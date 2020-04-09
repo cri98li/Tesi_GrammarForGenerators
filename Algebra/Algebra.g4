@@ -81,7 +81,7 @@ any_of_assertion: 'anyOf[' assertion (', 'assertion)* ']';
 
 one_of_assertion: 'oneOf[' assertion (', 'assertion)* ']';
 
-if_then_else_assertion: 'if: ' assertion ', then: ' assertion (' else: ' assertion)?;
+if_then_else_assertion: 'if: ' assertion ', then: ' assertion (', else: ' assertion)?;
 
 
 //--------------------------------REF
