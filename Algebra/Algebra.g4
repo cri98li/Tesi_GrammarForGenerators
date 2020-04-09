@@ -56,7 +56,7 @@ type_assertion: 'type(' types ')';
 
 pattern_asserton: 'pattern(' PATTERNSTRING ')';
 
-required_assertion: 'req[' ALFABETICSTRING (', ' ALFABETICSTRING)* ')';
+required_assertion: 'req[' ALFABETICSTRING (', ' ALFABETICSTRING)* ']';
 
 //---------------------------------NUMERICI
 between_assertion: 'bet(' (( NONEGATIVEINT ', 'number_JSONValue)
