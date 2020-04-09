@@ -54,22 +54,27 @@ unique_items_assertion: 'uniqueItems';
 
 type_assertion: 'type(' types ')';
 
-pattern_asserton: 'pattern(' ALFABETICSTRING ')';
+pattern_asserton: 'pattern(' PATTERNSTRING ')';
 
 required_assertion: 'req[' ALFABETICSTRING (', ' ALFABETICSTRING)* ')';
 
 //---------------------------------NUMERICI
-between_assertion: 'bet('number_JSONValue ', 'number_JSONValue')';
+between_assertion: 'bet(' (( NONEGATIVEINT ', 'number_JSONValue)
+                        | (number_JSONValue ', 'NONEGATIVEINT)) ')';
 
-xbetween_assertion: 'xbet('number_JSONValue ', 'number_JSONValue')';
+xbetween_assertion: 'xbet(' (( NONEGATIVEINT ', 'number_JSONValue)
+                        | (number_JSONValue ', 'NONEGATIVEINT)) ')';
 
-length_assertion: 'xbet('nonNegInt_JSONValue ', 'nonNegInt_JSONValue')';
+length_assertion: 'xbet(' (( NONEGATIVEINT ', 'nonNegInt_JSONValue )
+                    | ( nonNegInt_JSONValue ', 'NONEGATIVEINT )) ')';
 
-bet_items_assertion : 'betitems('nonNegInt_JSONValue', 'nonNegInt_JSONValue')';
+bet_items_assertion : 'betitems(' (( NONEGATIVEINT ', 'nonNegInt_JSONValue )
+                        | ( nonNegInt_JSONValue ', 'NONEGATIVEINT )) ')';
 
-between_properties_assertion : 'pro('nonNegInt_JSONValue', 'nonNegInt_JSONValue')';
+between_properties_assertion : 'pro(' (( NONEGATIVEINT ', 'nonNegInt_JSONValue )
+                                    | ( nonNegInt_JSONValue ', 'NONEGATIVEINT )) ')';
 
-multiple_of_assertion: 'mof('nonNegInt_JSONValue')';
+multiple_of_assertion: 'mof('NONEGATIVEINT')';
 
 //--------------------------------LOGICI
 
