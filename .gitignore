@@ -1,5 +1,8 @@
 # Compiled class file
 *.class
+Algebra/tests/
+Algebra/antlr4_generated/
+Algebra/.antlr/
 
 # Log file
 *.log
