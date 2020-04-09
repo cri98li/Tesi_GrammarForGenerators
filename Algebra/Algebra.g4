@@ -86,7 +86,7 @@ if_then_else_assertion: 'if: ' assertion ', then: ' assertion (', else: ' assert
 
 //--------------------------------REF
 
-ref_assertion: 'ref: ' REF;
+ref_assertion: 'ref: ' ALFABETICSTRING;
 
 
 //--------------------------------NODI
@@ -133,7 +133,5 @@ ALFABETICSTRING: '"STR_'[a-zA-Z]+'"';
 PATTERNSTRING: '"PAT_' STRING '"';
 
 STRING: .+?;
-
-REF: '"#/definitions/'ALFABETICSTRING'"';
 
 WS : [ \t\r\n]+ -> skip ; // Define whitespace rule, toss it out
