@@ -127,11 +127,11 @@ JSONValue: INT | FLOAT | STRING | 'null'
 
 types: 'obj' | 'str' | 'num' | 'int' | 'arr' | 'bool' | 'null';
 
-NONEGATIVEINT: [0-9]+;
+NONEGATIVEINT: [1-9][0-9]*;
 
-INT: '-'? [0-9]+;
+INT: '-'? NONEGATIVEINT;
 
-FLOAT: INT '.' NONEGATIVEINT;
+FLOAT: INT '.' [0-9]* [1-9];
 
 ALFABETICSTRING: '"STR_'[a-zA-Z]+'"';
 
