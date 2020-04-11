@@ -3,6 +3,10 @@
 Algebra/tests/
 Algebra/antlr4_generated/
 Algebra/.antlr/
+Credenziali.java
+Testing/target/
+Testing/JSONSchema-Algebra/
+Testing/testFiles
 
 # Log file
 *.log
