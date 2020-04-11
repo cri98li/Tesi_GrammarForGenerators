@@ -111,16 +111,16 @@ ref_assertion: 'ref: ' ALFABETICSTRING;
 items_assertion: 'items(' assertion (', ' assertion)*';)'
                     | 'items(' (assertion (', ' assertion)*)?'; 'assertion')';
 
-properties_assertion: 'props[' ALFABETICSTRING ':' assertion (','ALFABETICSTRING ':' assertion)* ';]'
-                        | 'props[' (ALFABETICSTRING ':' assertion (','ALFABETICSTRING ':' assertion)*)? ';'assertion']';
+properties_assertion: 'props[' ALFABETICSTRING ':' assertion (', 'ALFABETICSTRING ':' assertion)* ';]'
+                        | 'props[' (ALFABETICSTRING ':' assertion (', 'ALFABETICSTRING ':' assertion)*)? ';'assertion']';
 
 propertyNames: 'names: ' assertion;
 
 contains_assertion: 'contains (' nonNegInt_JSONValue ', ' nonNegInt_JSONValue')' assertion;
 
-pattern_required: 'pattReq''[' PATTERNSTRING ':' assertion ('?' PATTERNSTRING ':' assertion)* ']';
+pattern_required: 'pattReq''[' PATTERNSTRING ':' assertion (', ' PATTERNSTRING ':' assertion)* ']';
 
-additional_pattern_required: 'pattReq''[' '('(PATTERNSTRING (',' PATTERNSTRING))*')' ':' assertion ']';
+additional_pattern_required: 'addPattReq''[' '('(PATTERNSTRING (', ' PATTERNSTRING))*')' ':' assertion ']';
 
 
 
@@ -140,7 +140,7 @@ Int_JSONValue: INT;
 
 JSONValue: INT | FLOAT | STRING | 'null' 
             |   '[' JSONValue (', ' JSONValue)* ']'
-            |   '{' ALFABETICSTRING': ' JSONValue (',' ALFABETICSTRING': ' JSONValue)*'}';
+            |   '{' ALFABETICSTRING': ' JSONValue (', ' ALFABETICSTRING': ' JSONValue)*'}';
 
 types: 'obj' | 'str' | 'num' | 'int' | 'arr' | 'bool' | 'null';
 
