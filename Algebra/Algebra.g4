@@ -154,6 +154,8 @@ ALFABETICSTRING: '"STR_'[a-zA-Z]+'"';
 
 PATTERNSTRING: '"PAT_' STRING '"';
 
-STRING: .+?;
+//STRING: .+?;
+
+STRING: ~('"𐠽')+;
 
 WS : [ \t\r\n]+ -> skip ; // Define whitespace rule, toss it out

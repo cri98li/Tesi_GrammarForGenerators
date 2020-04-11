@@ -1,4 +1,6 @@
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
 
@@ -6,17 +8,11 @@ public class TestBuilder{
 	private static TestBuilder istance;
 	
 	private boolean destroyed;
+	private List<String> tests;
 	
-	private TestBuilder() throws IOException, InterruptedException {
-		getProject();
-		buildPythonFile();
-		
-		destroyed = false;
-	}
-	
-	public static TestBuilder setup() throws IOException, InterruptedException {
+	public static TestBuilder setup(List<String> tests) throws IOException, InterruptedException {
 		synchronized(Test.class) {
-			if(istance == null) istance = new TestBuilder();
+			if(istance == null) istance = new TestBuilder(tests);
 		}
 		
 		return istance;
@@ -42,10 +38,28 @@ public class TestBuilder{
         System.out.println("returncode creazione parser: "+returnCode);
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	private TestBuilder(List<String> tests) throws IOException, InterruptedException {
+		getProject();
+		buildPythonFile();
+		
+		destroyed = false;
+		this.tests = new LinkedList<>(tests);
+	}
+	
 	public Test getTest() {
 		if(destroyed) return null;
 		try {
-			return new Test();
+			return new Test(tests.get(new Random().nextInt(tests.size())));
 		} catch (IOException | InterruptedException e) {
 			e.printStackTrace();
 			return null;
@@ -67,14 +81,15 @@ public class TestBuilder{
 
 class Test implements Runnable{
 	private String fileName;
+	private String command;
 	
-	protected Test() throws IOException, InterruptedException {
+	protected Test(String command) throws IOException, InterruptedException {
 		fileName = this.hashCode()+"";
+		this.command = command;
 	}
 
 	@Override
 	public void run() {
-		int command = new Random().nextInt(3) +1;
 		String inputFile = command + "input_" + fileName;
 		String outputFile = command + "output_" + fileName;
 		//Creo il file di test

@@ -6,7 +6,8 @@ Algebra/.antlr/
 Credenziali.java
 Testing/target/
 Testing/JSONSchema-Algebra/
-Testing/testFiles
+Testing/testFiles/
+Testing/tmp/
 
 # Log file
 *.log
