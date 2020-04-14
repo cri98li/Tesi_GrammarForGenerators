@@ -152,10 +152,10 @@ FLOAT: INT '.' [0-9]* [1-9];
 
 ALFABETICSTRING: '"STR_'[a-zA-Z]+'"';
 
-PATTERNSTRING: '"PAT_' STRING '"';
+PATTERNSTRING: '"^PAT_' STRING '$"';
 
 //STRING: .+?;
 
-STRING: ~('"𐠽')+;
+STRING: [a-zA-Z0-9.,*:\-_{}[\]+?!)=|\\(];
 
 WS : [ \t\r\n]+ -> skip ; // Define whitespace rule, toss it out
