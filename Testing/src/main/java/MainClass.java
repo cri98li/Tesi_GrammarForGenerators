@@ -26,7 +26,7 @@ public class MainClass {
 		
 		
 		TestBuilder testBuilder = TestBuilder.setup(testId);
-		ExecutorService executors = Executors.newFixedThreadPool(1);
+		ExecutorService executors = Executors.newFixedThreadPool(12);
 		
 		
 		for(int i = 0; i < nTest; i++)
