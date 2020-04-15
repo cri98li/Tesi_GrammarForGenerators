@@ -2,7 +2,7 @@ grammar JSONSchema;
 
 //--------------------root
 
-jsonSchema: '{ ' keyword (', ' keyword)* ' }'; /* mettiamoci poi i vri tag */
+jsonSchema: ('{ ' keyword (', ' keyword)* ' }') | BOOLEAN; /* mettiamoci poi i vari tag?? */
 
 
 
@@ -12,30 +12,36 @@ keyword: uniqueItems
 
                     |   type
                     |   pattern
-                    |   required_assertion
+                    |   required
 
-                    |   between_assertion
-                    |   xbetween_assertion
-                    |   length_assertion
-                    |   bet_items_assertion
-                    |   between_properties_assertion
-                    |   multiple_of_assertion
-                    |   not_multiple_of_assertion
+                    |   minimum
+                    |   maximum
+                    |   minLength
+                    |   maxLength
+                    |   minItems
+                    |   maxItems
+                    |   minProperties
+                    |   maxProperties
+                    |   minContains
+                    |   maxContains
+                    |   multipleOf
 
-                    |   not_assertion
-                    |   all_of_assertion
-                    |   one_of_assertion
-                    |   any_of_assertion
-                    |   if_then_else_assertion
+                    |   not
+                    |   allOf
+                    |   oneOf
+                    |   anyOf
+                    |   if_then_else
 
-                    |   ref_assertion
+                    |   ref
 
-                    |   items_assertion
-                    |   properties_assertion
+                    |   items
+                    |   additionalItems
+                    |   properties
                     |   propertyNames
-                    |   contains_assertion
-                    |   pattern_required
-                    |   additional_pattern_required
+                    |   contains
+
+                    |   enum
+                    |   const
                     ;
 
 
@@ -59,66 +65,72 @@ required: '"required": [' ALFABETICSTRING (', ' ALFABETICSTRING)* ']';
 
 
 //---------------------------------NUMERICI
-minimum: '"minimum": ' number_JSONValue (', "exclusiveMinimum": ' BOOLEAN)?;
+minimum: ('"minimum": ' number_JSONValue (', "exclusiveMinimum": ' BOOLEAN)?) | exclusiveMinimum;
 
-maximum: '"maximum": ' number_JSONValue (', "exclusiveMaximum": ' BOOLEAN)?;
+maximum: ('"maximum": ' number_JSONValue (', "exclusiveMaximum": ' BOOLEAN)?) | exclusiveMaximum;
 
-exclusiveMinimum: 'xbet(' (( NONEGATIVEINT ', 'number_JSONValue);
+exclusiveMinimum: '"exclusiveMinimum": 'NONEGATIVEINT;
 
-length_assertion: 'xbet(' (( NONEGATIVEINT ', 'nonNegInt_JSONValue )
-                    | ( nonNegInt_JSONValue ', 'NONEGATIVEINT )) ')';
+exclusiveMaximum: '"exclusiveMaximum": 'NONEGATIVEINT;
 
-bet_items_assertion : 'betitems(' (( NONEGATIVEINT ', 'nonNegInt_JSONValue )
-                        | ( nonNegInt_JSONValue ', 'NONEGATIVEINT )) ')';
+minLength: '"minLength": ' NONEGATIVEINT;
 
-between_properties_assertion : 'pro(' (( NONEGATIVEINT ', 'nonNegInt_JSONValue )
-                                    | ( nonNegInt_JSONValue ', 'NONEGATIVEINT )) ')';
+maxLength: '"maxLength": ' NONEGATIVEINT;
 
-multiple_of_assertion: 'mof('NONEGATIVEINT')';
+minItems : '"minItems": ' NONEGATIVEINT;
 
-not_multiple_of_assertion : 'notMof''('NONEGATIVEINT')';	
+maxItems : '"maxItems": ' NONEGATIVEINT;
 
+minProperties : '"minProperties": ' NONEGATIVEINT;
+
+maxProperties : '"maxProperties": ' NONEGATIVEINT;
+
+minContains : '"minContains": ' NONEGATIVEINT;
+
+maxContains : '"maxContains": ' NONEGATIVEINT;
+
+multipleOf: '"multipleOf": 'NONEGATIVEINT;
 
 //--------------------------------LOGICI
 
-not_assertion: 'not: ' assertion;
+not: 'not: ' jsonSchema;
 
-all_of_assertion: 'allOf[' assertion (', 'assertion)* ']';
+allOf: '"allOf": [' jsonSchema (', 'jsonSchema)* ']';
 
-any_of_assertion: 'anyOf[' assertion (', 'assertion)* ']';
+anyOf: '"anyOf": [' jsonSchema (', 'jsonSchema)* ']';
 
-one_of_assertion: 'oneOf[' assertion (', 'assertion)* ']';
+oneOf: '"oneOf": [' jsonSchema (', 'jsonSchema)* ']';
 
-if_then_else_assertion: 'if: ' assertion ', then: ' assertion (', else: ' assertion)?;
+if_then_else: 'if: ' jsonSchema ', then: ' jsonSchema (', else: ' jsonSchema)?;
 
 
 //--------------------------------REF
 
-ref_assertion: 'ref: ' ALFABETICSTRING;
+ref: '"ref": ' '"#/$defs/' ALFABETICSTRING '"';
 
 
 //--------------------------------NODI
-items_assertion: 'items(' assertion (', ' assertion)*';)'
-                    | 'items(' (assertion (', ' assertion)*)?'; 'assertion')';
+items: '"items": ' (jsonSchema | '[' jsonSchema (', ' jsonSchema) ']');
 
-properties_assertion: 'props[' ALFABETICSTRING ':' assertion (', 'ALFABETICSTRING ':' assertion)* ';]'
-                        | 'props[' (ALFABETICSTRING ':' assertion (', 'ALFABETICSTRING ':' assertion)*)? ';'assertion']';
+additionalItems: '"additionalItems": ' jsonSchema;
 
-propertyNames: 'names: ' assertion;
+properties: '"properties": {' ALFABETICSTRING':' jsonSchema (', ' ALFABETICSTRING':' jsonSchema)* '}';
 
-contains_assertion: 'contains (' nonNegInt_JSONValue ', ' nonNegInt_JSONValue')' assertion;
+patternProperties: '"patternProperties": {' PATTERNSTRING':' jsonSchema (', ' PATTERNSTRING':' jsonSchema)* '}';
 
-pattern_required: 'pattReq''[' PATTERNSTRING ':' assertion (', ' PATTERNSTRING ':' assertion)* ']';
+additionalProperties: '"additionalProperties": ' jsonSchema;
 
-additional_pattern_required: 'addPattReq''[' '('(PATTERNSTRING (', ' PATTERNSTRING))*')' ':' assertion ']';
+propertyNames: '"propertyNames": ' jsonSchema;
+
+contains: '"contains": ' jsonSchema;
 
 
 
 //------------------------------Costanti (contengono json)
 
-const_assertion: 'const(' JSONValue ')';
+const: '"const": ' JSONValue;
 
-enum_assertion: 'enum[' JSONValue (', ' JSONValue)* ']';
+enum: '"enum": [' JSONValue (', ' JSONValue)*']';
 
 
 

@@ -40,6 +40,9 @@ single_assertion: unique_items_assertion
                     |   contains_assertion
                     |   pattern_required
                     |   additional_pattern_required
+
+                    |   enum_assertion
+                    |   const_assertion
                     ;
 
 
@@ -75,7 +78,7 @@ between_assertion: 'bet(' (( NONEGATIVEINT ', 'number_JSONValue)
 xbetween_assertion: 'xbet(' (( NONEGATIVEINT ', 'number_JSONValue)
                         | (number_JSONValue ', 'NONEGATIVEINT)) ')';
 
-length_assertion: 'xbet(' (( NONEGATIVEINT ', 'nonNegInt_JSONValue )
+length_assertion: 'length(' (( NONEGATIVEINT ', 'nonNegInt_JSONValue )
                     | ( nonNegInt_JSONValue ', 'NONEGATIVEINT )) ')';
 
 bet_items_assertion : 'betitems(' (( NONEGATIVEINT ', 'nonNegInt_JSONValue )
