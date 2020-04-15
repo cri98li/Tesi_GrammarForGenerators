@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
@@ -8,9 +9,9 @@ public class TestBuilder{
 	private static TestBuilder istance;
 	
 	private boolean destroyed;
-	private List<String> tests;
+	private List<Integer> tests;
 	
-	public static TestBuilder setup(List<String> tests) throws IOException, InterruptedException {
+	public static TestBuilder setup(List<Integer> tests) throws IOException, InterruptedException {
 		synchronized(Test.class) {
 			if(istance == null) istance = new TestBuilder(tests);
 		}
@@ -28,14 +29,20 @@ public class TestBuilder{
 				+ "cd JSONSchema-Algebra/Programmi/JsonSchema_to_Algebra/; ls;"
 				+ "mvn install;"
 				+ "cp target/JsonSchema_to_Algebra-0.0.1-SNAPSHOT-jar-with-dependencies.jar ../../../eseguibile.jar;"
-				+ "cd ../../../; rm -r -f JSONSchema-Algebra/ "
+				//+ "cd ../../../; rm -r -f JSONSchema-Algebra/ "
 				);
         System.out.println("prova: "+returnCode);
 	}
 	
 	private void buildPythonFile() throws IOException, InterruptedException {
-		int returnCode = Cmd_Linux.execute("bash", "-c", "grammarinator-process ../Algebra/Algebra.g4 -o tmp/ --no-actions");
-        System.out.println("returncode creazione parser: "+returnCode);
+		int returnCode = Cmd_Linux.execute("bash", "-c", "grammarinator-process ../Algebra/Algebra.g4 -o tmp/ --no-actions;");
+		System.out.println("returncode creazione parser algebra: "+returnCode);
+
+		returnCode = Cmd_Linux.execute("bash", "-c", "grammarinator-process ../JSONSchema/JSONSchema.g4 -o tmp/ --no-actions;");
+		System.out.println("returncode creazione parser jsonschema: "+returnCode);
+
+		returnCode = Cmd_Linux.execute("bash", "-c", "grammarinator-process ../Algebra/Algebra.g4 -o tmp/ --no-actions;");
+		System.out.println("returncode creazione parser algebra: "+returnCode);
 	}
 	
 	
@@ -48,7 +55,7 @@ public class TestBuilder{
 	
 	
 	
-	private TestBuilder(List<String> tests) throws IOException, InterruptedException {
+	private TestBuilder(List<Integer> tests) throws IOException, InterruptedException {
 		getProject();
 		buildPythonFile();
 		
@@ -56,23 +63,51 @@ public class TestBuilder{
 		this.tests = new LinkedList<>(tests);
 	}
 	
-	public Test getTest() {
+	public List<Test> getTests() throws IOException, InterruptedException {
 		if(destroyed) return null;
-		try {
-			return new Test(tests.get(new Random().nextInt(tests.size())));
-		} catch (IOException | InterruptedException e) {
-			e.printStackTrace();
-			return null;
+
+		List<Test> generatedTests = new LinkedList<>();
+
+		//GENERAZIONE TEST
+
+		for(int i = 0; i < tests.size(); i++){
+			int returnCode = 32;
+			if(tests.get(i) == 0) continue;
+			switch (i+1){
+				case 2:
+					returnCode = Cmd_Linux.execute("bash", "-c", "grammarinator-generate -d 30"
+							+ " -o testFiles/"+ (i+1) +"-test_%d.input -p tmp/AlgebraUnparser.py -l tmp/AlgebraUnlexer.py 	" +
+							" -n "+tests.get(i));
+					break;
+
+				case 1:
+				case 3:
+					returnCode = Cmd_Linux.execute("bash", "-c", "grammarinator-generate -d 100 "
+							+ " -o testFiles/"+ (i+1) +"-test_%d.input -p tmp/JSONSchemaUnparser.py -l tmp/JSONSchemaUnlexer.py 	" +
+							" -n "+tests.get(i));
+					break;
+
+			}
+
+			System.out.println("> returncode creazione testfile "+ (i+1) +": "+ returnCode);
 		}
+
+		File generatedTestFolder = new File("testFiles/");
+		for(File file : generatedTestFolder.listFiles()){
+			if(!file.isFile() || !file.getName().contains(".input")) continue;
+			String fileName = file.getName();
+			String command = fileName.split("-")[0];
+			generatedTests.add(new Test(command, fileName));
+		}
+
+		return generatedTests;
 	}
 	
 	public boolean shutdown() {
-		try {
-			int returnCode = Cmd_Linux.execute("bash", "-c", "rm -r -f tmp/");
+
+			int returnCode = 1;/*Cmd_Linux.execute("bash", "-c", "rm -r -f tmp/");*/
 			if(returnCode == 0) return true;
-		} catch (IOException | InterruptedException e) {
-			e.printStackTrace();
-		}
+
         
 		return false;
 	}
@@ -80,35 +115,25 @@ public class TestBuilder{
 
 
 class Test implements Runnable{
-	private String fileName;
+	private String inputFileName;
 	private String command;
 	
-	protected Test(String command) throws IOException, InterruptedException {
-		fileName = this.hashCode()+"";
+	protected Test(String command, String inputFileName) {
+		this.inputFileName = inputFileName;
 		this.command = command;
 	}
 
 	@Override
 	public void run() {
-		String inputFile = command + "input_" + fileName;
-		String outputFile = command + "output_" + fileName;
-		//Creo il file di test
-		try {
-		int returnCode = Cmd_Linux.execute("bash", "-c", "grammarinator-generate -r rootDef_assertion "
-				+ "-d 10 -o testFiles/" + inputFile + ".txt -p tmp/AlgebraUnparser.py -l tmp/AlgebraUnlexer.py;"
-        		+ "mv testFiles/" + inputFile + "*.txt testFiles/" + inputFile + ".txt");
-		
-		System.out.println(fileName + "> returncode creazione testfile: "+ returnCode);
-		if(returnCode != 0) return;
-        
         //eseguo il test
-        returnCode = Cmd_Linux.execute("bash", "-c", "/usr/lib/jvm/java-11-openjdk/bin/java -cp eseguibile.jar "
+		try{
+        int returnCode = Cmd_Linux.execute("bash", "-c", "/usr/lib/jvm/java-11-openjdk/bin/java -cp eseguibile.jar "
         		+ "it.unipi.di.tesiFalleniLandi.JsonSchema_to_Algebra.MainClass " 
-        		+ command + " testFiles/" + inputFile + ".txt &> testFiles/" + outputFile + ".txt");
+        		+ command + " testFiles/" + inputFileName + " &> testFiles/" + inputFileName + ".output");
         if(returnCode == 0) {
-        	returnCode = Cmd_Linux.execute("bash", "-c", "rm -f -r testFiles/"+inputFile+".txt;"
-      				+ "rm -f -r testFiles/"+outputFile+".txt");
-              System.out.println(fileName+"> eliminazione file test di successo: "+returnCode);
+        	returnCode = Cmd_Linux.execute("bash", "-c", "rm -f -r testFiles/"+inputFileName+".input;"
+      				+ "rm -f -r testFiles/"+inputFileName+".output");
+              System.out.println(inputFileName+"> eliminazione file test di successo: "+returnCode);
         	return;
         }
         

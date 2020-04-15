@@ -5,21 +5,11 @@ import java.util.concurrent.*;
 
 public class MainClass {
 	public static void main(String[] args) throws InterruptedException, IOException {
-		//ARGS: #test {lista possibili test}
-		int nTest = 100;
-		List<String> testId = new LinkedList<>();
-		testId.add("1"); //json --> grammatica
-		testId.add("2"); //grammatica --> json
-		testId.add("3"); //not elimination
-		
-		if(args.length != 0) {
-			nTest = Integer.parseInt(args[0]);
-			testId = new LinkedList<>();
-			
-			for(int i = 1; i < args.length; i++)
-				testId.add(args[i]);
-		}
-		
+		//ARGS: #testTipo1 #testTipo2 #testTipo3...
+		List<Integer> testId = new LinkedList<>();
+
+			for(int i = 0; i < args.length; i++)
+				testId.add(Integer.parseInt(args[i]));
 		
 		
 		
@@ -28,9 +18,9 @@ public class MainClass {
 		TestBuilder testBuilder = TestBuilder.setup(testId);
 		ExecutorService executors = Executors.newFixedThreadPool(12);
 		
-		
-		for(int i = 0; i < nTest; i++)
-			executors.execute(testBuilder.getTest());
+		List<Test> tests = testBuilder.getTests();
+		for(Test test : tests)
+			executors.execute(test);
 		
 		executors.shutdown();
 		

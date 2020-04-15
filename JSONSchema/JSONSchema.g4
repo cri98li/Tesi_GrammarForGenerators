@@ -2,7 +2,7 @@ grammar JSONSchema;
 
 //--------------------root
 
-jsonSchema: ('{ ' keyword (', ' keyword)* ' }') | BOOLEAN; /* mettiamoci poi i vari tag?? */
+jsonSchema: ('{ ' keyword (', ' keyword)* ' }') | BOOLEAN; /* mettiamoci poi i vari tag */
 
 
 
@@ -26,7 +26,7 @@ keyword: uniqueItems
                     |   maxContains
                     |   multipleOf
 
-                    |   not
+                    |   js_not
                     |   allOf
                     |   oneOf
                     |   anyOf
@@ -40,8 +40,8 @@ keyword: uniqueItems
                     |   propertyNames
                     |   contains
 
-                    |   enum
-                    |   const
+                    |   js_enum
+                    |   js_const
                     ;
 
 
@@ -57,9 +57,9 @@ uniqueItems: '"uniqueItems": 'BOOLEAN;
 
 //---------------------------------STRINGHE
 
-type: '"type": ' (types | ('[' types (', ' types)* ']')) ')';
+type: '"type": ' (types | ('[' types (', ' types)* ']'));
 
-pattern: '"pattern": "' PATTERNSTRING '"';
+pattern: '"pattern": ' PATTERNSTRING ;
 
 required: '"required": [' ALFABETICSTRING (', ' ALFABETICSTRING)* ']';
 
@@ -93,7 +93,7 @@ multipleOf: '"multipleOf": 'NONEGATIVEINT;
 
 //--------------------------------LOGICI
 
-not: 'not: ' jsonSchema;
+js_not: '"not": ' jsonSchema;
 
 allOf: '"allOf": [' jsonSchema (', 'jsonSchema)* ']';
 
@@ -101,12 +101,13 @@ anyOf: '"anyOf": [' jsonSchema (', 'jsonSchema)* ']';
 
 oneOf: '"oneOf": [' jsonSchema (', 'jsonSchema)* ']';
 
-if_then_else: 'if: ' jsonSchema ', then: ' jsonSchema (', else: ' jsonSchema)?;
+if_then_else: '"if": ' jsonSchema ', "then": ' jsonSchema (', "else": ' jsonSchema)?;
 
 
 //--------------------------------REF
 
-ref: '"ref": ' '"#/$defs/' ALFABETICSTRING '"';
+STRINGFORREF: [a-zA-Z0-9]+;
+ref: '"ref": ' '"#/$defs/' STRINGFORREF '"';
 
 
 //--------------------------------NODI
@@ -128,9 +129,9 @@ contains: '"contains": ' jsonSchema;
 
 //------------------------------Costanti (contengono json)
 
-const: '"const": ' JSONValue;
+js_const: '"const": ' JSONValue;
 
-enum: '"enum": [' JSONValue (', ' JSONValue)*']';
+js_enum: '"enum": [' JSONValue (', ' JSONValue)*']';
 
 
 
@@ -140,11 +141,11 @@ nonNegInt_JSONValue: NONEGATIVEINT | 'null';
 
 Int_JSONValue: INT;
 
-JSONValue: INT | FLOAT | STRING | 'null' 
+JSONValue: INT | FLOAT | ALFABETICSTRING | 'null' 
             |   '[' JSONValue (', ' JSONValue)* ']'
             |   '{' ALFABETICSTRING': ' JSONValue (', ' ALFABETICSTRING': ' JSONValue)*'}';
 
-types: 'obj' | 'str' | 'num' | 'int' | 'arr' | 'bool' | 'null';
+types: '"object"' | '"string"' | '"number"' | '"integer"' | '"array"' | '"boolean"' | '"null"';
 
 NONEGATIVEINT: [1-9][0-9]*;
 
@@ -154,11 +155,12 @@ FLOAT: INT '.' [0-9]* [1-9];
 
 ALFABETICSTRING: '"STR_'[a-zA-Z]+'"';
 
-PATTERNSTRING: '"PAT_' STRING '"';
+PATTERNSTRING: '"^PAT_' STRING '$"';
 
 //STRING: .+?;
 
-STRING: ~('"𐠽')+;
+STRING: [a-zA-Z0-9.,*:\-_{}[\]+?!)=|\\(];
+
 BOOLEAN: 'true' | 'false';
 
 WS : [ \t\r\n]+ -> skip ; // Define whitespace rule, toss it out

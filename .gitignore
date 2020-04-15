@@ -1,8 +1,11 @@
 # Compiled class file
 *.class
 Algebra/tests/
+JSONSchema/tests/
 Algebra/antlr4_generated/
+JSONSchema/antlr4_generated/
 Algebra/.antlr/
+JSONSchema/.antlr/
 Credenziali.java
 Testing/target/
 Testing/JSONSchema-Algebra/
