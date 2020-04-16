@@ -2,8 +2,9 @@ grammar JSONSchema;
 
 //--------------------root
 
-jsonSchema: ('{ ' keyword (', ' keyword)* ' }') | BOOLEAN; /* mettiamoci poi i vari tag */
+root_jsonSchema: '{ ' keyword (', ' keyword)* ' }';/* mettiamoci poi i vari tag */
 
+jsonSchema: ('{ ' keyword (', ' keyword)* ' }') | BOOLEAN; 
 
 
 //------------------------strutturali
