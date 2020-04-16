@@ -26,10 +26,10 @@ public class TestBuilder{
 		
 		
 		returnCode = Cmd_Linux.execute("bash", "-c", "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk/;"
-				+ "cd JSONSchema-Algebra/Programmi/JsonSchema_to_Algebra/; ls;"
+				+ "cd JSONSchema-Algebra/Programmi/JsonSchema_to_Algebra/;"
 				+ "mvn install;"
 				+ "cp target/JsonSchema_to_Algebra-0.0.1-SNAPSHOT-jar-with-dependencies.jar ../../../eseguibile.jar;"
-				//+ "cd ../../../; rm -r -f JSONSchema-Algebra/ "
+				+ "cd ../../../; rm -r -f JSONSchema-Algebra/ "
 				);
         System.out.println("prova: "+returnCode);
 	}
@@ -65,6 +65,8 @@ public class TestBuilder{
 	
 	public List<Test> getTests() throws IOException, InterruptedException {
 		if(destroyed) return null;
+
+		Cmd_Linux.execute("bash", "-c", "rm -r -f testFiles");
 
 		List<Test> generatedTests = new LinkedList<>();
 
@@ -103,9 +105,10 @@ public class TestBuilder{
 		return generatedTests;
 	}
 	
-	public boolean shutdown() {
+	public boolean shutdown() throws IOException, InterruptedException {
 
-			int returnCode = 1;/*Cmd_Linux.execute("bash", "-c", "rm -r -f tmp/");*/
+			int returnCode = Cmd_Linux.execute("bash", "-c", "rm -r -f tmp/" +
+					"rm -r -f eseguibile.jar");
 			if(returnCode == 0) return true;
 
         
@@ -129,11 +132,11 @@ class Test implements Runnable{
 		try{
         int returnCode = Cmd_Linux.execute("bash", "-c", "/usr/lib/jvm/java-11-openjdk/bin/java -cp eseguibile.jar "
         		+ "it.unipi.di.tesiFalleniLandi.JsonSchema_to_Algebra.MainClass " 
-        		+ command + " testFiles/" + inputFileName + " &> testFiles/" + inputFileName + ".output");
+        		+ command + " testFiles/" + inputFileName + " &> testFiles/" + inputFileName.replace(".input", ".output"));
         if(returnCode == 0) {
-        	returnCode = Cmd_Linux.execute("bash", "-c", "rm -f -r testFiles/"+inputFileName+".input;"
+        	returnCode = Cmd_Linux.execute("bash", "-c", "rm -f -r testFiles/"+inputFileName+"; "
       				+ "rm -f -r testFiles/"+inputFileName+".output");
-              System.out.println(inputFileName+"> eliminazione file test di successo: "+returnCode);
+        	System.out.println(inputFileName+"> SUCCESSO");
         	return;
         }
         
@@ -144,7 +147,7 @@ class Test implements Runnable{
         
         
       //se sono arrivato fin qui il test non ha avuto successo --> non elimino i file
-              
+			System.out.println(inputFileName+"> ERRORE");
 		}catch(Exception ex) {
 			ex.printStackTrace();
 		}

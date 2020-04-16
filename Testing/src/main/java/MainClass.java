@@ -5,7 +5,7 @@ import java.util.concurrent.*;
 
 public class MainClass {
 	public static void main(String[] args) throws InterruptedException, IOException {
-		//ARGS: #testTipo1 #testTipo2 #testTipo3...
+		//ARGS: #testTipo1 #testTipo2 #testTipo3 ...
 		List<Integer> testId = new LinkedList<>();
 
 			for(int i = 0; i < args.length; i++)
