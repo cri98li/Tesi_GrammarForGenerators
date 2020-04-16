@@ -135,7 +135,7 @@ class Test implements Runnable{
         		+ command + " testFiles/" + inputFileName + " &> testFiles/" + inputFileName.replace(".input", ".output"));
         if(returnCode == 0) {
         	returnCode = Cmd_Linux.execute("bash", "-c", "rm -f -r testFiles/"+inputFileName+"; "
-      				+ "rm -f -r testFiles/"+inputFileName+".output");
+      				+ "rm -f -r testFiles/"+inputFileName.replace(".input", ".output"));
         	System.out.println(inputFileName+"> SUCCESSO");
         	return;
         }
