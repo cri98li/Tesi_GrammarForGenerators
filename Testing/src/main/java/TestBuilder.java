@@ -77,13 +77,13 @@ public class TestBuilder{
 			if(tests.get(i) == 0) continue;
 			switch (i+1){
 				case 2:
+				case 3:
 					returnCode = Cmd_Linux.execute("bash", "-c", "grammarinator-generate -d 30"
 							+ " -o testFiles/"+ (i+1) +"-test_%d.input -p tmp/AlgebraUnparser.py -l tmp/AlgebraUnlexer.py 	" +
 							" -n "+tests.get(i));
 					break;
 
 				case 1:
-				case 3:
 					returnCode = Cmd_Linux.execute("bash", "-c", "grammarinator-generate -d 100 "
 							+ " -o testFiles/"+ (i+1) +"-test_%d.input -p tmp/JSONSchemaUnparser.py -l tmp/JSONSchemaUnlexer.py 	" +
 							" -n "+tests.get(i));
@@ -134,8 +134,8 @@ class Test implements Runnable{
         		+ "it.unipi.di.tesiFalleniLandi.JsonSchema_to_Algebra.MainClass " 
         		+ command + " testFiles/" + inputFileName + " &> testFiles/" + inputFileName.replace(".input", ".output"));
         if(returnCode == 0) {
-        	returnCode = Cmd_Linux.execute("bash", "-c", "rm -f -r testFiles/"+inputFileName+"; "
-      				+ "rm -f -r testFiles/"+inputFileName.replace(".input", ".output"));
+        	returnCode = Cmd_Linux.execute("bash", "-c", "rm -f -r testFiles/"+inputFileName);
+			returnCode = Cmd_Linux.execute("bash", "-c", "rm -f -r testFiles/"+inputFileName.replace(".input", ".output"));
         	System.out.println(inputFileName+"> SUCCESSO");
         	return;
         }
