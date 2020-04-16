@@ -102,7 +102,8 @@ any_of_assertion: 'anyOf[' assertion (', 'assertion)* ']';
 
 one_of_assertion: 'oneOf[' assertion (', 'assertion)* ']';
 
-if_then_else_assertion: 'if: ' assertion ', then: ' assertion (', else: ' assertion)?;
+if_then_else_assertion: ('ifThenElse(' assertion '; ' assertion ';  ' assertion ')')
+                            | 'ifThen(' assertion '; ' assertion ')';
 
 
 //--------------------------------REF
@@ -141,7 +142,7 @@ nonNegInt_JSONValue: NONEGATIVEINT | 'null';
 
 Int_JSONValue: INT;
 
-JSONValue: INT | FLOAT | STRING | 'null' 
+JSONValue: INT | FLOAT | '"'STRING'"' | 'null' 
             |   '[' JSONValue (', ' JSONValue)* ']'
             |   '{' ALFABETICSTRING': ' JSONValue (', ' ALFABETICSTRING': ' JSONValue)*'}';
 
