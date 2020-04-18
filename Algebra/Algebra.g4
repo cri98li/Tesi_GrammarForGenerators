@@ -81,7 +81,7 @@ xbetween_assertion: 'xbet(' (( NONEGATIVEINT ', 'number_JSONValue)
 length_assertion: 'length(' (( NONEGATIVEINT ', 'nonNegInt_JSONValue )
                     | ( nonNegInt_JSONValue ', 'NONEGATIVEINT )) ')';
 
-bet_items_assertion : 'betitems(' (( NONEGATIVEINT ', 'nonNegInt_JSONValue )
+bet_items_assertion : 'betItems(' (( NONEGATIVEINT ', 'nonNegInt_JSONValue )
                         | ( nonNegInt_JSONValue ', 'NONEGATIVEINT )) ')';
 
 between_properties_assertion : 'pro(' (( NONEGATIVEINT ', 'nonNegInt_JSONValue )
@@ -94,7 +94,7 @@ not_multiple_of_assertion : 'notMof''('NONEGATIVEINT')';
 
 //--------------------------------LOGICI
 
-not_assertion: 'not: ' assertion;
+not_assertion: 'not(' assertion ')';
 
 all_of_assertion: 'allOf[' assertion (', 'assertion)* ']';
 
@@ -108,7 +108,7 @@ if_then_else_assertion: ('ifThenElse(' assertion '; ' assertion ';  ' assertion 
 
 //--------------------------------REF
 
-ref_assertion: 'ref: ' ALFABETICSTRING;
+ref_assertion: 'ref(' ALFABETICSTRING ')';
 
 
 //--------------------------------NODI
@@ -118,13 +118,15 @@ items_assertion: 'items(' assertion (', ' assertion)*';)'
 properties_assertion: 'props[' ALFABETICSTRING ':' assertion (', 'ALFABETICSTRING ':' assertion)* ';]'
                         | 'props[' (ALFABETICSTRING ':' assertion (', 'ALFABETICSTRING ':' assertion)*)? ';'assertion']';
 
-propertyNames: 'names: ' assertion;
+propertyNames: 'names(' assertion ')';
 
-contains_assertion: 'contains (' nonNegInt_JSONValue ', ' nonNegInt_JSONValue')' assertion;
+exNames: 'exNames(' assertion ')';
+
+contains_assertion: 'contains (' nonNegInt_JSONValue ', ' nonNegInt_JSONValue';' assertion')';
 
 pattern_required: 'pattReq''[' PATTERNSTRING ':' assertion (', ' PATTERNSTRING ':' assertion)* ']';
 
-additional_pattern_required: 'addPattReq''[' '('(PATTERNSTRING (', ' PATTERNSTRING))*')' ':' assertion ']';
+additional_pattern_required: 'addPattReq''(' '['(PATTERNSTRING (', ' PATTERNSTRING))*']' ':' assertion ')';
 
 
 
@@ -146,7 +148,7 @@ JSONValue: INT | FLOAT | '"'STRING'"' | 'null'
             |   '[' JSONValue (', ' JSONValue)* ']'
             |   '{' ALFABETICSTRING': ' JSONValue (', ' ALFABETICSTRING': ' JSONValue)*'}';
 
-types: 'obj' | 'str' | 'num' | 'int' | 'arr' | 'bool' | 'null';
+types: 'obj' | 'str' | 'num' | 'int' | 'arr' | 'bool' | 'null' | 'typeNotInt';
 
 NONEGATIVEINT: [1-9][0-9]*;
 
