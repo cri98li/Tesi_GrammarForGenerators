@@ -20,16 +20,16 @@ public class TestBuilder{
 	}
 	
 	private void getProject() throws IOException, InterruptedException {
-		int returnCode = Cmd_Linux.execute("git", "clone", "https://"+ Credenziali.username + ":" + Credenziali.password +
+		/*int returnCode = Cmd_Linux.execute("git", "clone", "https://"+ Credenziali.username + ":" + Credenziali.password +
 				"@github.com/cri98li/JSONSchema-Algebra.git");
-		System.out.println("git clone: "+ returnCode);
+		System.out.println("git clone: "+ returnCode);*/
 		
 		
-		returnCode = Cmd_Linux.execute("bash", "-c", "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk/;"
+		int returnCode = Cmd_Linux.execute("bash", "-c", "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk/;"
 				+ "cd JSONSchema-Algebra/Programmi/JsonSchema_to_Algebra/;"
 				+ "mvn install;"
 				+ "cp target/JsonSchema_to_Algebra-0.0.1-SNAPSHOT-jar-with-dependencies.jar ../../../eseguibile.jar;"
-				+ "cd ../../../; rm -r -f JSONSchema-Algebra/ "
+				+ "cd ../../../; " //rm -r -f JSONSchema-Algebra/
 				);
         System.out.println("prova: "+returnCode);
 	}

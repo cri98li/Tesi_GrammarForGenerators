@@ -148,7 +148,7 @@ JSONValue: INT | FLOAT | '"'STRING'"' | 'null'
             |   '[' JSONValue (', ' JSONValue)* ']'
             |   '{' ALFABETICSTRING': ' JSONValue (', ' ALFABETICSTRING': ' JSONValue)*'}';
 
-types: 'obj' | 'str' | 'num' | 'int' | 'arr' | 'bool' | 'null' | 'typeNotInt';
+types: 'obj' | 'str' | 'num' | 'int' | 'arr' | 'bool' | 'null' | 'numNotInt';
 
 NONEGATIVEINT: [1-9][0-9]*;
 
