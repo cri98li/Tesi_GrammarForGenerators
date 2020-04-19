@@ -1,32 +1,120 @@
+import Testsuite.Compare.CompareTestBuilder;
+import Testsuite.Test;
+import Testsuite.RandomTest.RandomTestBuilder;
+import Testsuite.TestBuilder;
+import org.apache.commons.cli.*;
+
+import java.io.File;
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.*;
 
 public class MainClass {
 	public static void main(String[] args) throws InterruptedException, IOException {
-		//ARGS: #testTipo1 #testTipo2 #testTipo3 ...
-		List<Integer> testId = new LinkedList<>();
+		CommandLineParser parser = new DefaultParser();
+		CommandLine commandLine;
 
-			for(int i = 0; i < args.length; i++)
-				testId.add(Integer.parseInt(args[i]));
-		
-		
-		
-		
-		
-		TestBuilder testBuilder = TestBuilder.setup(testId);
-		ExecutorService executors = Executors.newFixedThreadPool(12);
-		
-		List<Test> tests = testBuilder.getTests();
-		for(Test test : tests)
-			executors.execute(test);
-		
-		executors.shutdown();
-		
-		while(!executors.awaitTermination(1, TimeUnit.SECONDS)) {
-			//System.out.println("MANCANO"+ executors. +"TEST");
+		try{
+			commandLine = parser.parse(prepareOptions(), args);
+		} catch (ParseException e) {
+			new HelpFormatter().printHelp("Testing", prepareOptions());
+			return;
 		}
-		testBuilder.shutdown();
+
+		if(commandLine.getOptions().length == 0) {
+			new HelpFormatter().printHelp("Testing", prepareOptions());
+			return;
+		}
+
+		TestBuilder testBuilder = null;
+
+		if(commandLine.hasOption("r")) {
+			String[] options = commandLine.getOptionValues("r");
+			List<Integer> testId = new LinkedList<>();
+
+			for (int i = 1; i < options.length; i++)
+				testId.add(Integer.parseInt(options[i]));
+
+			testBuilder = new RandomTestBuilder(testId);
+		}
+
+		if(commandLine.hasOption("c")){
+			File fileFolder = new File(commandLine.getOptionValue("c", "./"));
+			LinkedHashMap<String, Boolean> hm = new LinkedHashMap<>();
+			for(File file : fileFolder.listFiles()){
+				if(!file.isFile() || !file.getName().contains(".input")) continue;
+				String fileName = file.getName();
+
+				if(!fileName.substring(fileName.length() -7, fileName.length()).equalsIgnoreCase(".input1")
+					&& !fileName.substring(fileName.length() -7, fileName.length()).equalsIgnoreCase(".input2"))
+					continue;
+
+				if(hm.containsKey(fileName.substring(0, fileName.length() -7)))
+					hm.put(fileName.substring(0, fileName.length() -7), true);
+				else
+					hm.put(fileName.substring(0, fileName.length() -7), false);
+			}
+
+			TreeMap<String, String> fileSet = new TreeMap<>();
+
+			Set<Map.Entry<String, Boolean>> entrySet = hm.entrySet();
+
+			for(Map.Entry<String, Boolean> entry : entrySet)
+				if(entry.getValue())
+					fileSet.put(entry.getKey()+ ".input1", entry.getKey()+ ".input2");
+
+
+			testBuilder = new CompareTestBuilder(fileSet);
+			}
+
+		if(testBuilder != null) {
+			ExecutorService executors = Executors.newFixedThreadPool(4);
+			List<Test> tests = testBuilder.getTests();
+			for (Test test : tests)
+				executors.execute(test);
+
+			executors.shutdown();
+
+			while (!executors.awaitTermination(1, TimeUnit.SECONDS)) {
+				//System.out.println("MANCANO"+ executors. +"TEST");
+			}
+
+			int testTotali = tests.size();
+			int testPassati = 0;
+			for (Test t : tests)
+				if (t.getResult()) testPassati++;
+
+			System.out.println("TEST SUPERATI: " + testPassati + "/" + testTotali);
+
+			testBuilder.shutdown();
+		}
+
+	}
+
+
+	private static Options prepareOptions(){
+		Options options = new Options();
+
+		Option randomOption = Option.builder("r")
+				.longOpt("random")
+				.hasArg()
+				.numberOfArgs(3)
+				.argName("test1> <Test2> <Test3")
+				.valueSeparator(' ')
+				.type(Integer.class)
+				.desc("Execute random test")
+				.build();
+
+		Option compareOption = Option.builder("c")
+				.longOpt("compare")
+				.desc("Compare all couple of <*.input1, *.input2>")
+				.hasArg()
+				.optionalArg(true)
+				.argName("directory")
+				.type(String.class)
+				.build();
+
+		return options.addOption(randomOption)
+						.addOption(compareOption);
 	}
 }

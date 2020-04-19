@@ -1,31 +1,33 @@
+package Testsuite.RandomTest;
+
+import Testsuite.Test;
+import Testsuite.TestBuilder;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
 
 
-public class TestBuilder{
-	private static TestBuilder istance;
-	
-	private boolean destroyed;
-	private List<Integer> tests;
-	
-	public static TestBuilder setup(List<Integer> tests) throws IOException, InterruptedException {
-		synchronized(Test.class) {
-			if(istance == null) istance = new TestBuilder(tests);
-		}
-		
-		return istance;
+public class RandomTestBuilder extends TestBuilder {
+	private final boolean destroyed;
+	private final List<Integer> tests;
+
+	public RandomTestBuilder(List<Integer> tests) throws IOException, InterruptedException {
+		getProject();
+		buildPythonFile();
+
+		destroyed = false;
+		this.tests = new LinkedList<>(tests);
 	}
-	
+
 	private void getProject() throws IOException, InterruptedException {
-		/*int returnCode = Cmd_Linux.execute("git", "clone", "https://"+ Credenziali.username + ":" + Credenziali.password +
+		int returnCode = Testsuite.RandomTest.Cmd_Linux.execute("git", "clone", "https://"+ Testsuite.RandomTest.Credenziali.username + ":" + Testsuite.RandomTest.Credenziali.password +
 				"@github.com/cri98li/JSONSchema-Algebra.git");
-		System.out.println("git clone: "+ returnCode);*/
+		System.out.println("git clone: "+ returnCode);
 		
 		
-		int returnCode = Cmd_Linux.execute("bash", "-c", "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk/;"
+		returnCode = Cmd_Linux.execute("bash", "-c", "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk/;"
 				+ "cd JSONSchema-Algebra/Programmi/JsonSchema_to_Algebra/;"
 				+ "mvn install;"
 				+ "cp target/JsonSchema_to_Algebra-0.0.1-SNAPSHOT-jar-with-dependencies.jar ../../../eseguibile.jar;"
@@ -47,21 +49,7 @@ public class TestBuilder{
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	private TestBuilder(List<Integer> tests) throws IOException, InterruptedException {
-		getProject();
-		buildPythonFile();
-		
-		destroyed = false;
-		this.tests = new LinkedList<>(tests);
-	}
+
 	
 	public List<Test> getTests() throws IOException, InterruptedException {
 		if(destroyed) return null;
@@ -99,59 +87,24 @@ public class TestBuilder{
 			if(!file.isFile() || !file.getName().contains(".input")) continue;
 			String fileName = file.getName();
 			String command = fileName.split("-")[0];
-			generatedTests.add(new Test(command, fileName));
+			generatedTests.add(new RandomTest(command, fileName));
 		}
 
 		return generatedTests;
 	}
 	
-	public boolean shutdown() throws IOException, InterruptedException {
+	public boolean shutdown() {
 
-			int returnCode = Cmd_Linux.execute("bash", "-c", "rm -r -f tmp/" +
+		int returnCode = 0;
+		try {
+			returnCode = Cmd_Linux.execute("bash", "-c", "rm -r -f tmp/" +
 					"rm -r -f eseguibile.jar");
-			if(returnCode == 0) return true;
-
-        
-		return false;
-	}
-}
-
-
-class Test implements Runnable{
-	private String inputFileName;
-	private String command;
-	
-	protected Test(String command, String inputFileName) {
-		this.inputFileName = inputFileName;
-		this.command = command;
-	}
-
-	@Override
-	public void run() {
-        //eseguo il test
-		try{
-        int returnCode = Cmd_Linux.execute("bash", "-c", "/usr/lib/jvm/java-11-openjdk/bin/java -cp eseguibile.jar "
-        		+ "it.unipi.di.tesiFalleniLandi.JsonSchema_to_Algebra.MainClass " 
-        		+ command + " testFiles/" + inputFileName + " &> testFiles/" + inputFileName.replace(".input", ".output"));
-        if(returnCode == 0) {
-        	returnCode = Cmd_Linux.execute("bash", "-c", "rm -f -r testFiles/"+inputFileName);
-			returnCode = Cmd_Linux.execute("bash", "-c", "rm -f -r testFiles/"+inputFileName.replace(".input", ".output"));
-        	System.out.println(inputFileName+"> SUCCESSO");
-        	return;
-        }
-        
-        
-        
-        
-        
-        
-        
-      //se sono arrivato fin qui il test non ha avuto successo --> non elimino i file
-			System.out.println(inputFileName+"> ERRORE");
-		}catch(Exception ex) {
-			ex.printStackTrace();
+			return returnCode == 0;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
 		}
-	}
+    }
 }
 
 
