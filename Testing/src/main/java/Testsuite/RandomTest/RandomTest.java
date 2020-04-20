@@ -12,7 +12,7 @@ class RandomTest extends Test {
 	protected RandomTest(String command, String inputFileName) {
 		super();
 		this.inputFileName = inputFileName;
-		inputFiles.add(inputFileName);
+		inputFiles.add("testFiles/"+inputFileName);
 		this.command = command;
 	}
 
@@ -25,7 +25,7 @@ class RandomTest extends Test {
         		+ command + " testFiles/" + inputFileName + " &> testFiles/" + inputFileName.replace(".input", ".output"));
         if(returnCode == 0) {
 			result = true;
-			outputFiles.add(inputFileName.replace(".input", ".output"));
+			outputFiles.add(("testFiles/"+inputFileName).replace(".input", ".output"));
 		}
 		}catch(Exception ex) {
 			comment = ex.getMessage();
