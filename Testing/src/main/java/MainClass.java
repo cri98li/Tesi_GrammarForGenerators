@@ -130,6 +130,7 @@ public class MainClass {
 				.build();
 
 		return options.addOption(randomOption)
-						.addOption(compareOption);
+				.addOption(compareOption)
+				.addOption(deleteOption);
 	}
 }
