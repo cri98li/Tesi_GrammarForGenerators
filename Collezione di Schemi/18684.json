@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"List","type":"object","properties":{"___list":{"type":"string"},"___atMost":{"type":"number"},"___exactly":{"type":"number"},"___listType":{"enum":["exactly","atMost"]}},"required":["listType","list"]}

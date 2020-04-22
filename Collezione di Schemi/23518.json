@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"title":"Okapi Permission Object","type":"object","properties":{"___description":{"type":"string"},"___visible":{"type":"boolean"},"___permissionName":{"type":"string"},"___subPermissions":{"type":"array","items":{"type":"string"}},"___displayName":{"type":"string"}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","type":"object","properties":{"___test2":{"$eref":{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","$comment":"Tests back-referencing some parent-path schema from a subschema","type":"object","$id":"http:\/\/marksto.name\/schemas\/Test2"}}},"$id":"http:\/\/marksto.name\/schemas\/sub\/SubTest2"}

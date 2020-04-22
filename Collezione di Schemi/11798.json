@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"source.json#","type":"object","properties":{"___generate_entities":{"type":"boolean"},"___category":{"format":"source-category","type":"string"},"___label":{"minLength":2,"type":"string","maxLength":255}},"required":["label"]}

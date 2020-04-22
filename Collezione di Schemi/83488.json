@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Error message from addition service","additionalProperties":false,"title":"Addition error","type":"object","properties":{"___error":{"type":"string"}},"required":["error"]}

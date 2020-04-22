@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"array","items":{"type":"object","properties":{"___time":{"format":"date-time","type":"string"},"___disconnectReason":{"type":"string"},"___messagesToClient":{"type":"number"},"___messagesFromClient":{"type":"number"},"___connected":{"enum":[1,0]}}}}

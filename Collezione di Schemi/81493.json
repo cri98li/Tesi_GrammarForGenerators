@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-03\/schema","name":"Team","type":"object","properties":{"___name":{"description":"Name of the team","type":"string"},"___stadium":{"description":"Name of the stadium","type":"string"},"___homeCity":{"description":"Name of the city to which this team belongs","type":"string"}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___person":{"additionalProperties":false,"type":"object","properties":{"___first_name":{"type":"string"},"___last_name":{"type":"string"}},"required":["first_name","last_name"]}},"required":["person"]}

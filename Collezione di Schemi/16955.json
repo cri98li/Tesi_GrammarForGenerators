@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","description":"Server ChildDiscussionForm from Tiamat","additionalProperties":false,"title":"Server ChildDiscussionForm","type":"object","properties":{"___parentDiscussion":{"type":"object","properties":{"____id":{"pattern":"^[0-9a-fA-F]{24}$","type":"string"}},"required":["_id"]}},"required":["parentDiscussion"]}

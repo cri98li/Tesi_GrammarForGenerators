@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","type":"object","definitions":{},"properties":{"___situacao":{"type":"object","properties":{"___descricao":{"type":"string"},"___id":{"type":"string"}}},"___novaDataFimVigencia":{"type":"string"}},"$id":"http:\/\/www.pucomex.serpro.gov.br\/lpco\/deferir_prorrogacao_resp.schema.json"}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","properties":{"___@type":{"type":"string"},"___deviation":{"type":"number"},"___value":{"type":"number"},"___maxValue":{"type":"number"},"___@id":{"type":"string"},"___minValue":{"type":"number"}},"required":["@id"]}

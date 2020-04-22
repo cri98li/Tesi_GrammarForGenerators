@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"title":"ResetRequest","type":"object","properties":{"___type":{"type":"string","enum":["Hard","Soft"]}},"required":["type"]}

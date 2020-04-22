@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","type":"object","definitions":{"_88MySubObject":{"id":"filled#","type":"object","properties":{"___a":{"type":"boolean"}},"required":["a"]}},"properties":{"___empty":{"id":"empty#"},"___filled":{"$eref":{"id":"filled#","type":"object","properties":{"___a":{"type":"boolean"}},"required":["a"]}}},"required":["empty","filled"]}

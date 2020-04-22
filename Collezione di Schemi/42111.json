@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema","description":"Change the user's own password","title":"Change password","type":"object","properties":{"___current_password":{"minLength":6,"description":"The user's current password","type":"string"},"___password":{"minLength":6,"description":"The new password","type":"string"}},"required":["current_password","password"]}

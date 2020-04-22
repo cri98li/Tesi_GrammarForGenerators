@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Admin user plugin manifest","type":"object","properties":{"___plugins":{"type":"object","properties":{"___admin_user":{"type":"object","properties":{"___username":{"type":"string"}},"required":["username"]}}}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___box-for":{"type":"string"},"___multiline":{"type":"boolean"},"___boxes":{"type":"array","items":{"type":"object","properties":{"___value":{"type":"string"},"___label":{"type":"string"}}}}}}

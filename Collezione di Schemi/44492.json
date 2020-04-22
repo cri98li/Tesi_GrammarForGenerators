@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-03\/schema#","type":"object","properties":{"___adminSettings":{"description":"All entries present will overwrite local settings.","title":"A valid JSON string compliant with uBO's backup format.","type":"string"}}}

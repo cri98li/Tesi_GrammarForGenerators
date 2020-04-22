@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","definitions":{"_88pets":{"type":"object","properties":{"___amount":{"default":42,"type":"integer"}},"required":["amount"]}}}

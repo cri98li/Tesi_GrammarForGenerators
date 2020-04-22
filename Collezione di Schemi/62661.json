@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"A quote atom","title":"quote","type":"object","properties":{"___text":{"type":"string"},"___cite":{"type":"string"}},"required":["text"]}

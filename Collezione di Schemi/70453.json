@@ -1,0 +1,1 @@
+{"oneOf":[{"type":"integer","minimum":1},{"type":"string","enum":["validated","closed","current"]}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"A ledger version number","title":"ledgerVersion"}

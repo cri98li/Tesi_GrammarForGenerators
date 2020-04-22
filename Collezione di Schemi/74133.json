@@ -1,0 +1,1 @@
+{"allOf":[{"$eref":{"x-sdk-schema":{"$ref":"#\/definitions\/analysis-input-adhoc"},"anyOf":[{"$ref":"#\/definitions\/analysis-input-adhoc"},{"$ref":"#\/definitions\/analysis-input-job"}]}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Analysis","type":"object","required":["label"]}

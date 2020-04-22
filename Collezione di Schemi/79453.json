@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","additionalProperties":false,"title":"test json schema","type":"object","properties":{"___optionalValue":{"default":"my-default-value","type":"string"},"___value":{"maximum":{"$const":"my-constant"},"type":"integer","minimum":{"$const":"my-constant"}}},"required":["value"]}

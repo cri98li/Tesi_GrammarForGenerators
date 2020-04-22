@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","definitions":{"_88CDAIdentifier":{"additionalProperties":true,"type":"object","properties":{"___extension":{"minLength":0,"type":["string","null"],"title":"extension schema."},"___root":{"minLength":0,"type":["string","null"],"title":"root schema."}}}}}

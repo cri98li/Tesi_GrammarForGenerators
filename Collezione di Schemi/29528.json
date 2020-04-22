@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"lsngroup_lsnlogprofile_binding","title":"lsngroup_lsnlogprofile_binding","type":"object","properties":{"___groupname":{"type":"string"},"___logprofilename":{"type":"string"}}}

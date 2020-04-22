@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","additionalProperties":false,"title":"LogsRequest","type":"object","properties":{"___logs":{"type":"array","items":{"$fref":"resource:\/\/mdstudio\/logger\/event\/v1"}}}}

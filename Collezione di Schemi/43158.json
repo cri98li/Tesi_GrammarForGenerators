@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","additionalProperties":false,"type":"object","properties":{"___url":{"default":"http:\/\/localhost:8080","format":"uri","description":"Base URL for talking to Marathon. It overwrites the value specified in core.dcos_url","title":"Marathon base URL","type":"string"}}}

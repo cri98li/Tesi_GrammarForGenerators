@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","title":"Cursor request parameters","type":"object","properties":{"___paging":{"type":"object","properties":{"___limit":{"type":"integer","minimum":1},"___addPageInfo":{"default":false,"type":"boolean"}}}}}

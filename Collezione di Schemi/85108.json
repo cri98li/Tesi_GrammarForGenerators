@@ -1,0 +1,1 @@
+{"patternProperties":{"___.*":{"type":"string"}},"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"https:\/\/raw.githubusercontent.com\/washingtonpost\/ans-schema\/master\/src\/main\/resources\/schema\/ans\/0.6.0\/utils\/dictionary.json","properties":{"___basic":{"type":"string"}},"required":["basic"]}

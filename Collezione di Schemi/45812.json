@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","type":"object","properties":{"___links":{"$fref":"_definitions.json#\/definitions\/paginationLinks"},"___meta":{"$fref":"_definitions.json#\/definitions\/metaResponse"},"___data":{"type":"array","items":{"$fref":"_definitions.json#\/definitions\/responseData"}}},"required":["meta","data"]}

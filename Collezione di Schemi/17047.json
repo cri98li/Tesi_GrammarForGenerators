@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","type":"object","definitions":{"_88MyGeneric<number>":{"type":"object","properties":{"___field":{"type":"number"}},"required":["field"]}},"properties":{"___value":{"$eref":{"type":"object","properties":{"___field":{"type":"number"}},"required":["field"]}}},"required":["value"]}

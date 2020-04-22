@@ -1,0 +1,1 @@
+{"file":{"description":"description of a file","additionalProperties":false,"type":"object","properties":{"___path":{"description":"Path of the file","type":"string"}},"required":["path"]},"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Description of a file, that is attached to a step","title":"File schema"}

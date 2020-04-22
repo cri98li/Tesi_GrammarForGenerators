@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"A Transport Route","type":"object","properties":{"___points":{"type":"array","items":{"type":"string"}},"___transport":{"type":"string"},"___code":{"type":"string"},"___countryId":{"$eref":{"multipleOf":1,"type":"integer","minimum":0}},"___id":{"$eref":{"multipleOf":1,"type":"integer","minimum":0}}}}

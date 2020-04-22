@@ -1,0 +1,1 @@
+{"date":{"format":"date-time","type":"string"},"date_range":{"additionalProperties":false,"type":"object","properties":{"___start_date":{"$eref":{"format":"date-time","type":"string"}},"___end_date":{"$eref":{"format":"date-time","type":"string"}}}},"$schema":"http:\/\/json-schema.org\/draft-03\/schema#"}

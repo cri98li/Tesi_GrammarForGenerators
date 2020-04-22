@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema","description":"A child","type":"object","properties":{"___artist":{"type":"string"},"___title":{"type":"string"}},"required":["title","artist"]}

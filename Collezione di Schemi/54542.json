@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"The data contained in a LineChart Stream update object","title":"LineChartStreamUpdate","type":"object","properties":{"___stream":{"type":"array","items":{"type":"object","properties":{"___label":{"type":"string"},"___data":{"type":"array","items":{"type":"number"}}},"required":["label","data"]}}}}

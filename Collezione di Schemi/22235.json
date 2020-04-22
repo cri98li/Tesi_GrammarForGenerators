@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-03\/schema","$license":["http:\/\/www.apache.org\/licenses\/LICENSE-2.0"],"id":"#","type":"object","properties":{"___domain":{"description":"The domain the enrich from. (Queryable)","type":"string"}},"javaType":"org.apache.streams.fullcontact.api.EnrichCompanyRequest"}

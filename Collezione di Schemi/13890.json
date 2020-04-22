@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Event source","type":"object","properties":{"___name":{"description":"A name to identify the event source.","type":"string"},"___configuration":{"description":"A valid JSON Schema.","type":"json"},"___public":{"description":"Make the event source available to everybody.","type":"boolean"}}}

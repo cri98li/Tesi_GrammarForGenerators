@@ -1,0 +1,1 @@
+{"oneOf":[{"properties":{"___error":{"type":"string"},"___reason":{"type":"string"}},"required":["error","reason"]},{"properties":{"___ok":{"type":"boolean"}},"required":["ok"]}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"The value returned by PUT \/{db}","title":"CouchDB database creation","type":"object"}

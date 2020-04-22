@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","definitions":{"_88simple-extension":{"type":"object","properties":{"___url":{"type":"string"},"___value":{"type":"string"}}},"_88complex-extension":{"items":{"type":"object","properties":{"___extension":{"$eref":{"type":"object","properties":{"___url":{"type":"string"},"___value":{"type":"string"}}}}}}}}}

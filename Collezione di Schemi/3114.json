@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-03\/schema#","additionalProperties":false,"title":"Geosite plugin configuration","type":"object","properties":{"___css":{"type":"array","items":{"type":"string"}},"___use":{"type":"object"}}}

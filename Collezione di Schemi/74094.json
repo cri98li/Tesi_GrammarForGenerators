@@ -1,0 +1,1 @@
+{"allOf":[{"$eref":{"type":"object","properties":{"____id":{"type":"string"}},"x-sdk-return":"_id"}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","example":{"_id":"jane.doe@gmail.com"}}

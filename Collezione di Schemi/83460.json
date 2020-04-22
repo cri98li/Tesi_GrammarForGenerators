@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Contacts: name, freeform contact methods","maxProperties":5,"additionalProperties":{"pattern":"^([0-9]{3}) [0-9]{3}-[0-9]{4}$","type":"string"},"title":"Contacts","type":"object","properties":{"___name":{"type":"string"}},"required":["name"],"minProperties":1}

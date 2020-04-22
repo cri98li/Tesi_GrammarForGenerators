@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","description":"Set of configurations used to alter the usual behavior of sending the request","title":"Protocol Profile Behavior","type":"object","$id":"#\/definitions\/protocol-profile-behavior"}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___name":{"faker":"random.word","minLength":1,"type":"string","maxLength":255}},"required":["name"]}

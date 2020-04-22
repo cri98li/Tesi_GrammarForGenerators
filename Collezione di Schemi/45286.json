@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"array","items":{"oneOf":[{"type":"null"},{"type":"object","properties":{"___count":{"type":"number"},"___bound_to":{"type":"string"},"___dyes":{"type":"array","items":{"type":"number"}},"___binding":{"type":"string"},"___id":{"type":"number"}}}]},"properties":{}}

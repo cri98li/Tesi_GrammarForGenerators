@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___rating":{"maximum":5,"type":"number","minimum":1}},"required":["rating"]}

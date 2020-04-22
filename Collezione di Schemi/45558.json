@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema","id":"SchematicsUpdateSchema","title":"Schematic Options Schema","type":"object","properties":{"___version":{"default":"latest","description":"The target version, or dist-tag.","type":"string"},"___loose":{"default":false,"description":"Whether to use loose semver operators or to fix the version. Default to false.","type":"boolean"}}}

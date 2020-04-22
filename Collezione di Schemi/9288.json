@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___createGroups":{"default":true,"type":"boolean"},"___slug":{"minLength":4,"pattern":"^[0-9a-z-]*$","type":"string","maxLength":63},"___replaceExisting":{"default":false,"type":"boolean"},"___createUsers":{"default":true,"type":"boolean"}}}

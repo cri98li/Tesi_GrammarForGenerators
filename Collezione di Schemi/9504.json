@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","additionalProperties":false,"title":"UpdateOneRequest","type":"object","properties":{"___matched":{"type":"integer","minimum":0},"___upsertedId":{"type":"string"},"___modified":{"type":"integer","minimum":0}},"required":["matched","modified"]}

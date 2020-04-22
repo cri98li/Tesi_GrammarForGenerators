@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","definitions":{"_88morePets":{"$eref":{"type":"object","properties":{"___cat":{"type":"string"},"___dog":{"type":"string"}},"required":["dog","cat"]}},"_88pets":{"type":"object","properties":{"___cat":{"type":"string"},"___dog":{"type":"string"}},"required":["dog","cat"]}}}

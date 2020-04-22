@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","description":"","id":"https:\/\/rawgit.com\/camshaft\/shenu\/master\/schemas\/date.json#","additionalProperties":false,"title":"date","type":"object","properties":{"___month":{"maximum":12,"type":"integer","minimum":1},"___year":{"type":"integer"},"___day":{"maximum":31,"type":"integer","minimum":1}}}

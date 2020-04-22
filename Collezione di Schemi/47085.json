@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Url schema","type":"object","properties":{"___rates":{"type":"array","items":{"type":"object","properties":{"___rate":{"type":"integer","minimum":1},"___symbol":{"maximum":3,"type":"string","minimum":3}},"required":["symbol","rate"]}}},"required":["rates"]}

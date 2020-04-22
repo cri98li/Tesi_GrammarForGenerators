@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Dummy Schema for specs","title":"Dummy Schema","type":"object","properties":{"___name":{"minLength":1,"type":"string"}}}

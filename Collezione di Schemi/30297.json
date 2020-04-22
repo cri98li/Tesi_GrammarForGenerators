@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"systemextramgmtcpu","title":"systemextramgmtcpu","type":"object","properties":{"___configuredstate":{"readonly":true,"type":"string","enum":["ENABLED","DISABLED"]},"___nodeid":{"type":"integer"},"___effectivestate":{"readonly":true,"type":"string","enum":["ENABLED","DISABLED"]}}}

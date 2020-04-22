@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___name":{"description":"A name","type":"string"},"___description":{"type":"string"},"___test":{"type":"array","items":{}}},"required":["test"]}

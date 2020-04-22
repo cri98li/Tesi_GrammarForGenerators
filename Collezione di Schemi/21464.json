@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema","id":"SchematicsSchematicSchema","title":"Schematic Options Schema","type":"object","properties":{"___name":{"description":"The package name for the new schematic.","type":"string"},"___author":{"description":"Author for the new schematic.","type":"string"}},"required":["name"]}

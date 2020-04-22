@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","$eref":{"type":"object","properties":{"___user-agent":{"type":"string"}}},"definitions":{"_88headers":{"type":"object","properties":{"___user-agent":{"type":"string"}}}},"$id":"https:\/\/raw.githubusercontent.com\/mimmi20\/ua-result\/master\/schema\/headers.json"}

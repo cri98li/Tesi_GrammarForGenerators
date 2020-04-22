@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","type":"object","properties":{"___transforms":{"type":"array","items":{"type":"object","properties":{"___to":{"type":"string"},"___from":{"type":"string"}}}}}}

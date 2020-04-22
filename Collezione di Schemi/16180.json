@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"JSON schema for Azure Webjobs collection files","type":"object","properties":{"___WebJobs":{"description":"A list of Azure Webjobs.","type":"array","items":{"additionalProperties":false,"type":"object","properties":{"___filePath":{"type":"string"}}}}},"required":["WebJobs"]}

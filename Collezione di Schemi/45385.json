@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"array","items":{"type":"object","properties":{"___name":{"type":"string"},"___rank":{"type":"string"},"___joined":{"type":"string"}}},"properties":{}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"The total number of shares a company has issued","type":"object","properties":{"___number":{"type":"integer"},"___share_class":{"minLength":1,"type":"string"}},"required":["number"]}

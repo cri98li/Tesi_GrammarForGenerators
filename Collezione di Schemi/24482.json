@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","properties":{"___bar":{"pattern":"[0-9]+","type":"string"},"___baz":{"pattern":"[0-9]+","type":"number"}}}

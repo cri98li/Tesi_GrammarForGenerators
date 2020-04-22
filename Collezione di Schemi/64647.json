@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema","id":"slide","type":"object","properties":{"___name":{"$default":{"index":0,"$source":"argv"},"description":"Presentation name","type":"string"},"___project":{"$default":{"$source":"project"},"description":"Presentation name","type":"string"}},"required":["name"]}

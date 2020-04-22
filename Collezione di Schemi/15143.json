@@ -1,0 +1,1 @@
+{"minItems":2,"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","name":"continentIds","description":"List of available continent IDs","id":"https:\/\/api.guildwars2.com\/v2\/continents","type":"array","items":{"default":1,"description":"The unique identifier for a continent","id":"https:\/\/api.guildwars2.com\/v2\/continent\/id","type":"integer","minimum":1}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/jsonschema.net","type":"object","properties":{"___template":{"default":"forall","id":"http:\/\/jsonschema.net\/template","type":"string","enum":["forall","authentified","esr","privileged","restricted"]}},"required":["template"]}

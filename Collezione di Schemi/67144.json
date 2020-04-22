@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","pattern":"(https?:\/\/([-\\w\\.]+)+(:\\d+)?(\/([\\w\/_\\.]*(\\?\\S+)?)?)?)","id":"http:\/\/comrade.forma-pro.com\/schemas\/url.json","_description":"The patter is taken from https:\/\/mathiasbynens.be\/demo\/url-regex. @diegoperini version","type":"string"}

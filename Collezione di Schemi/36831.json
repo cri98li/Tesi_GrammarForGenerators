@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/localhost:4321\/test-schema.json#","additionalProperties":false,"title":"test schema","type":"object","properties":{"___value":{"maximum":10,"type":"integer","minimum":1}},"required":["value"]}

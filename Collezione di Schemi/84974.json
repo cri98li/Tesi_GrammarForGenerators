@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","description":"A MWF pagination component's schema definition.","id":"http:\/\/www.getmwf.com\/releases\/core\/schemas\/components\/pagination.json","title":"Pagination","type":"object","properties":{"___content":{"type":"object","properties":{"___selected":{"type":"integer"},"___pages":{"type":"integer"}}}},"required":["content"]}

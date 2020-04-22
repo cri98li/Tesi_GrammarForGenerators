@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___topic":{"minLength":1,"type":"string","maxLength":230},"___message":{"type":"string","maxLength":32767}},"required":["topic","message"]}

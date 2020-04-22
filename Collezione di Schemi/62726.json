@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"A subelement element","anyOf":[{"required":["children"]},{"required":["content"]}],"title":"subelement","type":"object","properties":{"___children":{"description":"the content","type":"string"},"___content":{"description":"the content","type":"string"}}}

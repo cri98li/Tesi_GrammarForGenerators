@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Chat user JSON schema","title":"User","type":"object","properties":{"___name":{"minLength":3,"type":"string","maxLength":12},"___isConnected":{"type":"boolean"},"___role":{"type":"string"},"___avatar":{"format":"uri","type":"string"}}}

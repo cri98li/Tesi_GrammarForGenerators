@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"\/","type":"object","properties":{"___hint_duration":{"default":3,"id":"hint_duration","type":"integer"},"___show_hint":{"default":true,"id":"show_hint","type":"boolean"},"___difficulty":{"default":"medium","id":"difficulty","type":"string","enum":["easy","medium","hard"]}}}

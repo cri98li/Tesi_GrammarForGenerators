@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Verify annotation is of `type` Annotation","type":"object","properties":{"___type":{"not":{"type":"object"},"anyOf":[{"pattern":"^Annotation$","type":"string"},{"anyOf":[{"pattern":"^Annotation$","type":"string"}],"type":"array"}]}},"required":["type"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___getQuote":{"type":"object","properties":{"___request":{"type":"object","properties":{"___symbol":{"type":"string"}},"required":["symbol"]}},"required":["request"]}},"required":["getQuote"]}

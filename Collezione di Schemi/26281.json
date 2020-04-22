@@ -1,0 +1,1 @@
+{"default":2,"oneOf":[{"standsFor":"miter","const":1},{"standsFor":"round","const":2},{"standsFor":"bevel","const":3}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"number"}

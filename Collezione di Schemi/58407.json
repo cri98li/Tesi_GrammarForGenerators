@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"USSD Say step","type":"object","properties":{"___language":{"type":["string","null"]},"___name":{"type":"string"},"___text":{"type":"string"},"___title":{"type":"string"},"___kind":{"enum":["ussdSay"]},"___label":{"type":"string"}},"required":["name","kind","label","title","text"]}

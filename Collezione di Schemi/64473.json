@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Delete users listed from a list of ids","title":"Service 002 : DELETE \/users\/","type":"array","items":{"description":"the list results","type":"object","properties":{"___status":{"type":"string","enum":["SUCCESS","ERROR"]},"___id":{"type":"integer"}},"required":["id","status"]}}

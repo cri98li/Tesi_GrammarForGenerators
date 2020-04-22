@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":true,"title":"JSON schema for the ASP.NET global configuration files","type":"object","properties":{"___sources":{"description":"A list of source folders relative to this file.","type":"array","items":{"type":"string"}}},"required":["sources"]}

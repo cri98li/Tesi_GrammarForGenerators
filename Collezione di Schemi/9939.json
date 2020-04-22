@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"The POST request to be sent to the API to authenticate a user","additionalProperties":false,"type":"object","properties":{"___password":{"type":"string"},"___username":{"type":"string"}},"required":["username","password"]}

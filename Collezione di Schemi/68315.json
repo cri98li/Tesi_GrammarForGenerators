@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Extract of a chapter","title":"Extract","type":"object","properties":{"___text":{"desciption":"Content of the extract","type":"string"},"___title":{"description":"Title of the extract","type":"string","maxLength":80}},"required":["title"]}

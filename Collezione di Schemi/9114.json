@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"title":"Standing instance","type":"object","properties":{"___positions":{"anyOf":[{"maximum":20,"description":"this is a desc","type":"integer"},{"description":"this is a desc","type":"boolean"}]}},"required":["positions"]}

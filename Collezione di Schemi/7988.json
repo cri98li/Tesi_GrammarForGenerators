@@ -1,0 +1,1 @@
+{"input_schema":{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","additionalProperties":false,"title":"Generic additional device properties","type":"object","properties":{"___additional_device_properties":{"description":"Generic additional device properties to be used for device annotations","$id":"\/properties\/additional_device_properties"}}}}

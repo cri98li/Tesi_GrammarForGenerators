@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","type":"object","version":"0.01","properties":{"___Storage backend":{"type":"string"},"___version":{"type":"string"},"___Cores":{"type":"string"},"___Server uptime":{"type":"string"},"___DVID datastore":{"type":"string"},"___Maximum Cores":{"type":"string"},"___Storage driver":{"type":"string"}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___line1":{"type":"string"},"___state":{"type":"string"},"___zip":{"pattern":"^[0-9]{5}(-[0-9]{4})?$","type":"string"},"___country":{"type":"string"},"___city":{"type":"string"}},"required":["line1","city","state","zip","country"]}

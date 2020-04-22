@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"sslcacertgroup_sslcertkey_binding","title":"sslcacertgroup_sslcertkey_binding","type":"object","properties":{"___cacertgroupname":{"type":"string"},"___certkeyname":{"type":"string"},"___ocspcheck":{"type":"string","enum":["Mandatory","Optional"]},"___crlcheck":{"type":"string","enum":["Mandatory","Optional"]}}}

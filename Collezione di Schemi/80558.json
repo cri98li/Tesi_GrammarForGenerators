@@ -1,0 +1,1 @@
+{"experiment":null,"allow_all":true,"fullname":"Yadage Workflow","is_deposit":false,"jsonschema":{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"yadage_workflow","additionalProperties":false,"title":"Yadage Workflow","type":"object","properties":{"___stages":{"type":"array","title":"Stages","items":{"type":"object"}}},"required":["stages"]}}

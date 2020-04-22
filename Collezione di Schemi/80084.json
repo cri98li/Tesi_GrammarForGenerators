@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","uniqueItems":true,"description":"dckrmgr subfolders description","title":"dckrsub","type":"array","items":{"additionalProperties":false,"type":"object","properties":{"___folder":{"type":"string"}}}}

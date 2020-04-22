@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"GET notification return schema - for sms notifications","additionalProperties":false,"type":"object","properties":{"___data":{"additionalProperties":false,"type":"object","properties":{"___notification":{"$fref":"sms_notification.json"}},"required":["notification"]}},"required":["data"]}

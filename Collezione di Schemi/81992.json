@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/toyatech.net\/cmsapp\/events","definitions":{"_88AttendanceRecord":{"type":"object","properties":{"___name":{"type":"string"},"___count":{"type":"integer"}}}}}

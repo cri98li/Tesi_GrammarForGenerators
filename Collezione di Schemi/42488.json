@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"TenantModuleDescriptorList","type":"array","items":{"$eref":{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/okapi\/TenantModuleDescriptor.json","title":"TenantModuleDescriptor","type":"object","properties":{"___id":{"type":"string"}}}}}

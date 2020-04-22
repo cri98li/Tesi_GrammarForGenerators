@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","type":"array","items":{"type":"object","properties":{"___descricao":{"type":"string"},"___id":{"type":"string"}}},"definitions":{},"$id":"http:\/\/www.pucomex.serpro.gov.br\/lpco\/listar_situacoes_destino.schema.json"}

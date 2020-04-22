@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","$eref":{"id":"#kind_collection","additionalProperties":false,"type":"object","properties":{"___kinds":{"type":"array","items":{"$ref":"#definitions\/kind"}}},"required":["kinds"]}}

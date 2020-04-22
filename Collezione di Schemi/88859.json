@@ -1,0 +1,1 @@
+{"not":{"required":["memos"]},"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","$fref":"settingsPlusMemos","title":"getSettings"}

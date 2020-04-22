@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___init_system":{"minLength":1,"type":"string"},"___services":{"type":"array","items":{"type":"object","properties":{"___name":{"minLength":1,"type":"string"},"___state":{"minLength":1,"type":"string"}},"required":["name","state"]}}},"required":["init_system","services"]}

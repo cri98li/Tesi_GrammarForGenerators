@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/schema.envirocar.org\/users.json#","additionalProperties":false,"type":"object","properties":{"___users":{"minItems":0,"type":"array","items":{"$fref":"http:\/\/schema.envirocar.org\/user.json#"}}},"required":["users"]}

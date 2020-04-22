@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","properties":{"___bar":{"minLength":10,"type":"string"},"___baz":{"minLength":10,"type":"number"}}}

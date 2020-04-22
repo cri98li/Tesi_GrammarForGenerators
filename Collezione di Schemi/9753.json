@@ -1,0 +1,1 @@
+{"minItems":2,"maxItems":2,"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalItems":false,"id":"http:\/\/acmepay.local\/schema\/wallet-summary.json#","type":"array","items":{"type":"object","properties":{"___currency":{"$fref":"http:\/\/acmepay.local\/schema\/currency.json#"},"___sum":{"type":"integer"}}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","name":"user","type":"object","properties":{"___name":{"type":"object","properties":{"___first":{"type":"string"},"___last":{"type":"string"},"___middle":{"type":"string"}},"required":["first","last"]},"___bday":{"format":"date-time","type":"string"}},"required":["name"]}

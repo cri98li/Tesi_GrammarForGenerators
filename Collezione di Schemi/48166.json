@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"____oai":{"type":"object","properties":{"___updated":{"type":"string"},"___sets":{"type":"array","items":{"type":"string"}},"___id":{"type":"string"}},"required":["updated","id"]}}}

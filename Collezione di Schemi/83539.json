@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","properties":{"___location":{"type":"string"},"___name":{"middle":{"type":"string"},"last":{"type":"string"},"first":{"type":"string"}},"___likes":{"type":"number"},"___image":{"type":"string"},"___current":{"default":false,"type":"boolean"},"___dob":{"type":"string"}},"required":["name","location"]}

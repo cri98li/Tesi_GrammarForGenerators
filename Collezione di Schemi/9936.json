@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Schema for the data returned by the users endpoint","type":"object","properties":{"___files":{"type":"array","items":{"$fref":"#\/schemas\/file.json"}},"___projects":{"type":"array","items":{"$fref":"#\/schemas\/project.json"}},"___username":{"type":"string"}},"required":["username"]}

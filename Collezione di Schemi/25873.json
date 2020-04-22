@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___passWord":{"default":"passwort","type":"string"},"___userName":{"default":"Tester","type":"string"},"___port":{"default":"3000","type":"string"},"___adresse":{"default":"localhost","type":"string"}},"required":["adresse","passWord","port","userName"]}

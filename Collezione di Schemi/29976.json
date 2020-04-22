@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"authenticationldappolicy_systemglobal_binding","title":"authenticationldappolicy_systemglobal_binding","type":"object","properties":{"___name":{"type":"string"},"___activepolicy":{"readonly":true,"type":"integer"},"___boundto":{"type":"string"},"___priority":{"readonly":true,"type":"integer"}}}

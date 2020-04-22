@@ -1,0 +1,1 @@
+{"endpoint":"\/networks","$schema":"http:\/\/json-schema.org\/schema#","methods":["get"],"description":"Fetching (and validating) data files for all networks","type":"object","properties":{"___networks":{"minItems":1,"type":"array","items":{"$fref":"http:\/\/localhost:9667\/definitions.json#\/network"}}},"required":["networks"]}

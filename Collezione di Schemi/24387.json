@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"schema with definition","type":"object","definitions":{"_88foo":{"type":"integer"}},"properties":{"___a":{"$eref":{"type":"integer"}}}}

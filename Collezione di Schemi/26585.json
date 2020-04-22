@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","resource":{"additionalProperties":false,"type":"object","properties":{"___cells":{"type":"array","items":{"$fref":"common.json#\/cell"}},"___pattern":{"type":"string"},"___endpoint":{"$fref":"common.json#\/endpoint"}}},"resource_id":{"pattern":"^[a-z0-9_\\-]+(\\.[\\w\\-]+)*$","type":"string","maxLength":128}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Dashboards","type":"object","properties":{"___name":{"type":"string"},"___layout":{"type":"object","properties":{"___^\\w+$":{"type":"object","properties":{"___col":{"type":"number"},"___size_x":{"type":"number"},"___row":{"type":"number"}},"required":["col","row","size_x"]}}}},"required":["name"]}

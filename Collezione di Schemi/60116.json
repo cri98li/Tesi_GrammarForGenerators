@@ -1,0 +1,1 @@
+{"name":"bitbucket","description":"Bitbucket","packagingVersion":"3.0","config":{"$schema":"http:\/\/json-schema.org\/schema#","type":"object","properties":{"___bitbucket":{"type":"object","properties":{"___name":{"default":"bitbucket","description":"name","type":"string"}},"required":["name"]}}},"version":"4.5","maintainer":"support@mesosphere.io","tags":["bitbucket"]}

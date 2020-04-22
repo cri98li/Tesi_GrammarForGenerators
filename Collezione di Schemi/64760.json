@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#4","description":"Contains multiple elements of unique identifiers","title":"IdLIst","type":"object","properties":{"___idType":{"enum":["stations","pumps","tanks"]},"___data":{"description":"array of ids","type":"array","items":{"type":"string"}}},"required":["idType","data"]}

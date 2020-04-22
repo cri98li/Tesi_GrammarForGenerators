@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","type":"object","definitions":{},"properties":{"___justificativa":{"type":"string"},"___novaDataFimVigencia":{"type":"string"}},"$id":"http:\/\/www.pucomex.serpro.gov.br\/lpco\/solicitar_prorrogacao.schema.json"}

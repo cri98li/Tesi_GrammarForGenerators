@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","properties":{"___max_api_version":{"description":"The maximum API version supported by this server.","type":"integer"},"___min_api_version":{"description":"The minimum API version supported by this server.","type":"integer"}},"example":{"max_api_version":1,"min_api_version":0}}

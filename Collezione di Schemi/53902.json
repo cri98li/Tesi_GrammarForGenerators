@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","additionalProperties":false,"title":"7\/CMP configuration request schema","type":"object","properties":{"___observe":{"description":"Whether the endpoint is interested in observing its configuration","type":"boolean"},"___configId":{"description":"Identifier of the currently applied configuration","type":"string"}}}

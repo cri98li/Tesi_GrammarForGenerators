@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","additionalProperties":false,"type":"object","properties":{"___snapshotsLimit":{"type":"number","minimum":0},"___enable":{"type":"boolean"}},"required":["enable","snapshotsLimit"],"$id":"vmSnapLimit"}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"shallow_object","additionalProperties":false,"title":"Shallow JSON object","type":"object","properties":{"___value":{"title":"Shalow Attribute","type":"string"}}}

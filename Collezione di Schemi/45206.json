@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Discovered MAC address data","type":"array","items":{"minItems":2,"additionalItems":false,"type":"array","items":[{"pattern":"^(?:[0-9a-fA-F]{12}|(?:[0-9a-fA-F]{1,2}[-:]){5}[0-9a-fA-F]{1,2})","description":"MAC address","type":"string"},{"description":"Port name","type":"string"}]}}

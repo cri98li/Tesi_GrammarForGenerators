@@ -1,0 +1,1 @@
+{"oneOf":[{"properties":{"___status":{"type":"string","enum":["notFound"]}},"required":["status"]}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{}}

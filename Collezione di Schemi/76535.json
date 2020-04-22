@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"#vat","type":"object","properties":{"___applied_to_shipping":{"type":"string"},"___rate":{"type":"string"},"___included_in_prices":{"type":"string"},"___region":{"type":"string"}},"required":["rate","region","included_in_prices","applied_to_shipping"]}

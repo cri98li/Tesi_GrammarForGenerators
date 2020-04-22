@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/hyper-schema","additionalProperties":false,"properties":{"___fingerprint":{"pattern":"^[0-9A-Fa-f]{40}$","type":"string"},"___type":{"min":1,"max":1,"type":"integer"},"___algorithm":{"min":1,"max":2,"type":"integer"}},"required":["algorithm","type","fingerprint"]}

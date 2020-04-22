@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"tit","type":"object","definitions":{"_88string":{"type":"string"}},"properties":{"___a":{"type":"string"},"___b":{"$fref":"#\/string"}}}

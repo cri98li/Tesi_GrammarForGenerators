@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___privacyStatements":{"minItems":0,"type":"array","items":{"type":"object","properties":{"___issuedDate":{"format":"date","type":"string"},"___id":{"type":"string"}},"required":["id","issuedDate"]}}},"required":["privacyStatements"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","type":"object","definitions":{"_88SubObject.0eb4e9af":{"type":"object","properties":{"___is":{"type":"string","enum":["SubObject_1"]}},"required":["is"]}},"properties":{"___sub":{"$eref":{"type":"object","properties":{"___is":{"type":"string","enum":["SubObject_1"]}},"required":["is"]}}},"required":["sub"]}

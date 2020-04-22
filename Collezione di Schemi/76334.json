@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"create tasks response","additionalProperties":false,"title":"create tasks response","type":"object","properties":{"___stderr":{"type":"string"},"___stdout":{"type":"string"},"___exitCode":{"type":"integer"}},"required":["exitCode","stdout","stderr"]}

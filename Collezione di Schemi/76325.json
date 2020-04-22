@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"datastore entity properties","additionalProperties":true,"title":"datastore entity properties","type":"object","properties":{"___base64_encoded_spider_metadata":{"minLength":1,"type":"string"},"___last_updated":{"minLength":1,"type":"string"}},"required":["base64_encoded_spider_metadata","last_updated"]}

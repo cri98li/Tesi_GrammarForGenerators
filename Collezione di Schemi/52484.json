@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Flag to indicate this content may edited in a story","id":"https:\/\/raw.githubusercontent.com\/washingtonpost\/ans-schema\/master\/src\/main\/resources\/schema\/ans\/0.5.2\/traits\/traits\/trait_editable.json","type":"boolean","enum":[true]}

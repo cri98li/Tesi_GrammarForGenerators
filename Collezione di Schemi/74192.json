@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"array","items":{"properties":{"___lastname":{"$eref":{"minLength":1,"title":"Last Name","type":"string","maxLength":64}},"____id":{"$eref":{"format":"email","type":"string"}},"___firstname":{"$eref":{"minLength":1,"title":"First Name","type":"string","maxLength":64}}}}}

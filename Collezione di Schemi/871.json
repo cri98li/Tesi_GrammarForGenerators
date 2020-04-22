@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___mask":{"type":"string"},"___type":{"type":"string"},"___public":{"type":"boolean"},"___value":{"type":"string"},"___source":{"type":"object","properties":{"___favicon":{"type":"string"},"___url":{"type":"string"},"___title":{"type":"string"}}}},"required":["type","value"]}

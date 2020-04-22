@@ -1,0 +1,1 @@
+{"oneOf":[{"$fref":"xAddress"},{"$fref":"classicAddress"}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","format":"address","link":"address","description":"An account address on the XRP Ledger","title":"address","type":"string"}

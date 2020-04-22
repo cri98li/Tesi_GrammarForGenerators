@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"HealthDescriptor","type":"object","properties":{"___instId":{"type":"string"},"___healthStatus":{"type":"boolean"},"___srvcId":{"type":"string"},"___healthMessage":{"type":"string"}},"required":["srvcId","instId","healthMessage","healthStatus"]}

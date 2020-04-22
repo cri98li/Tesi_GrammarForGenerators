@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","type":"object","properties":{"___templatePath":{"type":"array","items":{"type":"string"}},"___template":{"type":"string"},"___targetFile":{"type":"string"},"___templateDict":{"type":"object","properties":{"___template":{"type":"string"},"___kind":{"type":"string"}}},"___model":{"type":"object"}}}

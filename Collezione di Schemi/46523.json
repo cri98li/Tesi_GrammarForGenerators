@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"title":"Self-employment source of income","type":"object","properties":{"___accountName":{"minLength":1,"pattern":"^([a-zA-Z0-9]+\\s?)+$","description":"Friendly account name","title":"Account name","type":"string","maxLength":32}}}

@@ -1,0 +1,1 @@
+{"allOf":[{"properties":{"___foo":{"description":"Fooing","type":"string","example":"Foo"}}},{"properties":{"___bar":{"description":"A place to get a drink","type":"object"}}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"An example of a schema with an allOf property","title":"allOf Schema","type":"object"}

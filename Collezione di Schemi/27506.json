@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Example Schema","type":"object","properties":{"___person":{"type":"object","properties":{"___location":{"$fref":"vertxjsonschema:\/\/geoschema"},"___job":{"type":"string"}}}}}

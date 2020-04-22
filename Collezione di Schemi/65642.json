@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"SetConfigs","type":"array","items":[{"$eref":{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"SetConfig","type":"object","properties":{"___name":{"type":"string"},"___kind":{"type":"string"},"___replicas":{"type":"integer"}},"required":["name","replicas","kind"]}}]}

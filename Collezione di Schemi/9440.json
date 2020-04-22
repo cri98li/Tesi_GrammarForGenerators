@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","uniqueItems":true,"type":"array","items":{"pattern":"^[a-z][a-z_0-9]*$","type":"string"}}

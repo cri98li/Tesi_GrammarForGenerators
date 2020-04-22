@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","title":"CacheSettings","type":"object","properties":{"___settings":{"properties":{"___nodes":{"minItems":1,"type":"array","items":{"port":{"type":"integer"},"host":{"type":"string"},"required":["host","port"]}}}}},"required":["settings"]}

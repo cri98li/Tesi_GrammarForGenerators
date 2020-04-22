@@ -1,0 +1,1 @@
+{"oneOf":[{"type":"string"},{"type":"null"}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Postman allows you to define a script that is run after executing the request, which may act on the response. Such a script is stored in this field.","id":"#\/definitions\/tests"}

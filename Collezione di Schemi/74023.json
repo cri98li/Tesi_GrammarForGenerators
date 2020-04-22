@@ -1,0 +1,1 @@
+{"allOf":[{"$eref":{"x-sdk-model":"note","additionalProperties":false,"type":"object","properties":{"___text":{"$ref":"#\/definitions\/text"}}}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","required":["text"],"example":{"text":"Scitran core!"}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"#statementref","additionalProperties":false,"type":"object","properties":{"___objectType":{"enum":["StatementRef"]},"___id":{"format":"uuid","type":"string"}},"required":["objectType","id"]}

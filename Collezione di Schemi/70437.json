@@ -1,0 +1,1 @@
+{"allOf":[{"$fref":"amountbase"},{"required":["value"]}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","link":"amount","description":"An Amount on the XRP Ledger","title":"amount"}

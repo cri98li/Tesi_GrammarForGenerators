@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Definition of a text resource","id":"http:\/\/schlothauer.de\/schemas\/shared\/text_resource.json","type":"object","version":1,"properties":{"___text":{"description":"Text to display","type":"string"},"___res_id":{"description":"resource id of that text","type":"string"}}}

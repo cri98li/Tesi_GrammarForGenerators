@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"org.eclipse.persistence.testing.jaxb.annotations.xmlpath.self.PaymentInf","type":"object","properties":{"___PaymentInf":{"additionalProperties":false,"type":"object","properties":{"___paymentId":{"type":"string"},"___CreditorFrstName":{"type":"object","properties":{"___id":{"type":"string"}}}}}}}

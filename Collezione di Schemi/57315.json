@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___timestamp":{"format":"date-time","type":"string"},"___type":{"type":"string"},"___id":{"type":"string"},"___source":{"type":"object","properties":{"___kinesisPartitionKey":{"type":"string"},"___producerId":{"type":"string"}}},"___data":{"type":"object"}}}

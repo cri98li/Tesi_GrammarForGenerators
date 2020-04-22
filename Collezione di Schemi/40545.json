@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","additionalProperties":false,"type":"object","properties":{"___choices":{"minItems":1,"uniqueItems":true,"type":"array","items":{"type":"string","maxLength":30}},"___title":{"type":"string","maxLength":30}},"required":["title","choices"]}

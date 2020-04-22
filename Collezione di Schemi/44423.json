@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"A configuration of the video display object.<\/a>","id":"video","title":"VideoConfig","type":"object","properties":{"___url":{"description":"The url of the video file.","type":"string","title":"URL","example":".\/videos\/video.mp4"}},"required":["url"]}

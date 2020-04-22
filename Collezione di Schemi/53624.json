@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Services Eligibility List Response","type":"object","properties":{"___items":{"type":"array","items":{"$fref":"__apigModelsEndpoint__\/ServiceEligibility"}}},"required":["items"]}

@@ -1,0 +1,1 @@
+{"oneOf":[{"$fref":"http:\/\/www.getmwf.com\/releases\/core\/schemas\/components\/video.json"}],"supportedPartners":[],"$schema":"http:\/\/json-schema.org\/schema#","description":"A MWF video module's schema defintion.","id":"http:\/\/www.getmwf.com\/releases\/core\/schemas\/modules\/video.json","title":"Video module","type":"object"}

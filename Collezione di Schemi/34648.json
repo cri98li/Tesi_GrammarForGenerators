@@ -1,0 +1,1 @@
+{"default":1,"examples":[1,1.1,2.9,3],"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","description":"Version of file","title":"The Version Schema ","type":"number","definitions":{},"$id":"urn:williamdes:mariadb-mysql-kbs:doc-version"}

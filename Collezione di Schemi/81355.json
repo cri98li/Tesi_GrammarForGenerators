@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___email":{"type":"string"},"___lastName":{"type":"string"},"___postedSlides":{"type":"boolean"},"___rating":{"type":"number"},"___firstName":{"type":"string"}}}

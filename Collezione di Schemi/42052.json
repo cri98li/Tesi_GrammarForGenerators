@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","properties":{"___lib":{"$fref":"file:.\/lib\/lib.schema.json"},"___device":{"$fref":"file:.\/dev\/dev.schema.json"}}}

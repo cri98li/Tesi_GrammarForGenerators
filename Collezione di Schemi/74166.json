@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","$eref":{"type":"object","properties":{"____id":{"$ref":"#\/definitions\/_id"}},"required":["_id"],"x-sdk-return":"_id"}}

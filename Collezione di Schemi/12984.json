@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"#statementresult","additionalProperties":false,"type":"object","properties":{"___statements":{"$eref":{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"#statement_list","type":"array","items":{"$ref":"#statement"}}},"___more":{"format":"iri","type":"string"}},"required":["statements"]}

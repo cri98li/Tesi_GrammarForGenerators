@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___system_type":{"type":"string","enum":["local","remote","docker"]},"___locale":{"minLength":1,"type":"string"}},"required":["locale"]}

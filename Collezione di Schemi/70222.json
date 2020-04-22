@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/hyper-schema","additionalProperties":false,"properties":{"___address":{"format":"ipv4","type":"string"}},"required":["address"]}

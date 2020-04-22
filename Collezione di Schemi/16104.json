@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","video":[{"name":"YouTube Quality (NVENC)","options":{"rc":"constq","bf":"3","_pixelFormat":"yuv420p","profile":"high","preset":"slow","qp":"15"},"sidedata":{},"description":"8 bit YUV 4:2:0","id":"A0CB3A42-BB07-4663-B2EC-9DAE4AC5C7D1","filters":[],"encoder":"h264_nvenc"}],"audio":[]}

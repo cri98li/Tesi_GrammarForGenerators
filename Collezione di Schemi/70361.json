@@ -1,0 +1,1 @@
+{"oneOf":[{"$fref":"sourceExactAdjustment"},{"$fref":"maxAdjustment"}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"sourceAdjustment","type":"object"}

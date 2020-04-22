@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","id":"response_get_client_identity_0","additionalProperties":false,"type":"object","properties":{"___clientIdentities":{"type":"array","items":{"$fref":"common_clientIdentity"}}},"required":["clientIdentities"]}

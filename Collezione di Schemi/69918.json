@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"A saved game from Robbie","title":"Savegame","type":"object","properties":{"___floors":{"type":"array","items":{"type":"object","properties":{}}}}}

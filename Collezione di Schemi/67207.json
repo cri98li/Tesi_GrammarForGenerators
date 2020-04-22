@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","description":"Schema definition of Pinterest image","id":"image.json","title":"image","type":"object","properties":{"___url":{"format":"uri","type":"string"},"___height":{"type":"integer"},"___width":{"type":"integer"}}}

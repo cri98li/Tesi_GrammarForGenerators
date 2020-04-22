@@ -1,0 +1,1 @@
+{"oneOf":[{"type":"array","items":{"$fref":"http:\/\/example.api.com\/jsonrefs\/definitions#\/definitions\/machine"}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/example.api.com\/jsonrefs\/machine#","additionalProperties":false,"title":"Machine-Array"}

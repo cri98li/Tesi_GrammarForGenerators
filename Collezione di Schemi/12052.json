@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Default Property","properties":{"___name":{"default":"default_value","readonly":true,"options":{"hidden":true},"type":"string"}},"required":["name"]}

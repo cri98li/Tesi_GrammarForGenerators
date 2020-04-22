@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","additionalProperties":false,"title":"AggregateRequest","type":"object","properties":{"___collection":{"$fref":"resource:\/\/mdstudio\/db\/collection\/v1"},"___pipeline":{"additionalItems":false,"type":"array","items":{"$fref":"resource:\/\/mdstudio\/db\/aggregate-pipeline-operator\/v1"}}},"required":["collection","pipeline"]}

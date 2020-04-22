@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___dictionary":{"patternProperties":{"___^[a-zA-Z0-9]{1,10}$":{"type":"string"}},"additionalProperties":false,"type":"object"}}}

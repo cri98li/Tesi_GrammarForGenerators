@@ -1,0 +1,1 @@
+{"default":1,"oneOf":[{"standsFor":"Above","const":1},{"standsFor":"Below","const":2}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"number"}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema","description":"Options available for the renderer legend.","title":"Renderer Legend Options","type":"object","properties":{"___title":{"description":"The title of the legend.","type":"string"}}}

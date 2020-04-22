@@ -1,0 +1,1 @@
+{"allOf":[{"$fref":"test_schemas\/subschema1-src.json"},{"$fref":"test_schemas\/subschema2.json"}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"title":"test","type":"object"}

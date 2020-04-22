@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","anyOf":[{"type":"string"},{"type":"object","properties":{"___Include":{"type":"object","properties":{"___href":{"type":"string"}}}}}],"title":"javax.activation.DataHandler"}

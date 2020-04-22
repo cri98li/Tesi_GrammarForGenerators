@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Sports activity registration, 12-14 age bracket","additionalProperties":false,"title":"Registration","type":"object","properties":{"___name":{"type":"string"},"___sex":{"type":"string","enum":["M","F"]},"___age":{"maximum":14,"type":"integer","minimum":12}},"required":["name","sex","age"]}

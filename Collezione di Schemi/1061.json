@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"\/","type":"object","properties":{"___flavor":{"id":"flavor","type":"object","properties":{"___public":{"id":"public","type":"boolean"},"___nodes":{"id":"nodes","type":"array","items":{"id":"0","type":"string"},"required":["0"]},"___promoted":{"id":"promoted","type":"boolean"}},"required":[]}},"required":["flavor"]}

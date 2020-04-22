@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","definitions":{"_88custom":{"$fref":"urn:custom"}},"properties":{"___bar":{"$fref":"#\/definitions\/custom\/fooDef1"}}}

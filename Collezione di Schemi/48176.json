@@ -1,0 +1,1 @@
+{"oneOf":[{"type":"integer","minimum":1},{"minLength":1,"type":"string"}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"OneOf"}

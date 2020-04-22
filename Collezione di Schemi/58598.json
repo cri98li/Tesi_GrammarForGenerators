@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","properties":{"___is_completed":{"description":"whether the upload was completed or not. Presently must be set to true.","type":"boolean"}}}

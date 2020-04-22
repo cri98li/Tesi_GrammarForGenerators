@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/localhost:3000\/schemas\/post-device-request.json#","additionalProperties":false,"title":"Post device request","type":"object","properties":{"___user_id":{"minLength":1,"type":"string"},"___user_agent":{"minLength":1,"type":"string"}},"required":["user_agent","user_id"]}

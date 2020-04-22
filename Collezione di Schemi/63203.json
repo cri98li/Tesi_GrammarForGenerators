@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-03\/schema#","description":"Pickup","type":"object","properties":{"___description":{"type":"string"},"___state":{"type":"string"},"___start":{"format":"rfc3339","type":"string"},"___end":{"format":"rfc3339","type":"string"}}}

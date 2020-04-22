@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"command","$version":"0.0.1","title":"sample","definitions":{},"properties":{"___test":{"links":[{"schema":{"properties":{}},"targetSchema":{"properties":{}},"method":"GET","rel":"self","href":"\/test","title":"regist_check"}]}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","definitions":{"_88httpUri":{"allOf":[{"format":"uri"},{"pattern":"^https?:\/\/"}],"type":"string"}},"properties":{"___name":{"type":"string"},"___uri":{"$eref":{"allOf":[{"format":"uri"},{"pattern":"^https?:\/\/"}],"type":"string"}}}}

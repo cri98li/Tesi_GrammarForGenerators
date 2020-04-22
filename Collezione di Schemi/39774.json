@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___created_at":{"pattern":"\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}","type":"string"},"___tags":{"minItems":1,"uniqueItems":true,"type":"array","items":{"type":"string"}},"___title":{"type":"string"},"___id":{"type":"integer"}},"required":["id","title"]}

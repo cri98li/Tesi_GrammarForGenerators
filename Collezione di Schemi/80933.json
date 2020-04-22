@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-03\/schema","id":"http:\/\/example.com\/test\/test2.json#","title":"test 2","type":"object","properties":{"___ref":{"$eref":{"type":"object","properties":{"___foo3":{"$ref":"#\/definitions\/up_one"},"___foo2":{"type":"number"},"___foo1":{"type":"string"}},"required":["foo1","foo2"]}},"___foo":{"type":"string"}}}

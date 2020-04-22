@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"NodeDescriptorList","type":"array","items":{"$eref":{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"NodeDescriptor","type":"object","properties":{"___url":{"type":"string"},"___nodeId":{"type":"string"}},"required":["nodeId","url"]}}}

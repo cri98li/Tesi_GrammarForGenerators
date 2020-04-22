@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","type":"object","properties":{"___name":{"type":"string"},"___enum_homeNum":{"type":"integer","enum":[1,2,3]},"___enum_parks":{"type":"string","enum":["park_a","park_b"]}},"required":["enum_homeNum","enum_parks","name"]}

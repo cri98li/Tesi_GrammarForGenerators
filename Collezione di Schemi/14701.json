@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","resource":{"type":"object","properties":{"___count":{"maximum":1000,"type":"integer","minimum":0},"___additionalProperties":false,"___required":["count"]}},"resource_id":{"$fref":"common.json#\/app_id"},"verbs":{"create":{"required":["count"]},"update":{"required":["count"]}}}

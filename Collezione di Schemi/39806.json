@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"title":"VersionSearchResponse","type":"object","javaName":"VersionSearchResponse","properties":{"___version":{"type":"string"},"___createdAt":{"format":"date-time","type":"string"},"___commitId":{"type":"string"}}}

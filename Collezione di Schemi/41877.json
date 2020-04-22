@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","definitions":{"_88dog":{"allOf":[{"$eref":{"type":"integer","exclusiveMinimum":true,"minimum":0}},{"exclusiveMinimum":false,"minimum":5}]},"_88xs:positiveInteger":{"type":"integer","exclusiveMinimum":true,"minimum":0}}}

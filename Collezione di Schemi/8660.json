@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Add documentation","title":"Documentation","type":"object","properties":{"___keyword":{"title":"Keyword","type":"string"},"___url":{"title":"URL","type":"string"},"___CADI_ID":{"title":"CADI ID","type":"string"},"___comment":{"title":"Comment","type":"string"}}}

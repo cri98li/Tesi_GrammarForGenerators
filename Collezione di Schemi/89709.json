@@ -1,0 +1,1 @@
+{"esriDocumentation":{"examples":[{"code":{"title":{"text":"Great slide"}},"title":"title"}]},"$schema":"http:\/\/json-schema.org\/draft-04\/schema","description":"Text for the title of the individual slide.","additionalProperties":false,"title":"title","type":"object","properties":{"___text":{"description":"Text to display as slide title.","type":"string"}},"required":["text"]}

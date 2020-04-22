@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"title":"CommitIdCollection","type":"object","javaName":"CommitIdCollection","properties":{"___commits":{"description":"List of commits to search over.","type":"array","items":{"type":"string"}}}}

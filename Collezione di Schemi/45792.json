@@ -1,0 +1,1 @@
+{"default":[],"$schema":"http:\/\/json-schema.org\/schema#","description":"# Brief\n\nOptional list of languages related to the resource.\n","type":"array","items":{"type":"string"}}

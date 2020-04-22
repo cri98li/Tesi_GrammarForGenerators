@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___orgName":{"minLength":1,"type":"string","maxLength":255},"___email":{"format":"email","type":"string","maxLength":1024},"___ttl":{"type":"number"},"___role":{"type":"string","enum":["admin","edit","collaborate","view","none"]},"___inviteDate":{"format":"date-time","type":"string"}}}

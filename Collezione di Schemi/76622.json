@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___text":{"type":"string"},"___time":{"description":"UNIX time at which the comment was made","type":"integer","minimum":0},"___username":{"type":"string"},"___id":{"type":"string"}},"required":["id","text","time","username"]}

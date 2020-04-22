@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Describes the authenticated User for a request.","title":"User","type":["object","null"],"properties":{"___email":{"type":["string","null"],"maxLength":1024},"___username":{"type":["string","null"],"maxLength":1024},"___id":{"type":["string","number","null"],"maxLength":1024}},"$id":"docs\/spec\/user.json"}

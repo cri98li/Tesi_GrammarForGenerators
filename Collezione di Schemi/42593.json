@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"array","items":{"type":"object","properties":{"___middle_name":{"type":"string"},"___first_name":{"type":"string"},"___employee_id":{"type":"string"},"___last_name":{"type":"string"},"___id":{"type":"integer"}},"required":["id","employee_id","first_name","last_name"]}}

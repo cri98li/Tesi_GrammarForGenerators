@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"The Ripple-REST configuration file","title":"config.json","type":"object","properties":{"___rippled_servers":{"minItems":1,"uniqueItems":true,"type":"array","items":{"type":"string"}}},"required":["rippled_servers"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","patients":{"id":"#\/core\/patients","type":"object","properties":{"___persons":{"type":"array","items":{"$fref":"schemas\/core\/patient.json#\/core\/patient"}},"___size":"integer"}},"id":"http:\/\/baseurl.com\/schemas"}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","type":"object","properties":{"___name":{"type":"string"},"___version":{"type":"string"},"___comment":{"type":"string"}},"required":["name","version"],"$id":"creator.json#"}

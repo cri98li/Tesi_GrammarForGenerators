@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___bbb":{"type":"array","items":{"format":"date","type":"string"}},"___aaa":{"format":"date","type":"string"},"___ccc":{"$eref":{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___ddd":{"format":"date","type":"string"}}}}}}

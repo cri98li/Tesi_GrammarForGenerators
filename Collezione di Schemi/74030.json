@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","definitions":{"_88logout-output":{"type":"object","properties":{"___tokens_removed":{"type":"integer"}},"required":["tokens_removed"]},"_88login-output":{"type":"object","properties":{"___token":{"type":"string"}},"required":["token"]}}}

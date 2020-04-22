@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Users List Response","type":"object","properties":{"___items":{"type":"array","items":{"type":"object","properties":{"___user":{"$fref":"__apigModelsEndpoint__\/User"},"___role":{"$fref":"__apigModelsEndpoint__\/Role"}}}}},"required":["items"]}

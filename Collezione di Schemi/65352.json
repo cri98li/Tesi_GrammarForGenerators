@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___ccc":{"oneOf":[{"properties":{"___ccc_type":{"enum":["ddd"]},"___ccc_properties":{"$fref":"includes\/ddd.json"}}},{"properties":{"___ccc_type":{"enum":["eee"]},"___ccc_properties":{"$fref":"includes\/eee.json"}}}],"type":"object"}}}

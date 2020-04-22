@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"#mbox_sha1sum","type":"object","properties":{"___mbox":{"type":"null"},"___account":{"type":"null"},"___mbox_sha1sum":{"format":"sha1","id":"#mbox_sha1sum!core","type":"string"},"___openid":{"type":"null"}},"required":["mbox_sha1sum"]}

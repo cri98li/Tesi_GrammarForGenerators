@@ -1,0 +1,1 @@
+{"_public_fields":[""],"$schema":"http:\/\/json-schema.org\/draft-04\/schema","title":"Destination schema","type":"object","properties":{"___type":{"_db_settings":{"unique":true,"type":"text","required":true}},"___id":{"_db_settings":{"type":"id_field","primary_key":true,"required":true}}}}

@@ -1,0 +1,1 @@
+{"allOf":[{"$eref":{"type":"object","properties":{"___logs":{"type":"array","items":{"$ref":"#\/definitions\/job-log-statement"}},"___id":{"$ref":"common.json#\/definitions\/objectid"}}}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","example":{"_id":"57ac7394c700190017123fb8","logs":[{"msg":"Hello World!","fd":1}]}}

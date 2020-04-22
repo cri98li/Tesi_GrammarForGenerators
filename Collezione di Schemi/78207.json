@@ -1,0 +1,1 @@
+{"endpoint":"http:\/\/{host}","$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"films_index","type":"array","items":{"title":"film","type":"object","properties":{"___id":{"type":"uuid"}}}}

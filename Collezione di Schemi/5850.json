@@ -1,0 +1,1 @@
+{"endpoint":"\/sequence","$schema":"http:\/\/json-schema.org\/schema#","methods":["get","post","put","delete"],"description":"testing the sending of params","maxProperties":0,"type":"object","properties":{}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Youtube video","type":"object","properties":{"___name":{"default":"youtube","readonly":true,"options":{"hidden":true},"type":"string"},"___src":{"description":"The youtube embed url. Example: https:\/\/www.youtube.com\/embed\/8X1eao17Lok","type":"string"}},"required":["src"]}

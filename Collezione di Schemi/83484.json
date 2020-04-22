@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Inches measurement, must be even number of feet","title":"Measure","type":"object","properties":{"___length":{"multipleOf":12,"type":"integer","minimum":0}}}

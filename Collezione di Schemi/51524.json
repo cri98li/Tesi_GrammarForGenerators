@@ -1,0 +1,1 @@
+{"patternProperties":{"___.*":{"type":"object"}},"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"What the Washington Post calls a Kicker","id":"https:\/\/raw.githubusercontent.com\/washingtonpost\/ans-schema\/master\/src\/main\/resources\/schema\/ans\/0.5.7\/traits\/trait_label.json","title":"Label","type":"object"}

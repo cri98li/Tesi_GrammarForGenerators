@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___port":{"default":8080,"description":"the port where the app should be running","type":"integer"},"___host":{"default":"localhost","description":"the host name","type":"string"}}}

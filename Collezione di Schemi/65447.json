@@ -1,0 +1,1 @@
+{"allOf":[{"$fref":"https:\/\/opendesk.cc\/schemata\/base\/option.json#"},{"properties":{"___type":{"pattern":"boolean","type":"string"},"___value":{"type":"boolean"}},"required":["value"]}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"https:\/\/opendesk.cc\/schemata\/base\/boolean.json","title":"Winnow Boolean","type":"object"}

@@ -1,0 +1,1 @@
+{"schema":{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___message":{"type":"string"}}},"organizationId":1,"public":true,"name":"slack\/message","deletable":true,"description":"Send a message to slack.","id":1,"type":"http:\/\/iflux.io\/schemas\/actionTypes\/slackMessageSending"}

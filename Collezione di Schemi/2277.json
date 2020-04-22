@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Wishlist Item","type":"object","properties":{"___product":{"pattern":"^.+","type":"string"},"___amount":{"default":1,"type":"integer","minimum":1},"___createdAt":{"format":"date-time","type":"string"},"___note":{"type":"string"}},"required":["product","amount"]}

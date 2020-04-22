@@ -1,0 +1,1 @@
+{"default":"individual","$schema":"http:\/\/json-schema.org\/schema#","type":"string","enum":["individual","group","org","location"]}

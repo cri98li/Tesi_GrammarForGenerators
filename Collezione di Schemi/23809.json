@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"A bounding box as defined by GeoJSON","id":"http:\/\/atomicbits.io\/raml10\/bbox.json","type":"array","items":{"type":"number"}}

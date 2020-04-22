@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Person","type":"object","properties":{"___name":{"minLength":3,"pattern":"^[a-zA-Z][a-zA-Z0-9_-]*$","type":"string","maxLength":32},"___age":{"type":"integer","minimum":0},"___email":{"format":"email","type":"string"},"___homepage":{"format":"uri","type":"string"}},"required":["name"]}

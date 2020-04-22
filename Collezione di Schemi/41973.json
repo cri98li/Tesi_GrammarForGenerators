@@ -1,0 +1,1 @@
+{"allOf":[{"$eref":{"type":"string","enum":["dog","cat"]}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","definitions":{"_88myType":{"type":"string","enum":["dog","cat"]}}}

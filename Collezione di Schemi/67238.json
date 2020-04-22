@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":true,"type":"object","properties":{"___deployment":{"additionalProperties":{"additionalProperties":false,"type":"object","properties":{"___config":{"additionalProperties":true,"type":"object"},"___instances":{"type":"integer"}}},"type":"object"}},"required":["deployment"]}

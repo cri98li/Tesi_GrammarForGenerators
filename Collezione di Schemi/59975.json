@@ -1,0 +1,1 @@
+{"oneOf":[{"type":"array"},{"type":"number"},{"type":"object"},{"type":"string"}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"The value returned by PUT \/{db}\/{section}\/{key}","title":"CouchDB configuration value"}

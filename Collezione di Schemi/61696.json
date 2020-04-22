@@ -1,0 +1,1 @@
+{"private":true,"normandy":{"driverVersion":"1.x","argumentsSchema":{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Log a message to the console","type":"object","properties":{"___message":{"default":"","description":"Message to log to the console","type":"string"}},"required":["message"]}},"name":"console-log","main":".\/index.js","version":"0.0.1"}

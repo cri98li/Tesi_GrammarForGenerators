@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","$eref":{"additionalProperties":false,"type":"object","properties":{"___ticket":{"type":"string"},"___file_cnt":{"type":"integer"},"___size":{"type":"integer"},"___filename":{"type":"string"}},"required":["ticket","filename","file_cnt","size"]}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","minLength":1,"description":"Short string. Max. 1024 bytes.","id":"http:\/\/schema.myrtana.sk\/text\/shortString.json#","title":"Short string","type":"string","maxLength":1024}

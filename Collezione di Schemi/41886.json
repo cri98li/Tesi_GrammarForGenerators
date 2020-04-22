@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","definitions":{"_88myInteger":{"exclusiveMaximum":false,"maximum":8,"type":"integer"},"_88pets":{"type":"object","properties":{"___amount":{"$eref":{"exclusiveMaximum":false,"maximum":8,"type":"integer"}},"___dog":{"minItems":3,"maxItems":8,"type":"array","items":{"type":"string"}}},"required":["dog"]}}}

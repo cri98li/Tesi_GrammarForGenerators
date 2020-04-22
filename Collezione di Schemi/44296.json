@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"This schema is a stub for a person's name.","type":"object","properties":{"___middle_name":{"type":"string"},"___first_name":{"type":"string"},"___last_name":{"type":"string"}},"required":["first_name","last_name"]}

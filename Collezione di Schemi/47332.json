@@ -1,0 +1,1 @@
+{"patternProperties":{"___.*":{"type":"number"}},"$schema":"http:\/\/json-schema.org\/schema#","description":"MachineBoss parameter assignments schema","id":"https:\/\/raw.githubusercontent.com\/evoldoers\/machineboss\/master\/schema\/params.json","type":"object"}

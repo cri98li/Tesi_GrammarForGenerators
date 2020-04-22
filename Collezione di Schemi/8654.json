@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"An issued identifier","title":"Identifier","type":"object","properties":{"___scheme":{"title":"Scheme","type":"string"},"___identifier":{"title":"Identifier","type":"string"}}}

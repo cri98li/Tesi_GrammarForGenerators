@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___url":{"format":"uri","description":"a (probably tenant-specific) url of the landing page for this app","type":"string"}}}

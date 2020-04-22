@@ -1,0 +1,1 @@
+{"javaInterfaces":["java.io.Serializable"],"$schema":"http:\/\/json-schema.org\/draft-03\/schema","id":"#","type":"object","properties":{"___path":{"default":"\/tmp\/streams-file-queue.txt","description":"A file to read\/write data","type":"string"}},"javaType":"org.apache.streams.filebuffer.FileBufferConfiguration"}

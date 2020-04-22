@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"A box atom","anyOf":[{"required":["children"]},{"required":["content"]}],"title":"box","type":"object","properties":{"___children":{"type":"string"},"___modifier":{"description":"A pattern modifier","enum":["","dark"]},"___content":{"type":"string"}}}

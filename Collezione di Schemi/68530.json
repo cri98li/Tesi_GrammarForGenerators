@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","name":"SHA1","pattern":"^[\\da-fA-F]{40}$","description":"A SHA1 code.","id":"urn:SHA1.schema.json#","type":"string"}

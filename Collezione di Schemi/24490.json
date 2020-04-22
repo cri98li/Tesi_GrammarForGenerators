@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","properties":{"___bar":{"uniqueItems":true,"type":"array"},"___baz":{"uniqueItems":false,"type":"array"}}}

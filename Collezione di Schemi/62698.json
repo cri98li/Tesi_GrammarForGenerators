@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"A a test","title":"a","type":"object","properties":{"___listitems":{"minItems":1,"type":"array","items":{"type":"object","properties":{"___text":{"type":"string"}}}}},"required":["listitems"]}

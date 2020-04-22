@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"array","items":{"$eref":{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___item":{"$ref":"itemRead.json"},"___meta":{"$ref":"itemMeta.json"}}}}}

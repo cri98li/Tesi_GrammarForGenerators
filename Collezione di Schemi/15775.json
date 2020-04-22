@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"title":"Random Key Expression","type":"object","properties":{"___random_key":{"enum":["sym_key","asym_prv_key"]}},"required":["random_key"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","type":"array","title":"URLs","items":{"type":["object","null"],"title":"URL","properties":{"___description":{"type":["string","null"],"title":"Description from 8564_y field"},"___value":{"format":"url","title":"URL","type":"string"}}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","description":"Postman allows you to configure scripts to run when specific events occur. These scripts are stored here, and can be referenced in the collection by their ID.","title":"Event List","type":"array","items":{"$fref":"#\/definitions\/event"},"$id":"#\/definitions\/event-list"}

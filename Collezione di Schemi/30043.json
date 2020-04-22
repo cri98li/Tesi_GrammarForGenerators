@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"lbmetrictable_metric_binding","title":"lbmetrictable_metric_binding","type":"object","properties":{"___metric":{"type":"string"},"___metrictable":{"type":"string"},"___Snmpoid":{"type":"string"},"___metrictype":{"readonly":true,"type":"string","enum":["INTERNAL","CONFIGURED"]}}}

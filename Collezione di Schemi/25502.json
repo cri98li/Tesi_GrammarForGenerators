@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","type":"object","definitions":{"_88timestamp":{"format":"date-time","type":"string"},"_88date":{"format":"string","type":"string"}},"properties":{"___ts":{"$eref":{"format":"date-time","type":"string"}},"___d":{"$eref":{"format":"string","type":"string"}}}}

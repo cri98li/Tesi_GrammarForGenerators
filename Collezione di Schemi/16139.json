@@ -1,0 +1,1 @@
+{"defaults":{},"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","name":"Image series (BMP)","groups":[{"id":"basic","class":"basic","properties":[{"forced":true,"parameter":"_pixelFormat","control":{"type":"combobox","items":[{"value":"bgr24"},{"value":"bgra"}],"selectedIndex":0},"id":"pixelFormat"}]}],"id":"bmp"}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"","id":"http:\/\/www.turnslift.com\/<%= props.name %>","type":"object","properties":{},"required":[]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___tracks":{"minItems":0,"type":"array","items":{"$eref":{"type":"object","properties":{"___name":{"type":"string"},"___modified":{"format":"date-time","type":"string"},"___id":{"type":"string"}},"required":["id"]}}}},"required":["tracks"]}

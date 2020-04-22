@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___notification":{"additionalProperties":false,"properties":{"___person_id":{"type":"integer"},"___door_id":{"type":"integer"}},"required":["person_id","door_id"]}},"required":["notification"]}

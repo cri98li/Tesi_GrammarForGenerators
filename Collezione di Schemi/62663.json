@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"A button atom","anyOf":[{"required":["children"]},{"required":["text"]}],"title":"button","type":"object","properties":{"___children":{"type":"string"},"___disabled":{"type":"boolean"},"___text":{"type":"string"}}}

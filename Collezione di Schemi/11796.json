@@ -1,0 +1,1 @@
+{"oneOf":[{"$fref":"\/entity\/asset.json#"}],"plural":"Buildings","faIcon":"fa-building","$schema":"http:\/\/json-schema.org\/draft-04\/schema#","sortIndex":65,"description":"A building","id":"\/entity\/building.json#","title":"Building","type":"object","properties":{"___building_address":{"$fref":"\/entity\/address.json#"}},"graph":"node"}

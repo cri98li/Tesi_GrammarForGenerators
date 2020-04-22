@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___name":{"type":"string"},"___email":{"type":"string"},"___password":{"type":"string"},"___forename":{"type":"string"}},"required":["email","password","name","forename"]}

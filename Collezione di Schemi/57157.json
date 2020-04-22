@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","description":"Test collection 3","title":"Test 3","type":"object","properties":{"____uid":{"isAutoIncrement":true,"type":"number"},"___field_1":{"type":"string"},"___field_2":{"type":"string"}},"required":["_uid","_metadata"],"$id":"test_3"}

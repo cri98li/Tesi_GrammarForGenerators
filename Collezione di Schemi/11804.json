@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"alert.json#","type":"object","properties":{"___query_text":{"type":["string","null"]},"___label":{"type":["string","null"]},"___entity_id":{"type":["string","null"]}},"required":[]}

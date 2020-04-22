@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___prop1":{"type":"string","enum":["ændring","test"]},"___prop2":{"$eref":{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___prop3":{"type":"string","enum":["ændring","test"]}}}}}}

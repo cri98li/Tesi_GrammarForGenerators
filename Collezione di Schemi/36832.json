@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Used in publisher_test.js","id":"http:\/\/localhost:1203\/exchange-test-schema.json#","additionalProperties":false,"type":"object","properties":{"___someString":{"type":"string"}},"required":["someString"]}

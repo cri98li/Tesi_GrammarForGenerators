@@ -43,6 +43,7 @@ single_assertion: unique_items_assertion
 
                     |   enum_assertion
                     |   const_assertion
+                    |   BOOLEAN
                     ;
 
 
@@ -161,6 +162,8 @@ ALFABETICSTRING: '"STR_'[a-zA-Z]+'"';
 PATTERNSTRING: '"^PAT_' STRING '$"';
 
 //STRING: .+?;
+
+BOOLEAN: 'true' | 'false';
 
 STRING: [a-zA-Z0-9.,*:\-_{}[\]+?!)=|\\(];
 

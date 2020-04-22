@@ -1,0 +1,1 @@
+{"allOf":[{"$eref":{"additionalProperties":false,"type":"object","x-sdk-return":"number_cancelled","properties":{"___number_cancelled":{"type":"integer"}},"required":["number_cancelled"]}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","example":{"number_cancelled":4}}

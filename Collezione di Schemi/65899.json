@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"payment options json schema","title":"Payment options","type":"object","properties":{"___allowed_payment_method":{"type":"string","enum":["INSTANT_FUNDING_SOURCE"]}}}

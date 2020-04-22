@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"defines the structure of a temperature event in degrees Fahrenheit ","title":"EnvSensor4 tempEvent Schema","type":"object","properties":{"___temp":{"default":75,"description":"temperature in degrees Fahrenheit","type":"number","minimum":-459.67}},"required":["temp"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Simple IP server definition","title":"Server","type":"object","properties":{"___address":{"type":"string"},"___port":{"type":"integer"}}}

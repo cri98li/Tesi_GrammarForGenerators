@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"A cta atom","title":"cta","type":"object","properties":{"___icon":{"description":"An icon atom","enum":["nitro"]},"___text":{"description":"Button text","type":"string"},"___href":{"description":"URL","type":"string"}},"required":["text","href","icon"]}

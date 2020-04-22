@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/toyatech.net\/cmsapp\/contacts","definitions":{"_88PostalAddress":{"type":"object","properties":{"___locality":{"type":"string"},"___street":{"type":"string"},"___postOfficeBox":{"type":"string"},"___country":{"type":"string"},"___postalCode":{"type":"string"},"___region":{"type":"string"}}}}}

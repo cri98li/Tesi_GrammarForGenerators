@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","type":"object","properties":{"___onContentLoad":{"min":-1,"type":"number"},"___onLoad":{"min":-1,"type":"number"},"___comment":{"type":"string"}},"$id":"pageTimings.json#"}

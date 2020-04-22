@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Bee schema","type":"object","properties":{"___name":{"description":"name","type":"string"},"___id":{"description":"identifier","type":"string"},"___metadata":{"readonly":true,"description":"metadata","$fref":"raml-util\/schemas\/metadata.schema"}}}

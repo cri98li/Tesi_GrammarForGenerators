@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"policystringmap_pattern_binding","title":"policystringmap_pattern_binding","type":"object","properties":{"___name":{"type":"string"},"___key":{"type":"string"},"___value":{"type":"string"}}}

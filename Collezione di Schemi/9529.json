@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","additionalProperties":false,"title":"CountResponse","type":"object","properties":{"___results":{"additionalItems":false,"type":"array","items":{"$fref":"resource:\/\/mdstudio\/db\/document\/v1"}},"___total":{"min":0,"type":"integer"}},"required":["results","total"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","properties":{"___user":{"$eref":{"minLength":1,"pattern":"^[A-Za-z0-9-_.:]*$","description":"The name of a Chef object.","maxLength":255},"description":"Name of user invited to the organization."}},"example":{"user":"jkeiser"}}

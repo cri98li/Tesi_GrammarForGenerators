@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"The data contained in a DonutChart InPlace update object","title":"DonutChartInPlaceUpdate","type":"object","properties":{"___inplace":{"type":"array","items":{"type":"object","properties":{"___name":{"type":"string"},"___newValue":{"type":"number"}},"required":["name","newValue"]}}}}

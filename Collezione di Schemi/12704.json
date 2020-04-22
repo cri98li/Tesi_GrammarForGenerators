@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"org.eclipse.persistence.testing.jaxb.json.attribute.Address","type":"object","properties":{"___address":{"additionalProperties":false,"type":"object","properties":{"___street":{"type":"string"},"___@city":{"type":"string"},"___@id":{"type":"integer"}}}}}

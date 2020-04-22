@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","$eref":{"additionalProperties":false,"type":"object","properties":{"___session":{"$ref":"session.json#\/definitions\/session-metadata-input"},"___project":{"$ref":"project.json#\/definitions\/project-metadata-input"},"___acquisition":{"$ref":"acquisition.json#\/definitions\/acquisition-metadata-input"}}}}

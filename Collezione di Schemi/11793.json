@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"collection.json#","type":"object","properties":{"___label":{"minLength":2,"type":"string","maxLength":255},"___managed":{"type":"boolean"}},"required":["label"]}

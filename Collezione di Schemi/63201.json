@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-03\/schema#","description":"Location","type":"object","properties":{"___name":{"type":"string"},"___description":{"type":"string"},"___url":{"description":"Long url for embedding a google map","type":"string"}}}

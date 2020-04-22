@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","pattern":"^[A-F0-9]{64}$","description":"The hexadecimal representation of a 256-bit hash","title":"hash256","type":"string"}

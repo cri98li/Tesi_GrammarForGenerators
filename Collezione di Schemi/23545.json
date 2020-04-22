@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___permissions":{"id":"permissionsListObject","type":"array","items":{"$fref":"permission.json","type":"object"}},"___totalRecords":{"type":"integer"}},"required":["permissions","totalRecords"]}

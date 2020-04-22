@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"array","definitions":{"_88role":{"description":"role held by a principal","type":"string"}},"items":{"$eref":{"description":"role held by a principal","type":"string"}}}

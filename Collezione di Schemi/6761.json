@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","$eref":{"$ref":"#\/definitions\/MyObject"},"definitions":{"_88MyObject":{"type":"object","properties":{"___prop":{"type":"number"}},"required":["prop"]},"_88MyAlias":{"$eref":{"type":"object","properties":{"___prop":{"type":"number"}},"required":["prop"]}}}}

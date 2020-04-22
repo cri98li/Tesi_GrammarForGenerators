@@ -1,0 +1,1 @@
+{"allOf":[{"$fref":"glTFChildOfRootProperty.schema.json"}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema","description":"Rigid body physics properties for a scene","additionalProperties":false,"title":"physics","type":"object","properties":{"___gravity":{"default":-9.8,"description":"A scalar gravity value in m\/s\/s","type":"number"}}}

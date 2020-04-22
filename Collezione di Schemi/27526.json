@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","description":"","id":"https:\/\/rawgit.com\/camshaft\/shenu\/master\/schemas\/phone_number.json#","additionalProperties":false,"title":"phone_number","type":"object","properties":{"___country_code":{"type":"integer"},"___national_number":{"type":"string"}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","properties":{"___qux":{"maximum":10,"type":"string"},"___bar":{"maximum":10,"type":"integer"},"___baz":{"maximum":10.5,"type":"number"}}}

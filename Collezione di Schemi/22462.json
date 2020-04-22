@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___name":{"description":"Name of the product","type":"string"},"___price":{"type":"number"},"___tags":{"type":"array"},"___id":{"description":"The unique identifier for a product","type":"number"}},"required":["id","name","price"]}

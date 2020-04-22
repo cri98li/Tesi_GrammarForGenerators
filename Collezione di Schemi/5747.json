@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___time":{"format":"date-time","type":"string"},"___relayId":{"type":"string"},"___data":{"patternProperties":{"___^[0-9a-zA-Z_-]{1,255}$":{"type":["number","string","boolean"]}},"additionalProperties":false,"type":"object"}},"required":["data"]}

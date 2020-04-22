@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"JSON","type":"object","properties":{"___dataStructureFormat":{"enum":["simple","complex"]},"___stripWhitespace":{"type":"boolean"}}}

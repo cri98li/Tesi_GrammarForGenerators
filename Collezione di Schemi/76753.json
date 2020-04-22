@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-03\/schema#","title":"list of features","type":"array","items":{"$eref":{"$schema":"http:\/\/json-schema.org\/draft-03\/schema#","title":"feature","type":"object","properties":{"___attributes":{"title":"feature attributes","$ref":"attributes.json"},"___geometry":{"title":"feature geometry","$ref":"geometry.json"}}}}}

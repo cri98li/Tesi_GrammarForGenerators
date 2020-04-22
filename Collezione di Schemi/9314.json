@@ -1,0 +1,1 @@
+{"patternProperties":{"___.*":{"type":"array","items":{"type":"object","properties":{"___time":{"format":"date-time","type":"string"},"___count":{"type":"number"}}}}},"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object"}

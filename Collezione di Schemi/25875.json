@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___vorgaenger":{"type":"array","items":{"type":"string"}},"___rechner":{"type":"string"},"___warteart":{"default":"beginn","type":"string","enum":["beginn","ende"]},"___wartezeit":{"type":"string"}},"required":["vorgaenger"]}

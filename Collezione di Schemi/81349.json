@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___email":{"pattern":"^[\\w|-]+@[\\w|-]+\\.[A-Za-z]{2,4}$","type":"string"},"___lastName":{"type":"string"},"___firstName":{"type":"string"}},"required":["email","firstName","lastName"]}

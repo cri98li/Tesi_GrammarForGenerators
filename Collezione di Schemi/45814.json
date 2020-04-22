@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","description":"# Brief\n\nUnique values for groups with count for each group value.\n","additionalProperties":{"type":"integer"},"type":"object","example":{"python":8,"java":1}}

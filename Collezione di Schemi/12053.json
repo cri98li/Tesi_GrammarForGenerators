@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","format":"grid","description":"An Object","title":"Example Object","type":"object","properties":{"___link":{"type":"object","properties":{"___url":{"type":"string"},"___title":{"type":"string"}},"required":["url"]}}}

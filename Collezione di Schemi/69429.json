@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___address":{"type":"object","properties":{"___state":{"type":"string"},"___street":{"type":"string"},"___city":{"type":"string"}},"required":["state"]}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"#score","additionalProperties":false,"type":"object","properties":{"___min":{"type":"number"},"___max":{"type":"number"},"___scaled":{"maximum":1,"type":"number","minimum":-1},"___raw":{"type":"number"}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"PAN","type":"object","properties":{"___random_card":{"type":"array"},"___format":{"type":"array"},"___separator":{"type":"string"},"___length":{"type":"string"},"___brand":{"type":"string"}},"required":["brand","length"]}

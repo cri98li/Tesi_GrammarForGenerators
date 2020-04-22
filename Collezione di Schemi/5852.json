@@ -1,0 +1,1 @@
+{"endpoint":"\/","$schema":"http:\/\/json-schema.org\/schema#","methods":["post","put"],"description":"testing if options.body is applied","type":"object","properties":{"___body":{"type":"object","properties":{"___key":{"type":"string","enum":["value"]}},"required":["key"]}},"required":["body"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Describe information needed for deposit module.","title":"Deposit schema.","type":"object","properties":{"___basic_info":{"type":"object","properties":{"___anal_name":{"title":"Analysis Name","type":"string"},"___cadi":{"title":"CADI #","type":"string"}}}}}

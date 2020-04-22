@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"A schema for data that needs the pointer escaped","title":"Some Schema","type":"object","properties":{"___\/path":{"type":"object","properties":{"___~prop":{"type":"number","minimum":0}}}}}

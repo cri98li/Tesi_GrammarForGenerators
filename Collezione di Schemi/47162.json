@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"bundle:\/\/\/test-schema-04.json","definitions":{"_88referencedSchema":{"additionalProperties":{"$eref":{"pattern":"^[a-z]{3}[0-9]{3}$","type":"string"}},"type":"object"},"_88localReference":{"pattern":"^[a-z]{3}[0-9]{3}$","type":"string"}}}

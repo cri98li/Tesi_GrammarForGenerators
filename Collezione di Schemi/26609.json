@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Build metadata plugin manifest","type":"object","properties":{"___provider":{"type":"string","enum":["ec2"]},"___plugins":{"type":"object","properties":{"___build_metadata":{"type":"object","properties":{"___path":{"type":"string"}},"required":["path"]}},"required":["build_metadata"]}},"required":["plugins"]}

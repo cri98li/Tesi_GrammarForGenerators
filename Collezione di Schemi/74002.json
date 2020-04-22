@@ -1,0 +1,1 @@
+{"allOf":[{"$eref":{"allOf":[{"$ref":"#\/definitions\/device"}],"x-sdk-model":"device","type":"object","required":["_id","name","method","last_seen"]}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#"}

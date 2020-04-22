@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","sortIndex":7,"description":"","require":["proto"],"id":"https:\/\/flynn.io\/schema\/controller\/port#","additionalProperties":false,"title":"Port","type":"object","properties":{"___proto":{"type":"string","enum":["tcp","udp"]},"___port":{"type":"integer"}}}

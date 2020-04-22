@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Information concerning the ATLAS datasets used","title":"ATLAS Dataset","type":"object","properties":{"___format":{"title":"Data Format","type":"string"},"___type":{"title":"Data Type","type":"string"},"___title":{"type":"string","title":"Title"}}}

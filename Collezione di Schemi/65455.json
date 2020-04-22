@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"https:\/\/opendesk.cc\/schemata\/base\/exception.json","title":"Winnow Exception Value","type":"object","properties":{"___key":{"type":"string"},"___type":{"type":"string"},"___values":{},"___context":{}},"required":["key","type","values","context"]}

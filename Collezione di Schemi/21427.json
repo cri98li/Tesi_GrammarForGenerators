@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema","description":"Ng Deploy target options for Firebase.","id":"FirebaseDeploySchema","title":"Firebase Deploy","properties":{"___buildTarget":{"pattern":"^[^:\\s]+:[^:\\s]+(:[^\\s]+)?$","description":"Target to build.","type":"string"}}}

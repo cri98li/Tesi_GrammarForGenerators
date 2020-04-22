@@ -1,0 +1,1 @@
+{"oneOf":[{"type":"object","properties":{"___id":{"type":"string"},"___handleWinResponse":{"type":"object"}},"required":["id","win"]},{"type":"object","properties":{"___id":{"type":"string"},"___lose":{"type":"object"}},"required":["id","lose"]}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object"}

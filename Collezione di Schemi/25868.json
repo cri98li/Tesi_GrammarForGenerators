@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___messages":{"type":"array","items":{"type":"string"}},"___status":{"default":"initialized","description":"der Status der StartStoppApplikation","type":"string","enum":["initialized","failure"]}},"required":["status"]}

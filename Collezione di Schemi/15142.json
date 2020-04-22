@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema","title":"User list","type":"array","properties":{"___name":{"type":["string","null"]},"___email":{"type":["string","null"]},"___created_at":{"description":"compliant with RFC3339","type":["string","null"]},"___screen_name":{"type":["string","null"]},"___id":{"type":"number"}},"required":["id"]}

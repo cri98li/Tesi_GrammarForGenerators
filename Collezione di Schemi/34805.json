@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"schema for a list of authors","type":"object","properties":{"___author":{"type":"object","properties":{"___first_name":{"type":"string"},"___last_name":{"type":"string"},"___id":{"type":"integer"}}}}}

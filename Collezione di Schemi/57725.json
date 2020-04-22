@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"DayTypeCalendar","type":"array","items":{"title":"Day","type":"object","properties":{"___date":{"type":"string"},"___types":{"type":"array","items":{"type":"string"}}},"required":["date","types"]}}

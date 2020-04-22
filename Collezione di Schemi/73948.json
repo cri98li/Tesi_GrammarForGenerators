@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"array","items":{"allOf":[{"$eref":{"allOf":[{"$ref":"#\/definitions\/file-entry"}],"x-sdk-model":"file-entry","type":"object","required":["modified","size"]}}]}}

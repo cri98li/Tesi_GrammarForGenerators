@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","type":"object","properties":{"___iscrazy":{"type":"boolean"},"___age":{"type":"integer"},"___lastName":{"type":"string"},"___firstName":{"type":"string"},"___height":{"type":"number"},"___dob":{"type":"string"}},"required":["age","dob","firstName","height","iscrazy","lastName"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","patient":{"allof":[{"$fref":"schemas\/general\/person.json#general\/person"},{"properties":{"___diagnosis":{"type":"array","items":"string"}},"required":["diagnosis"]}],"id":"#\/core\/patient","type":"object"},"id":"http:\/\/baseurl.com\/schemas"}

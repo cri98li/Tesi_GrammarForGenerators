@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"choiceSet.json","type":"object","properties":{"___type":{"type":"string","enum":["Choice","Composite","List","Independents"]},"___items":{"type":"array"}},"required":["type","items"]}

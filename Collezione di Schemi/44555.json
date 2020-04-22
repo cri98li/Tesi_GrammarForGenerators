@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/schema.envirocar.org\/measurements.json#","additionalProperties":false,"type":"object","properties":{"___type":{"type":"string","enum":["FeatureCollection"]},"___features":{"minItems":0,"type":"array","items":{"$fref":"http:\/\/schema.envirocar.org\/measurement.json#"}}},"required":["type","features"]}

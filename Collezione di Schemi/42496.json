@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"TenantList","type":"array","items":{"type":"object","properties":{"___name":{"type":"string"},"___description":{"type":"string"},"___id":{"type":"string"}}}}

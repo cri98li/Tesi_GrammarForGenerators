@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Defines the format for describing the retention policy of a data source","title":"Data Retention","type":"object","properties":{"___span":{"description":"The expected lifespan (in seconds) of a data object","type":"integer","minimum":0}},"required":["span"]}

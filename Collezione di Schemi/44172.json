@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"title":"GetCompositeScheduleRequest","type":"object","properties":{"___duration":{"type":"integer"},"___chargingRateUnit":{"type":"string","enum":["A","W"]},"___connectorId":{"type":"integer"}},"required":["connectorId","duration"]}

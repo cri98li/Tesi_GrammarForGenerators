@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Server name and IP address, port","additionalProperties":false,"title":"Server","type":"object","properties":{"___name":{"type":"string"},"___address":{"type":"string"},"___port":{"maximum":65535,"type":"integer","minimum":0}},"required":["name","address","port"]}

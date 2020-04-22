@@ -1,0 +1,1 @@
+{"examples":["schema\/examples\/controller\/ca_cert#"],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","sortIndex":17,"description":"","id":"https:\/\/flynn.io\/schema\/controller\/ca_cert#","title":"CA Cert","type":"string"}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"A Loader atom","title":"Loader","type":"object","properties":{"___modifier":{"description":"A modifier","enum":["","white"]}}}

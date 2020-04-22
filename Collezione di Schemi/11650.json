@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___name":{"type":"string"},"___color":{"type":"string"},"___slotprofile":{"type":"string"},"___school_id":{"type":"string"},"___validation":{"type":"boolean"},"___extendcolor":{"type":"boolean"}},"required":["name","validation","color"]}

@@ -1,0 +1,1 @@
+{"minItems":1,"$schema":"http:\/\/json-schema.org\/schema#","uniqueItems":true,"type":"array","items":{"$eref":{"$schema":"http:\/\/json-schema.org\/schema#","type":"object","properties":{"___body":{"type":"string"},"___subject":{"type":"string"}},"required":["body","subject"]}}}

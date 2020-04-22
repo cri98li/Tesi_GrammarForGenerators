@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","additionalProperties":false,"title":"test json schema","type":"object","properties":{"___optArray":{"default":["my-default-value"],"type":"array"},"___optEmpty":{"default":[],"type":"array"},"___optObj":{"default":{"_8_hello":"world"},"type":"object"}}}

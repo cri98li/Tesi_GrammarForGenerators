@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","type":"object","properties":{"___name":{"type":"string"},"___key":{"type":"string"},"___actions_py":{"type":"string"},"___state":{"type":"string"},"___parent":{"type":"string"},"___role":{"type":"string"},"___producers":{"type":"array","items":{"type":"string"}}},"required":["key","name","role","state"]}

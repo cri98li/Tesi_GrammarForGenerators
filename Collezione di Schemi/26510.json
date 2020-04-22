@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/example.api.com\/jsonrefs\/definitions#","title":"Machine","definitions":{"_88machine":{"description":"Used to describe a machine","additionalProperties":false,"title":"Machine object","type":"object","properties":{"___name":{"type":"string"},"___type":{"type":"string"}}}}}

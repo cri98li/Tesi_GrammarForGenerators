@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","id":"http:\/\/comrade.forma-pro.com\/schemas\/runner\/QueueRunner.json","type":"object","properties":{"___schema":{"type":"string","enum":["http:\/\/comrade.forma-pro.com\/schemas\/runner\/QueueRunner.json"]},"___connectionDsn":{"type":"string"},"___queue":{"type":"string"}},"required":["queue","schema"]}

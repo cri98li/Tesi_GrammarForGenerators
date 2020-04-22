@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","else":{"required":["a","c"]},"then":{"required":["a","b","c"]},"title":"An example schema","type":"object","if":{"properties":{"___c":{"enum":["ghi"]}}},"properties":{"___c":{"type":"string","enum":["abc","def","ghi","jkl"]},"___a":{"type":"string"},"___b":{"type":"integer"}}}

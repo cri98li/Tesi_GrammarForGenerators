@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","description":"MachineBoss named sequence schema","id":"https:\/\/raw.githubusercontent.com\/evoldoers\/machineboss\/master\/schema\/namedsequence.json","additionalProperties":false,"type":"object","properties":{"___name":{"type":"string"},"___sequence":{"type":"array","items":{"type":"string"}}},"required":["sequence"]}

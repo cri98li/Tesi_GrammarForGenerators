@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"List all visible birds in the registry","additionalProperties":false,"title":"POST \/birds [request]","type":"array","items":{"uniqueItems":true,"description":"Object id","type":"string"}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___wells":{"type":"array","items":{"type":"object","properties":{"___type":{"type":"string"},"___index":{"type":"string"},"___values":{"type":"array","items":{"type":"number"}},"___size":{"type":"integer"}},"required":["type","index","size","values"]}}},"required":["wells"]}

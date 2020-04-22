@@ -1,0 +1,1 @@
+{"allOf":[{"$eref":{"type":"object","properties":{"___dog":{"type":"string"}},"required":["dog"]}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","definitions":{"_88myType":{"type":"object","properties":{"___dog":{"type":"string"}},"required":["dog"]}}}

@@ -1,0 +1,1 @@
+{"allOf":[{"$eref":{"type":"object","properties":{"___path":{"minLength":1,"type":"array","items":{"type":"string"}}},"required":["path"]}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","example":{"path":["scitran","Neuroscience"]}}

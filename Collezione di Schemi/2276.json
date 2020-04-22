@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"ProjectMedia","type":"object","properties":{"___uri":{"type":"uri"},"___id":{"type":"String"}}}

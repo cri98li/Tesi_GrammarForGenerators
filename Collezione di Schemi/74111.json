@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","$eref":{"description":"A project's session template","additionalProperties":false,"type":"object","properties":{"___acquisitions":{"minItems":1,"type":"array","items":{"$ref":"#\/definitions\/requirement"}},"___session":{"type":"object"}}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema","id":"Account","type":"object","properties":{"___name":{"type":"string"},"___status":{"type":"string","enum":["offline","online"]},"___group":{"minLength":1,"type":"string"}},"required":["group"]}

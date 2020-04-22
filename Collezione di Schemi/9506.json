@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","additionalProperties":false,"title":"ScopeRegisterRequest","type":"object","properties":{"___scopes":{"type":"array","items":{"additionalProperties":false,"type":"object","properties":{"___uri":{"type":"string"},"___scope":{"type":"string"}},"required":["scope","uri"]}}},"required":["scopes"]}

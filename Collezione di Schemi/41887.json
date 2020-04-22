@@ -1,0 +1,1 @@
+{"allOf":[{"$eref":{"type":"string","enum":["yes","no"]}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","definitions":{"_88yesno":{"type":"string","enum":["yes","no"]}},"enum":["yes"]}

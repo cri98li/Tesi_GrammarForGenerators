@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"An icon atom","title":"icon","type":"object","properties":{"___icon":{"description":"The short name of the icon","enum":["check","arrow","nitro"]}},"required":["icon"]}

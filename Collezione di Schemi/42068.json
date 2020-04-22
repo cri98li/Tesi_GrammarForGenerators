@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","title":"An Array of Transports","type":"object","properties":{"___transports":{"type":"array","items":{"$eref":{"$schema":"http:\/\/json-schema.org\/schema#","title":"A Transport","type":"object","properties":{"___name":{"type":"string"},"___id":{"$ref":"definitions-schema.json#\/definitions\/id"}}}}}}}

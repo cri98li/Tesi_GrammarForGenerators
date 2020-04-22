@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","type":["object"],"properties":{"___foo":{"type":"number"}},"required":["foo"],"$id":"http:\/\/json-schema.org\/draft-06\/schema#"}

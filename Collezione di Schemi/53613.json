@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Services Eligibility Get Request","type":"object","properties":{"___timeOfService":{"minLength":1,"format":"date-time","description":"Date\/time of services to be rendered (in UTC ISO time format)","type":"string"}},"required":["timeOfService"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","definitions":{"_88solarSystemIdList":{"id":"#solarSystemIdList","type":"array","items":{"$eref":{"id":"#solarSystemId","type":"integer","minimum":0}}},"_88solarSystemId":{"id":"#solarSystemId","type":"integer","minimum":0}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","sentences":{"id":"segments","type":"array","items":{"type":"string"}},"id":"https:\/\/github.com\/myedibleenso\/processors-server\/tree\/master\/src\/main\/resources\/json\/schema\/segmented-message.json","type":"object","required":["segments"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"XML","type":"object","properties":{"___customTemplate":{"type":"string"},"___useCustomExportFormat":{"type":"boolean"},"___recordNodeName":{"type":"string"},"___rootNodeName":{"type":"string"}}}

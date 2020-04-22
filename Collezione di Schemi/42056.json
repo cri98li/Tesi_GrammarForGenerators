@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","type":"array","items":{"type":"object","properties":{"___num":{"enum":[1,2]},"___alias":{"type":"string"},"___channel":{"maximum":7,"type":"integer","minimum":0},"___stream":{"maximum":7,"type":"integer","minimum":0},"___comment":{"type":"string"}},"required":["num","stream","channel"]}}

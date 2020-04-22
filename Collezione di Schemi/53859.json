@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"TextRandom","type":"object","properties":{"___minWords":{"type":"integer","minimum":1},"___maxWords":{"type":"integer","minimum":1},"___startsWithLipsum":{"type":"boolean"}},"required":["startsWithLipsum","minWords","maxWords"]}

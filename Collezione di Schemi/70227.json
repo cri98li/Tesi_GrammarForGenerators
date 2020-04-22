@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/hyper-schema","description":"Limits","id":"limits","additionalProperties":false,"title":"limits","properties":{"___limits":{"description":"Limits","type":"object","properties":{"___absolute":{"type":"object","properties":{"___maxZones":{"type":"integer"},"___maxZoneRecords":{"type":"integer"}}}}}}}

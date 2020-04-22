@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___name":{"description":"Optional duplicate name of metadata property.","type":"string"},"___immutable":{"description":"If true, you are unable to alter this value","type":"boolean"},"___value":{"anyOf":[{"type":"string"},{"type":"integer"},{"type":"boolean"}]}},"required":["value"]}

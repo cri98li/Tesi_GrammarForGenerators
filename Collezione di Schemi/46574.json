@@ -1,0 +1,1 @@
+{"oneOf":[{"description":"The obligation is open or has not been fulfilled","enum":["Open"]},{"description":"The obligation has been Fulfilled","enum":["Fulfilled"]}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"The status of the obligation.","id":"class4-exemption-code","example":"Open"}

@@ -1,0 +1,1 @@
+{"allOf":[{"$fref":"key.json#Key"},{"type":"object","properties":{"___private_key":{"description":"The created private key","$fref":"common.json#PrivateKey"},"___uri":{"format":"uri","description":"URI to the created key","type":"string"}}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#"}

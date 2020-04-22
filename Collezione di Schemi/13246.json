@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema","id":"\/interests","additionalProperties":false,"title":"Interests","type":"array","items":{"type":"string"}}

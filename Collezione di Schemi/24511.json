@@ -1,0 +1,1 @@
+{"allOf":[{"$eref":{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","type":"object","properties":{"___bar":{"type":"string"}}}},{"properties":{"___qux":{"type":"string"}}}],"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","type":"object"}

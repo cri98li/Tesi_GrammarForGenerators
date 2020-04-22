@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Team registration, non-intramural leagues only","title":"Team registration","type":"object","properties":{"___name":{"type":"string"},"___age":{"maximum":14,"type":"integer","minimum":10},"___league":{"not":{"enum":["intramural"]},"type":"string"}}}

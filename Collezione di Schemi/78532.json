@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Test schema responses","id":".\/test3-model-schema.json","title":"test3-model-schema","definitions":{"_88c":{"additionalProperties":{"type":"integer"},"type":"object"},"_88b":{"additionalProperties":false,"type":"object","properties":{"___a2":{"type":"integer"},"___a1":{"type":"string"}},"required":["a1"]}}}

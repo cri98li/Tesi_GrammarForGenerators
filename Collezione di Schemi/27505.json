@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Example Schema","type":"object","properties":{"___age":{"description":"Age in years","type":"integer","minimum":0},"___lastName":{"type":"string"},"___firstName":{"type":"string"}},"required":["firstName","lastName"]}

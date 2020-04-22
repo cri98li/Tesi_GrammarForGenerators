@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","id":"http:\/\/cypress.healthit.gov\/schemas\/errors.json","title":"Errors","type":"object","properties":{"___errors":{"type":"array","items":{"type":"object","properties":{"___field":{"type":"string"},"___messages":{"type":"array","items":{"type":"string"}}}}}}}

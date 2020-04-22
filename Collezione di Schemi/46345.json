@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"yadage_workflow","additionalProperties":false,"title":"Yadage Workflow","type":"object","properties":{"___stages":{"type":"array","title":"Stages","items":{"$fref":"https:\/\/analysispreservation.cern.ch\/app\/schemas\/definitions\/workflow_schemas\/yadage\/stage-schema_no_circ_refs-v0.0.1.json#"}}}}

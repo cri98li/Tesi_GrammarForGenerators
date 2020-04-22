@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"array","items":{"type":"object","properties":{"___errors":{"type":"array","items":{}},"___pathsCompleted":{"type":"number"},"___time":{"format":"date-time","type":"string"},"___flowVersionId":{"type":"string"},"___wallTime":{"type":"number"},"___pathsFailed":{"type":"number"},"___runCount":{"type":"number"}}}}

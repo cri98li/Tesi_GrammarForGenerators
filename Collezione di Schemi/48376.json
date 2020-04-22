@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","properties":{"___run_list":{"$eref":{"description":"An ordered list of recipes to run.","type":"array","items":{"pattern":"^\\w+(::\\w+)?(@\\d+\\.\\d+\\.\\d+)?$","type":"string"}}}},"example":{"run_list":["zed@0.0.1","role[bar]","mysql::server","recipe[gem]","nginx::base@0.99.2","cron","foo"]}}

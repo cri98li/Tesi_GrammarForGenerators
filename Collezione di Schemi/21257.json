@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-03\/schema#","pattern":"^[0-9a-fA-F]{24}$","description":"ObjectId validation","id":"base:objectId#","title":"ObjectId","type":"string"}

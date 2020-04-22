@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___integration":{"additionalProperties":true,"properties":{"___synchronize_users":{"type":"boolean"},"___is_active":{"type":"boolean"}}}},"required":["integration"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","definitions":{"_88dog":{"allOf":[{"$eref":{"type":"string"}},{"minLength":5,"maxLength":10}]},"_88myString":{"type":"string"}}}

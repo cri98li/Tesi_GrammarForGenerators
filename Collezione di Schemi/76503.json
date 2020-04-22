@@ -1,0 +1,1 @@
+{"minItems":1,"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"#interactioncomponent_list","type":"array","items":{"$eref":{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"#interactioncomponent","type":"object","properties":{"___description":{"$ref":"#languagemap"},"___id":{"minLength":1,"type":"string"}},"required":["id"]}}}

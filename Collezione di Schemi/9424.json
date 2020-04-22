@@ -1,0 +1,1 @@
+{"maxItems":100,"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"array","items":{"additionalProperties":false,"type":"object","properties":{"___key":{"pattern":"^[0-9a-zA-Z_-]{1,255}$","type":"string"},"___value":{"minLength":1,"type":"string","maxLength":255}}}}

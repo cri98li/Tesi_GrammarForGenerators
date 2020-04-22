@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Edges in a Guice injector graph.","type":"object","properties":{"___type":{"enum":["binding","dependency"]},"___toId":{"type":"string"},"___fromId":{"type":"string"},"___bindingType":{"type":"string"}},"required":["fromId","toId","type"]}

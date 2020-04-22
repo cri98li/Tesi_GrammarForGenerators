@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","id":"SMS notification creation","additionalProperties":false,"type":"object","properties":{"___description":{"minLength":1,"type":"string","maxLength":160},"___message":{"minLength":1,"type":"string","maxLength":160},"___jobId":{"type":"integer"},"___to":{"pattern":"^\\+44[\\d]{10}$","type":"string"}},"required":["to","message"]}

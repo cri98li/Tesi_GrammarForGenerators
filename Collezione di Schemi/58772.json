@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___device":{"additionalProperties":false,"properties":{"___name":{"minLength":4,"type":"string","maxLength":255}},"minProperties":1}},"required":["device"]}

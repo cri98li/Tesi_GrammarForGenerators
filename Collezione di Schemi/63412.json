@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","type":"object","definitions":{"_88stringArray":{"additionalItems":false,"type":"array","items":{"type":"string"}}},"properties":{"___ramlTitle":{"type":"string"},"___validationViolations":{"$eref":{"additionalItems":false,"type":"array","items":{"type":"string"}}}}}

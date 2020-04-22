@@ -1,0 +1,1 @@
+{"allOf":[{"$fref":"\/schema\/examples\/base#"},{"type":"object","properties":{"___request":{"type":"object","properties":{"___method":{"type":"string","enum":["DELETE"]}}}}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"","id":"https:\/\/flynn.io\/schema\/examples\/controller\/job_delete#","title":"Delete job"}

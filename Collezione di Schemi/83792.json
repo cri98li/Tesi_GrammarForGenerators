@@ -1,0 +1,1 @@
+{"default":{"_8_username":"","_8_enabled":false},"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___enabled":{"type":"boolean"},"___username":{"type":"string"}}}

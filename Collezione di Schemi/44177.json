@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"title":"DataTransferRequest","type":"object","properties":{"___messageId":{"type":"string","maxLength":50},"___vendorId":{"type":"string","maxLength":255},"___data":{"type":"string"}},"required":["vendorId"]}

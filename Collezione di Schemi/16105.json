@@ -1,0 +1,1 @@
+{"defaults":{"_name":"vflip"},"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","name":"vflip","groups":[{"id":"filter.vflip.standard","class":"standard","properties":[]}],"id":"filter.vflip","type":"video"}

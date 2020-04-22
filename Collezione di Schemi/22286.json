@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-03\/schema","$license":["http:\/\/www.apache.org\/licenses\/LICENSE-2.0"],"id":"#","type":"object","properties":{"___value":{"description":"The URL to the photo.","type":"string"},"___label":{"description":"The type of photo.","type":"string"}},"javaType":"org.apache.streams.fullcontact.pojo.PersonPhoto"}

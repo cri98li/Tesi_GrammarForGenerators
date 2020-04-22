@@ -1,0 +1,1 @@
+{"a":{"b":{"c":{"type":"object","properties":{"___col":{"type":"string"}}}}},"$schema":"http:\/\/json-schema.org\/schema#","x":{"y":{"z":{"$eref":{"type":"object","properties":{"___col":{"type":"string"}}}}}},"type":"object","properties":{"___banana":{"$eref":{"$ref":"#\/a\/b\/c"}}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","id":"http:\/\/cypress.healthit.gov\/schemas\/bundles.json","title":"Bundles","type":"array","items":{"$fref":"bundle"}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","$eref":{"additionalProperties":false,"type":"object","properties":{"___sessions_changed":{"type":"array","items":{"allOf":[{"$ref":"common.json#\/definitions\/objectid"}]}}},"required":["sessions_changed"]}}

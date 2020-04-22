@@ -1,0 +1,1 @@
+{"minItems":1,"maxItems":1,"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalItems":false,"description":"Input params with only the scenario Id","type":"array","items":[{"minItems":1,"maxItems":1,"additionalItems":false,"type":"array","items":[{"description":"The unique identifier for the scenario","type":"string","example":"gmd4"}]}]}

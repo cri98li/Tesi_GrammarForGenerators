@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"well types","id":"https:\/\/inowas.com\/schema\/","additionalProperties":false,"title":"wellType","type":"object","properties":{"___well_type":{"type":"string","maxLength":4}},"required":["well_type"]}

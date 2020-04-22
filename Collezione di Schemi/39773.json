@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","definitions":{"_88error":{"additionalProperties":false,"type":"object","properties":{"___message":{"type":"string"},"___code":{"type":"integer"}}},"_88link":{"additionalProperties":false,"type":"object","properties":{"___href":{"type":"string"}}}}}

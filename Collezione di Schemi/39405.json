@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema","id":"https:\/\/github.com\/empirefox\/node-private-tools\/blob\/master\/src\/schemas\/generic-tool.json#","title":"generic-tool Config","properties":{"___$tool":{"description":"Tool name to find the tool.","type":"string"},"___$schema":{"type":"string"}},"required":["$tool"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema","id":"SchematicsForAddLanguage","title":"addLanguage Schema","type":"object","properties":{"___language":{"$default":{"index":0,"$source":"argv"},"description":"The language to be added","type":"string"},"___languages":{"description":"Languages to be added (comma separated list like 'en,de,fr').","type":"string"}}}

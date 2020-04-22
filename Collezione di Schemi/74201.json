@@ -1,0 +1,1 @@
+{"allOf":[{"$eref":{"allOf":[{"$ref":"#\/definitions\/group"}],"x-sdk-model":"group","type":"object","required":["permissions","created","modified","_id"]}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","required":["permissions","created","modified","_id"]}

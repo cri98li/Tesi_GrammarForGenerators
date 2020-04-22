@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","$eref":{"minItems":2,"additionalItems":{"anyOf":[{"type":"string"},{"type":"number"}]},"type":"array","items":[{"type":"string"},{"type":"number"}]},"definitions":{"_88MyTuple":{"minItems":2,"additionalItems":{"anyOf":[{"type":"string"},{"type":"number"}]},"type":"array","items":[{"type":"string"},{"type":"number"}]}}}

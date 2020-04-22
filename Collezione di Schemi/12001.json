@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","description":"Contact person's data","type":"object","properties":{"___name":{"description":"Contact person's name","type":"string"},"___email":{"format":"email","description":"Contact person's e-mail","type":"string"}}}

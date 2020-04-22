@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Стиль текста","id":"https:\/\/raw.githubusercontent.com\/InfinniPlatform\/InfinniUI-schema\/master\/Style\/TextStyle.json","enum":["Display4","Display3","Display2","Display1","Headline","Title","Subhead","Body2","Body1","Caption","Menu","Button"]}

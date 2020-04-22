@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"title":"User role configuration","type":"object","properties":{"___name":{"propertyOrder":10,"title":"Name","type":"string"}}}

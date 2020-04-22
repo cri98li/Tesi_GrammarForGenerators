@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"rsskeytype","title":"rsskeytype","type":"object","properties":{"___rsstype":{"type":"string","enum":["ASYMMETRIC","SYMMETRIC"]}}}

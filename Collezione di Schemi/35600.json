@@ -1,0 +1,1 @@
+{"request":{"path":"\/hello","headers":{"Accept":"application\/json"},"method":"GET","params":{}},"response":{"headers":{"Vary":"Accept","Content-Type":"application\/json"},"body":{"$schema":"http:\/\/json-schema.org\/draft-03\/schema#","type":"object","properties":{"___message":{"type":"string","required":true}},"required":true},"status":200}}

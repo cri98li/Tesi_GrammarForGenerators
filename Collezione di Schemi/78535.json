@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Test schema responses","title":"test3-model-schema","definitions":{"_88b3":{"additionalProperties":{"type":"string"},"type":"object"},"_88b2":{"type":"object","properties":{"___x2":{"type":"string"}}},"_88b1":{"type":"array","items":{"type":"string"}}}}

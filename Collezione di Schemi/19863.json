@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/localhost:3000\/schemas\/get-devices-request.json#","additionalProperties":false,"title":"Devices","type":"object","properties":{"___attributes":{"type":"string"},"___page":{"type":"integer"},"___items_per_page":{"max":150,"type":"integer"},"___q":{"type":"string"}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/baseurl.com\/schemas","ID":{"id":"#\/general\/ID","type":"object","properties":{"___id":{"default":0,"type":"integer"}},"required":["id"]}}

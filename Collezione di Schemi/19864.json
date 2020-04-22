@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/localhost:3000\/schemas\/post-device-response.json#","additionalProperties":false,"title":"Post device response","type":"object","properties":{"___refresh_token":{"type":"string"},"___expires_in":{"type":"integer"},"___access_token":{"type":"string"}}}

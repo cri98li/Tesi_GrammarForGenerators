@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___description":{"type":"string"},"___license":{"type":"string"},"___authors":{"minItems":1,"uniqueItems":true,"type":"array","items":{"type":"object","properties":{"___name":{"type":"string"},"___email":{"format":"email","type":"string"}},"required":["name"]}},"___title":{"type":"string"}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","description":"I've got class.","title":"choices","type":"object","definitions":{"_88item":{"type":"string","enum":["one","two","three","marvelous breaking changes","GA","FL"]}},"properties":{"___value":{"type":"array","items":{"$eref":{"type":"string","enum":["one","two","three","marvelous breaking changes","GA","FL"]}}}}}

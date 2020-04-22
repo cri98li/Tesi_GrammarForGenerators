@@ -1,0 +1,1 @@
+{"features":{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___document":{"type":"object","properties":{"___resource":{"type":"string"}},"required":["resource"]}}},"name":"my-editor-widget","integration":{"technology":"angular","type":"widget"},"description":"A simple document editor"}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema","description":"The creation schema for the command endpoint","type":"object","properties":{"___quote":{"type":"string"}},"required":["quote"],"$id":"file:\/\/\/home\/nate\/go\/src\/github.com\/CactusDev\/Xerophi\/command\/createSchema.json"}

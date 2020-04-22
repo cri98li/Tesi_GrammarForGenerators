@@ -1,0 +1,1 @@
+{"minItems":1,"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","uniqueItems":true,"description":"","type":"array","items":{"type":"object","properties":{"___contentId":{"minLength":1,"type":"string"},"___internalName":{"minLength":1,"type":"string"},"___id":{"minLength":1,"type":"string"}},"required":["internalName","id","contentId"]}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"\/","type":"object","properties":{"___name":{"minLength":1,"id":"name","type":"string"},"___link":{"minLength":1,"id":"link","type":"string"},"___id":{"minLength":1,"id":"id","type":"string"}},"required":["id","name","link"]}

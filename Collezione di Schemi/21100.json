@@ -1,0 +1,1 @@
+{"minItems":1,"default":["+"],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"add char","id":"http:\/\/select-object-path\/ref.add.schema.json#","type":"array","items":{"minLength":1,"type":"string","maxLength":1}}

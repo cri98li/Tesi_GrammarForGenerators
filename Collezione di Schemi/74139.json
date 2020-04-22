@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","$eref":{"type":"object","properties":{"___auth":{"patternProperties":{"___^[0-9a-z]*$":{"$ref":"#\/definitions\/config-auth-output"}},"type":"object"},"___site":{"$ref":"#\/definitions\/site-config-output"},"___modified":{"type":"string"},"___created":{"type":"string"}},"required":["site","modified","auth","created"]}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Tree","type":"object","properties":{"___autoIncRowNum":{"type":"integer"},"___maxSiblings":{"type":"integer","minimum":1}},"required":["autoIncRowNum","maxSiblings"]}

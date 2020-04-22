@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___name":{"important":"","chance":{"pickone":[["first","last"]]},"minLength":1,"description":"Must be 'first' or 'last'","type":"string"}},"required":["name"]}

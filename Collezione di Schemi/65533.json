@@ -1,0 +1,1 @@
+{"allOf":[{"$fref":"unit-value-1.x.json"},{"properties":{"___unit":{"enum":["min\/mi","min\/km"]}}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"This schema represents a pace (time over distance).","type":"object"}

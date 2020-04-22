@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___name":{"type":"string"},"___description":{"type":"string"},"___points":{"type":"array","items":{"type":"object","properties":{"___latitude":{"type":"number"},"___longitude":{"type":"number"}},"required":["latitude","longitude"]}}},"required":["name","description","points"]}

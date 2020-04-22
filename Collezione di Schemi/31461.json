@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"crvserver_cspolicy_binding","title":"crvserver_cspolicy_binding","type":"object","properties":{"___name":{"type":"string"},"___hits":{"readonly":true,"type":"integer"},"___policyname":{"type":"string"},"___targetvserver":{"type":"string"},"___priority":{"type":"integer"}}}

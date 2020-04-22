@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___protocol":{"type":"string","enum":["choria:secure:reply:1"]},"___message":{"description":"YAML encoded choria:reply:1","type":"string"},"___hash":{"description":"SHA256 has of the message","type":"string"}},"required":["protocol","message","hash"]}

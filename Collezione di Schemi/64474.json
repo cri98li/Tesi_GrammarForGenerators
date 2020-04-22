@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"\/BaseSchema","definitions":{"_88userLight":{"type":"object","properties":{"___callsign":{"type":"string"},"___admin":{"type":"boolean"},"___email":{"format":"email","type":"string"},"___id":{"type":"integer"}},"required":["id","callsign","email","admin"]}}}

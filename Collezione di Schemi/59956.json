@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"The value returned by GET \/_db_updates","title":"CouchDB _db_updates","type":"object","properties":{"___db_name":{"type":"string"},"___type":{"type":"string","enum":["created","updated","deleted"]},"___ok":{"type":"boolean"}},"required":["db_name","ok","type"]}

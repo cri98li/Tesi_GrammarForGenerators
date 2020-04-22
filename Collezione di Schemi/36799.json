@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Schema for a jwk (**kty RSA\/e=65537 ONLY**)","id":"https:\/\/letsencrypt.org\/schema\/01\/jwk#","type":"object","properties":{"___kty":{"enum":["RSA"]},"___n":{"pattern":"^[-_=0-9A-Za-z]+$","type":"string"},"___e":{"enum":["AQAB"]}},"required":["kty","e","n"]}

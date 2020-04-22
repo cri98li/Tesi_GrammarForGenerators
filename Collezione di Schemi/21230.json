@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___RetentionInDays":{"type":"integer","enum":[1,3,5,7,14,30,60,90,120,150,180,365,400,545,731,1827,3653]},"___LogGroupNamePrefix":{"pattern":".+","type":"string"}},"required":["LogGroupNamePrefix"]}

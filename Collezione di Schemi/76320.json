@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"put spider metadata request","additionalProperties":false,"title":"put spider metadata request","type":"object","properties":{"___base64_encoded_spider_metadata":{"minLength":1,"type":"string"},"___ttl_in_seconds":{"type":"integer","minimum":60}},"required":["base64_encoded_spider_metadata","ttl_in_seconds"]}

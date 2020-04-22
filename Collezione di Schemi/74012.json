@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"array","items":{"$eref":{"allOf":[{"$ref":"#\/definitions\/job"}],"x-sdk-model":"job","type":"object","required":["id","gear_id","inputs","config","destination","tags","state","attempt"]}}}

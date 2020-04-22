@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"US zip code with pattern to validate against","title":"US zip code","type":"object","properties":{"___zipCode":{"pattern":"^[0-9]{5}(-[0-9]{4})?$","type":"string"}}}

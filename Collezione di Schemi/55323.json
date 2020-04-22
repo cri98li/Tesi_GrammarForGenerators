@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/hyper-schema","additionalProperties":false,"properties":{"___weight":{"maximum":65535,"type":"integer","minimum":0},"___target":{"format":"hostname","type":"string"},"___port":{"maximum":65535,"type":"integer","minimum":0},"___priority":{"maximum":65535,"type":"integer","minimum":0}},"required":["priority","weight","port","target"]}

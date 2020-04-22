@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","$eref":{"additionalProperties":false,"type":"object","properties":{"___containers":{"patternProperties":{"___^[a-fA-F0-9]{24}$":{"type":"object"}},"type":"object"},"___jobs":{"type":"array","items":{"$ref":"job.json#\/definitions\/job-output"}}}}}

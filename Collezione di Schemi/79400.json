@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema","type":"array","items":{"$eref":{"$schema":"http:\/\/json-schema.org\/draft-04\/schema","additionalProperties":false,"type":"object","properties":{"___link":{"format":"uri","description":"link to the job","type":"string"},"___job":{"description":"id of the job this link is for","type":"integer"}},"required":["job","link"]}}}

@@ -1,0 +1,1 @@
+{"allOf":[{"$eref":{"x-sdk-model":"file-entry","additionalProperties":false,"type":"object","properties":{"___type":{"$ref":"#\/definitions\/file-type"},"___measurements":{"$ref":"#\/definitions\/measurements"},"___modality":{"$ref":"#\/definitions\/modality"}}}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#"}

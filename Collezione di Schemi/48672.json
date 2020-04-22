@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","type":"object","version":"0.01","properties":{"___version":{"type":"string"},"___DatasetsUUID":{"type":"array","items":{"type":"string"}},"___NewDatasetID":{"type":"number"}}}

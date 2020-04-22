@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","$eref":{"additionalProperties":false,"type":"object","properties":{"___ref":{"type":["string","null"],"maxLength":2000},"___purpose":{"default":"image","type":"string","enum":["image","profile_image","icon"]}}},"description":"Schema for images.upload","title":"images.upload","$id":"images.upload"}

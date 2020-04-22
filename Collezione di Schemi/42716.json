@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema","id":"EmptyApp","title":"Angular Bazel Workspace Options Schema","type":"object","properties":{"___name":{"type":"string"}},"required":[]}

@@ -1,0 +1,1 @@
+{"oneOf":[{"properties":{"___sport":{"type":"string"},"___lastName":{"type":"string"},"___firstName":{"type":"string"}},"required":["firstName"]},{"additionalProperties":false,"properties":{"___price":{"type":"integer"},"___vehicle":{"type":"string"}}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"top level oneOf object","type":"object"}

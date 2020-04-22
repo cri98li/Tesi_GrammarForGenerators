@@ -1,0 +1,1 @@
+{"allOf":[{"$eref":{"x-sdk-model":"group","additionalProperties":false,"type":"object","properties":{"____id":{"$ref":"common.json#\/definitions\/string-id"},"___label":{"$ref":"#\/definitions\/label"}}}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","example":{"label":"New group label"}}

@@ -1,0 +1,1 @@
+{"esriDocumentation":{"examples":[{"code":{"version":"1.10"},"title":"version"}]},"$schema":"http:\/\/json-schema.org\/draft-04\/schema","description":"Root element in the web scene specifying a string value indicating the web scene version.","title":"version","type":"string","enum":["1.8","1.9","1.10"]}

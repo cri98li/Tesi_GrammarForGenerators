@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema","uniqueItems":true,"title":"Collection of B","type":"array","items":{"$fref":"pojogen\/B.json"}}

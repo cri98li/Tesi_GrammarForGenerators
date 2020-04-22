@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"systemglobal_authenticationradiuspolicy_binding","title":"systemglobal_authenticationradiuspolicy_binding","type":"object","properties":{"___builtin":{"type":"object","enum":["MODIFIABLE","DELETABLE","IMMUTABLE"]},"___policyname":{"type":"string"},"___priority":{"type":"integer"}}}

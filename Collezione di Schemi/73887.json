@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Test model with top-level referenced model files","title":"referenced multi types","type":"object","version":1,"definitions":{"_88user":{"$fref":".\/user.json#\/user"},"_88incident":{"$fref":".\/incident.json#\/incident"}}}

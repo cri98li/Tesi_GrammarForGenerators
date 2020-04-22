@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema","id":"base.json","title":"Base definitions","definitions":{"_88JsonPath":{"format":"jsonpath","description":"JsonPath, see http:\/\/goessner.net\/articles\/JsonPath\/","type":"string","example":"products.book[2]"}}}

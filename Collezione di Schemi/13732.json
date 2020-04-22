@@ -1,0 +1,1 @@
+{"minItems":2,"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalItems":false,"id":"http:\/\/sqp.org\/postgres-backend\/pg_point","title":"PostgreSQL Point","type":"array","items":[{"description":"X Coordinate","id":"x","type":"number"},{"description":"Y Coordinate","id":"y","type":"number"}]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","type":"object","properties":{"___channel":{"type":"string"},"___tags":{"type":"array","items":{"type":"string"}},"___command":{"type":"string"},"___actions":{"type":"array","items":{"type":"string"}}},"required":["actions","channel","command","tags"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","type":"object","definitions":{},"properties":{"___items":{"type":"object","properties":{"___sucesso":{"type":"boolean"},"___seq":{"type":"integer"},"___codigo":{"type":["string","null"]},"___erros":{"type":"array","items":{"type":"string"}}}}},"$id":"http:\/\/www.pucomex.serpro.gov.br\/catp\/produto_retorno.schema.json"}

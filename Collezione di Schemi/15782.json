@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"title":"Vault Collection Expression","type":"object","properties":{"___vaults":{"minItems":1,"uniqueItems":true,"type":"array","items":{"type":"string"}}},"required":["vaults"]}

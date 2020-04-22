@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","self":{"vendor":"com.nordstrom","name":"category\/items","format":"jsonschema","version":"1-0-0"},"additionalProperties":false,"type":"array","items":{"additionalProperties":false,"type":"object","properties":{"___category":{"type":"string"}},"required":["category"]}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","resource":{"additionalProperties":false,"type":"object","properties":{"___environment":{"$fref":"common.json#\/environment"}}},"resource_id":{"type":"string"},"verbs":{"create":{"required":["environment"]},"update":{"required":["environment"]}}}

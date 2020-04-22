@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"icaparameter","title":"icaparameter","type":"object","properties":{"___hdxinsightnonnsap":{"type":"string","enum":["YES","NO"]},"___builtin":{"readonly":true,"type":"object","enum":["MODIFIABLE","DELETABLE","IMMUTABLE","PARTITION_ALL"]},"___enablesronhafailover":{"type":"string","enum":["YES","NO"]}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","properties":{"___qux":{"type":"integer","minimum":10},"___bar":{"type":"integer","exclusiveMinimum":true,"minimum":10},"___baz":{"type":"integer","exclusiveMinimum":false,"minimum":10}}}

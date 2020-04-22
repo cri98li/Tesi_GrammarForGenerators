@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"TextFixed","type":"object","properties":{"___numWords":{"type":"integer","minimum":1}},"required":["numWords"]}

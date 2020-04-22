@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"A heading atom","title":"heading","type":"object","properties":{"___subTitle":{"type":"string"},"___title":{"type":"string"},"___titleTag":{"description":"Heading level","enum":["h1","h2","h3"]}},"required":["title"]}

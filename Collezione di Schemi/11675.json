@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":true,"type":"object","properties":{"___titre":{"type":"string"},"___id_eleve":{"type":"string"},"___traitee":{"type":"boolean"},"___timestamp_dt":{"type":"string"},"___commentaire":{"type":"string"},"___id":{"type":"string"},"___timestamp_fn":{"type":"string"}},"required":["id"]}

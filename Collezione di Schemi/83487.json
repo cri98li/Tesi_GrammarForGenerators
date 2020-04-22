@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Answer from addition service","additionalProperties":false,"title":"Addition response","type":"object","properties":{"___answer":{"type":"integer","minimum":1}},"required":["answer"]}

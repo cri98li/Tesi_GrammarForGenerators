@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","id":"uri:\/\/registries\/security#login","type":"object","properties":{"___passwordHash":{"description":"","title":"Hash hesla","type":"string"},"___salt":{"description":"","title":"Salt pre hash hesla","type":"string"},"___loginName":{"title":"Prihlasovacie meno","type":"string"}}}

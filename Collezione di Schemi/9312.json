@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___twoFactorAuthEnabled":{"type":"boolean"},"___accountIsLocked":{"type":"boolean"},"___success":{"type":"boolean","enum":[true]}}}

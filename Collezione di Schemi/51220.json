@@ -1,0 +1,1 @@
+{"patternProperties":{"___^[a-zA-Z0-9_-]{3,256}$":{"anyOf":[{"minItems":1,"type":"array"},{"type":"string"},{"type":"integer"},{"type":"boolean"},{"type":"number"},{"type":"object"}]}},"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"A dictionary captures a set of key\/value pairs","additionalProperties":false,"title":"dictionary","type":"object"}

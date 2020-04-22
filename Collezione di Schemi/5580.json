@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___error":{"type":"object","properties":{"___name":{"type":"string"},"___message":{"type":"string"},"___code":{"type":"integer"}},"required":["name","message","code"]}},"required":["error"]}

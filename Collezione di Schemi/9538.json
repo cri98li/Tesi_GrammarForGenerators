@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","title":"DBSettings","type":"object","properties":{"___settings":{"properties":{"___port":{"default":27017,"type":"integer"},"___host":{"default":"localhost","type":"string"},"___secret":{"minlength":20,"type":"string"}},"required":["host","port","secret"]}},"required":["settings"]}

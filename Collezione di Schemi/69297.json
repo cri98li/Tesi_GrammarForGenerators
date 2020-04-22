@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"The default Pandoc schema","title":"Default","type":"array","items":[{"type":"object","properties":{"___unMeta":{"type":"object"}}},{"type":"array"}]}

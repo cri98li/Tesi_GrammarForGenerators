@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","definitions":{"_88OrderType":{"type":"object","properties":{"___number":{"type":"integer","exclusiveMinimum":true,"minimum":0},"___items":{"type":"integer","exclusiveMinimum":false,"minimum":0},"___customer":{"type":"string"}},"required":["number","customer","items"]}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalItems":false,"description":"List of traffic signal colors","title":"Traffic signals","type":"array","items":{"type":"string"}}

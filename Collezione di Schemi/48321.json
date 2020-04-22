@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Everything beautiful","id":"http:\/\/schema.myrtana.sk\/beauty.json#","additionalProperties":false,"title":"Beauty","type":"object","properties":{"___entity":{"enum":["kitten","c-beam","elena"]}},"required":["entity"]}

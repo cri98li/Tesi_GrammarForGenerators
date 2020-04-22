@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Chargeback messages for Finance division","title":"Chargeback finance","type":"object","properties":{"___usageUnits":{"type":"integer"},"___division":{"default":15,"maximum":30,"type":"integer","minimum":15},"___functionCode":{"type":"string"}},"required":["functionCode","usageUnits","division"]}

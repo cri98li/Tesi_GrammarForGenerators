@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___text":{"type":"string"},"___author":{"type":"string"}},"required":["author","text"]}

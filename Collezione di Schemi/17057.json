@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","type":"object","definitions":{"_88Widget":{"type":"number"}},"properties":{"___name":{"type":"string"},"___otherWidgets":{"type":"array","items":{"$eref":{"type":"number"}}},"___mainWidget":{"$eref":{"type":"number"}}},"required":["mainWidget","name","otherWidgets"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"title":"Payee","type":"object","properties":{"___name":{"type":"string"},"___parent":{"type":"integer"},"____id":{"description":"A unique ID for Payee","type":"integer"}}}

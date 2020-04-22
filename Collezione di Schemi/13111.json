@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","additionalProperties":false,"title":"Find a Stream","type":"object","properties":{"___streamId":{"description":"The stream's id.","type":"string","title":"Stream Id"}},"required":["streamId"]}

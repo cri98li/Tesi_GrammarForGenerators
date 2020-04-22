@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Households Create Request","type":"object","properties":{"___household":{"$fref":"__apigModelsEndpoint__\/Household","type":"object"},"___members":{"minItems":1,"type":"array","items":{"$fref":"__apigModelsEndpoint__\/HouseholdMember"}}},"required":["household","members"]}

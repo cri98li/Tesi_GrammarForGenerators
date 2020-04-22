@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","$eref":{"additionalProperties":false,"type":"object","properties":{"___groups":{"type":"array","items":{"$ref":"#\/definitions\/group-report"}},"___group_count":{"type":"integer"}},"required":["group_count","groups"]}}

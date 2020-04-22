@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","minLength":"13","pattern":"\/^[0-9]{12}[0-9X]$\/","description":"ISO 2108 ISBN 13","id":"http:\/\/schema.hyperrest.com\/iso\/2108_isbn_13.json","title":"ISBN-13","type":"string","maxLength":"13","example":"9780306406157"}

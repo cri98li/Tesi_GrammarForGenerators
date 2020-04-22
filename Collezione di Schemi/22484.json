@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___tag":{"anyOf":[{"type":"object","properties":{"___tag_id":{"type":"string"},"___label":{"type":"string"}}},{"type":"string","enum":["green"]}]}}}

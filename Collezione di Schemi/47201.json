@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"IoTOSHI Sensor Event Schema","type":"object","properties":{"___memory":{"default":0,"description":"Memory utilization (%)","maximum":100,"type":"number","minimum":0},"___cpu":{"default":0,"description":"CPU utilization (%)","maximum":100,"type":"number","minimum":0}},"required":["cpu","memory"]}

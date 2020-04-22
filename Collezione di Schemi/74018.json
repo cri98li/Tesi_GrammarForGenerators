@@ -1,0 +1,1 @@
+{"allOf":[{"$eref":{"allOf":[{"$ref":"#\/definitions\/job"}],"x-sdk-model":"job","type":"object","required":["id","gear_id","inputs","config","destination","tags","state","attempt"]}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object"}

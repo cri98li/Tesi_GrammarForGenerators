@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","description":"Vulnerability","additionalProperties":true,"title":"Vulnerability","type":"object","properties":{"___Name":{"minLength":1,"type":"string","maxLength":512},"___Severity":{"type":"string","enum":["negligible","Negligible","low","Low","medium","Medium","high","High"]}},"required":["Name","Severity"]}

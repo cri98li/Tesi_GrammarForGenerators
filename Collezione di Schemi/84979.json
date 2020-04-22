@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","description":"A MWF hyperlink component's schema definition.","id":"http:\/\/www.getmwf.com\/releases\/core\/schemas\/components\/hyperlink.json","title":"Hyperlink","type":"object","properties":{"___text":{"type":"string"},"___href":{"type":"string"},"___label":{"type":"string"}},"required":["text","href"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","type":"object","properties":{"___foo":{"type":"any"},"___bar":{"type":"string","enum":["a","b","c"]}},"required":["foo"],"$id":"http:\/\/json-schema.org\/draft-06\/schema#"}

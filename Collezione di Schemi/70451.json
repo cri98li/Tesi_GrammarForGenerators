@@ -1,0 +1,1 @@
+{"oneOf":[{"maxProperties":2,"required":["memos"],"minProperties":2},{"not":{"required":["memos"]},"maxProperties":1,"minProperties":1}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","link":"settings","$fref":"settingsPlusMemos","title":"settings"}

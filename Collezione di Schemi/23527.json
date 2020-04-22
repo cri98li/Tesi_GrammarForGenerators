@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Information about file to upload","additionalProperties":false,"type":"object","properties":{"___name":{"description":"File name","type":"string"}}}

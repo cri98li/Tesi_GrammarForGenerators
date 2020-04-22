@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-03\/schema","id":"#","type":"object","properties":{"___streamHash":{"minItems":1,"type":"array","items":{"type":"string"}},"___apiKey":{"type":"string"},"___userName":{"type":"string"}},"javaType":"org.apache.streams.datasift.DatasiftConfiguration"}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","$eref":{"oneOf":[{"$ref":"#\/definitions\/info-add-remove"},{"$ref":"#\/definitions\/info-replace"}],"description":"Helper endpoint for editing an object's info key","type":"object"}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Latitidue and Longitude of the content","id":"https:\/\/raw.githubusercontent.com\/washingtonpost\/ans-schema\/master\/src\/main\/resources\/schema\/ans\/0.10.4\/traits\/trait_geo.json","title":"Geo","type":"object","properties":{"___latitude":{"type":"number"},"___longitude":{"type":"number"}}}

@@ -1,0 +1,1 @@
+{"oneOf":[{"$fref":"http:\/\/schema.hyperrest.com\/gs1\/ean_13_0.json"},{"$fref":"http:\/\/schema.hyperrest.com\/gs1\/ean_13_2.json"},{"$fref":"http:\/\/schema.hyperrest.com\/gs1\/ean_13_5.json"}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/schema.hyperrest.com\/gs1\/ean_13.json","title":"EAN-13"}

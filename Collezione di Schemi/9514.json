@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","additionalProperties":false,"title":"FindOneResponse","type":"object","properties":{"___result":{"oneOf":[{"$fref":"resource:\/\/mdstudio\/db\/document\/v1"},{"type":"null"}]}},"required":["result"]}

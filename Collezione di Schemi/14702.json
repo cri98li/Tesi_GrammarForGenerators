@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","message":{"filter":{"pattern":"^[\\w\\-\\.#@\\*\\[\\]\\?]+$","type":"string","maxLength":137},"topic":{"pattern":"^\/[a-z\\-]+$","type":"string"},"snapshot":{"type":"boolean"},"since":{"type":"integer"}}}

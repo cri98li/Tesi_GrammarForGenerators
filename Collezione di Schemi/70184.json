@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"GEO Location","title":"geolocation","type":"object","properties":{"___altitude":{"type":"number"},"___longitude":{"type":"number"},"___latitude":{"type":"number"},"___altitude_accuracy":{"type":"number"},"___accuracy":{"type":"number"},"___speed":{"type":"number"},"___heading":{"type":"number"}}}

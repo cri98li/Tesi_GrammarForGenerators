@@ -1,0 +1,1 @@
+{"$async":true,"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","description":"LoginForm from Tiamat","title":"LoginForm","type":"object","properties":{"___email":{"minLength":4,"format":"email","type":"string","emailExists":true,"maxLength":30},"___password":{"minLength":4,"type":"string","maxLength":50}},"required":["email","password"]}

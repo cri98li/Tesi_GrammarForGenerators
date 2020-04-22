@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","title":"11\/CEP command response schema","type":"array","items":{"additionalProperties":false,"type":"object","properties":{"___id":{"description":"ID of the command.","type":"integer"},"___payload":{"description":"The command payload to be interpreted by the endpoint."}},"required":["id"]}}

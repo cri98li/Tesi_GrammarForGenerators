@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Data","type":"object","properties":{"___c":{"type":"number"},"___a":{"type":"number","constraints":[{"type":"valueEqualTo","target":"#\/b"},{"type":"valueLesserThan","target":"#\/c"}]},"___b":{"type":"number"}}}

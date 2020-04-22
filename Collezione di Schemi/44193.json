@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"title":"UpdateFirmwareRequest","type":"object","properties":{"___location":{"format":"uri","type":"string"},"___retrieveDate":{"format":"date-time","type":"string"},"___retries":{"type":"number"},"___retryInterval":{"type":"number"}},"required":["location","retrieveDate"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Evidence for an annotation entry","title":"annotationEvidence","type":"object","properties":{"___class":{"type":"string","enum":["IEA","TAS","PCS","ICE"]},"___id":{"type":"string"}},"required":["class","id"],"$id":"http:\/\/jax.org\/common_disease_annotation\/evidence"}

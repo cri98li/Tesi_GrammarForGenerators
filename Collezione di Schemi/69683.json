@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","UserHypertyPolicy":{"type":"object","properties":{}},"UserHypertyConfigurationData":{"type":"object","properties":{}},"id":"UserHypertyAccount","type":"object","properties":{"___hyperty":{"type":"string"},"___account":{"type":"string"},"___id":{"type":"null"}},"required":["id","account","hyperty"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___userId":{"pattern":"^[A-Fa-f\\d]{24}$","type":"string"},"___token":{"minLength":1,"type":"string"}},"required":["userId","token"]}

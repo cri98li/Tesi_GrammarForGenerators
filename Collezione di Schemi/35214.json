@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","link":"transaction-memos","description":"Array of memos to attach to the transaction.","title":"memos","type":"array","items":{"$fref":"memo"}}

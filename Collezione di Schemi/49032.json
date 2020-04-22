@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/footown.com\/generic\/address-override#","type":"object","definitions":{"_88countries":{"type":"string","enum":["AU","GB","VN","DE","CH"]}},"properties":{"___country":{"$eref":{"type":"string","enum":["AU","GB","VN","DE","CH"]}}},"required":["country"]}

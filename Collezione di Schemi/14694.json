@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","resource":{"additionalProperties":false,"type":"object","properties":{"___systems":{"minItems":1,"type":"array","items":{"$fref":"common.json#\/system_id"}}}},"resource_id":{"pattern":"^(\\w+)(:\\w+)*$","type":"string"},"verbs":{"create":{"required":["systems"]},"update":{"required":["systems"]}}}

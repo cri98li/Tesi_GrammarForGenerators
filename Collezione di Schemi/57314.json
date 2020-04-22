@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___collection":{"type":"string"},"___element":{"type":"object"},"___token":{"type":"string"},"___method":{"type":"string","enum":["insert","replace","remove"]},"___elementId":{"type":"string"}},"required":["collection","method"]}

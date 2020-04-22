@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"This is a custom data component","title":"fw_core with category","type":"object","properties":{"___fw_core":{"type":"object","properties":{"___category":{"enum":["restaurant"]}}}}}

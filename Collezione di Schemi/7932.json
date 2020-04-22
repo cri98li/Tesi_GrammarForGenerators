@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","type":"object","properties":{"___l":{"type":"integer"},"___num":{"type":"number"},"___i":{"type":"integer"},"___i8":{"type":"integer"},"___d":{"type":"number"},"___i32":{"type":"integer"},"___i64":{"type":"integer"},"___f":{"type":"number"},"___i16":{"type":"integer"}},"required":["d","f","i","i16","i32","i64","i8","l","num"]}

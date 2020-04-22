@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"array","items":[{"type":"object","properties":{"___url":{"anyOf":[{"type":"string"},{"type":"null"}]},"___start":{"format":"date-time","type":"string"},"___title":{"type":"string"},"___end":{"format":"date-time","type":"string"}},"required":["title","start","end","url"]}]}

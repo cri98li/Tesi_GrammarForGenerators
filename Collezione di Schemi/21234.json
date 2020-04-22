@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","type":"object","properties":{"___Age":{"type":"number"},"___FirstName":{"type":"string"},"___LastName":{"type":"string"}},"required":["Age"],"$id":"http:\/\/www.xsd2jsonschema.org","dependencies":{"FirstName":{"not":{"required":["LastName"]}},"LastName":{"not":{"required":["FirstName"]}}}}

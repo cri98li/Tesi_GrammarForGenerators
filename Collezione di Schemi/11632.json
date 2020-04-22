@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___info_id":{"type":"integer"},"___title":{"description":"News title : used only for notification system","type":"string"},"___comment":{"type":"string"}},"required":["info_id","comment"]}

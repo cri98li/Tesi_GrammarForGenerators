@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"array","items":{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___name":{"type":"string"},"___time":{"format":"date-time","type":"string"},"___payload":{"type":"object"}},"required":["name"]}}

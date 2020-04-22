@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"MC Analysis","type":"object","properties":{"___train_id":{"title":"Train ID","type":"string"},"___wagon_names":{"title":"Wagon Names","type":"string"},"___run_id":{"title":"Run ID","type":"string"}}}

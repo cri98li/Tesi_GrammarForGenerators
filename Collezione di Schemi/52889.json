@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"CSV","type":"object","properties":{"___eol":{"enum":["Windows","Unix","Mac"]},"___delimiter":{"type":"string"}},"required":["delimiter"]}

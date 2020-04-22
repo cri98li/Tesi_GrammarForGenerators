@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Schema for a defer message","id":"https:\/\/letsencrypt.org\/schema\/01\/defer#","type":"object","properties":{"___interval":{"type":"integer"},"___type":{"enum":["defer"]},"___token":{"type":"string"},"___message":{"type":"string"}},"required":["type","token"]}

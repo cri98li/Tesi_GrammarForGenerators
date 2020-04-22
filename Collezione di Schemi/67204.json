@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","description":"Schema demonstrating planks variable subsitution cases","id":"variable_subtitution.json","title":"variable_subtitution","type":"object","properties":{"___alloc_prop":{"type":"integer"},"___copy_prop":{"type":"integer"},"___mutable_copy_prop":{"type":"integer"},"___new_prop":{"type":"integer"}}}

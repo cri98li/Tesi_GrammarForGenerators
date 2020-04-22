@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___format":{"type":"string","enum":["flat-1.0.0"]},"___spriteId":{"type":"integer"}},"required":["format","spriteId"]}

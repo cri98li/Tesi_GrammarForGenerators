@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-03\/hyper-schema","description":"Foo Model","title":"Foo","type":"object","definitions":{"_88title":{"minLength":1,"description":"Title","readOnly":false,"type":"string"},"_88id":{"$eref":{"minLength":1,"format":"uuid","description":"Unique identifier.","readOnly":true,"type":"string","example":"01234567-89ab-cdef-0123-456789abcdef"}}}}

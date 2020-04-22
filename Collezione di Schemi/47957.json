@@ -1,0 +1,1 @@
+{"oneOf":[{"description":"One value for all in the layer","type":"number"},{"description":"Rows","type":"array","items":{"description":"Cols","type":"array","items":{"type":"number"}}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"https:\/\/inowas.com\/schema\/"}

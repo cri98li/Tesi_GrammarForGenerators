@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"The data contained in a Page settings object","title":"PageSettings","type":"object","properties":{"___maxChartsRow":{"type":"integer","minimum":1},"___maxChartsCol":{"type":"integer","minimum":1},"___title":{"type":"string"}}}

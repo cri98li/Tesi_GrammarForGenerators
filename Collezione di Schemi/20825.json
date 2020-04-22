@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","id":"Notification service creation","additionalProperties":false,"type":"object","properties":{"___name":{"minLength":5,"type":"string","maxLength":160},"___userId":{"type":"integer"}},"required":["name","userId"]}

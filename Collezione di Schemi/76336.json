@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"get noop response","additionalProperties":false,"title":"get noop response","type":"object","properties":{"___links":{"type":"object","properties":{"___self":{"type":"object","properties":{"___href":{"format":"uri","type":"string"}},"required":["href"]}},"required":["self"]}},"required":["links"]}

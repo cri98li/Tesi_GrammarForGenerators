@@ -1,0 +1,1 @@
+{"metadata":{"customParameters":{},"instanceGroupConfig":[]},"schemas":{"service_binding":null,"service_instance":{"create":{"parameters":{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","required":"thisElementHereIsWrong"}},"update":null}},"name":"s","description":"A complex test plan","id":"5cf4a198-259d-4a3b-bc3b-9958ac4f8f7a","free":false}

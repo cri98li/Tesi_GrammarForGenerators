@@ -1,0 +1,1 @@
+{"patternProperties":{"___^[a-zA-Z0-9-]{1,64}$":{"description":"The referral code associated with the programId key","type":"string","title":"Referral Code"}},"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","description":"A map of programs to referral codes.","additionalProperties":false,"title":"Referral Codes","type":"object"}

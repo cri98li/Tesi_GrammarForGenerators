@@ -1,0 +1,1 @@
+{"patternProperties":{"___^comment[1-9]$":{"type":"string"}},"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Note with optional comments","additionalProperties":false,"title":"Note","type":"object","properties":{"___content":{"type":"string"},"___title":{"type":"string"},"___author":{"type":"string"}},"required":["author","title","content"]}

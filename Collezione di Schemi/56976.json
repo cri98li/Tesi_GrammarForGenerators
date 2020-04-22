@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___password":{"type":"string"},"___roles":{"type":"array","items":{"type":"string"}},"___username":{"type":"string"}},"required":["username","password","roles"]}

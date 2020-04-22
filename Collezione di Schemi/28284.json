@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","description":"TBD","additionalProperties":false,"title":"Inventory Manager Publishing Schema","type":"object","properties":{"___private":{"type":"boolean"},"___until":{"format":"date-time","type":"string"}},"required":["private"]}

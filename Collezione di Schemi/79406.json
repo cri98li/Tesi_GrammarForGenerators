@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema","description":"the result of successfully launching a job set upload","additionalProperties":false,"type":"object","properties":{"___uploadID":{"description":"the ID of the successfully launched upload","type":"integer"}},"required":["uploadID"]}

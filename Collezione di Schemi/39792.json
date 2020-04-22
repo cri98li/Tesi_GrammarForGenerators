@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","errorType":{"id":"#\/general\/errorType","type":"object","properties":{"___appErrorCode":{"default":0,"type":"integer"},"___appErrorString":{"default":"","type":"string"}},"required":["appErrorCode"]},"id":"http:\/\/baseurl.com\/schemas"}

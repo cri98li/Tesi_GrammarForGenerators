@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","type":"object","properties":{"___location":{"$fref":"location.json"},"___type":{"$fref":"talk_type.json"},"___title":{"minLength":10,"type":"string","maxLength":20},"___date":{"$fref":"date.json"},"___speaker":{"pattern":"(Mr.|Mrs.)?[A-Za-z ]+","type":"string"}},"required":["location"]}

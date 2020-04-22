@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"title":"json-schema-umbrella\/analyse\/in","type":"object","properties":{"___options":{"default":{},"description":"analyse switch options","type":"object"},"___schema":{"default":{},"description":"schema to analyse","type":"object"}}}

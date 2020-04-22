@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","description":"Preferences and configuration options to be used by the IRC client.","title":"IRC Client Preferences","type":"object","properties":{"___$schema":{"default":"https:\/\/headcr4sh.github.io\/irc\/schema\/client-preferences.schema.json#","type":"string"}}}

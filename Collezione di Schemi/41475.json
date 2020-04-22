@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","sortIndex":20,"description":"","require":["path"],"id":"https:\/\/flynn.io\/schema\/controller\/volume_req#","additionalProperties":false,"title":"Volume Request","type":"object","properties":{"___delete_on_stop":{"description":"delete the volume when the job stops","type":"boolean"},"___path":{"type":"string"}}}

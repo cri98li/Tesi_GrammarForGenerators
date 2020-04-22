@@ -1,0 +1,1 @@
+{"patternProperties":{"___[a-zA-Z]+":{"minItems":1,"uniqueItems":true,"type":"array","items":{"type":"string"}}},"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Define the errors for the API","additionalProperties":false,"title":"Errors","type":"object"}

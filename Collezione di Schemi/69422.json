@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"____links":{"patternProperties":{"___":{"type":"object","properties":{"___href":{"type":"string"}}}},"type":"object"}}}

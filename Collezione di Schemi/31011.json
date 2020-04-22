@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"techsupport","title":"techsupport","type":"object","properties":{"___scope":{"type":"string","enum":["NODE","CLUSTER"]},"___servername":{"readonly":true,"type":"string"}}}

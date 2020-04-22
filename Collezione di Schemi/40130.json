@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Update Post","type":"object","properties":{"___post":{"additionalProperties":false,"type":"object","properties":{"___body":{"type":"string"},"___title":{"type":"string"},"___author":{"type":"string"}},"required":["title","body"]}},"required":["post"]}

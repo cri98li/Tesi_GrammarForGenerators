@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Формат отображения объекта","id":"https:\/\/raw.githubusercontent.com\/InfinniPlatform\/InfinniUI-schema\/master\/Components\/TextEditorBase\/DisplayFormat\/ObjectFormat.json","type":"object","properties":{"___Format":{"description":"Формат отображения","type":"string"}},"required":["Format"]}

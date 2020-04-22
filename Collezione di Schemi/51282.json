@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"describable","type":"object","properties":{"___description":{"description":"A description for this construct","type":"string"},"___title":{"description":"A title for this construct","type":"string"}},"required":["title"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","$eref":{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"sportscar","title":"Sports Car Schema","type":"object","$ref":"car","properties":{"___track":{"type":"string"}}},"id":"sportscar","title":"Sports Car Schema","type":"object","properties":{"___track":{"type":"string"}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/localhost:3000\/schemas\/register-request.json#","additionalProperties":false,"title":"Register request","type":"object","properties":{"___email":{"format":"email","type":"string"},"___password":{"minLength":6,"type":"string"}},"required":["email","password"]}

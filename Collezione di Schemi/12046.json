@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Image","type":"object","properties":{"___name":{"default":"image","readonly":true,"options":{"hidden":true},"type":"string"},"___src":{"format":"url","type":"string"},"___alt":{"type":"string"}},"required":["src"]}

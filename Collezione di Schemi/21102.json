@@ -1,0 +1,1 @@
+{"default":"*","$schema":"http:\/\/json-schema.org\/draft-04\/schema#","minLength":0,"description":"select, spearated by comma. cans be empty (so == all)","id":"http:\/\/select-object-path\/ref.select.schema.json#","type":"string"}

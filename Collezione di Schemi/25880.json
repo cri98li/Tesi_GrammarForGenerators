@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___name":{"type":"string"},"___tcpAdresse":{"type":"string"},"___port":{"default":"3000","type":"string"}},"required":["name","tcpAdresse","port"]}

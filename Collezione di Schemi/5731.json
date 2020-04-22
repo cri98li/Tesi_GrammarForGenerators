@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___channelTemplate":{"minLength":1,"title":"Channel Name","type":"string"},"___textTemplate":{"minLength":1,"title":"Message","type":"string"},"___urlPathTemplate":{"minLength":1,"title":"Service Path","type":"string"}},"required":["urlPathTemplate"]}

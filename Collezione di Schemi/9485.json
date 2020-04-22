@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","additionalProperties":false,"title":"Cursor","type":"object","properties":{"___cursorId":{"type":"string"},"___results":{"additionalItems":false,"type":"array","items":{"$fref":"resource:\/\/mdstudio\/db\/document\/v1"}},"___alive":{"type":"boolean"},"___size":{"type":"integer","minimum":0}},"required":["results","size","alive"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Information controlling the pull facility","title":"PullDescriptor","type":"object","properties":{"___urls":{"description":"List of URLs from which Okapi attempts pulling","type":"array","items":{"type":"string"}}}}

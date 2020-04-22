@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","uniqueItems":true,"type":"array","items":{"type":"object","title":"Title (and subtitle)","properties":{"___subtitle":{"type":["string","null"]},"___title":{"type":"string"},"___source":{"type":["string","null"]}},"required":["title"]}}

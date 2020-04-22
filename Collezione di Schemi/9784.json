@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema","id":"problem.json","type":"object","properties":{"___status":{"readonly":true,"type":"integer"},"___type":{"readonly":true,"format":"uri","type":"string"},"___title":{"readonly":true,"type":"string"},"___detail":{"readonly":true,"type":"string"}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","definitions":{"_88bar":{"type":"string"}},"properties":{"___foo":{"$eref":{"type":"string"}}},"required":["foo"]}

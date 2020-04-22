@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","definitions":{},"properties":{"___bucket":{"$eref":{"type":"integer"}},"___items":{"$eref":{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"array","items":{"$ref":"itemWrite.json"}}}}}

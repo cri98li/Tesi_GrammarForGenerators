@@ -1,0 +1,1 @@
+{"patternProperties":{"___^[a-zA-Z]":{"oneOf":[{"$eref":{"type":"string"}},{"$eref":{"type":"boolean"}}]}},"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/webmozart.io\/fixtures\/schema-refs#","additionalProperties":false,"type":"object","definitions":{"_88booleanDefinition":{"type":"boolean"},"_88stringDefinition":{"type":"string"}}}

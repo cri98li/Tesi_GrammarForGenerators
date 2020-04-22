@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"schema for an fstab entry","id":"http:\/\/some.site.somewhere\/entry-schema#","type":"object","definitions":{"_88nfs":{},"_88diskUUID":{},"_88diskDevice":{},"_88tmpfs":{}},"properties":{"___storage":{"oneOf":[{"$eref":{}},{"$eref":{}},{"$eref":{}},{"$eref":{}}],"type":"object"}},"required":["storage"]}

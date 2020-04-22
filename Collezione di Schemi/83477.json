@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Central American country selection","title":"Location selector","type":"object","properties":{"___country":{"default":"Panama","type":"string","enum":["Belize","Costa Rica","El Salvador","Guatemala","Honduras","Nicaragua","Panama"]}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___flowId":{"pattern":"^[A-Fa-f\\d]{24}$","type":["string","null"]},"___deviceId":{"pattern":"^[A-Fa-f\\d]{24}$","type":["string","null"]}},"required":["flowId","deviceId"]}

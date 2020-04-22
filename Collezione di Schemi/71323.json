@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema","description":"A rectangle from diagroo app - http:\/\/ow.ly\/WSX8I","title":"Rectangle","type":"object","properties":{"___rotation":{"maximum":360,"type":"number","minimum":-360},"___height":{"type":"integer","minimum":1},"___width":{"type":"integer","minimum":1}},"required":["width","height"]}

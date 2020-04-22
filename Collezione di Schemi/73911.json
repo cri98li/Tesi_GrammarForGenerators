@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","additionalProperties":false,"title":"datasourceRunsCreate","type":"object","properties":{"___dryrun":{"type":"boolean"},"___datasourceId":{"pattern":"[a-f0-9]{24}","type":"string"},"___data":{"type":"object"}},"required":["datasourceId"]}

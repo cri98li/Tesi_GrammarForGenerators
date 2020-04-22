@@ -1,0 +1,1 @@
+{"allOf":[{"$fref":"amountbase"},{"not":{"required":["value"]}}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"A currency-counterparty pair, or just currency if it's XRP","title":"issue"}

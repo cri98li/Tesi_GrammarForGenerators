@@ -1,0 +1,1 @@
+{"oneOf":[{"additionalProperties":false,"type":"object","properties":{"___dog":{"type":"string"}},"required":["dog"]},{"additionalProperties":false,"type":"object","properties":{"___cat":{"type":"string"}},"required":["cat"]}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#"}

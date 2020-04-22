@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","additionalProperties":false,"title":"MCDA empty performance for the performance table entry of absolute data","type":"object","properties":{"___type":{"type":"string","enum":["empty"]},"___value":{"type":"string"}},"required":["type"],"$id":"https:\/\/mcda.drugis.org\/emptyPerformance.json#"}

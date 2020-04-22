@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema","description":"A user.","type":"object","properties":{"___users":{"type":"object","properties":{"___links":{"type":"object","properties":{"___user-groups":{"type":"array"}},"required":["user-groups"]},"___content":{"type":"string"},"___id":{"type":"string"}},"required":["username","email","name","surname"]}}}

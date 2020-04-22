@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/schema.envirocar.org\/phenomenon.modify.json#","additionalProperties":false,"type":"object","properties":{"___unit":{"type":"string"}}}

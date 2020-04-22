@@ -1,0 +1,1 @@
+{"additionalFields":false,"$schema":"http:\/\/json-schema.org\/schema#","title":"Piwik Core Collector Query","type":"object","properties":{"___frequency":{"type":"string"},"___site_id":{"type":"string"},"___period":{"type":"string"},"___api_method":{"type":"string"},"___api_method_arguments":{"type":"object","properties":{"___idGoal":{"type":"string"}}}},"required":["site_id"]}

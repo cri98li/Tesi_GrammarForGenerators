@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","definitions":{"_88Enum":{"type":["number","boolean","string","null"],"enum":[0,1,null,"str",true]}},"properties":{"___foo":{"$eref":{"type":["number","boolean","string","null"],"enum":[0,1,null,"str",true]}}},"required":["foo"]}

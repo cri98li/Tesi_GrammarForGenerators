@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"lsnpool","title":"lsnpool","type":"object","properties":{"___portblockallocation":{"type":"string","enum":["ENABLED","DISABLED"]},"___maxportrealloctmq":{"type":"integer"},"___portrealloctimeout":{"type":"integer"},"___poolname":{"type":"string"},"___nattype":{"type":"string","enum":["DYNAMIC","DETERMINISTIC"]}}}

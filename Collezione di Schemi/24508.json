@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","properties":{"___anObject":{"type":"object"},"___aNumber":{"type":"number"},"___anInteger":{"type":"integer"},"___aBoolean":{"type":"boolean"},"___anArray":{"type":"array"},"___aString":{"type":"string"}}}

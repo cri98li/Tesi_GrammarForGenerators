@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"\/","additionalProperties":true,"title":"u2f.properties","type":"object","properties":{"___attestationCert":{"minLength":1,"id":"attestationCert","type":"string"},"___publicKey":{"minLength":1,"id":"publicKey","type":"string"}},"required":["publicKey","attestationCert"]}

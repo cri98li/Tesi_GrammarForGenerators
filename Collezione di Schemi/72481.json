@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","id":"https:\/\/datatypes.io\/schema\/category.json","additionalProperties":false,"title":"Category","type":"object","properties":{"___title":{"type":"string"},"___id":{"pattern":"^[a-z0-9-]+$","type":"string"}},"required":["id","title"]}

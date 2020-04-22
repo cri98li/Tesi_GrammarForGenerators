@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","additionalProperties":false,"title":"GetRequest","type":"object","properties":{"___key":{"pattern":"^[a-zA-Z0-9_\\.]+$","type":"string","maxLength":12}},"required":["key"]}

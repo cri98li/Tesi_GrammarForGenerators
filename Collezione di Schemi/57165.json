@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","description":"Simple schema for testing ValidatableJsonNode","additionalProperties":false,"type":"object","properties":{"___beers":{"type":"array","items":{"type":"string"}},"___country":{"type":"string"}},"required":["country","beers"]}

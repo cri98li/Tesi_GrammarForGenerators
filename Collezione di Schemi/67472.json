@@ -1,0 +1,1 @@
+{"oneOf":[{"type":"array","items":{"$fref":"#\/definitions\/event"}},{"type":"null"}],"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Postman allows you to configure scripts to run when specific events occur. These scripts are stored here, and can be referenced in the collection by their ID.","id":"#\/definitions\/event-list","title":"Event List"}

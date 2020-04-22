@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Schema for <%= lambdaFunctionName %>","properties":{"___user":{"type":"object","properties":{"___lastName":{"minLength":1,"type":"string"},"___firstName":{"minLength":1,"type":"string"},"___middleName":{"minLength":1,"type":"string"}},"required":["firstName","lastName"]}},"required":["user"]}

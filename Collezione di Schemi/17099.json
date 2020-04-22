@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","minLength":10,"pattern":"^mystring-[a-zA-Z0-9]+$","description":"This is a description","type":"string","maxLength":24}

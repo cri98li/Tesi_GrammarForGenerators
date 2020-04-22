@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Формат отображения даты\/времени","id":"https:\/\/raw.githubusercontent.com\/InfinniPlatform\/InfinniUI-schema\/master\/Components\/TextEditorBase\/DisplayFormat\/DateTimeFormat.json","type":"object","properties":{"___Format":{"default":"G","description":"Формат отображения","type":"string"}}}

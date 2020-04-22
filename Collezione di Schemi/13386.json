@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-03\/schema#","id":"http:\/\/portele.de\/ows9\/test\/DataType2.json","title":"DataType2","type":"object","properties":{"___attributes":{"title":"feature attributes","type":"object","properties":{"___integer":{"title":"integer","type":"integer"},"___string":{"minItems":1,"title":"string","type":"array","items":{"type":"string"}}}}}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","type":"object","version":"0.01","properties":{"___labels64":{"type":"string"},"___grayscale8":{"type":"string"},"___version":{"type":"string"},"___quadtree":{"type":"string"},"___multichan16":{"type":"string"},"___rgba8":{"type":"string"},"___labelmap":{"type":"string"},"___keyvalue":{"type":"string"}}}

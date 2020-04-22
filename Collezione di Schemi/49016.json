@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/hyper-schema#","additionalProperties":false,"title":"Foo","type":"object","properties":{"___id":{"type":"string"}}}

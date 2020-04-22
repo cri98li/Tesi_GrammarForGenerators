@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"A schema which validates params accepted by the Facebook adapter","title":"Facebook Adapter Params","type":"object","properties":{"___placementId":{"description":"An ID which identifies the placement selling the impression","type":"string"}},"required":["placementId"]}

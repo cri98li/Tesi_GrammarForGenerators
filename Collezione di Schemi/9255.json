@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___nameColumn":{"type":"string"},"___makeUniqueKeySecret":{"type":"boolean"},"___email":{"format":"email","type":"string","maxLength":1024},"___csv":{"type":"string"},"___descriptionColumn":{"type":"string"}},"required":["csv"]}

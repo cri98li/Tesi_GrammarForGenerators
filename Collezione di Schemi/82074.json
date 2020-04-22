@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___status":{"type":"string","enum":["AVAILABLE","NOT_AVAILABLE"]},"___Package":{"$fref":"file:\/\/%%PATH%%\/json\/schemas\/output\/package.schema.json"}},"required":["status","Package"]}

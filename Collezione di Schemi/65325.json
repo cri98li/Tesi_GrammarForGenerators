@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Performances of all athletes for all events in a competition.","title":"Results for a competition","type":"object","properties":{"___events":{"minItems":1,"description":"Array of completed events","type":"array","items":{"$fref":"file:\/\/\/json\/event.json#"}}},"required":["events"]}

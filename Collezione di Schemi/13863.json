@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Authentication Signin","type":"object","properties":{"___email":{"type":"string"},"___password":{"type":"string"}},"required":["username","password"]}

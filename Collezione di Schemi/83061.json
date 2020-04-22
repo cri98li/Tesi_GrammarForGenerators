@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/schema#","type":"object","properties":{"___Foo":{"type":"string"},"___Bar":{"type":"integer"},"___Baz":{"type":"array","items":{"type":"string"}}},"required":["Foo"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"array","items":{"$eref":{"type":"object","properties":{"___id":{"type":"string"}},"required":["id"]}},"definitions":{"_88advertisement":{"type":"object","properties":{"___id":{"type":"string"}},"required":["id"]}}}

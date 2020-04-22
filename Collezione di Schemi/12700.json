@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"org.eclipse.persistence.testing.jaxb.xmlelement.self.Root","type":"object","properties":{"___root":{"additionalProperties":true,"type":"object","properties":{}}}}

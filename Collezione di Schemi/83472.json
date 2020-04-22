@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Full name, middle name optional","title":"Name","type":"object","properties":{"___lastName":{"minLength":1,"type":"string","maxLength":20},"___firstName":{"minLength":1,"type":"string","maxLength":10},"___middleName":{"minLength":0,"type":"string","maxLength":8}},"required":["firstName","lastName"]}

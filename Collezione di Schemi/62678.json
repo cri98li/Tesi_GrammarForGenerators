@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"A b test","title":"b","type":"object","properties":{"___listitems":{"type":"array"},"___modifier":{"description":"A modifier","enum":["","aaff"]},"___headline":{"type":"object","properties":{"___count":{"type":"string"},"___title":{"type":"string"}}}},"required":["headline","listitems"]}

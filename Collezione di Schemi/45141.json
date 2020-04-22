@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Parameters for a senpy analysis","type":"object","properties":{"___name":{"description":"Name of the parameter","type":"string"},"___prov:value":{"@type":"any","description":"Value of the parameter"}},"required":["name","prov:value"]}

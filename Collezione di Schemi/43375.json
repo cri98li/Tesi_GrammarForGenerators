@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___ModifiedUtc":{"type":"string"},"___CreatedUtc":{"type":"string"},"___PublishedUtc":{"type":"string"},"___Owner":{"type":"string"},"___Container":{"type":"integer"}},"required":["Owner","CreatedUtc","ModifiedUtc","PublishedUtc","Container"]}

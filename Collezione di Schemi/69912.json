@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","type":"object","properties":{"___include":{"type":"array","items":{"type":"string"}},"___regex":{"default":"false","description":"Whether to understand the annotation names as regular expressions.","type":"boolean"},"___exclude":{"type":"array","items":{"type":"string"}}}}

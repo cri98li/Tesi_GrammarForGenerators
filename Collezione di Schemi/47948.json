@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"https:\/\/inowas.com\/schema\/","additionalProperties":false,"type":"object","properties":{"___tsmult":{"type":"integer"},"___steady":{"type":"boolean"},"___nstp":{"type":"integer"},"___totim_start":{"type":"integer"},"___perlen":{"type":"integer"}},"required":["totim_start","perlen","nstp","tsmult","steady"]}

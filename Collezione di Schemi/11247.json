@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-06\/schema#","type":"object","properties":{"___encoding":{"type":"string"},"___text":{"type":"string"},"___compression":{"type":"integer"},"___mimeType":{"type":"string"},"___comment":{"type":"string"},"___size":{"type":"integer"}},"required":["size","mimeType"],"$id":"content.json#"}

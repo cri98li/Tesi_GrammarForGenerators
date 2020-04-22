@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Inventory with current stock count","title":"Inventory","type":"array","items":{"additionalProperties":false,"properties":{"___count":{"type":"integer","minimum":0},"___id":{"type":"string"}},"required":["id","count"]}}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Pantries Create Response","type":"object","properties":{"___pantry":{"$fref":"__apigModelsEndpoint__\/Pantry","type":"object"},"___users":{"type":"array","items":{"$fref":"__apigModelsEndpoint__\/User"}}},"required":["pantry","users"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Simple JSON schema test","id":"https:\/\/joipolloi.com\/json-validation-bundle\/schemas\/schema-simple.json","type":"object","properties":{"___test":{"minLength":1,"type":"string"}},"required":["test"]}

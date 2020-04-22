@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"dnsaction64","title":"dnsaction64","type":"object","properties":{"___mappedrule":{"type":"string"},"___actionname":{"type":"string"},"___prefix":{"type":"string"},"___builtin":{"readonly":true,"type":"object","enum":["MODIFIABLE","DELETABLE","IMMUTABLE"]},"___excluderule":{"type":"string"}}}

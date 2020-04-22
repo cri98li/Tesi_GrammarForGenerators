@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-07\/schema#","title":"Response from DELETE rest\/warehouse\/export\/request\/{id}","type":"object","properties":{"___total":{"type":"integer"},"___message":{"type":"string"},"___success":{"type":"boolean"},"___data":{"type":"array","items":{"type":"object"}}},"required":["success","message"]}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","additionalProperties":false,"type":"object","properties":{"___description":{"type":"string","maxLength":32767},"___endpointDefaultCors":{"type":"boolean"},"___sourceVersionIdOrName":{"minLength":1,"type":"string","maxLength":255}}}

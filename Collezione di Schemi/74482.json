@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Tags","type":"object","properties":{"___name":{"type":"string"},"___color":{"pattern":"^#[a-fA-F0-9]{6}$","type":"string"}},"required":["name","color"]}

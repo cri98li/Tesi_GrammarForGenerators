@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Data","type":"object","properties":{"___SOURCE_NAME":{"type":"object","constraints":[{"type":"CONSTRAINT_TYPE","target":"#\/TARGET_NAME"}],"properties":{"___a":{"type":"string"},"___b":{"type":"string"}}},"___TARGET_NAME":{"type":"object","properties":{"___a":{"type":"string"},"___b":{"type":"string"}}}}}

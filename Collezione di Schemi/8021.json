@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema","description":"Track cache-wide data","type":"object","definitions":{"_88dateUTCISO":{"pattern":"^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$","type":"string"}},"properties":{"___lastSweep":{"$eref":{"pattern":"^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$","type":"string"}}},"required":["lastSweep"]}

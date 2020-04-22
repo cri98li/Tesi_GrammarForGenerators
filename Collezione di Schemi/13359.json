@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-03\/schema#","additionalProperties":false,"type":"object","properties":{"___nanoentities":{"type":"array","items":{"additionalProperties":false,"type":"object","properties":{"___name":{"type":"string"},"___context":{"type":"string"}}}}}}

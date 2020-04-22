@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"Pause step","type":"object","properties":{"___name":{"type":"string"},"___iface":{"type":"object"},"___length":{"type":"integer","minimum":1},"___title":{"type":"string"},"___kind":{"enum":["pause"]},"___label":{"type":"string"}},"required":["name","kind","label","title"]}

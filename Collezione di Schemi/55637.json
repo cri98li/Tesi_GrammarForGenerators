@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","title":"\/todo GET validation","properties":{"___id":{"type":"string"}},"required":["id"]}

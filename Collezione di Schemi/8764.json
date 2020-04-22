@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/example.com\/example.json","additionalProperties":false,"type":"object","definitions":{},"properties":{"___description":{"id":"\/properties\/description","type":"string"},"___done":{"id":"\/properties\/done","type":"boolean"},"___priority":{"id":"\/properties\/priority","type":"integer"}}}

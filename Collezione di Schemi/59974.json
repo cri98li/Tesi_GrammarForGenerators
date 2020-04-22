@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"The value returned by GET \/_uuids","title":"CouchDB _uuids","type":"object","items":{"properties":{"___uuids":{"type":"array"}}}}

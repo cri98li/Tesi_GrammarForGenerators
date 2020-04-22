@@ -1,0 +1,1 @@
+{"doctor":{"allof":[{"$fref":"schemas\/general\/person.json#general\/person"},{"ID":{"$fref":"schemas\/general\/id.json#general\/ID"},"properties":{"___specialization":{"default":"","type":"string"}},"required":["specialization"]}],"id":"#\/core\/doctor"},"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","id":"http:\/\/baseurl.com\/schemas"}

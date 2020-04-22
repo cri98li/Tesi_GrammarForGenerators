@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","description":"Bibliographic record. Aims to be compatible with BibTeX.","id":"http:\/\/schema.myrtana.sk\/support\/bibliographicBibTeXLike.json#","title":"Bibliographic record","type":"string","maxLength":100}

@@ -1,0 +1,1 @@
+{"$schema":"http:\/\/json-schema.org\/draft-04\/schema#","minLength":1,"pattern":"^[0-9A-F]*$","description":"An uppercase hexadecimal string representation of a transaction","title":"blob","type":"string"}

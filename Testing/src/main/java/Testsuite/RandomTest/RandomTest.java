@@ -1,9 +1,8 @@
 package Testsuite.RandomTest;
 
 
+import Testsuite.Cmd_Linux;
 import Testsuite.Test;
-
-import java.util.List;
 
 class RandomTest extends Test {
 	private final String inputFileName;
