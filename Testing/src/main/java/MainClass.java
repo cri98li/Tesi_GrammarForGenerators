@@ -121,6 +121,8 @@ public class MainClass {
 
 
 		System.out.println("\t\tTEMPO IMPIEGATO: "+ (System.currentTimeMillis() - start) +" millisecondi");
+		System.out.println("\t\tTEMPO IMPIEGATO: "+ (System.currentTimeMillis() - start)/1000 +" secondi");
+		System.out.println("\t\tTEMPO IMPIEGATO: "+ (System.currentTimeMillis() - start)/(1000*60) +" minuti");
 	}
 
 
