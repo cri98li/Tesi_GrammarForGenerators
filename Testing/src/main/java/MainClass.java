@@ -13,6 +13,8 @@ import java.util.concurrent.*;
 
 public class MainClass {
 	public static void main(String[] args) throws InterruptedException, IOException {
+		Long start = System.currentTimeMillis();
+
 		CommandLineParser parser = new DefaultParser();
 		CommandLine commandLine;
 
@@ -117,6 +119,8 @@ public class MainClass {
 			}
 		}
 
+
+		System.out.println("\t\tTEMPO IMPIEGATO: "+ (System.currentTimeMillis() - start) +" millisecondi");
 	}
 
 
