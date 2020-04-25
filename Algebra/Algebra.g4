@@ -63,7 +63,7 @@ repeated_items_assertion : 'repeatedItems';
 
 //---------------------------------STRINGHE
 
-type_assertion: 'type(' types ')';
+type_assertion: 'type[' types (', ' types)* ']';
 
 pattern_asserton: 'pattern(' PATTERNSTRING ')';
 
@@ -113,8 +113,8 @@ ref_assertion: 'ref(' ALFABETICSTRING ')';
 
 
 //--------------------------------NODI
-items_assertion: 'items(' assertion (', ' assertion)*';)'
-                    | 'items(' (assertion (', ' assertion)*)?'; 'assertion')';
+items_assertion: 'items[' assertion (', ' assertion)*';]'
+                    | 'items[' (assertion (', ' assertion)*)?'; 'assertion']';
 
 properties_assertion: 'props[' ALFABETICSTRING ':' assertion (', 'ALFABETICSTRING ':' assertion)* ';]'
                         | 'props[' (ALFABETICSTRING ':' assertion (', 'ALFABETICSTRING ':' assertion)*)? ';'assertion']';
@@ -139,7 +139,7 @@ enum_assertion: 'enum[' JSONValue (', ' JSONValue)* ']';
 
 
 
-number_JSONValue: INT | FLOAT;
+number_JSONValue: INT | FLOAT | (('+' | '-')? 'inf');
 
 nonNegInt_JSONValue: NONEGATIVEINT | 'null';
 
@@ -149,7 +149,7 @@ JSONValue: INT | FLOAT | '"'STRING'"' | 'null'
             |   '[' JSONValue (', ' JSONValue)* ']'
             |   '{' ALFABETICSTRING': ' JSONValue (', ' ALFABETICSTRING': ' JSONValue)*'}';
 
-types: 'obj' | 'str' | 'num' | 'int' | 'arr' | 'bool' | 'null' | 'numNotInt';
+types: 'obj' | 'str' | 'num' | 'int' | 'arr' | 'bool' | 'null';
 
 NONEGATIVEINT: [1-9][0-9]*;
 
@@ -163,7 +163,7 @@ PATTERNSTRING: '"^PAT_' STRING '$"';
 
 //STRING: .+?;
 
-BOOLEAN: 'true' | 'false';
+BOOLEAN: 'true' | 'false' | 'tt' | 'ff' | 'f' | 't';
 
 STRING: [a-zA-Z0-9.,*:\-_{}[\]+?!)=|\\(];
 
