@@ -43,7 +43,7 @@ single_assertion: unique_items_assertion
 
                     |   enum_assertion
                     |   const_assertion
-                    |   BOOLEAN
+                    |   EXTENDED_BOOLEAN
                     ;
 
 
@@ -79,14 +79,11 @@ between_assertion: 'bet(' (( NONEGATIVEINT ', 'number_JSONValue)
 xbetween_assertion: 'xbet(' (( NONEGATIVEINT ', 'number_JSONValue)
                         | (number_JSONValue ', 'NONEGATIVEINT)) ')';
 
-length_assertion: 'length(' (( NONEGATIVEINT ', 'nonNegInt_JSONValue )
-                    | ( nonNegInt_JSONValue ', 'NONEGATIVEINT )) ')';
+length_assertion: 'length(' ( NONEGATIVEINT ', 'nonNegInt_JSONValue )')';
 
-bet_items_assertion : 'betItems(' (( NONEGATIVEINT ', 'nonNegInt_JSONValue )
-                        | ( nonNegInt_JSONValue ', 'NONEGATIVEINT )) ')';
+bet_items_assertion : 'betItems(' ( NONEGATIVEINT ', 'nonNegInt_JSONValue )')';
 
-between_properties_assertion : 'pro(' (( NONEGATIVEINT ', 'nonNegInt_JSONValue )
-                                    | ( nonNegInt_JSONValue ', 'NONEGATIVEINT )) ')';
+between_properties_assertion : 'pro(' ( NONEGATIVEINT ', 'nonNegInt_JSONValue )')';
 
 multiple_of_assertion: 'mof('NONEGATIVEINT')';
 
@@ -123,7 +120,7 @@ propertyNames: 'names(' assertion ')';
 
 exNames: 'exNames(' assertion ')';
 
-contains_assertion: 'contains (' nonNegInt_JSONValue ', ' nonNegInt_JSONValue';' assertion')';
+contains_assertion: 'contains (' NONEGATIVEINT ', ' nonNegInt_JSONValue';' assertion')';
 
 pattern_required: 'pattReq''[' PATTERNSTRING ':' assertion (', ' PATTERNSTRING ':' assertion)* ']';
 
@@ -137,23 +134,25 @@ const_assertion: 'const(' JSONValue ')';
 
 enum_assertion: 'enum[' JSONValue (', ' JSONValue)* ']';
 
-
+nonNegNum_JSONValue: INT | FLOAT | ('+'? 'inf');
 
 number_JSONValue: INT | FLOAT | (('+' | '-')? 'inf');
 
-nonNegInt_JSONValue: NONEGATIVEINT | 'null';
+nonNegInt_JSONValue: NONEGATIVEINT | '+inf';
 
 Int_JSONValue: INT;
 
-JSONValue: INT | FLOAT | '"'STRING'"' | 'null' 
+JSONValue: INT | FLOAT | '"'STRING'"' | 'null' | BOOLEAN
             |   '[' JSONValue (', ' JSONValue)* ']'
             |   '{' ALFABETICSTRING': ' JSONValue (', ' ALFABETICSTRING': ' JSONValue)*'}';
 
-types: 'obj' | 'str' | 'num' | 'int' | 'arr' | 'bool' | 'null';
+types: 'obj' | 'str' | 'num' | 'int' | 'arr' | 'bool' | 'null' | 'numNotInt';
 
 NONEGATIVEINT: [1-9][0-9]*;
 
 INT: '-'? NONEGATIVEINT;
+
+NONEGATIVEFLOAT: INT '.' [0-9]* [1-9];
 
 FLOAT: INT '.' [0-9]* [1-9];
 
@@ -163,7 +162,9 @@ PATTERNSTRING: '"^PAT_' STRING '$"';
 
 //STRING: .+?;
 
-BOOLEAN: 'true' | 'false' | 'tt' | 'ff' | 'f' | 't';
+BOOLEAN: 'true' | 'false';
+
+EXTENDED_BOOLEAN: BOOLEAN | 'tt' | 'ff' | 'f' | 't';
 
 STRING: [a-zA-Z0-9.,*:\-_{}[\]+?!)=|\\(];
 

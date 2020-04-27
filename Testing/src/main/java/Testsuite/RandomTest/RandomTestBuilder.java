@@ -52,13 +52,13 @@ public class RandomTestBuilder extends TestBuilder {
 			switch (i+1){
 				case 2:
 				case 3:
-					returnCode = Cmd_Linux.execute("bash", "-c", "grammarinator-generate -d 30"
+					returnCode = Cmd_Linux.execute("bash", "-c", "grammarinator-generate -d 20 "
 							+ " -o testFiles/"+ (i+1) +"-test_%d.input -p tmp/AlgebraUnparser.py -l tmp/AlgebraUnlexer.py 	" +
 							" -n "+tests.get(i));
 					break;
 
 				case 1:
-					returnCode = Cmd_Linux.execute("bash", "-c", "grammarinator-generate -d 100 "
+					returnCode = Cmd_Linux.execute("bash", "-c", "grammarinator-generate -d 50 "
 							+ " -o testFiles/"+ (i+1) +"-test_%d.input -p tmp/JSONSchemaUnparser.py -l tmp/JSONSchemaUnlexer.py 	" +
 							" -n "+tests.get(i));
 					break;

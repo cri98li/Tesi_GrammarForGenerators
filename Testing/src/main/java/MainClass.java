@@ -87,7 +87,7 @@ public class MainClass {
 
 
 		if(testBuilder != null) {
-			ExecutorService executors = Executors.newFixedThreadPool(8);
+			ExecutorService executors = Executors.newFixedThreadPool(3);
 			List<Test> tests = testBuilder.getTests();
 			for (Test test : tests)
 				executors.execute(test);
