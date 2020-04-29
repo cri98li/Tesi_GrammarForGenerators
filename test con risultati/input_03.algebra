@@ -1,0 +1,1 @@
+not(oneOf[mof(3),mof(2),mof(1)])

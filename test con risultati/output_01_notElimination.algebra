@@ -1,0 +1,14 @@
+ anyOf[
+	type[str,
+		obj,
+		arr,
+		bool,
+		null],
+	{
+		type[num],
+		anyOf[
+			xbet(-inf,3),
+			xbet(3,+inf)
+		]
+	}
+]

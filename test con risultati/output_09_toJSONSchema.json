@@ -1,0 +1,6 @@
+{
+	"not": {
+		"maxProperties": 30,
+		"minProperties": 10
+	}
+}

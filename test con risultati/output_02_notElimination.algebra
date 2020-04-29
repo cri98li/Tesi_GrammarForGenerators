@@ -1,0 +1,7 @@
+{
+	mof(3),
+	{
+		type[num],
+		notMof(2)
+	}
+}

@@ -2,7 +2,7 @@ grammar Algebra;
 
 //--------------------root
 
-rootDef_assertion: 'rootdef = ' assertion (', ' def_assertion)*;
+rootDef_assertion: 'rootdef "root" = ' assertion (', ' def_assertion)*;
 
 
 //------------------------strutturali

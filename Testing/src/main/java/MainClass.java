@@ -32,6 +32,16 @@ public class MainClass {
 
 		TestBuilder testBuilder = null;
 
+
+
+
+
+
+
+
+
+
+
 		if(commandLine.hasOption("r")) {
 			String[] options = commandLine.getOptionValues("r");
 			List<Integer> testId = new LinkedList<>();
@@ -42,21 +52,29 @@ public class MainClass {
 			testBuilder = new RandomTestBuilder(testId);
 		}
 
+
+
+
+
+
+
+
+
+
 		if(commandLine.hasOption("c")){
 			File fileFolder = new File(commandLine.getOptionValue("c", "./"));
 			LinkedHashMap<String, Boolean> hm = new LinkedHashMap<>();
 			for(File file : fileFolder.listFiles()){
-				if(!file.isFile() || !file.getName().contains(".input")) continue;
+				if(!file.isFile()) continue;
 				String fileName = file.getName();
 
-				if(!fileName.substring(fileName.length() -7, fileName.length()).equalsIgnoreCase(".input1")
-					&& !fileName.substring(fileName.length() -7, fileName.length()).equalsIgnoreCase(".input2"))
+				if(!fileName.startsWith("input")
+					&& !fileName.startsWith("output"))
 					continue;
 
-				if(hm.containsKey(fileName.substring(0, fileName.length() -7)))
-					hm.put(fileName.substring(0, fileName.length() -7), true);
-				else
-					hm.put(fileName.substring(0, fileName.length() -7), false);
+				String fn = fileName.replace("input", "").replace("output", "");
+
+				hm.put(fn, hm.containsKey(fn));
 			}
 
 			TreeMap<String, String> fileSet = new TreeMap<>();
@@ -65,15 +83,61 @@ public class MainClass {
 
 			for(Map.Entry<String, Boolean> entry : entrySet)
 				if(entry.getValue())
-					fileSet.put(entry.getKey()+ ".input1", entry.getKey()+ ".input2");
+					fileSet.put(fileFolder.getPath()+"/input" + entry.getKey(), fileFolder.getPath()+"/output"+entry.getKey() );
 
 
 			testBuilder = new CompareTestBuilder(fileSet);
 			}
 
 
+
+
+
+
+
+
+
+
+
+
 		if(commandLine.hasOption("t")){
 			testBuilder = new FolderTestBuilder(commandLine.getOptionValue("t"));
+			ExecutorService executors = Executors.newFixedThreadPool(1);
+			List<Test> tests = testBuilder.getTests();
+			for (Test test : tests)
+				executors.execute(test);
+
+			executors.shutdown();
+
+			while (!executors.awaitTermination(1, TimeUnit.SECONDS)) {
+				//System.out.println("MANCANO"+ executors. +"TEST");
+			}
+
+			int testTotali = tests.size();
+			int testPassati = 0;
+			for (Test t : tests) {
+				if (t.getResult()) testPassati++;
+			}
+
+			System.out.println("TEST SUPERATI: " + testPassati + "/" + testTotali);
+
+			testBuilder.shutdown();
+
+			for(int i = 0; i < args.length; i++)
+				if(args[i].equals("-t") || args[i].equals("--testFolder"))
+					args[i] = "-c";
+
+			if(commandLine.hasOption("d")){
+				for(Test t : tests)
+					if(t.getResult())
+						for(String path : t.getInputFiles())
+							new File(path).delete();
+			}
+
+			System.out.println(Arrays.toString(args));
+			main(args);
+
+			return;
 		}
 
 
@@ -141,7 +205,7 @@ public class MainClass {
 
 		Option compareOption = Option.builder("c")
 				.longOpt("compare")
-				.desc("Compare all couple of <*.input1, *.input2>")
+				.desc("Compare all couple of <input*, output*>")
 				.hasArg()
 				.optionalArg(true)
 				.argName("folder")
@@ -155,7 +219,7 @@ public class MainClass {
 
 		Option testFolderOption = Option.builder("t")
 				.longOpt("testFolder")
-				.desc("Run a all possible test based on file format (.json or .txt) in a specified folder")
+				.desc("Run a all possible test based on file format (.json or .algebra) in a specified folder")
 				.hasArg()
 				.argName("folder")
 				.type(String.class)

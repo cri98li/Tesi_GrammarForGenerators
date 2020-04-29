@@ -10,8 +10,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class FolderTestBuilder extends TestBuilder {
-    private static String[] actionsForJSONInput = {"1"};
-    private static String[] actionsForGraamarInput = {"2", "3"};
+    private static int[] actionsForJSONInput = {1};
+    private static int[] actionsForGraamarInput = {2, 3};
+    private static String[] actionNames ={"toAlgebra.algebra", "toJSONSchema.json", "notElimination.algebra"};
+
     private String path;
 
     public FolderTestBuilder(String path) throws IOException, InterruptedException {
@@ -27,16 +29,16 @@ public class FolderTestBuilder extends TestBuilder {
             throw new IOException();
 
         for(File file : folder.listFiles()){
-            if(!file.isFile())
+            if(!file.isFile() || file.getName().startsWith("output"))
                 continue;
 
             if(file.getName().contains(".json"))
-                for(String action : FolderTestBuilder.actionsForJSONInput)
-                    returnList.add(new FolderTest(file.getPath(), action));
+                for(int action : FolderTestBuilder.actionsForJSONInput)
+                    returnList.add(new FolderTest(file.getPath(), action, actionNames[action-1]));
 
-            if(file.getName().contains(".txt"))
-                for(String action : FolderTestBuilder.actionsForGraamarInput)
-                    returnList.add(new FolderTest(file.getPath(), action));
+            if(file.getName().contains(".algebra"))
+                for(int action : FolderTestBuilder.actionsForGraamarInput)
+                    returnList.add(new FolderTest(file.getPath(), action, actionNames[action-1]));
 
         }
 

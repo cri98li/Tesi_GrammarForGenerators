@@ -1,0 +1,11 @@
+{
+	type[obj],
+	props[
+		"^a$": true,
+		"^c$": true,
+		"^b$": true
+		;{
+			type[num],
+			notMof(3)
+		}]
+}

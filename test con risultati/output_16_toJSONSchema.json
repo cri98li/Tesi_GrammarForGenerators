@@ -1,0 +1,25 @@
+{
+	"not": {
+		"then": {
+			"allOf": [
+				{
+					"not": {
+						"patternProperties": {
+							"^r1$": false
+						}
+					}
+				},
+				{
+					"not": {
+						"patternProperties": {
+							"^rn$": false
+						}
+					}
+				}
+			]
+		},
+		"if": {
+			"type": "object"
+		}
+	}
+}

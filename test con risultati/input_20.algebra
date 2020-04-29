@@ -1,0 +1,1 @@
+not( addPattReq( ["a","b","c"] : mof(3) ))

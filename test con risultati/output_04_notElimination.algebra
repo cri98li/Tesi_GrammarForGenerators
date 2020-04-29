@@ -1,0 +1,5 @@
+allOf[
+	mof(3),
+	mof(2),
+	mof(1)
+]

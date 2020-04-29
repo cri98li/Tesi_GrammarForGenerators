@@ -1,0 +1,10 @@
+{
+	"not": {
+		"if": {
+			"multipleOf": 3
+		},
+		"then": {
+			"multipleOf": 2
+		}
+	}
+}

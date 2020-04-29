@@ -1,0 +1,105 @@
+{
+	"multipleOf": 1,
+	"anyOf": [
+		{
+			"multipleOf": 1
+		},
+		{
+			"type": "integer"
+		}
+	],
+	"then": {
+		"minLength": 10,
+		"maxLength": 100
+	},
+	"type": "integer",
+	"required": [
+		"a",
+		"b",
+		"c"
+	],
+	"minProperties": 1,
+	"patternProperties": {
+		"^\\[0-9]{3}?[0-9]{3}-[0-9]{4}$": {
+			"ref": "#/$defs/e"
+		}
+	},
+	"oneOf": [
+		{
+			"multipleOf": 1
+		},
+		{
+			"type": "integer"
+		}
+	],
+	"not": {
+		"const": "abc",
+		"enum": [
+			null,
+			12,
+			true,
+			[
+				1,
+				2,
+				3
+			],
+			{
+				"a": 30,
+				"b": 100
+			}
+		]
+	},
+	"else": {
+		"maximum": 100,
+		"minimum": 10
+	},
+	"$defs": {
+		"e": {
+			"not": {
+				"type": "number"
+			}
+		},
+		"f": {
+			"anyOf": [
+				{
+					"type": [
+						"string",
+						"number"
+					]
+				}
+			]
+		}
+	},
+	"additionalProperties": {
+		"ref": "#/$defs/f"
+	},
+	"maxProperties": 3,
+	"if": {
+		"type": "null"
+	},
+	"properties": {
+		"a": {
+			"exclusiveMaximum": 10,
+			"exclusiveMinimum": 1
+		},
+		"b": {
+			"minItems": 1,
+			"additionalItems": false,
+			"type": "array",
+			"items": [
+				{
+					"minItems": 1,
+					"maxItems": 5
+				},
+				{
+					"propertyNames": true
+				}
+			],
+			"uniqueItems": true
+		},
+		"c": {
+			"pattern": "^\\[0-9]{3}?[0-9]{3}-[0-9]{4}$",
+			"type": "string"
+		}
+	}
+}

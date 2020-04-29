@@ -1,0 +1,6 @@
+{
+	"not": {
+		"minItems": 0,
+		"maxItems": 30
+	}
+}

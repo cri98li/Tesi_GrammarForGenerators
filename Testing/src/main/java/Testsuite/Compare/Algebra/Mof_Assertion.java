@@ -1,9 +1,9 @@
 package Testsuite.Compare.Algebra;
 
 public class Mof_Assertion implements Assertion{
-	private final Long mof;
+	private final Object mof;
 	
-	public Mof_Assertion(Long mof) {
+	public Mof_Assertion(Object mof) {
 		this.mof = mof;
 	}
 

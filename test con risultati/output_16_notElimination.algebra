@@ -1,0 +1,11 @@
+{
+	type[obj],
+	anyOf[
+		props[
+			"^rn$": false
+			;],
+		props[
+			"^r1$": false
+			;]
+	]
+}

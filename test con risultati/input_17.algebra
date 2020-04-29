@@ -1,0 +1,1 @@
+not(enum[{"a":"abc"}, 100, "aaa", [1, 2, 3], null, true])

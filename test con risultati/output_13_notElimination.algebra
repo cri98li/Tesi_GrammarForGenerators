@@ -1,0 +1,11 @@
+anyOf[
+	type[obj,
+		num,
+		arr,
+		bool,
+		null],
+	{
+		notPattern("^a$"),
+		type[str]
+	}
+]

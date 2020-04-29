@@ -2,9 +2,9 @@ package Testsuite.Compare.Algebra;
 
 
 public class NotMof_Assertion implements Assertion {
-	private final Long notMof;
+	private final Object notMof;
 	
-	public NotMof_Assertion(Long notMof) {
+	public NotMof_Assertion(Object notMof) {
 		this.notMof = notMof;
 	}
 

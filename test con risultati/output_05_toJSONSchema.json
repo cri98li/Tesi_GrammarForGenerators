@@ -1,0 +1,12 @@
+{
+	"not": {
+		"additionalItems": {
+			"multipleOf": 2
+		},
+		"items": [
+			{
+				"multipleOf": 1
+			}
+		]
+	}
+}

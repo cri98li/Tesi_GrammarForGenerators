@@ -1,0 +1,23 @@
+{
+	type[obj],
+	anyOf[
+		props[
+			"^b$": {
+				type[num],
+				notMof(2)
+			}
+			;],
+		props[
+			"^a$": {
+				type[num],
+				notMof(1)
+			}
+			;],
+		props[
+			"^c$": {
+				type[num],
+				notMof(3)
+			}
+			;]
+	]
+}

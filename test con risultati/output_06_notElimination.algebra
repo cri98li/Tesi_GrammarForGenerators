@@ -1,0 +1,20 @@
+{
+	type[arr],
+	anyOf[
+		{
+			items[{
+					type[num],
+					notMof(1)
+				};],
+			betItems(1,+inf)
+		},
+		{
+			betItems(1,+inf),
+			items[false;]
+		},
+		{
+			betItems(2,+inf),
+			items[true;]
+		}
+	]
+}

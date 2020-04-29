@@ -1,0 +1,34 @@
+anyOf[
+	{
+		type[arr],
+		anyOf[
+			betItems(0,0),
+			betItems(2,+inf)
+		]
+	},
+	{
+		type[arr],
+		{
+			items[anyOf[
+					type[str,
+						obj,
+						arr,
+						bool,
+						null],
+					{
+						type[num],
+						anyOf[
+							xbet(-inf,1),
+							xbet(1,+inf)
+						]
+					}
+				];],
+			betItems(1,+inf)
+		}
+	},
+	type[str,
+		obj,
+		num,
+		bool,
+		null]
+]

@@ -1,0 +1,15 @@
+{
+	"not": {
+		"oneOf": [
+			{
+				"multipleOf": 3
+			},
+			{
+				"multipleOf": 2
+			},
+			{
+				"multipleOf": 1
+			}
+		]
+	}
+}

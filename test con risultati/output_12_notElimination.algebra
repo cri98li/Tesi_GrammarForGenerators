@@ -1,0 +1,8 @@
+anyOf[
+	type[str,
+		obj,
+		num,
+		arr,
+		null],
+	ifBoolThen(false)
+]

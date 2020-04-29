@@ -1,0 +1,1 @@
+not(pattReq["a":mof(1), "b":mof(2), "c":mof(3)])

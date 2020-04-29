@@ -15,6 +15,8 @@ public class Boolean_Assertion implements Assertion{
 		return value == that.value;
 	}
 
+	public boolean getValue(){return value;}
+
 	@Override
 	public int hashCode() {
 		return (value ? 1 : 0);

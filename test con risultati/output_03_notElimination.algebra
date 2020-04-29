@@ -1,0 +1,26 @@
+allOf[
+	anyOf[
+		{
+			type[num],
+			notMof(3)
+		},
+		mof(2),
+		mof(1)
+	],
+	anyOf[
+		mof(3),
+		{
+			type[num],
+			notMof(2)
+		},
+		mof(1)
+	],
+	anyOf[
+		mof(3),
+		mof(2),
+		{
+			type[num],
+			notMof(1)
+		}
+	]
+]

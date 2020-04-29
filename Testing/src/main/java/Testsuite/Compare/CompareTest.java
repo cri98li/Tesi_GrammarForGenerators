@@ -5,8 +5,10 @@ import Testsuite.Compare.Algebra.ANTLR4.GrammaticaLexer;
 import Testsuite.Compare.Algebra.ANTLR4.GrammaticaParser;
 import Testsuite.Compare.Algebra.Assertion;
 import Testsuite.Test;
-import org.antlr.v4.runtime.CharStreams;
-import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.atn.ATNConfigSet;
+import org.antlr.v4.runtime.dfa.DFA;
+import org.antlr.v4.runtime.misc.ParseCancellationException;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -17,6 +19,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.BitSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -29,6 +32,7 @@ public class CompareTest extends Test {
 
     @Override
     public void run() {
+
         result = compare(inputFiles.get(0), inputFiles.get(1));
     }
 
@@ -44,7 +48,7 @@ public class CompareTest extends Test {
 
             return root1.equals(root2);
         } catch (Exception e) {
-            //comment = e.getMessage();
+            comment = e.getMessage();
         }
 
         try {
@@ -53,6 +57,10 @@ public class CompareTest extends Test {
             GrammaticaLexer lexer = new GrammaticaLexer(CharStreams.fromReader(reader));
             CommonTokenStream tokens = new CommonTokenStream(lexer);
             GrammaticaParser parser = new GrammaticaParser(tokens);
+            lexer.removeErrorListeners();
+            lexer.addErrorListener(new ErrorListener());
+            parser.removeErrorListeners();
+            parser.addErrorListener(new ErrorListener());
 
             ParseTree tree =  parser.assertion();
             AlgebraParser p = new AlgebraParser();
@@ -64,6 +72,10 @@ public class CompareTest extends Test {
             lexer = new GrammaticaLexer(CharStreams.fromReader(reader));
             tokens = new CommonTokenStream(lexer);
             parser = new GrammaticaParser(tokens);
+            lexer.removeErrorListeners();
+            lexer.addErrorListener(new ErrorListener());
+            parser.removeErrorListeners();
+            parser.addErrorListener(new ErrorListener());
 
             tree =  parser.assertion();
             p = new AlgebraParser();
@@ -71,7 +83,7 @@ public class CompareTest extends Test {
 
             return schema1.equals(schema2);
         } catch (Exception e) {
-            //comment = e.getMessage();
+            comment = e.getMessage();
         }
 
 
@@ -121,5 +133,33 @@ public class CompareTest extends Test {
 
             return true;
         }
+    }
+}
+
+class ErrorListener implements ANTLRErrorListener {
+
+    @Override
+    public void syntaxError(Recognizer<?, ?> recognizer, Object o, int i, int i1, String s, RecognitionException e) throws ParseCancellationException {
+        System.out.println("ERRORE RILEVATO syntax: ");
+        System.out.println("\triga: "+ i +"\r\n\tcolonna:"+  i1 + "\r\n\t\t"+ s);
+        throw new ParseCancellationException("line " + i + ":" + i1 + " " + s);
+    }
+
+    @Override
+    public void reportAmbiguity(Parser parser, DFA dfa, int i, int i1, boolean b, BitSet bitSet, ATNConfigSet atnConfigSet) {
+        //System.out.println("ERRORE RILEVATO ambiguo");
+        //System.out.println("\triga: "+ i +"\r\n\tcolonna:"+  i1 + "\r\n\t\t"+ atnConfigSet.getAlts().toString());
+    }
+
+    @Override
+    public void reportAttemptingFullContext(Parser parser, DFA dfa, int i, int i1, BitSet bitSet, ATNConfigSet atnConfigSet) {
+        /*System.out.println("ERRORE RILEVATO full context");
+        System.out.println("\triga: "+ i +"\r\n\tcolonna:"+  i1 + "\r\n\t\t"+ bitSet);*/
+    }
+
+    @Override
+    public void reportContextSensitivity(Parser parser, DFA dfa, int i, int i1, int i2, ATNConfigSet atnConfigSet) {
+        /*System.out.println("ERRORE RILEVATO context sensitivity");
+        System.out.println("\triga: "+ i +"\r\n\tcolonna:"+  i1 + "\r\n\t\t"+ atnConfigSet);*/
     }
 }

@@ -1,0 +1,1 @@
+not(anyOf[not({mof(3),mof(2),mof(1)})])

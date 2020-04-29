@@ -1,0 +1,12 @@
+{
+	"not": {
+		"then": {
+			"not": {
+				"uniqueItems": true
+			}
+		},
+		"if": {
+			"type": "array"
+		}
+	}
+}
