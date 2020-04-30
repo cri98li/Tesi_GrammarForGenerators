@@ -1,0 +1,29 @@
+{
+	type[obj],
+	anyOf[
+		pattReq[
+			"^a$": {
+				type[num],
+				notMof(1)
+			}
+		],
+		pattReq[
+			"^b$": {
+				type[num],
+				notMof(2)
+			}
+		],
+		pattReq[
+			"^c$": {
+				type[num],
+				notMof(3)
+			}
+		],
+		addPattReq(["^a$",
+		"^b$",
+		"^c$"] : {
+			type[num],
+			notMof(4)
+		})
+	]
+}

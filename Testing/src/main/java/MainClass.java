@@ -14,6 +14,7 @@ import java.util.concurrent.*;
 public class MainClass {
 	public static void main(String[] args) throws InterruptedException, IOException {
 		Long start = System.currentTimeMillis();
+		int nThread = 3;
 
 		CommandLineParser parser = new DefaultParser();
 		CommandLine commandLine;
@@ -102,7 +103,7 @@ public class MainClass {
 
 		if(commandLine.hasOption("t")){
 			testBuilder = new FolderTestBuilder(commandLine.getOptionValue("t"));
-			ExecutorService executors = Executors.newFixedThreadPool(1);
+			ExecutorService executors = Executors.newFixedThreadPool(nThread);
 			List<Test> tests = testBuilder.getTests();
 			for (Test test : tests)
 				executors.execute(test);
@@ -151,7 +152,7 @@ public class MainClass {
 
 
 		if(testBuilder != null) {
-			ExecutorService executors = Executors.newFixedThreadPool(3);
+			ExecutorService executors = Executors.newFixedThreadPool(nThread);
 			List<Test> tests = testBuilder.getTests();
 			for (Test test : tests)
 				executors.execute(test);

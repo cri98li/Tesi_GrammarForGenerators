@@ -14,7 +14,7 @@ public class AntlrBoolean implements AntlrValue{
 	}
 
 	@Override
-	public Object getValue() {
+	public Boolean getValue() {
 		return value;
 	}
 

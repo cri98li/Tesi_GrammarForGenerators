@@ -1,0 +1,10 @@
+{
+	type[arr],
+	{
+		items[{
+				type[num],
+				notMof(1)
+			};],
+		betItems(1,+inf)
+	}
+}

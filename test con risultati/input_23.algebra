@@ -1,0 +1,8 @@
+not(
+props[
+        "a": mof(1),
+        "b": mof(2),
+        "c": mof(3);
+        mof(4)
+     ]
+)

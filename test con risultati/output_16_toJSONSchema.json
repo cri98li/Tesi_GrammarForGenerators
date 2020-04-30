@@ -5,14 +5,14 @@
 				{
 					"not": {
 						"patternProperties": {
-							"^r1$": false
+							"^rn$": false
 						}
 					}
 				},
 				{
 					"not": {
 						"patternProperties": {
-							"^rn$": false
+							"^r1$": false
 						}
 					}
 				}

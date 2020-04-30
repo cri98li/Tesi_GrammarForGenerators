@@ -37,6 +37,7 @@ assertion : 		type_assertion																					#NewTypeAssertion
 				|	repeated_items_assertion																		#NewRepeatedItems
 				|	additional_pattern_required																		#NewAdditionalPatternRequired
 				|	pattern_required																				#NewPatternRequired
+				|   ifBoolThen_assertion                                                                            #NewIfBoolThen
 	;
 
 
@@ -110,6 +111,7 @@ pattern_required: 'pattReq''[' STRING ':' assertion (',' STRING ':' assertion)* 
 
 additional_pattern_required: 'addPattReq''(' '['(STRING (',' STRING)*)*']' ':' assertion ')'							#ParseAdditionalPatternRequired;
 
+ifBoolThen_assertion: 'ifBoolThen''('BOOLEAN')'                                                                               #ParseIfBoolThen;
 
 json_value :  			NULL																						#NullValue
 				|		INT 																						#IntValue

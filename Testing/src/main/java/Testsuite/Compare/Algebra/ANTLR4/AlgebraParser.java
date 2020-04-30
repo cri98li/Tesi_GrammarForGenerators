@@ -636,4 +636,20 @@ public class AlgebraParser extends GrammaticaBaseVisitor<AlgebraParserElement> {
 	public ExName_Assertion visitParsePropertyExNames(GrammaticaParser.ParsePropertyExNamesContext ctx) {
 		return new ExName_Assertion((Assertion) visit(ctx.assertion()));
 	}
+
+	public IfBoolThen_Assertion visitParseIfBoolThen(GrammaticaParser.ParseIfBoolThenContext ctx){
+		Boolean b = false;
+		switch(ctx.BOOLEAN().getText()){
+			case "true":
+			case "t":
+			case "tt":
+				b=true;
+		}
+
+		return new IfBoolThen_Assertion(b);
+	}
+
+	public IfBoolThen_Assertion visitNewIfBoolThen(GrammaticaParser.NewIfBoolThenContext ctx){
+		return (IfBoolThen_Assertion) visit(ctx.ifBoolThen_assertion());
+	}
 }

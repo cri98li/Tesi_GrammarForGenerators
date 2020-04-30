@@ -1,0 +1,10 @@
+def "not_x2" = {
+	type[num],
+	notMof(2)
+},
+rootdef "not_x1" = {
+	type[num],
+	notMof(1)
+},
+def "x1" = mof(1),
+def "x2" = mof(2)
