@@ -1,4 +1,4 @@
-package Testsuite.TestFolder;
+package Testsuite.FolderTest;
 
 import Testsuite.Cmd_Linux;
 import Testsuite.Test;

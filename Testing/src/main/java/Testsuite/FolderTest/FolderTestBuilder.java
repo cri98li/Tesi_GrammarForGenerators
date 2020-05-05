@@ -1,4 +1,4 @@
-package Testsuite.TestFolder;
+package Testsuite.FolderTest;
 
 import Testsuite.Cmd_Linux;
 import Testsuite.Test;
@@ -11,8 +11,8 @@ import java.util.List;
 
 public class FolderTestBuilder extends TestBuilder {
     private static int[] actionsForJSONInput = {1};
-    private static int[] actionsForGraamarInput = {2, 3};
-    private static String[] actionNames ={"toAlgebra.algebra", "toJSONSchema.json", "notElimination.algebra"};
+    private static int[] actionsForGramarInput = {2, 3, 4};
+    private static String[] actionNames ={"toAlgebra.algebra", "toJSONSchema.json", "notElimination.algebra", "andMerging.algebra"};
 
     private String path;
 
@@ -34,11 +34,13 @@ public class FolderTestBuilder extends TestBuilder {
 
             if(file.getName().contains(".json"))
                 for(int action : FolderTestBuilder.actionsForJSONInput)
-                    returnList.add(new FolderTest(file.getPath(), action, actionNames[action-1]));
+                    if(new File(file.getPath().replace("input", "output").replace(".json", "_"+actionNames[action-1])).exists())
+                        returnList.add(new FolderTest(file.getPath(), action, actionNames[action-1]));
 
             if(file.getName().contains(".algebra"))
-                for(int action : FolderTestBuilder.actionsForGraamarInput)
-                    returnList.add(new FolderTest(file.getPath(), action, actionNames[action-1]));
+                for(int action : FolderTestBuilder.actionsForGramarInput)
+                    if(new File(file.getPath().replace("input", "output").replace(".algebra", "_"+actionNames[action-1])).exists())
+                        returnList.add(new FolderTest(file.getPath(), action, actionNames[action-1]));
 
         }
 

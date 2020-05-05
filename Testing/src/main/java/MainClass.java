@@ -2,8 +2,7 @@ import Testsuite.Compare.CompareTestBuilder;
 import Testsuite.Test;
 import Testsuite.RandomTest.RandomTestBuilder;
 import Testsuite.TestBuilder;
-import Testsuite.TestFolder.FolderTest;
-import Testsuite.TestFolder.FolderTestBuilder;
+import Testsuite.FolderTest.FolderTestBuilder;
 import org.apache.commons.cli.*;
 
 import java.io.File;
