@@ -1,0 +1,4 @@
+rootdef "x" = allOf[
+	ifBoolThen(true),
+	ifBoolThen(false)
+]

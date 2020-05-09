@@ -1,0 +1,11 @@
+rootdef x = mof(14.0),
+def "not_x" = anyOf[
+	{
+		type[num],
+		notMof(2.0)
+	},
+	{
+		type[num],
+		notMof(7.0)
+	}
+]

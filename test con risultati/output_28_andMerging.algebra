@@ -1,0 +1,11 @@
+rootdef x = anyOf[
+	type[str],
+	type[obj],
+	type[num],
+	type[arr],
+	type[null]
+],
+def "not_x" = anyOf[
+	ifBoolThen(false),
+	ifBoolThen(true)
+]

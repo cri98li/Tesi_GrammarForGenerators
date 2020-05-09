@@ -1,0 +1,4 @@
+rootdef "x" = allOf[
+	mof(2.0),
+	mof(7.0)
+]

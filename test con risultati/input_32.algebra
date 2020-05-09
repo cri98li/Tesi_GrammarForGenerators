@@ -1,0 +1,6 @@
+allOf[
+    props[
+        "a" : type[int, obj],
+        "b" : type[obj, int];
+    ]
+]

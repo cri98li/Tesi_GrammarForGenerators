@@ -1,0 +1,2 @@
+rootdef x = ifBoolThen(false),
+def "not_x" = ifBoolThen(true)

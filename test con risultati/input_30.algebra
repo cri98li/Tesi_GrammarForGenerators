@@ -1,0 +1,30 @@
+rootdef "x" = allOf[
+	items[
+	    {
+	        type[int],
+	        bet(3,7)
+	    },
+	    {
+	        type[str],
+	        length(10,25)
+	    };
+	    {
+	        type[obj],
+	        pro(2,6)
+	    }
+	],
+	items[
+    	    {
+    	        type[int],
+    	        xbet(3,6)
+    	    },
+    	    {
+    	        type[str],
+    	        length(10,30)
+    	    };
+    	    {
+    	        type[obj],
+    	        pro(2,3)
+    	    }
+    	]
+]

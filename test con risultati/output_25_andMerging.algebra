@@ -1,0 +1,37 @@
+rootdef x = allOf[
+	props[
+		"^b$": type[int]
+		;],
+	props[
+		"^a$": type[str]
+		;]
+],
+def "not_x" = {
+	type[obj],
+	anyOf[
+		type[str],
+		type[num],
+		type[arr],
+		type[bool],
+		type[null],
+		pattReq[
+			"^a$": anyOf[
+				type[obj],
+				type[num],
+				type[arr],
+				type[bool],
+				type[null]
+			]
+		],
+		pattReq[
+			"^b$": anyOf[
+				type[str],
+				type[obj],
+				type[arr],
+				type[bool],
+				type[null],
+				type[numNotInt]
+			]
+		]
+	]
+}

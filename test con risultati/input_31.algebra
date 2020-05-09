@@ -1,0 +1,11 @@
+allOf[
+    items[
+        type[int];
+        mof(7)
+    ],
+    items[
+        mof(2),
+        mof(3);
+        mof(4)
+    ]
+]

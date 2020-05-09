@@ -1,0 +1,7 @@
+rootdef "root" = items[{
+		mof(2.0),
+		type[int]
+	},
+	mof(21.0);
+    mof(28.0)
+]

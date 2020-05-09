@@ -1,0 +1,10 @@
+rootdef "x" = allOf[
+        props[
+            "a": type[str],
+            "b": type[int]
+            ;
+        ],
+         props[
+              "a": type[str];
+         ]
+]

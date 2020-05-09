@@ -1,0 +1,8 @@
+rootdef "x" = allOf[
+    type[int],
+    type[int],
+    allOf[
+        mof(2),
+        notMof(5)
+    ]
+]
