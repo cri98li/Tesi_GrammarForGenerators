@@ -20,7 +20,7 @@ public class Cmd_Linux {
 	}
 
 	public static void getProject() throws IOException, InterruptedException {
-		int returnCode = Cmd_Linux.execute("git", "clone", "https://"+ Testsuite.RandomTest.Credenziali.username + ":" + Testsuite.RandomTest.Credenziali.password +
+		int returnCode = Cmd_Linux.execute("git", "clone", "https://"+ System.getenv("GIT_USER") + ":" + System.getenv("GIT_PASSW") +
 				"@github.com/cri98li/JSONSchema-Algebra.git");
 		System.out.println("git clone: "+ returnCode);
 
