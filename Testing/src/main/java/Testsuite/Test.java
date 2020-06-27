@@ -7,6 +7,7 @@ import java.util.Map;
 public abstract class Test implements Runnable {
     protected boolean result;
     protected String comment;
+    protected long time;
     protected List<String> inputFiles;
     protected List<String> outputFiles;
 
@@ -33,5 +34,7 @@ public abstract class Test implements Runnable {
         return outputFiles;
     }
 
-
+    public long getTime() {
+        return time;
+    }
 }

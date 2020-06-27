@@ -19,6 +19,15 @@
 	    <artifactId>github-api</artifactId>
 	    <version>1.110</version>
 	</dependency>
+
+      <dependency>
+          <artifactId>Testing</artifactId>
+          <groupId>it.unipi.di.tesiFalleniLandi</groupId>
+          <version>0.0.1-SNAPSHOT</version>
+          <scope>system</scope>
+          <systemPath>/lib/JsonSchema_to_Algebra-0.0.1-SNAPSHOT-jar-with-dependencies.jar</systemPath>
+      </dependency>
+
       <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
       <dependency>
           <groupId>com.googlecode.json-simple</groupId>

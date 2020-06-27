@@ -34,12 +34,12 @@ public class FolderTestBuilder extends TestBuilder {
 
             if(file.getName().contains(".json"))
                 for(int action : FolderTestBuilder.actionsForJSONInput)
-                    if(new File(file.getPath().replace("input", "output").replace(".json", "_"+actionNames[action-1])).exists())
+                    //if(new File(file.getPath().replace("input", "output").replace(".json", "_"+actionNames[action-1])).exists())
                         returnList.add(new FolderTest(file.getPath(), action, actionNames[action-1]));
 
             if(file.getName().contains(".algebra"))
                 for(int action : FolderTestBuilder.actionsForGramarInput)
-                    if(new File(file.getPath().replace("input", "output").replace(".algebra", "_"+actionNames[action-1])).exists())
+                    //if(new File(file.getPath().replace("input", "output").replace(".algebra", "_"+actionNames[action-1])).exists())
                         returnList.add(new FolderTest(file.getPath(), action, actionNames[action-1]));
 
         }

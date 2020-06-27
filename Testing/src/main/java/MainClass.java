@@ -5,8 +5,7 @@ import Testsuite.TestBuilder;
 import Testsuite.FolderTest.FolderTestBuilder;
 import org.apache.commons.cli.*;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -102,7 +101,10 @@ public class MainClass {
 
 		if(commandLine.hasOption("t")){
 			testBuilder = new FolderTestBuilder(commandLine.getOptionValue("t"));
-			ExecutorService executors = Executors.newFixedThreadPool(nThread);
+			//ExecutorService executors = Executors.newFixedThreadPool(nThread);
+			ThreadPoolExecutor executors = new ThreadPoolExecutor(nThread, nThread,
+					0L, TimeUnit.MILLISECONDS,
+					new LinkedBlockingQueue<>());
 			List<Test> tests = testBuilder.getTests();
 			for (Test test : tests)
 				executors.execute(test);
@@ -110,16 +112,25 @@ public class MainClass {
 			executors.shutdown();
 
 			while (!executors.awaitTermination(1, TimeUnit.SECONDS)) {
-				//System.out.println("MANCANO"+ executors. +"TEST");
+				System.out.println("MANCANO "+ executors.getQueue().size() +" TEST (su "+ tests.size() +")");
 			}
 
 			int testTotali = tests.size();
 			int testPassati = 0;
+			long tempoMedio = 0;
+			BufferedWriter w = new BufferedWriter(new FileWriter("output.csv"));
 			for (Test t : tests) {
-				if (t.getResult()) testPassati++;
+				w.write(t.getInputFiles().get(0)+","+t.getResult()+","+t.getTime()+","+t.getComment()+"\r\n");
+
+				if (t.getResult()) {
+					testPassati++;
+					tempoMedio += t.getTime();
+				}
 			}
+			w.close();
 
 			System.out.println("TEST SUPERATI: " + testPassati + "/" + testTotali);
+			System.out.println("\tTEMPO MEDIO ELABORAZIONE: " + (tempoMedio/testPassati) + " millisecondi");
 
 			testBuilder.shutdown();
 

@@ -2,10 +2,18 @@ package Testsuite.FolderTest;
 
 import Testsuite.Cmd_Linux;
 import Testsuite.Test;
+import it.unipi.di.tesiFalleniLandi.JsonSchema_to_Algebra.Common.Utils;
+import it.unipi.di.tesiFalleniLandi.JsonSchema_to_Algebra.FullAlgebra.Utils_FullAlgebra;
+import it.unipi.di.tesiFalleniLandi.JsonSchema_to_Algebra.JSONSchema.JSONSchema;
+import it.unipi.di.tesiFalleniLandi.JsonSchema_to_Algebra.JSONSchema.Utils_JSONSchema;
+
+import java.io.FileWriter;
+import java.io.Writer;
+
 
 public class FolderTest extends Test {
     private String filename, action;
-    private int command;
+    private int command; //TODO: implementare controllo sul comando, per ora solo su JSON
 
     public FolderTest(String filename, int command, String action){
         super();
@@ -20,15 +28,25 @@ public class FolderTest extends Test {
     public void run() {
         String outputFileName = filename.replace(".json", "").replace(".algebra", "") +"_" + action;
         try{
-            int returnCode = Cmd_Linux.execute("bash", "-c", "/usr/lib/jvm/java-11-openjdk/bin/java -cp eseguibile.jar "
-                    + "it.unipi.di.tesiFalleniLandi.JsonSchema_to_Algebra.MainClass "
-                    + command + " " + filename + " &> " + outputFileName);
-            if(returnCode == 0) {
-                result = true;
-                outputFiles.add(outputFileName);
-            }
+            time = System.currentTimeMillis();
+
+            JSONSchema js = Utils_JSONSchema.parse(filename);
+            Writer w = new FileWriter(outputFileName);
+            //w.write(Utils.beauty(js.toGrammarString()));
+            w.write(Utils_FullAlgebra.parseString(Utils_JSONSchema.normalize(js).toGrammarString()).toGrammarString());
+            w.close();
+            result = true;
+            outputFiles.add(outputFileName);
+
+            time = System.currentTimeMillis() - time;
         }catch(Exception ex) {
-            comment = ex.getMessage();
+            if(ex.getCause() != null)
+                comment = ex.getCause().toString().replace(",", ".").replace("\r", "").replace("\n", "");
+            else if(ex.getMessage() != null && !ex.getMessage().isEmpty())
+                comment = ex.getMessage().replace(",", ".").replace("\r", "").replace("\n", "");
+            else
+                comment = "da indagare";
+
         }
     }
 }
