@@ -1,0 +1,336 @@
+{
+    "$id": "https://raw.githubusercontent.com/edertone/TurboBuilder/master/TurboBuilder-Node/src/main/resources/json-schema/turbodepot.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "turbodepot.json schema",
+    "required": [
+        "$schema",
+        "depots",
+        "sources"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "Url to the json schema definition to validate this file",
+            "enum": [
+                "https://raw.githubusercontent.com/edertone/TurboBuilder/master/TurboBuilder-Node/src/main/resources/json-schema/turbodepot.schema.json"
+            ]
+        },
+        "wildCards": {
+            "type": "array",
+            "description": "List of wildcards that can be used to be dinamically replaced on this setup, with different values for the build and release commands",
+            "items": {
+                "type": "object",
+                "description": "",
+                "required": [
+                    "name",
+                    "build",
+                    "release"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The name for the wildcard. This string will be searched on all the setup file and replaced with the build or release value"
+                    },
+                    "build": {
+                        "type": "string",
+                        "description": "The value that will be assigned to all the wildcard occurences when the build process is executed"
+                    },
+                    "release": {
+                        "type": "string",
+                        "description": "The value that will be assigned to all the wildcard occurences when the release process is executed"
+                    }
+                }
+            }
+        },
+        "depots": {
+            "type": "array",
+            "description": "",
+            "items": {
+                "type": "object",
+                "description": "",
+                "required": [
+                    "name",
+                    "storageFolderPath",
+                    "tmpFiles",
+                    "localizedFiles",
+                    "logs",
+                    "objects",
+                    "googleDrive",
+                    "users"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": ""
+                    },
+                    "storageFolderPath": {
+                        "type": "string",
+                        "description": "The full file system path to the root of the storage folder (if used)"
+                    },
+                    "tmpFiles": {
+                        "type": "object",
+                        "description": "Defines the setup for the storage of temporary files into this depot instance",
+                        "required": [
+                            "source"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "source": {
+                                "type": "string",
+                                "description": "The name for a source that will be used to store and read the temporary files"
+                            }
+                        }
+                    },
+                    "localizedFiles": {
+                        "type": "object",
+                        "description": "Defines the setup for the storage of localized files into this depot instance",
+                        "required": [
+                            "source"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "source": {
+                                "type": "string",
+                                "description": "The name for a source that will be used to store and read the localized files"
+                            },
+                            "locales": {
+                                "type": "array",
+                                "description": "The list of locales that will be used to perform translations on the item names. Sorted by preference, like: 'en_US', 'es_ES' (see TurboCommons LocalizedFilesManager constructor docs for more info)"
+                            },
+                            "locations": {
+                                "type": "array",
+                                "description": "A list (sorted by preference) where each item defines a translations location (see TurboCommons LocalizedFilesManager constructor docs for more info)"
+                            },
+                            "failIfKeyNotFound": {
+                                "type": "boolean",
+                                "description": "True to throw an exception if any localization key is not found (see TurboCommons LocalizedFilesManager constructor docs for more info)"
+                            }
+                        }
+                    },
+                    "logs": {
+                        "type": "object",
+                        "description": "Defines the setup for the storage of logs into this depot instance",
+                        "required": [
+                            "source"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "source": {
+                                "type": "string",
+                                "description": "The name for a source that will be used to store and read the logs"
+                            }
+                        }
+                    },
+                    "objects": {
+                        "type": "object",
+                        "description": "",
+                        "required": [
+                            "source"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "source": {
+                                "type": "string",
+                                "description": ""
+                            }
+                        }
+                    },
+                    "googleDrive": {
+                        "type": "object",
+                        "description": "Defines the setup for the google drive client",
+                        "required": [
+                            "accountCredentialsPath",
+                            "apiClientRoot",
+                            "cacheRootPath",
+                            "cacheZone",
+                            "listsTimeToLive",
+                            "filesTimeToLive"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "accountCredentialsPath": {
+                                "type": "string",
+                                "description": "A full file system path to the file that contains the service account credentials that will be used to authenticate with the google drive API"
+                            },
+                            "apiClientRoot": {
+                                "type": "string",
+                                "description": "A full file system path to the root of the google-api-php-client library. See GoogleDriveManager class for more info"
+                            },
+                            "cacheRootPath": {
+                                "type": "string",
+                                "description": "A full file system path to the root of the folder where the cached google drive files will be stored. Set it to empty string to disable local cache. See GoogleDriveManager class for more info"
+                            },
+                            "cacheZone": {
+                                "type": "string",
+                                "description": "The name for the cache zone where the google drive cached files will be stored. See GoogleDriveManager class for more info"
+                            },
+                            "listsTimeToLive": {
+                                "type": "integer",
+                                "description": "Defines the number of seconds after which the operations related to listing files and folder cache data will be deleted. Set it to 0 to for an infinite time. (1 hour = 3600 seconds, 1 day = 86400 seconds, 1 month = 2592000, 1 year = 31536000)"
+                            },
+                            "filesTimeToLive": {
+                                "type": "integer",
+                                "description": "Defines the number of seconds after which the operations related to getting files content cache data will be deleted. Set it to 0 to for an infinite time. (1 hour = 3600 seconds, 1 day = 86400 seconds, 1 month = 2592000, 1 year = 31536000)"
+                            }
+                        }
+                    },
+                    "users": {
+                        "type": "object",
+                        "description": "",
+                        "required": [
+                            "source"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "source": {
+                                "type": "string",
+                                "description": ""
+                            },
+                            "tokenLength": {
+                                "type": "integer",
+                                "description": ""
+                            },
+                            "tokenLifetime": {
+                                "type": "integer",
+                                "description": ""
+                            }
+                        }
+                    },
+                    "database": {
+                        "type": "string",
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "sources": {
+            "type": "object",
+            "description": "Defines the destinations where the data will be saved and read",
+            "required": [],
+            "additionalProperties": false,
+            "properties": {
+                "fileSystem": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "type": "object",
+                        "description": "",
+                        "required": [
+                            "name",
+                            "path"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "A name we want to use as an alias for this file system source"
+                            },
+                            "path": {
+                                "type": "string",
+                                "description": "An absolute path that points to the root of this file system source. This is where the data will be stored when we use this source alias on our depots"
+                            }
+                        }
+                    }
+                },
+                "mariadb": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "type": "object",
+                        "description": "",
+                        "required": [
+                            "name",
+                            "host",
+                            "database",
+                            "prefix"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": ""
+                            },
+                            "host": {
+                                "type": "string",
+                                "description": ""
+                            },
+                            "database": {
+                                "type": "string",
+                                "description": ""
+                            },
+                            "prefix": {
+                                "type": "string",
+                                "description": ""
+                            }
+                        }
+                    }
+                },
+                "mysql": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "type": "object",
+                        "description": "",
+                        "required": [
+                            "name",
+                            "host",
+                            "database",
+                            "prefix"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": ""
+                            },
+                            "host": {
+                                "type": "string",
+                                "description": ""
+                            },
+                            "database": {
+                                "type": "string",
+                                "description": ""
+                            },
+                            "prefix": {
+                                "type": "string",
+                                "description": ""
+                            }
+                        }
+                    }
+                },
+                "sqLite": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "type": "object",
+                        "description": "",
+                        "required": [
+                            "name",
+                            "path",
+                            "prefix"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": ""
+                            },
+                            "path": {
+                                "type": "string",
+                                "description": ""
+                            },
+                            "prefix": {
+                                "type": "string",
+                                "description": ""
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,131 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "/",
+    "type": "object",
+    "title": "\u7cfb\u7edf\u63a5\u53e3\u89c4\u8303\u7684\u57fa\u7840schema",
+    "description": "\u5728\u6b64\u57fa\u7840\u4e0a\u5b9a\u4e49\u7cfb\u7edf\u63a5\u53e3\u89c4\u8303",
+    "name": "/",
+    "properties": {
+        "api": {
+            "id": "api",
+            "type": "string",
+            "title": "\u63a5\u53e3API",
+            "description": "\u7cfb\u7edf\u63a5\u53e3\u89c4\u8303\u7684API\u6807\u8bc6",
+            "name": "api",
+            "default": "api_sample"
+        },
+        "uri": {
+            "id": "uri",
+            "type": "string",
+            "title": "\u63a5\u53e3URI",
+            "description": "\u7cfb\u7edf\u63a5\u53e3\u89c4\u8303\u7684URI\u5730\u5740",
+            "name": "uri",
+            "default": "api/sample"
+        },
+        "title": {
+            "id": "title",
+            "type": "string",
+            "title": "\u63a5\u53e3\u540d\u79f0",
+            "description": "\u7cfb\u7edf\u63a5\u53e3\u89c4\u8303\u7684\u540d\u79f0",
+            "name": "title",
+            "default": "api sample"
+        },
+        "description": {
+            "id": "description",
+            "type": "string",
+            "title": "\u63a5\u53e3\u8bf4\u660e",
+            "description": "\u7cfb\u7edf\u63a5\u53e3\u89c4\u8303\u7684\u8bf4\u660e\u63cf\u8ff0",
+            "name": "description",
+            "default": "A json api sample."
+        },
+        "request": {
+            "id": "request",
+            "type": "object",
+            "title": "\u63a5\u53e3\u8bf7\u6c42",
+            "description": "\u7cfb\u7edf\u63a5\u53e3\u89c4\u8303\u7684\u8bf7\u6c42\u6570\u636e\u5bf9\u8c61",
+            "name": "request",
+            "properties": {
+                "method": {
+                    "id": "method",
+                    "type": "string",
+                    "title": "HTTP\u65b9\u6cd5",
+                    "description": "\u7cfb\u7edf\u63a5\u53e3\u89c4\u8303\u7684HTTP\u65b9\u6cd5",
+                    "name": "method",
+                    "default": "POST"
+                },
+                "params": {
+                    "id": "params",
+                    "type": "array",
+                    "title": "\u53c2\u6570\u5217\u8868",
+                    "description": "\u7cfb\u7edf\u63a5\u53e3\u89c4\u8303\u8bf7\u6c42\u6570\u636e\u7684\u53c2\u6570\u5217\u8868",
+                    "name": "params",
+                    "items": {
+                        "id": "0",
+                        "type": "object",
+                        "title": "\u8bf7\u6c42\u53c2\u6570",
+                        "description": "\u8bf7\u6c42\u6570\u636e\u7684\u53c2\u6570",
+                        "name": "0",
+                        "properties": {
+                            "name": {
+                                "id": "name",
+                                "type": "string",
+                                "title": "\u53c2\u6570\u540d",
+                                "description": "\u53c2\u6570\u540d",
+                                "name": "name",
+                                "default": "param"
+                            },
+                            "title": {
+                                "id": "title",
+                                "type": "string",
+                                "title": "\u53c2\u6570\u540d\u79f0",
+                                "description": "\u53c2\u6570\u7684\u540d\u79f0",
+                                "name": "title",
+                                "default": "\u53c2\u6570"
+                            },
+                            "description": {
+                                "id": "description",
+                                "type": "string",
+                                "title": "\u53c2\u6570\u63cf\u8ff0",
+                                "description": "\u53c2\u6570\u7684\u63cf\u8ff0",
+                                "name": "description",
+                                "default": "\u8bf7\u6c42\u53c2\u6570\u7684\u793a\u4f8b"
+                            },
+                            "optional": {
+                                "id": "optional",
+                                "type": "boolean",
+                                "title": "\u662f\u5426\u53ef\u9009",
+                                "description": "\u53c2\u6570\u662f\u5426\u53ef\u9009",
+                                "name": "optional",
+                                "default": false
+                            },
+                            "type": {
+                                "id": "type",
+                                "type": "string",
+                                "title": "\u6570\u636e\u7c7b\u578b",
+                                "description": "\u53c2\u6570\u7684\u6570\u636e\u7c7b\u578b",
+                                "name": "type",
+                                "default": "integer"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "response": {
+            "id": "response",
+            "type": "object",
+            "title": "\u63a5\u53e3\u54cd\u5e94",
+            "description": "\u7cfb\u7edf\u63a5\u53e3\u89c4\u8303\u7684\u54cd\u5e94\u6570\u636e\u5bf9\u8c61",
+            "name": "response",
+            "properties": {}
+        }
+    },
+    "required": [
+        "api",
+        "uri",
+        "title",
+        "description",
+        "request",
+        "response"
+    ]
+}

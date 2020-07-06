@@ -1,0 +1,60 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "Location",
+    "description": "JSON schema for an location",
+    "additionalProperties": false,
+    "required": [
+        "$schema",
+        "pid",
+        "code",
+        "name",
+        "library"
+    ],
+    "properties": {
+        "$schema": {
+            "title": "Schema",
+            "description": "Schema to validate organisation records against.",
+            "type": "string",
+            "minLength": 9,
+            "default": "https://ils.rero.ch/schema/locations/location-v0.0.1.json"
+        },
+        "pid": {
+            "title": "Location ID",
+            "type": "string"
+        },
+        "code": {
+            "title": "Code",
+            "description": "Code of the location.",
+            "type": "string"
+        },
+        "name": {
+            "title": "Name",
+            "description": "Name of the location.",
+            "type": "string",
+            "minLength": 1
+        },
+        "is_pickup": {
+            "title": "Is pickup location",
+            "type": "boolean",
+            "default": false,
+            "description": "Qualify this location as a pickup location."
+        },
+        "pickup_name": {
+            "title": "Pickup location name",
+            "type": "string",
+            "description": "Displayed pickup location name, if different from the location name."
+        },
+        "library": {
+            "title": "Library",
+            "type": "object",
+            "properties": {
+                "$ref": {
+                    "title": "Library URI",
+                    "type": "string",
+                    "pattern": "^https://ils.rero.ch/api/libraries/.*?$"
+                }
+            }
+        }
+    }
+}

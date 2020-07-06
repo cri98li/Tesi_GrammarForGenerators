@@ -1,0 +1,29 @@
+{
+    "id": "https://raw.githubusercontent.com/MoskitosForReal/xpack-rest-api-spec/master/src/schemas/trigger-schedule.json#",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "trigger-schedule",
+    "documentation": "https://www.elastic.co/guide/en/x-pack/5.5/trigger-schedule.html",
+    "description": "Schedule triggers define when the watch execution should start based on date and time. All times are specified in UTC time.",
+    "type": "object",
+    "properties": {
+        "schedule": {
+            "type": "object",
+            "$ref": "#/definitions/schedule"
+        }
+    },
+    "required": [
+        "schedule"
+    ],
+    "definitions": {
+        "schedule": {
+            "oneOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/MoskitosForReal/xpack-rest-api-spec/master/src/schemas/trigger-schedule-hourly.json#"
+                },
+                {
+                    "$ref": "https://raw.githubusercontent.com/MoskitosForReal/xpack-rest-api-spec/master/src/schemas/trigger-schedule-daily.json#"
+                }
+            ]
+        }
+    }
+}

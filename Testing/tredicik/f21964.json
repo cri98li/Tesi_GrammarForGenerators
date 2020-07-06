@@ -1,0 +1,114 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://damnhandy.com/json-schema/uri-template-structure",
+    "description": "Schema for the parsed structure of a URI template.",
+    "title": "The structure of a URI template",
+    "type": "object",
+    "properties": {
+        "template": {
+            "description": "The input URI template string",
+            "type": "string"
+        },
+        "expression_count": {
+            "description": "The total number of expressions in the URI Template",
+            "type": "integer"
+        },
+        "expressions": {
+            "description": "The collection of expressions found in the URI parsed template.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "expression": {
+                        "description": "Represents a single expression in the URI template.",
+                        "type": "string"
+                    },
+                    "operator": {
+                        "description": "If specified, represents the operator in the expression.",
+                        "type": "string"
+                    },
+                    "variables": {
+                        "description": "the collection of variables with the expression.",
+                        "type": "array",
+                        "items": {
+                            "description": "represents a single variable with the expression",
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "modifier": {
+                                    "description": "Represents the modifier applied to the variable if specified. Otherwise, it defaults to NONE.",
+                                    "enum": [
+                                        "NONE",
+                                        "EXPLODE",
+                                        "PREFIX"
+                                    ]
+                                },
+                                "prefix": {
+                                    "description": "The modifier is PREFIX, this value represents the character count. ",
+                                    "type": "integer"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "name",
+                                "modifier"
+                            ]
+                        }
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "expression",
+                "variables"
+            ]
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "template",
+        "expression_count",
+        "expressions"
+    ],
+    "links": [
+        {
+            "title": "The link for this URI template description",
+            "href": "/uri-template{?template}",
+            "rel": "self",
+            "method": "GET",
+            "enctype": "application/www-form-urlencoded",
+            "mediaType": "application/json;profile=/schema/uriTemplateStructure"
+        },
+        {
+            "title": "Parses and explains the structure about the submitted URI template string.",
+            "href": "/uri-template",
+            "rel": "about",
+            "method": "GET",
+            "enctype": "application/www-form-urlencoded",
+            "mediaType": "application/json;profile=/schema/uriTemplateStructure",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "template": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "template"
+                ]
+            }
+        },
+        {
+            "href": "/uri-template",
+            "rel": "create",
+            "method": "POST",
+            "enctype": "application/json",
+            "mediaType": "application/json;profile='/schemas/expansionResult'",
+            "schema": {
+                "$ref": "./expansionRequest.json"
+            }
+        }
+    ]
+}

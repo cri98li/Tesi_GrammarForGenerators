@@ -1,0 +1,58 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "header": {
+        "type": "object",
+        "properties": {
+            "user": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 30
+            },
+            "email": {
+                "type": "string",
+                "format": "email"
+            },
+            "institution": {
+                "type": "string",
+                "minLength": 3,
+                "maxLength": 50
+            },
+            "tags": {
+                "type": "string"
+            },
+            "tags_format": {
+                "enum": [
+                    "OWL",
+                    "RDF"
+                ]
+            },
+            "postman": {
+                "$ref": "http://some.site.somewhere/collector-schema#"
+            },
+            "collector": {
+                "$ref": "http://some.site.somewhere/collector-schema#"
+            },
+            "settings": {
+                "$ref": "http://some.site.somewhere/settings-schema#"
+            },
+            "context": {
+                "$ref": "http://some.site.somewhere/context-schema#"
+            }
+        },
+        "required": [
+            "collector",
+            "settings"
+        ],
+        "dependencies": {
+            "postman": [
+                "collector"
+            ],
+            "tags_format": [
+                "tags"
+            ]
+        }
+    },
+    "required": [
+        "header"
+    ]
+}

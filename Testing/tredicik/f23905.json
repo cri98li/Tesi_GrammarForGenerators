@@ -1,0 +1,42 @@
+{
+    "id": "http://ndm.mit.edu/magnet_orders/schemas/schemaMetadata",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "schemaMetadata",
+    "description": "Formatting information for record display",
+    "type": "object",
+    "definitions": {},
+    "properties": {
+        "name": {
+            "type": "STRING"
+        },
+        "title": {
+            "type": "array",
+            "items": {
+                "type": "STRING"
+            }
+        },
+        "brief": {
+            "type": "array",
+            "items": {
+                "type": "STRING"
+            }
+        },
+        "body": {
+            "type": "array",
+            "items": {
+                "type": "STRING"
+            }
+        },
+        "links": {
+            "type": "array",
+            "items": {
+                "type": "STRING"
+            }
+        }
+    },
+    "required": [
+        "name",
+        "title",
+        "body"
+    ]
+}

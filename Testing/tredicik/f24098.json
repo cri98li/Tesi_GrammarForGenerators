@@ -1,0 +1,616 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "phone": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "description": "Dictionary: PHONE_TYPE"
+                },
+                "number": {
+                    "type": "string",
+                    "pattern": "^\\+38[0-9]{10}$"
+                }
+            },
+            "required": [
+                "type",
+                "number"
+            ],
+            "additionalProperties": false
+        },
+        "name": {
+            "type": "string",
+            "pattern": "^(?!.*[\u042b\u042a\u042d\u0401\u044b\u044a\u044d\u0451@%&$^#])[a-zA-Z\u0410-\u042f\u0490\u0407\u0406\u0404\u0430-\u044f\u0491\u0457\u0456\u04540-9\u2116\\\"!\\^\\*)\\]\\[(._-].*$"
+        },
+        "person_name": {
+            "type": "string",
+            "pattern": "^(?!.*[\u042b\u042a\u042d\u0401\u044b\u044a\u044d\u0451@%&$^#])[\u0410-\u042f\u0490\u0407\u0406\u0404\u0430-\u044f\u0491\u0457\u0456\u0454\\'\\-]+(\\s(?!.*[\u042b\u042a\u042d\u0401\u044b\u044a\u044d\u0451@%&$^#])[\u0410-\u042f\u0490\u0407\u0406\u0404\u0430-\u044f\u0491\u0457\u0456\u0454\\'\\-]+)*$",
+            "minLength": 1,
+            "maxLength": 255
+        },
+        "unzr": {
+            "type": "string",
+            "pattern": "^[0-9]{8}-[0-9]{5}$"
+        },
+        "tax_id": {
+            "type": "string",
+            "pattern": "^[0-9]{10}$",
+            "minLength": 10,
+            "maxLength": 255
+        },
+        "gender": {
+            "type": "string",
+            "description": "Dictionary: GENDER",
+            "maxLength": 255
+        },
+        "address": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "description": "Dictionary: ADDRESS_TYPE"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "area": {
+                    "$ref": "#/definitions/name"
+                },
+                "region": {
+                    "$ref": "#/definitions/name"
+                },
+                "settlement": {
+                    "$ref": "#/definitions/name"
+                },
+                "settlement_type": {
+                    "type": "string",
+                    "description": "settlement type Dictionary: SETTLEMENT_TYPE"
+                },
+                "settlement_id": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+                },
+                "street_type": {
+                    "type": "string",
+                    "description": "street type Dictionary: STREET_TYPE"
+                },
+                "street": {
+                    "$ref": "#/definitions/name"
+                },
+                "building": {
+                    "type": "string",
+                    "pattern": "^[1-9]((?![\u042b\u042a\u042d\u0401\u044b\u044a\u044d\u0451])()([\u0410-\u042f\u0490\u0407\u0406\u0404\u0430-\u044f\u0491\u0457\u0456\u0454 \\/\\'\\-0-9])){0,20}$"
+                },
+                "apartment": {
+                    "type": "string"
+                },
+                "zip": {
+                    "type": "string",
+                    "pattern": "^[0-9]{5}$"
+                }
+            },
+            "required": [
+                "type",
+                "country",
+                "area",
+                "settlement",
+                "settlement_type",
+                "settlement_id"
+            ],
+            "additionalProperties": false
+        },
+        "series_number_document": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "PASSPORT",
+                        "COMPLEMENTARY_PROTECTION_CERTIFICATE",
+                        "REFUGEE_CERTIFICATE"
+                    ],
+                    "description": "Dictionary: DOCUMENT_TYPE"
+                },
+                "number": {
+                    "type": "string",
+                    "pattern": "^((?![\u042b\u042a\u042d\u0401])([\u0410-\u042f\u0490\u0407\u0406\u0404])){2}[0-9]{6}$"
+                },
+                "issued_by": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "issued_at": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "expiration_date": {
+                    "type": "string",
+                    "format": "date"
+                }
+            },
+            "required": [
+                "type",
+                "number",
+                "issued_at",
+                "issued_by"
+            ],
+            "additionalProperties": false
+        },
+        "temporary_document": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "PERMANENT_RESIDENCE_PERMIT",
+                        "TEMPORARY_CERTIFICATE"
+                    ],
+                    "description": "Dictionary: DOCUMENT_TYPE"
+                },
+                "number": {
+                    "type": "string",
+                    "pattern": "^(((?![\u042b\u042a\u042d\u0401])([\u0410-\u042f\u0490\u0407\u0406\u0404])){2}[0-9]{4,6}|[0-9]{9}|((?![\u042b\u042a\u042d\u0401])([\u0410-\u042f\u0490\u0407\u0406\u0404])){2}[0-9]{5}\\/[0-9]{5})$"
+                },
+                "issued_by": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "issued_at": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "expiration_date": {
+                    "type": "string",
+                    "format": "date"
+                }
+            },
+            "required": [
+                "type",
+                "number",
+                "issued_at",
+                "issued_by"
+            ],
+            "additionalProperties": false
+        },
+        "number_document": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "BIRTH_CERTIFICATE",
+                        "TEMPORARY_PASSPORT"
+                    ],
+                    "description": "Dictionary: DOCUMENT_TYPE"
+                },
+                "number": {
+                    "type": "string",
+                    "pattern": "^(?![\u042b\u042a\u042d\u0401\u044b\u044a\u044d\u0451@%&$^#`~:,.*|}{?!])[A-Z\u0410-\u042f\u0490\u0407\u0406\u04040-9\u2116\\/()-]+$",
+                    "minLength": 2,
+                    "maxLength": 25
+                },
+                "issued_by": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "issued_at": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "expiration_date": {
+                    "type": "string",
+                    "format": "date"
+                }
+            },
+            "required": [
+                "type",
+                "number",
+                "issued_at",
+                "issued_by"
+            ],
+            "additionalProperties": false
+        },
+        "id_card": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "NATIONAL_ID"
+                    ],
+                    "description": "Dictionary: DOCUMENT_TYPE"
+                },
+                "number": {
+                    "type": "string",
+                    "pattern": "^[0-9]{9}$"
+                },
+                "issued_by": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "issued_at": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "expiration_date": {
+                    "type": "string",
+                    "format": "date"
+                }
+            },
+            "required": [
+                "type",
+                "number",
+                "issued_at",
+                "issued_by",
+                "expiration_date"
+            ],
+            "additionalProperties": false
+        },
+        "document_relationship": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "description": "Dictionary: DOCUMENT_RELATIONSHIP_TYPE",
+                    "minLength": 1
+                },
+                "number": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "issued_by": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "issued_at": {
+                    "type": "string",
+                    "format": "date"
+                }
+            },
+            "required": [
+                "type",
+                "number"
+            ],
+            "additionalProperties": false
+        },
+        "authentication_method": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "description": "Dictionary: AUTHENTICATION_METHOD"
+                },
+                "phone_number": {
+                    "type": "string",
+                    "pattern": "^\\+38[0-9]{10}$"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "type": "object",
+    "properties": {
+        "declaration_request": {
+            "type": "object",
+            "properties": {
+                "start_date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Should be defined on the client side."
+                },
+                "person": {
+                    "type": "object",
+                    "properties": {
+                        "first_name": {
+                            "type": "string",
+                            "$ref": "#/definitions/person_name"
+                        },
+                        "last_name": {
+                            "type": "string",
+                            "$ref": "#/definitions/person_name"
+                        },
+                        "second_name": {
+                            "type": "string",
+                            "$ref": "#/definitions/person_name"
+                        },
+                        "birth_date": {
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "birth_country": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 255
+                        },
+                        "birth_settlement": {
+                            "type": "string",
+                            "$ref": "#/definitions/name",
+                            "minLength": 1,
+                            "maxLength": 255
+                        },
+                        "gender": {
+                            "$ref": "#/definitions/gender"
+                        },
+                        "email": {
+                            "type": "string",
+                            "format": "email",
+                            "maxLength": 255
+                        },
+                        "tax_id": {
+                            "type": "string",
+                            "$ref": "#/definitions/tax_id"
+                        },
+                        "no_tax_id": {
+                            "type": "boolean",
+                            "description": "Status person refused tax_id"
+                        },
+                        "unzr": {
+                            "type": "string",
+                            "$ref": "#/definitions/unzr"
+                        },
+                        "invalid_tax_id": {
+                            "type": "boolean"
+                        },
+                        "secret": {
+                            "type": "string",
+                            "$ref": "#/definitions/name",
+                            "minLength": 6,
+                            "maxLength": 20
+                        },
+                        "preferred_way_communication": {
+                            "type": "string",
+                            "enum": [
+                                "email",
+                                "phone"
+                            ]
+                        },
+                        "documents": {
+                            "type": "array",
+                            "minItems": 1,
+                            "items": {
+                                "oneOf": [
+                                    {
+                                        "$ref": "#/definitions/series_number_document"
+                                    },
+                                    {
+                                        "$ref": "#/definitions/temporary_document"
+                                    },
+                                    {
+                                        "$ref": "#/definitions/number_document"
+                                    },
+                                    {
+                                        "$ref": "#/definitions/id_card"
+                                    }
+                                ]
+                            }
+                        },
+                        "addresses": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/address"
+                            },
+                            "minItems": 1
+                        },
+                        "phones": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/phone"
+                            }
+                        },
+                        "authentication_methods": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/authentication_method"
+                            }
+                        },
+                        "emergency_contact": {
+                            "type": "object",
+                            "properties": {
+                                "first_name": {
+                                    "type": "string",
+                                    "$ref": "#/definitions/person_name"
+                                },
+                                "last_name": {
+                                    "type": "string",
+                                    "$ref": "#/definitions/person_name"
+                                },
+                                "second_name": {
+                                    "type": "string",
+                                    "$ref": "#/definitions/person_name"
+                                },
+                                "phones": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/phone"
+                                    },
+                                    "minItems": 1
+                                }
+                            },
+                            "required": [
+                                "first_name",
+                                "last_name",
+                                "phones"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "confidant_person": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "relation_type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "PRIMARY",
+                                            "SECONDARY"
+                                        ]
+                                    },
+                                    "first_name": {
+                                        "type": "string",
+                                        "$ref": "#/definitions/person_name"
+                                    },
+                                    "last_name": {
+                                        "type": "string",
+                                        "$ref": "#/definitions/person_name"
+                                    },
+                                    "second_name": {
+                                        "type": "string",
+                                        "$ref": "#/definitions/person_name"
+                                    },
+                                    "birth_date": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "birth_country": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "birth_settlement": {
+                                        "type": "string",
+                                        "$ref": "#/definitions/name",
+                                        "minLength": 1
+                                    },
+                                    "gender": {
+                                        "$ref": "#/definitions/gender"
+                                    },
+                                    "unzr": {
+                                        "type": "string",
+                                        "$ref": "#/definitions/unzr"
+                                    },
+                                    "tax_id": {
+                                        "type": "string",
+                                        "$ref": "#/definitions/tax_id"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "maxLength": 255
+                                    },
+                                    "secret": {
+                                        "type": "string",
+                                        "$ref": "#/definitions/name",
+                                        "minLength": 6
+                                    },
+                                    "documents_person": {
+                                        "type": "array",
+                                        "minItems": 1,
+                                        "items": {
+                                            "oneOf": [
+                                                {
+                                                    "$ref": "#/definitions/series_number_document"
+                                                },
+                                                {
+                                                    "$ref": "#/definitions/number_document"
+                                                },
+                                                {
+                                                    "$ref": "#/definitions/id_card"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "documents_relationship": {
+                                        "type": "array",
+                                        "minItems": 1,
+                                        "items": {
+                                            "$ref": "#/definitions/document_relationship"
+                                        }
+                                    },
+                                    "phones": {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#/definitions/phone"
+                                        }
+                                    },
+                                    "preferred_way_communication": {
+                                        "type": "string",
+                                        "enum": [
+                                            "email",
+                                            "phone"
+                                        ]
+                                    }
+                                },
+                                "required": [
+                                    "relation_type",
+                                    "first_name",
+                                    "last_name",
+                                    "birth_country",
+                                    "birth_settlement",
+                                    "gender",
+                                    "secret",
+                                    "documents_person",
+                                    "documents_relationship"
+                                ],
+                                "additionalProperties": false
+                            },
+                            "description": "Should be set if this Person is disabled, underage, etc."
+                        },
+                        "patient_signed": {
+                            "type": "boolean",
+                            "enum": [
+                                false
+                            ]
+                        },
+                        "process_disclosure_data_consent": {
+                            "type": "boolean",
+                            "enum": [
+                                true
+                            ]
+                        }
+                    },
+                    "required": [
+                        "first_name",
+                        "last_name",
+                        "birth_date",
+                        "birth_country",
+                        "birth_settlement",
+                        "gender",
+                        "secret",
+                        "documents",
+                        "addresses",
+                        "authentication_methods",
+                        "emergency_contact",
+                        "patient_signed",
+                        "process_disclosure_data_consent",
+                        "no_tax_id"
+                    ],
+                    "additionalProperties": false,
+                    "description": "Object that described a Patient. Confidant person should be set for disabled persons, underage persons, etc."
+                },
+                "employee_id": {
+                    "type": "string",
+                    "minLength": 36,
+                    "description": "Employee ID with `type=DOCTOR` selected from available Employees as a third contract party."
+                },
+                "division_id": {
+                    "type": "string",
+                    "minLength": 36,
+                    "description": "Registered Medical Service Provider Division identifier."
+                },
+                "scope": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "seed": {
+                    "type": "string"
+                },
+                "overlimit": {
+                    "type": "boolean",
+                    "enum": [
+                        false
+                    ]
+                }
+            },
+            "required": [
+                "person",
+                "employee_id",
+                "division_id",
+                "scope"
+            ],
+            "additionalProperties": false
+        }
+    }
+}

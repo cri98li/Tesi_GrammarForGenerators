@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "List of Pokemon Regions",
+    "description": "Schema that describe a list of Pokemon regions",
+    "type": "array",
+    "items": {
+        "title": "A region in the Pokemon world",
+        "type": "object",
+        "properties": {
+            "id": {
+                "description": "Unique identifier of the region",
+                "type": "number"
+            },
+            "region": {
+                "description": "Name of the region",
+                "type": "string"
+            },
+            "description_file": {
+                "description": "The filename containing the description of the region",
+                "type": "string"
+            }
+        },
+        "required": [
+            "id",
+            "region",
+            "description_file"
+        ]
+    }
+}

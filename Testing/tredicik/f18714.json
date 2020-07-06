@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "Historic England Heritage At Risk dataset properties schema",
+    "description": "Historic England Heritage At Risk",
+    "properties": {
+        "EntryName": {
+            "description": "",
+            "title": "Entry Name",
+            "type": "string"
+        },
+        "HeritageCa": {
+            "description": "",
+            "title": "Heritage Category",
+            "type": "string"
+        },
+        "List_Entry": {
+            "description": "Each Heritage At Risk Entry is assigned a unique ID",
+            "title": "List Entry ID",
+            "type": "integer"
+        },
+        "Risk_Metho": {
+            "description": "",
+            "title": "Heritage At Risk method",
+            "type": "string"
+        },
+        "SHAPE_Area": {
+            "description": "",
+            "title": "Shape Area",
+            "type": "number"
+        },
+        "SHAPE_Leng": {
+            "description": "",
+            "title": "Shape length",
+            "type": "number"
+        },
+        "URL": {
+            "description": "",
+            "title": "URL to entry",
+            "type": "string"
+        }
+    }
+}

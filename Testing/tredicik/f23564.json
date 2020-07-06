@@ -1,0 +1,65 @@
+{
+    "id": "http://ndm.mit.edu/ndm/schemas/runDay",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "runDay",
+    "description": "Experiment Run Day Schema",
+    "definitions": {},
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "_NDMobject"
+        },
+        {
+            "$ref": "_NDMobject#/definitions/V"
+        }
+    ],
+    "properties": {
+        "operators": {
+            "type": "STRING",
+            "defaultvalue": "Bent"
+        },
+        "shortDescription": {
+            "type": "STRING",
+            "defaultvalue": "'What we are doing today'"
+        },
+        "run": {
+            "type": "INTEGER"
+        },
+        "runDate": {
+            "type": "STRING",
+            "format": "date-time",
+            "defaultvalue": "'sysdate()'"
+        }
+    },
+    "required": [
+        "runDate"
+    ],
+    "metadata": {
+        "schemaMetadata": {
+            "title": [
+                "@class",
+                "run"
+            ],
+            "brief": [
+                "operators"
+            ],
+            "body": [
+                "shortDescription"
+            ],
+            "form": [
+                {
+                    "Name": "run",
+                    "Type": "Number",
+                    "default": "http://localhost:8088/currentRun",
+                    "help": "Date of the run encoded YYMMDD"
+                },
+                {
+                    "Name": "shortDescription",
+                    "Type": "Text",
+                    "help": "Brief comment about today's run"
+                }
+            ],
+            "links": []
+        }
+    }
+}

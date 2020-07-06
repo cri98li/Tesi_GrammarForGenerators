@@ -1,0 +1,376 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "urn:hps:schema.json",
+    "title": "model",
+    "description": "HPS Model File",
+    "type": "object",
+    "properties": {
+        "title": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "machines": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/machine"
+            }
+        },
+        "networks": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/network"
+            }
+        },
+        "$schema": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "machine": {
+            "type": "object",
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/state-machine"
+                },
+                {
+                    "$ref": "#/definitions/network-machine"
+                }
+            ]
+        },
+        "property": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "comment": {
+                    "type": "string"
+                },
+                "value": {}
+            },
+            "additionalProperties": false
+        },
+        "state-machine": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "const": "state-machine"
+                },
+                "properties": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/property"
+                    }
+                },
+                "comment": {
+                    "type": "string"
+                },
+                "structure": {
+                    "$ref": "#/definitions/state-machine.structure"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "state-machine.structure": {
+            "type": "object",
+            "properties": {
+                "states": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/state-machine.state"
+                    }
+                },
+                "initial": {
+                    "type": "string"
+                },
+                "transitions": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/state-machine.trigger"
+                            }
+                        }
+                    }
+                }
+            },
+            "required": [
+                "states",
+                "initial",
+                "transitions"
+            ],
+            "additionalProperties": false
+        },
+        "state-machine.state": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "enter": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/state-machine.action"
+                    }
+                },
+                "leave": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/state-machine.action"
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "state-machine.action": {
+            "type": "object",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/state-machine.action.decrement"
+                },
+                {
+                    "$ref": "#/definitions/state-machine.action.increment"
+                }
+            ]
+        },
+        "state-machine.action.decrement": {
+            "type": "object",
+            "properties": {
+                "action": {
+                    "const": "Decrement"
+                },
+                "property": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "action",
+                "property"
+            ],
+            "additionalProperties": false
+        },
+        "state-machine.action.increment": {
+            "type": "object",
+            "properties": {
+                "action": {
+                    "const": "Increment"
+                },
+                "property": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "action",
+                "property"
+            ],
+            "additionalProperties": false
+        },
+        "state-machine.trigger": {
+            "type": "object",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/state-machine.trigger.probabilistic"
+                },
+                {
+                    "$ref": "#/definitions/state-machine.trigger.deterministic"
+                },
+                {
+                    "$ref": "#/definitions/state-machine.trigger.property-gate"
+                },
+                {
+                    "$ref": "#/definitions/state-machine.trigger.idle"
+                },
+                {
+                    "$ref": "#/definitions/state-machine.trigger.instant"
+                }
+            ]
+        },
+        "state-machine.trigger.probabilistic": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "const": "probabilistic"
+                },
+                "distribution": {
+                    "type": "string",
+                    "enum": [
+                        "exponential"
+                    ]
+                },
+                "parameter": {
+                    "type": "number"
+                },
+                "comment": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "state-machine.trigger.deterministic": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "const": "deterministic"
+                },
+                "parameter": {
+                    "type": "number"
+                },
+                "comment": {
+                    "type": "string"
+                }
+            }
+        },
+        "state-machine.trigger.property-gate": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "const": "property-gate"
+                },
+                "property": {
+                    "type": "string"
+                },
+                "value": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ]
+                },
+                "comment": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type",
+                "property",
+                "value"
+            ],
+            "additionalProperties": false
+        },
+        "state-machine.trigger.idle": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "const": "idle"
+                },
+                "comment": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "state-machine.trigger.instant": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "const": "instant"
+                },
+                "comment": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "network-machine": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "const": "network-machine"
+                },
+                "properties": {
+                    "additionalProperties": {
+                        "$ref": "#/definitions/property"
+                    }
+                },
+                "comment": {
+                    "type": "string"
+                },
+                "structure": {
+                    "$ref": "#/definitions/network-machine.structure"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "network-machine.structure": {
+            "type": "object",
+            "properties": {
+                "network": {
+                    "type": "string"
+                }
+            }
+        },
+        "network": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "machines": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/instance"
+                    }
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "additionalProperties": false
+        },
+        "instance": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "machine": {
+                    "type": "string"
+                },
+                "properties": {
+                    "type": "object"
+                },
+                "comment": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "machine"
+            ],
+            "additionalProperties": false
+        }
+    }
+}

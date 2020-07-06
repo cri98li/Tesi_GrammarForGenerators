@@ -1,0 +1,68 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "sum": {
+            "type": "string",
+            "required": true
+        },
+        "discountSum": {
+            "type": "string"
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "payment",
+                "refund",
+                "unfinished",
+                "training",
+                "subtraction"
+            ],
+            "required": true
+        },
+        "subtractionDescription": {
+            "type": "string"
+        },
+        "paymentType": {
+            "type": "string"
+        },
+        "paymentReference": {
+            "type": "string"
+        },
+        "lines": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "price": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "quantity": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "discount": {
+                        "type": "string"
+                    },
+                    "vat": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "isService": {
+                        "type": "boolean",
+                        "default": false
+                    },
+                    "mainGroup": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": true
+        }
+    }
+}

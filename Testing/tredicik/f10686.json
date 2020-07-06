@@ -1,0 +1,190 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Service for a particular household at a food pantry",
+    "title": "Service",
+    "type": "object",
+    "properties": {
+        "serviceId": {
+            "description": "[Output Only] Unique ID of pantry household service",
+            "type": "string",
+            "minLength": 1
+        },
+        "pantryId": {
+            "description": "Unique ID of food pantry",
+            "type": "string",
+            "minLength": 1
+        },
+        "householdId": {
+            "description": "Unique ID of pantry household",
+            "type": "string",
+            "minLength": 1
+        },
+        "timeOfService": {
+            "description": "Date/time when service was rendered",
+            "type": "string",
+            "format": "date-time",
+            "minLength": 1
+        },
+        "householdNumber": {
+            "description": "Household number receiving pantry service",
+            "type": "number",
+            "minLength": 1
+        },
+        "householdCity": {
+            "description": "City of household",
+            "type": "string",
+            "minLength": 1
+        },
+        "householdZip": {
+            "description": "Zip code of household",
+            "type": "number",
+            "minLength": 1
+        },
+        "hudCategory": {
+            "description": "HUD category of the household",
+            "type": "string",
+            "enum": [
+                "Extremely Low",
+                "Very Low",
+                "Low",
+                "Moderate"
+            ]
+        },
+        "transportationType": {
+            "description": "Type of transportation for the household",
+            "type": "string",
+            "enum": [
+                "By Bus",
+                "By Car",
+                "On Foot"
+            ]
+        },
+        "personPresentFirstName": {
+            "description": "First name of the person picking up the service items",
+            "type": "string",
+            "minLength": 1
+        },
+        "headOfHouseholdGender": {
+            "description": "Gender of the Head of Household",
+            "type": "string",
+            "enum": [
+                "Male",
+                "Female",
+                "Other"
+            ]
+        },
+        "isHomeless": {
+            "description": "Flag to indicate if a service was provided to a homeless household",
+            "type": "boolean"
+        },
+        "isInCityLimits": {
+            "description": "Flag to indicate if a service was provided to a household in city limits",
+            "type": "boolean"
+        },
+        "isSingleParentHousehold": {
+            "description": "Flag to indicate if a service was provided to a single parent household",
+            "type": "boolean"
+        },
+        "disabledCount": {
+            "description": "Count of disabled household members receiving service",
+            "type": "number"
+        },
+        "hispanicCount": {
+            "description": "Count of hispanic household members receiving service",
+            "type": "number"
+        },
+        "specialNeedsCount": {
+            "description": "Count of special needs household members receiving service",
+            "type": "number"
+        },
+        "genderMaleCount": {
+            "description": "Count of male gender household members receiving service",
+            "type": "number"
+        },
+        "genderFemaleCount": {
+            "description": "Count of female gender household members receiving service",
+            "type": "number"
+        },
+        "genderOtherCount": {
+            "description": "Count of other gender household members receiving service",
+            "type": "number"
+        },
+        "numberPoundsFullService": {
+            "description": "Number of pounds of full service received",
+            "type": "number",
+            "minLength": 1
+        },
+        "numberPoundsEFAP": {
+            "description": "Number of pounds of EFAP service received",
+            "type": "number",
+            "minLength": 1
+        },
+        "numberPoundsSupplemental": {
+            "description": "Number of pounds of supplemental service received",
+            "type": "number",
+            "minLength": 1
+        },
+        "numberPoundsNonFood": {
+            "description": "Number of pounds of non-food service received",
+            "type": "number",
+            "minLength": 1
+        },
+        "numberPoundsBaby": {
+            "description": "Number of pounds of baby services received",
+            "type": "number",
+            "minLength": 1
+        },
+        "numberPoundsOther": {
+            "description": "Number of pounds of other services received",
+            "type": "number",
+            "minLength": 1
+        },
+        "createdAt": {
+            "description": "[Output only] Creation time of the user role",
+            "type": "string",
+            "format": "date-time",
+            "minLength": 1
+        },
+        "createdBy": {
+            "description": "[Output only] Creator of the user role",
+            "type": "string",
+            "minLength": 1
+        },
+        "updatedAt": {
+            "description": "[Output only] Last modification time of the user role",
+            "type": "string",
+            "format": "date-time",
+            "minLength": 1
+        },
+        "updatedBy": {
+            "description": "[Output only] User to last modify the user role",
+            "type": "string",
+            "minLength": 1
+        }
+    },
+    "required": [
+        "timeOfService",
+        "householdNumber",
+        "hudCategory",
+        "transportationType",
+        "householdCity",
+        "householdZip",
+        "personPresentFirstName",
+        "headOfHouseholdGender",
+        "isHomeless",
+        "isInCityLimits",
+        "isSingleParentHousehold",
+        "disabledCount",
+        "hispanicCount",
+        "specialNeedsCount",
+        "genderMaleCount",
+        "genderFemaleCount",
+        "genderOtherCount",
+        "numberPoundsFullService",
+        "numberPoundsEFAP",
+        "numberPoundsSupplemental",
+        "numberPoundsNonFood",
+        "numberPoundsBaby",
+        "numberPoundsOther"
+    ]
+}

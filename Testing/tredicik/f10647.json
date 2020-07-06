@@ -1,0 +1,495 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "AWS Bucket Policy schema.",
+    "description": "This schema describes a bucket policy per AWS policy grammar rules",
+    "definitions": {
+        "principalService": {
+            "type": "object",
+            "properties": {
+                "Service": {
+                    "type": "string",
+                    "enum": [
+                        "backbeat"
+                    ]
+                }
+            },
+            "additionalProperties": false
+        },
+        "principalCanonicalUser": {
+            "type": "object",
+            "properties": {
+                "CanonicalUser": {
+                    "type": "string",
+                    "pattern": "^[0-9a-z]{64}$"
+                }
+            },
+            "additionalProperties": false
+        },
+        "principalAnonymous": {
+            "type": "string",
+            "pattern": "^\\*$"
+        },
+        "principalAWSAccountID": {
+            "type": "string",
+            "pattern": "^[0-9]{12}$"
+        },
+        "principalAWSAccountArn": {
+            "type": "string",
+            "pattern": "^arn:aws:iam::[0-9]{12}:root$"
+        },
+        "principalAWSUserArn": {
+            "type": "string",
+            "pattern": "^arn:aws:iam::[0-9]{12}:user/[\\w+=,.@ -]{1,64}$"
+        },
+        "principalAWSRoleArn": {
+            "type": "string",
+            "pattern": "^arn:aws:iam::[0-9]{12}:role/[\\w+=,.@ -]{1,64}$"
+        },
+        "principalAWSItem": {
+            "type": "object",
+            "properties": {
+                "AWS": {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/principalAWSAccountID"
+                        },
+                        {
+                            "$ref": "#/definitions/principalAnonymous"
+                        },
+                        {
+                            "$ref": "#/definitions/principalAWSAccountArn"
+                        },
+                        {
+                            "$ref": "#/definitions/principalAWSUserArn"
+                        },
+                        {
+                            "$ref": "#/definitions/principalAWSRoleArn"
+                        },
+                        {
+                            "type": "array",
+                            "minItems": 1,
+                            "items": {
+                                "$ref": "#/definitions/principalAWSAccountID"
+                            }
+                        },
+                        {
+                            "type": "array",
+                            "minItems": 1,
+                            "items": {
+                                "$ref": "#/definitions/principalAWSAccountArn"
+                            }
+                        },
+                        {
+                            "type": "array",
+                            "minItems": 1,
+                            "items": {
+                                "$ref": "#/definitions/principalAWSRoleArn"
+                            }
+                        },
+                        {
+                            "type": "array",
+                            "minItems": 1,
+                            "items": {
+                                "$ref": "#/definitions/principalAWSUserArn"
+                            }
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false
+        },
+        "principalItem": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/principalAWSItem"
+                },
+                {
+                    "$ref": "#/definitions/principalAnonymous"
+                },
+                {
+                    "$ref": "#/definitions/principalService"
+                },
+                {
+                    "$ref": "#/definitions/principalCanonicalUser"
+                }
+            ]
+        },
+        "actionItem": {
+            "type": "string",
+            "pattern": "^[^*:]+:([^:])+|^\\*$"
+        },
+        "resourceItem": {
+            "type": "string",
+            "pattern": "^\\*|arn:(aws|scality)(:(\\*{1}|[a-z0-9\\*\\-]{2,})*?){3}:((?!\\$\\{\\}).)*?$"
+        },
+        "conditionKeys": {
+            "properties": {
+                "aws:CurrentTime": {},
+                "aws:EpochTime": {},
+                "aws:MultiFactorAuthAge": {},
+                "aws:MultiFactorAuthPresent": {},
+                "aws:PrincipalArn": {},
+                "aws:PrincipalOrgId": {},
+                "aws:PrincipalTag/${TagKey}": {},
+                "aws:PrincipalType": {},
+                "aws:Referer": {},
+                "aws:RequestTag/${TagKey}": {},
+                "aws:RequestedRegion": {},
+                "aws:SecureTransport": {},
+                "aws:SourceAccount": {},
+                "aws:SourceArn": {},
+                "aws:SourceIp": {},
+                "aws:SourceVpc": {},
+                "aws:SourceVpce": {},
+                "aws:TagKeys": {},
+                "aws:TokenIssueTime": {},
+                "aws:UserAgent": {},
+                "aws:userid": {},
+                "aws:username": {},
+                "s3:ExistingJobOperation": {},
+                "s3:ExistingJobPriority": {},
+                "s3:ExistingObjectTag/<key>": {},
+                "s3:JobSuspendedCause": {},
+                "s3:LocationConstraint": {},
+                "s3:RequestJobOperation": {},
+                "s3:RequestJobPriority": {},
+                "s3:RequestObjectTag/<key>": {},
+                "s3:RequestObjectTagKeys": {},
+                "s3:VersionId": {},
+                "s3:authtype": {},
+                "s3:delimiter": {},
+                "s3:locationconstraint": {},
+                "s3:max-keys": {},
+                "s3:object-lock-legal-hold": {},
+                "s3:object-lock-mode": {},
+                "s3:object-lock-remaining-retention-days": {},
+                "s3:object-lock-retain-until-date": {},
+                "s3:prefix": {},
+                "s3:signatureage": {},
+                "s3:signatureversion": {},
+                "s3:versionid": {},
+                "s3:x-amz-acl": {},
+                "s3:x-amz-content-sha256": {},
+                "s3:x-amz-copy-source": {},
+                "s3:x-amz-grant-full-control": {},
+                "s3:x-amz-grant-read": {},
+                "s3:x-amz-grant-read-acp": {},
+                "s3:x-amz-grant-write": {},
+                "s3:x-amz-grant-write-acp": {},
+                "s3:x-amz-metadata-directive": {},
+                "s3:x-amz-server-side-encryption": {},
+                "s3:x-amz-server-side-encryption-aws-kms-key-id": {},
+                "s3:x-amz-storage-class": {},
+                "s3:x-amz-website-redirect-location": {}
+            },
+            "additionalProperties": false
+        },
+        "conditions": {
+            "type": "object",
+            "properties": {
+                "ArnEquals": {
+                    "type": "object"
+                },
+                "ArnEqualsIfExists": {
+                    "type": "object"
+                },
+                "ArnLike": {
+                    "type": "object"
+                },
+                "ArnLikeIfExists": {
+                    "type": "object"
+                },
+                "ArnNotEquals": {
+                    "type": "object"
+                },
+                "ArnNotEqualsIfExists": {
+                    "type": "object"
+                },
+                "ArnNotLike": {
+                    "type": "object"
+                },
+                "ArnNotLikeIfExists": {
+                    "type": "object"
+                },
+                "BinaryEquals": {
+                    "type": "object"
+                },
+                "BinaryEqualsIfExists": {
+                    "type": "object"
+                },
+                "BinaryNotEquals": {
+                    "type": "object"
+                },
+                "BinaryNotEqualsIfExists": {
+                    "type": "object"
+                },
+                "Bool": {
+                    "type": "object"
+                },
+                "BoolIfExists": {
+                    "type": "object"
+                },
+                "DateEquals": {
+                    "type": "object"
+                },
+                "DateEqualsIfExists": {
+                    "type": "object"
+                },
+                "DateGreaterThan": {
+                    "type": "object"
+                },
+                "DateGreaterThanEquals": {
+                    "type": "object"
+                },
+                "DateGreaterThanEqualsIfExists": {
+                    "type": "object"
+                },
+                "DateGreaterThanIfExists": {
+                    "type": "object"
+                },
+                "DateLessThan": {
+                    "type": "object"
+                },
+                "DateLessThanEquals": {
+                    "type": "object"
+                },
+                "DateLessThanEqualsIfExists": {
+                    "type": "object"
+                },
+                "DateLessThanIfExists": {
+                    "type": "object"
+                },
+                "DateNotEquals": {
+                    "type": "object"
+                },
+                "DateNotEqualsIfExists": {
+                    "type": "object"
+                },
+                "IpAddress": {
+                    "type": "object"
+                },
+                "IpAddressIfExists": {
+                    "type": "object"
+                },
+                "NotIpAddress": {
+                    "type": "object"
+                },
+                "NotIpAddressIfExists": {
+                    "type": "object"
+                },
+                "Null": {
+                    "type": "object"
+                },
+                "NumericEquals": {
+                    "type": "object"
+                },
+                "NumericEqualsIfExists": {
+                    "type": "object"
+                },
+                "NumericGreaterThan": {
+                    "type": "object"
+                },
+                "NumericGreaterThanEquals": {
+                    "type": "object"
+                },
+                "NumericGreaterThanEqualsIfExists": {
+                    "type": "object"
+                },
+                "NumericGreaterThanIfExists": {
+                    "type": "object"
+                },
+                "NumericLessThan": {
+                    "type": "object"
+                },
+                "NumericLessThanEquals": {
+                    "type": "object"
+                },
+                "NumericLessThanEqualsIfExists": {
+                    "type": "object"
+                },
+                "NumericLessThanIfExists": {
+                    "type": "object"
+                },
+                "NumericNotEquals": {
+                    "type": "object"
+                },
+                "NumericNotEqualsIfExists": {
+                    "type": "object"
+                },
+                "StringEquals": {
+                    "type": "object"
+                },
+                "StringEqualsIfExists": {
+                    "type": "object"
+                },
+                "StringEqualsIgnoreCase": {
+                    "type": "object"
+                },
+                "StringEqualsIgnoreCaseIfExists": {
+                    "type": "object"
+                },
+                "StringLike": {
+                    "type": "object"
+                },
+                "StringLikeIfExists": {
+                    "type": "object"
+                },
+                "StringNotEquals": {
+                    "type": "object"
+                },
+                "StringNotEqualsIfExists": {
+                    "type": "object"
+                },
+                "StringNotEqualsIgnoreCase": {
+                    "type": "object"
+                },
+                "StringNotEqualsIgnoreCaseIfExists": {
+                    "type": "object"
+                },
+                "StringNotLike": {
+                    "type": "object"
+                },
+                "StringNotLikeIfExists": {
+                    "type": "object"
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "properties": {
+        "Version": {
+            "type": "string",
+            "enum": [
+                "2012-10-17"
+            ]
+        },
+        "Statement": {
+            "oneOf": [
+                {
+                    "type": [
+                        "array"
+                    ],
+                    "minItems": 1,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "Sid": {
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9]+$"
+                            },
+                            "Action": {
+                                "oneOf": [
+                                    {
+                                        "$ref": "#/definitions/actionItem"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#/definitions/actionItem"
+                                        }
+                                    }
+                                ]
+                            },
+                            "Effect": {
+                                "type": "string",
+                                "enum": [
+                                    "Allow",
+                                    "Deny"
+                                ]
+                            },
+                            "Principal": {
+                                "$ref": "#/definitions/principalItem"
+                            },
+                            "Resource": {
+                                "oneOf": [
+                                    {
+                                        "$ref": "#/definitions/resourceItem"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#/definitions/resourceItem"
+                                        },
+                                        "minItems": 1
+                                    }
+                                ]
+                            },
+                            "Condition": {
+                                "$ref": "#/definitions/conditions"
+                            }
+                        },
+                        "required": [
+                            "Action",
+                            "Effect",
+                            "Principal",
+                            "Resource"
+                        ]
+                    }
+                },
+                {
+                    "type": [
+                        "object"
+                    ],
+                    "properties": {
+                        "Sid": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z0-9]+$"
+                        },
+                        "Action": {
+                            "oneOf": [
+                                {
+                                    "$ref": "#/definitions/actionItem"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/actionItem"
+                                    }
+                                }
+                            ]
+                        },
+                        "Effect": {
+                            "type": "string",
+                            "enum": [
+                                "Allow",
+                                "Deny"
+                            ]
+                        },
+                        "Principal": {
+                            "$ref": "#/definitions/principalItem"
+                        },
+                        "Resource": {
+                            "oneOf": [
+                                {
+                                    "$ref": "#/definitions/resourceItem"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/resourceItem"
+                                    },
+                                    "minItems": 1
+                                }
+                            ]
+                        },
+                        "Condition": {
+                            "$ref": "#/definitions/conditions"
+                        }
+                    },
+                    "required": [
+                        "Action",
+                        "Effect",
+                        "Resource",
+                        "Principal"
+                    ]
+                }
+            ]
+        }
+    },
+    "required": [
+        "Version",
+        "Statement"
+    ],
+    "additionalProperties": false
+}

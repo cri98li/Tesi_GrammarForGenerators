@@ -1,0 +1,129 @@
+{
+    "id": "http://some.site.somewhere/entry-schema#",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "OCS Datagram",
+    "description": "Schema for OCS collector data",
+    "type": "object",
+    "required": [
+        "userId",
+        "sessionId",
+        "dataType",
+        "collectorInfo",
+        "tags",
+        "messageId"
+    ],
+    "properties": {
+        "userId": {
+            "description": "The unique identifier for an user",
+            "type": "integer"
+        },
+        "sessionId": {
+            "description": "The unique identifier for a session",
+            "type": "integer"
+        },
+        "dataType": {
+            "description": "The type of data contained in the message",
+            "type": "string",
+            "oneOf": [
+                {
+                    "format": "permutation"
+                },
+                {
+                    "format": "graph"
+                },
+                {
+                    "format": "multiGraph"
+                },
+                {
+                    "format": "digraph"
+                },
+                {
+                    "format": "multiDigraph"
+                },
+                {
+                    "format": "polynomial"
+                },
+                {
+                    "format": "automata"
+                }
+            ]
+        },
+        "tags": {
+            "description": "Tags attached the data",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "string"
+            },
+            "uniqueItems": true
+        },
+        "applicationName": {
+            "description": "The name of the program where data was collected",
+            "type": "string"
+        },
+        "collectorInfo": {
+            "$ref": "#/definitions/collectorInfo"
+        },
+        "systemInfo": {
+            "$ref": "#/definitions/systemInfo"
+        },
+        "messageId": {
+            "description": "Unique identifier of the message",
+            "type": "integer"
+        },
+        "chunkId": {
+            "description": "Unique identifier of the chunk for a same message",
+            "type": "integer"
+        },
+        "isLastChunk": {
+            "description": "True if this is the last chunk of data",
+            "type": "boolean"
+        }
+    },
+    "definitions": {
+        "collectorInfo": {
+            "description": "Information about the collector",
+            "type": "object",
+            "required": [
+                "name",
+                "version"
+            ],
+            "properties": {
+                "name": {
+                    "description": "The name of the collector",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "The version of the collector",
+                    "type": "string"
+                },
+                "additionalInfo": {
+                    "description": "Additional information about the collector",
+                    "type": "object"
+                }
+            }
+        },
+        "systemInfo": {
+            "description": "Information about the host machine",
+            "type": "object",
+            "properties": {
+                "osName": {
+                    "description": "The name of the operating system",
+                    "type": "string"
+                },
+                "osVersion": {
+                    "description": "The version of the operating system",
+                    "type": "string"
+                },
+                "osArch": {
+                    "description": "The version of the operating system",
+                    "type": "string"
+                },
+                "cpuCount": {
+                    "description": "CPU Count on the host machine",
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

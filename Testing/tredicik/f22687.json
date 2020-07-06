@@ -1,0 +1,55 @@
+{
+    "id": "https://raw.githubusercontent.com/MoskitosForReal/xpack-rest-api-spec/master/src/schemas/trigger-schedule-attribute-at.json#",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "trigger-schedule-attribute-at",
+    "documentation": "https://www.elastic.co/guide/en/x-pack/5.5/trigger-schedule.html#schedule-daily",
+    "description": "An attribute used in trigger's schedule",
+    "type": "object",
+    "properties": {
+        "at": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/time"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/time"
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            ]
+        }
+    },
+    "required": [
+        "at"
+    ],
+    "definitions": {
+        "time": {
+            "oneOf": [
+                {
+                    "type": "string",
+                    "pattern": "^([0-1][0-9]|2[0-3])(:[0-5][0-9])?$"
+                },
+                {
+                    "type": "string",
+                    "enum": [
+                        "noon",
+                        "midnight"
+                    ]
+                },
+                {
+                    "allOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/MoskitosForReal/xpack-rest-api-spec/master/src/schemas/trigger-schedule-attribute-hour.json#"
+                        },
+                        {
+                            "$ref": "https://raw.githubusercontent.com/MoskitosForReal/xpack-rest-api-spec/master/src/schemas/trigger-schedule-attribute-minute.json#"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

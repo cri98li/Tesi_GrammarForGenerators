@@ -1,0 +1,201 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Case",
+    "description": "An Ebola case registered by the call centre",
+    "type": "object",
+    "properties": {
+        "doc_type": {
+            "type": "string",
+            "pattern": "^case$"
+        },
+        "version": {
+            "type": "string",
+            "format": "semver"
+        },
+        "callNature": {
+            "enum": [
+                "death",
+                "suspect",
+                "sick",
+                "health information",
+                "quarantine",
+                "security threat",
+                "prank call",
+                "other"
+            ]
+        },
+        "callNatureOther": {
+            "type": "string"
+        },
+        "requestedHealthInfo": {
+            "type": "object"
+        },
+        "createdOn": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "createdBy": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/user"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "callDetails": {
+            "type": "string"
+        },
+        "isFollowUpCall": {
+            "type": "boolean"
+        },
+        "changeLog": {
+            "$ref": "#/definitions/changeLog"
+        },
+        "contact": {
+            "$ref": "#/definitions/contact"
+        },
+        "patient": {
+            "$ref": "#/definitions/patient"
+        },
+        "response": {
+            "$ref": "#/definitions/response"
+        },
+        "dispatch": {
+            "$ref": "#/definitions/dispatch"
+        }
+    },
+    "definitions": {
+        "changeLog": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "rev": {
+                        "type": "string"
+                    },
+                    "timestamp": {
+                        "type": "integer"
+                    },
+                    "user": {
+                        "$ref": "#/definitions/user"
+                    }
+                }
+            }
+        },
+        "contact": {
+            "type": "object",
+            "properties": {
+                "phoneNo": {
+                    "type": "string"
+                },
+                "adminDivision1": {
+                    "type": [
+                        "string",
+                        "number"
+                    ]
+                },
+                "adminDivision2": {
+                    "type": [
+                        "string",
+                        "number"
+                    ]
+                },
+                "adminDivision3": {
+                    "type": [
+                        "string",
+                        "number"
+                    ]
+                },
+                "location": {
+                    "$ref": "#/definitions/location"
+                },
+                "preferredLanguages": {
+                    "type": "array"
+                }
+            },
+            "required": [
+                "phoneNo"
+            ]
+        },
+        "patient": {
+            "type": "object",
+            "properties": {
+                "adminDivision1": {
+                    "type": [
+                        "string",
+                        "number"
+                    ]
+                },
+                "adminDivision2": {
+                    "type": [
+                        "string",
+                        "number"
+                    ]
+                },
+                "adminDivision3": {
+                    "type": [
+                        "string",
+                        "number"
+                    ]
+                },
+                "location": {
+                    "$ref": "#/definitions/location"
+                }
+            }
+        },
+        "response": {
+            "type": "object"
+        },
+        "dispatch": {
+            "type": "object"
+        },
+        "user": {
+            "type": "object",
+            "properties": {
+                "username": {
+                    "type": "string"
+                },
+                "fullName": {
+                    "type": "string"
+                }
+            }
+        },
+        "location": {
+            "type": "object",
+            "properties": {
+                "adminDivision1": {
+                    "$ref": "#/definitions/adminDivision"
+                },
+                "adminDivision2": {
+                    "$ref": "#/definitions/adminDivision"
+                },
+                "adminDivision3": {
+                    "$ref": "#/definitions/adminDivision"
+                }
+            }
+        },
+        "adminDivision": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ]
+        }
+    },
+    "required": [
+        "doc_type",
+        "callNature",
+        "createdOn",
+        "contact"
+    ]
+}

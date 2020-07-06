@@ -1,0 +1,46 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://ostlog.org/schema/Worship_log.json",
+    "title": "Worship log",
+    "description": "Each entry records and act of worship. For example, attending mass.",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "meta_id": {
+            "type": "integer",
+            "description": "reference to entry's metadata"
+        },
+        "calendar_date_id": {
+            "type": "string",
+            "description": "YYYYMMDD formatted date when the act took place."
+        },
+        "timestamp": {
+            "type ": "string ",
+            "description": "HH:MM:SS formatted time when the act took place."
+        },
+        "location_id": {
+            "type": "integer",
+            "description ": "the location where the research was made."
+        },
+        "domain ": {
+            "$ref": "definitions.json#/domain"
+        },
+        "person_id ": {
+            "type": "integer",
+            "description ": "the person who is performed the act."
+        },
+        "remarks": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "calendar_date_id",
+        "timestamp",
+        "location_id",
+        "domain",
+        "person_id"
+    ]
+}

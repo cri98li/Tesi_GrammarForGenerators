@@ -1,0 +1,66 @@
+{
+    "id": "http://ndm.mit.edu/ndm/schemas/reel",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "reel",
+    "description": "HTS Tape Reel class schema.",
+    "definitions": {},
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "_NDMobject"
+        },
+        {
+            "$ref": "_NDMobject#/definitions/V"
+        }
+    ],
+    "properties": {
+        "manufacturer": {
+            "type": "STRING",
+            "defaultvalue": "'Super Power'"
+        },
+        "manufacturerDesignation": {
+            "type": "STRING",
+            "defaultvalue": "blue"
+        },
+        "datePurchased": {
+            "type": "STRING",
+            "defaultvalue": "'sysdate()'"
+        },
+        "startPosition": {
+            "type": "INTEGER",
+            "defaultvalue": "42"
+        },
+        "endPosition": {
+            "type": "INTEGER",
+            "defaultvalue": "42"
+        },
+        "tapestarData": {
+            "$ref": "_NDMobject#/definitions/LINK",
+            "defaultvalue": {
+                "linked-class": "_ExternalReference"
+            }
+        }
+    },
+    "required": [
+        "manufacturer"
+    ],
+    "metadata": {
+        "schemaMetadata": {
+            "title": [
+                "@class",
+                "manufacturer",
+                "manufacturerDesignation"
+            ],
+            "brief": [
+                "datePurchased"
+            ],
+            "body": [
+                "startPosition",
+                "endPosition"
+            ],
+            "links": [
+                "tapestarData"
+            ]
+        }
+    }
+}

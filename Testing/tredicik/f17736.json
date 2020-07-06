@@ -1,0 +1,84 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "id": "SchemaDisplay",
+    "type": "object",
+    "properties": {
+        "scaler": {
+            "type": "string",
+            "title": "A standard scaler for number properties",
+            "enum": [
+                "%",
+                "bps",
+                "k",
+                "M"
+            ]
+        },
+        "style": {
+            "type": "string",
+            "title": "The display style for lists (grid,tabs,pills)",
+            "display": {
+                "helper": "typeahead",
+                "suggestions": [
+                    "normal",
+                    "grid",
+                    "tabs",
+                    "pills"
+                ]
+            }
+        },
+        "group": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "The list of vector properties to show together on a grid"
+        },
+        "tag": {
+            "type": "string",
+            "title": "The schema property to look for for tagging in lists"
+        },
+        "helper": {
+            "type": "string",
+            "title": "The name of a selection helper class, date or typeahead",
+            "enum": [
+                "date",
+                "typeahead"
+            ]
+        },
+        "suggestions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "A list of suggestions to make to the user when helper is 'typeahead'"
+        },
+        "additional-suggestions-labels": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "A list of labels to look for to apply additional suggestions depending on their value"
+        },
+        "additional-suggestions": {
+            "id": "TypeaheadAdditionalSuggestions",
+            "type": "object",
+            "title": "A dictionary of additional suggestions lists depending on the specified labels values",
+            "additionalProperties": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "display": {
+                "collapse": true
+            }
+        }
+    },
+    "title": "A page driving the display of the property by the editor",
+    "labels": [
+        "Display"
+    ],
+    "display": {
+        "collapse": true
+    }
+}

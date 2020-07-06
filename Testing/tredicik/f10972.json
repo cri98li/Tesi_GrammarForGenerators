@@ -1,0 +1,17 @@
+{
+    "id": "https://raw.githubusercontent.com/MoskitosForReal/xpack-rest-api-spec/master/src/schemas/trigger-schedule-daily.json#",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "trigger-schedule-daily",
+    "documentation": "https://www.elastic.co/guide/en/x-pack/5.5/trigger-schedule.html#schedule-daily",
+    "description": "A schedule that triggers at a particular time every day. To use the daily schedule, you specify the time of day (or times) when you want the scheduler to start the watch execution with the at attribute.",
+    "type": "object",
+    "properties": {
+        "daily": {
+            "type": "object",
+            "$ref": "https://raw.githubusercontent.com/MoskitosForReal/xpack-rest-api-spec/master/src/schemas/trigger-schedule-attribute-at.json#"
+        }
+    },
+    "required": [
+        "daily"
+    ]
+}

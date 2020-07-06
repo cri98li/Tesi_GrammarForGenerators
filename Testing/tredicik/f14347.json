@@ -1,0 +1,109 @@
+{
+    "id": "http://ndm.mit.edu/ndm/schemas/CableShot",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "CableShot",
+    "description": "Cable Test Shot",
+    "definitions": {},
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "_shot"
+        }
+    ],
+    "properties": {
+        "startTime": {
+            "type": "String"
+        },
+        "rampUpRate": {
+            "type": "FLOAT",
+            "defaultvalue": "0.0"
+        },
+        "rampDownRate": {
+            "type": "FLOAT",
+            "defaultvalue": "0.0"
+        },
+        "currentSetPoint": {
+            "type": "FLOAT",
+            "defaultvalue": "0.0"
+        },
+        "currentSetPointHoldTime": {
+            "type": "FLOAT",
+            "defaultvalue": "0.0"
+        },
+        "VLimit_L": {
+            "type": "FLOAT",
+            "defaultvalue": "0.0"
+        },
+        "VLimit_H": {
+            "type": "FLOAT",
+            "defaultvalue": "0.0"
+        }
+    },
+    "required": [
+        "shotNumber"
+    ],
+    "metadata": {
+        "schemaMetadata": {
+            "title": [
+                "@class",
+                "shotNumber",
+                "runDate"
+            ],
+            "brief": [
+                "shotNumber"
+            ],
+            "body": [
+                "rampUpRate",
+                "rampDownRate",
+                "currentSetPoint",
+                "currentSetPointHoldTime",
+                "VLimit_L",
+                "VLimit_h"
+            ],
+            "form": [
+                {
+                    "Name": "shotNumber",
+                    "Type": "Number",
+                    "default": "http://localhost:8088/nextShot"
+                },
+                {
+                    "Name": "rampUpRate",
+                    "Type": "Number",
+                    "default": "0",
+                    "help": "Ramp Up Rate in A/Sec"
+                },
+                {
+                    "Name": "rampDownRate",
+                    "Type": "Number",
+                    "default": "0",
+                    "help": "Ramp Down Rate in A/Sec"
+                },
+                {
+                    "Name": "currentSetPoint",
+                    "Type": "Number",
+                    "default": "0",
+                    "help": "Current Set Point in  A"
+                },
+                {
+                    "Name": "currentSetPointHoldTime",
+                    "Type": "Number",
+                    "default": "0",
+                    "help": "Current hold time in Sec"
+                },
+                {
+                    "Name": "VLimit_L",
+                    "Type": "Number",
+                    "default": "0",
+                    "help": "Low Voltage Limit in V"
+                },
+                {
+                    "Name": "VLimit_H",
+                    "Type": "Number",
+                    "default": "0",
+                    "help": "High Voltage Limit in V"
+                }
+            ],
+            "links": []
+        }
+    }
+}

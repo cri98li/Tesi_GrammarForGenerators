@@ -1,0 +1,84 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://ostlog.org/schema/Workload_log.json",
+    "title": "Workload log",
+    "description": "Each entry records a person's workload at a given point in time.  Derives from NASA's task load index.",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "meta_id": {
+            "type": "integer",
+            "description": "reference to entry's metadata"
+        },
+        "calendar_date_id": {
+            "type": "string",
+            "description": "YYYYMMDD formatted date."
+        },
+        "timestamp": {
+            "type ": "string ",
+            "description": "HH:MM:SS formatted time."
+        },
+        "location_id": {
+            "type": "integer",
+            "description ": "the location where the measures were recorded."
+        },
+        "domain": {
+            "$ref": "definitions.json#/domain"
+        },
+        "person_id": {
+            "type": "integer",
+            "description": "the worker."
+        },
+        "work is mentally demanding": {
+            "$ref": "definitions.json#/likert_scale"
+        },
+        "work is physically demanding": {
+            "$ref": "definitions.json#/likert_scale"
+        },
+        "feeling hurried or rushed at work": {
+            "$ref": "definitions.json#/likert_scale"
+        },
+        "work is meeting expectations": {
+            "$ref": "definitions.json#/likert_scale"
+        },
+        "hard work is required to meet performance levels": {
+            "$ref": "definitions.json#/likert_scale"
+        },
+        "work is causing insecurity, irritation, or stress": {
+            "$ref": "definitions.json#/likert_scale"
+        },
+        "direct_reports": {
+            "type": "integer",
+            "description": "the number of people supervised/managed-by the worker."
+        },
+        "emails_received_last_week": {
+            "type": "integer",
+            "description": "the number of emails received in the last completed week of work."
+        },
+        "emails_sent_last_week": {
+            "type": "integer",
+            "description": "the number of emails sent in the last completed week of work."
+        },
+        "meetings_attended_last_week": {
+            "type": "integer",
+            "description": "the number of meetings attended in the last completed week of work."
+        },
+        "hours_worked_last_week": {
+            "type": "number",
+            "description": "the sum of hours worked in the last completed work week."
+        },
+        "remarks": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "calendar_date_id",
+        "timestamp",
+        "location_id",
+        "domain",
+        "person_id"
+    ]
+}

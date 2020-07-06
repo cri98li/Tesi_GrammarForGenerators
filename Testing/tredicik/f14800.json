@@ -1,0 +1,164 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://jsonschema.net",
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+        "data": {
+            "id": "http://jsonschema.net/data",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": false,
+            "additionalItems": true,
+            "items": {
+                "id": "http://jsonschema.net/data/1",
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {
+                    "data": {
+                        "id": "http://jsonschema.net/data/1/data",
+                        "type": "object",
+                        "additionalProperties": true,
+                        "properties": {
+                            "abs_path": {
+                                "id": "http://jsonschema.net/data/1/data/abs_path",
+                                "type": "string",
+                                "minLength": 1
+                            },
+                            "size": {
+                                "id": "http://jsonschema.net/data/1/data/size",
+                                "type": "integer",
+                                "multipleOf": 1,
+                                "minimum": 1,
+                                "exclusiveMinimum": false
+                            },
+                            "content": {
+                                "id": "http://jsonschema.net/data/1/data/content",
+                                "type": "array",
+                                "minItems": 1,
+                                "uniqueItems": false,
+                                "additionalItems": true,
+                                "items": {
+                                    "id": "http://jsonschema.net/data/1/data/content/1",
+                                    "type": "object",
+                                    "additionalProperties": true,
+                                    "properties": {
+                                        "type": {
+                                            "id": "http://jsonschema.net/data/1/data/content/1/type",
+                                            "type": "string",
+                                            "minLength": 1
+                                        },
+                                        "name": {
+                                            "id": "http://jsonschema.net/data/1/data/content/1/name",
+                                            "type": "string",
+                                            "minLength": 1
+                                        },
+                                        "sticky": {
+                                            "id": "http://jsonschema.net/data/1/data/content/1/sticky",
+                                            "type": "boolean"
+                                        },
+                                        "rights": {
+                                            "id": "http://jsonschema.net/data/1/data/content/1/rights",
+                                            "type": "object",
+                                            "additionalProperties": true,
+                                            "properties": {
+                                                "user": {
+                                                    "id": "http://jsonschema.net/data/1/data/content/1/rights/user",
+                                                    "type": "string",
+                                                    "minLength": 1
+                                                },
+                                                "group": {
+                                                    "id": "http://jsonschema.net/data/1/data/content/1/rights/group",
+                                                    "type": "string",
+                                                    "minLength": 1
+                                                },
+                                                "other": {
+                                                    "id": "http://jsonschema.net/data/1/data/content/1/rights/other",
+                                                    "type": "string",
+                                                    "minLength": 1
+                                                }
+                                            }
+                                        },
+                                        "acl": {
+                                            "id": "http://jsonschema.net/data/1/data/content/1/acl",
+                                            "type": "boolean"
+                                        },
+                                        "owner": {
+                                            "id": "http://jsonschema.net/data/1/data/content/1/owner",
+                                            "type": "string",
+                                            "minLength": 1
+                                        },
+                                        "group": {
+                                            "id": "http://jsonschema.net/data/1/data/content/1/group",
+                                            "type": "string",
+                                            "minLength": 1
+                                        },
+                                        "size": {
+                                            "id": "http://jsonschema.net/data/1/data/content/1/size",
+                                            "type": "integer",
+                                            "multipleOf": 1,
+                                            "minimum": 1,
+                                            "exclusiveMinimum": false
+                                        },
+                                        "date": {
+                                            "id": "http://jsonschema.net/data/1/data/content/1/date",
+                                            "type": "string",
+                                            "minLength": 1
+                                        },
+                                        "abs_path": {
+                                            "id": "http://jsonschema.net/data/1/data/content/1/abs_path",
+                                            "type": "string",
+                                            "minLength": 1
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "required": [
+                            "abs_path",
+                            "size",
+                            "content"
+                        ]
+                    },
+                    "name": {
+                        "id": "http://jsonschema.net/data/1/name",
+                        "type": "string",
+                        "minLength": 1
+                    }
+                },
+                "required": [
+                    "data",
+                    "name"
+                ]
+            },
+            "required": [
+                "1"
+            ]
+        },
+        "err": {
+            "id": "http://jsonschema.net/err",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": false,
+            "additionalItems": true,
+            "items": {
+                "id": "http://jsonschema.net/err/1",
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {
+                    "err": {
+                        "id": "http://jsonschema.net/err/1/err",
+                        "type": "object",
+                        "additionalProperties": true,
+                        "properties": {}
+                    },
+                    "name": {
+                        "id": "http://jsonschema.net/err/1/name",
+                        "type": "string",
+                        "minLength": 1
+                    }
+                }
+            }
+        }
+    }
+}

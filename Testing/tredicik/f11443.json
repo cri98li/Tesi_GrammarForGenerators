@@ -1,0 +1,38 @@
+{
+    "id": "http://ndm.mit.edu/ndm/schemas/DropboxImage",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "DropboxImage",
+    "description": "dropbox image file reference",
+    "definitions": {},
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "_ExternalReference"
+        }
+    ],
+    "properties": {
+        "name": {
+            "type": "STRING"
+        },
+        "type": {
+            "type": "STRING",
+            "defaultvalue": "image"
+        }
+    },
+    "required": [
+        "name"
+    ],
+    "metadata": {
+        "schemaMetadata": {
+            "title": [
+                "@class",
+                "name"
+            ],
+            "brief": [],
+            "body": [
+                "URI"
+            ],
+            "links": []
+        }
+    }
+}

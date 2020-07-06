@@ -1,0 +1,46 @@
+{
+    "id": "http://ndm.mit.edu/ndm/schemas/MDSplus",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "MDSplus",
+    "description": "MDSplus external reference",
+    "definitions": {},
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "_ExternalReference"
+        }
+    ],
+    "properties": {
+        "tree": {
+            "type": "STRING",
+            "defaultvalue": "hts"
+        },
+        "shot": {
+            "type": "INTEGER",
+            "defaultvalue": "-1"
+        },
+        "expression": {
+            "type": "STRING",
+            "defaultvalue": "1 + 2"
+        }
+    },
+    "required": [
+        "expression"
+    ],
+    "metadata": {
+        "schemaMetadata": {
+            "title": [
+                "@class"
+            ],
+            "brief": [
+                "tree",
+                "shot",
+                "expression"
+            ],
+            "body": [
+                "URI"
+            ],
+            "links": []
+        }
+    }
+}

@@ -1,0 +1,100 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "merchant": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "required": true
+                },
+                "organizationNumber": {
+                    "type": "string",
+                    "required": true
+                },
+                "address": {
+                    "type": "object",
+                    "properties": {
+                        "streetName": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "city": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "zip": {
+                            "type": "string",
+                            "required": true
+                        }
+                    },
+                    "required": true
+                }
+            },
+            "required": true
+        },
+        "date": {
+            "type": "string",
+            "required": true
+        },
+        "serialNumber": {
+            "type": "integer",
+            "required": true
+        },
+        "cashierDesignation": {
+            "type": "string",
+            "required": true
+        },
+        "lines": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "quantity": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "price": {
+                        "type": "string",
+                        "required": true
+                    }
+                },
+                "required": true
+            }
+        },
+        "sum": {
+            "type": "string",
+            "required": true
+        },
+        "vat": {
+            "type": "string",
+            "required": true
+        },
+        "vats": {
+            "type": "object",
+            "properties": {
+                "25": {
+                    "type": "string"
+                }
+            },
+            "required": true
+        },
+        "paymentType": {
+            "type": "string",
+            "required": true
+        },
+        "receiptType": {
+            "type": "string",
+            "required": true
+        },
+        "controlUnitSerialNumber": {
+            "type": "string",
+            "required": true
+        }
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "team",
+    "description": "a team of players",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "team_name": {
+            "type": "string"
+        },
+        "abbreviation": {
+            "type": "string"
+        },
+        "players": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "batting_order": {
+                        "type": "integer"
+                    },
+                    "position": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "position",
+                    "name",
+                    "batting_order"
+                ]
+            },
+            "minItems": 9,
+            "maxItems": 30,
+            "uniqueItems": true
+        }
+    },
+    "required": [
+        "players",
+        "id",
+        "team_name",
+        "abbreviation"
+    ]
+}

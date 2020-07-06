@@ -1,0 +1,310 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Mapping Definitions",
+    "description": "Defines mapping definitions for Cloud Providers.",
+    "type": "object",
+    "properties": {
+        "genericElements": {
+            "$ref": "#/definitions/ElementsByType"
+        },
+        "mappings": {
+            "$ref": "#/definitions/MappingsByType"
+        },
+        "providers": {
+            "$ref": "#/definitions/Providers"
+        },
+        "specificElements": {
+            "$ref": "#/definitions/SpecificElementsByProvider"
+        },
+        "types": {
+            "$ref": "#/definitions/Types"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "genericElements",
+        "mappings",
+        "providers",
+        "specificElements",
+        "types"
+    ],
+    "definitions": {
+        "Description": {
+            "title": "Description",
+            "description": "Description of the object",
+            "type": "string"
+        },
+        "ElementsByType": {
+            "title": "Generic element types",
+            "description": "Generic elements object with the type keys.",
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "#/definitions/Elements"
+            }
+        },
+        "Elements": {
+            "title": "Generic elements",
+            "description": "Generic elements object with the element id keys.",
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "#/definitions/Element"
+            }
+        },
+        "Element": {
+            "title": "Generic element",
+            "description": "A generic element",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "$ref": "#/definitions/Title"
+                },
+                "description": {
+                    "$ref": "#/definitions/Description"
+                },
+                "icon": {
+                    "$ref": "#/definitions/Icon"
+                },
+                "properties": {
+                    "title": "Properties",
+                    "description": "Properties of the generic element which realize element definition",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "title",
+                "properties"
+            ]
+        },
+        "MappingsByType": {
+            "title": "Mappings",
+            "description": "Mappings mapped by type",
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "#/definitions/MappingsByGenericElement"
+            }
+        },
+        "MappingsByGenericElement": {
+            "title": "Mappings",
+            "description": "Mappings mapped by generic element",
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "#/definitions/MappingsByProvider"
+            }
+        },
+        "MappingsByProvider": {
+            "title": "Mappings",
+            "description": "Mappings mapped by provider",
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "#/definitions/Mapping"
+            }
+        },
+        "Mapping": {
+            "title": "Mapping",
+            "description": "Mapping of a generic element to the list of specific elements",
+            "type": "object",
+            "properties": {
+                "in": {
+                    "title": "In",
+                    "desscription": "The element which receives the connections from outside",
+                    "type": "string",
+                    "minLength": 1
+                },
+                "out": {
+                    "title": "Out",
+                    "desscription": "The element from the connections go outside",
+                    "type": "string",
+                    "minLength": 1
+                },
+                "elements": {
+                    "title": "Elements",
+                    "description": "Elements",
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/MappingElement"
+                    }
+                },
+                "connections": {
+                    "title": "Connections",
+                    "description": "List of connections",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/MappingConnection"
+                    }
+                }
+            },
+            "required": [
+                "elements",
+                "in",
+                "out"
+            ],
+            "additionalProperties": false
+        },
+        "MappingElement": {
+            "title": "Mapping Element",
+            "description": "Reference to a specific element at mappings",
+            "type": "object",
+            "properties": {
+                "typeId": {
+                    "title": "Type Id",
+                    "description": "Id of the type",
+                    "type": "string"
+                },
+                "elementId": {
+                    "title": "Element Id",
+                    "description": "Id of the element",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "typeId",
+                "elementId"
+            ],
+            "additionalProperties": false
+        },
+        "MappingConnection": {
+            "title": "Connection",
+            "description": "Connection between two elements",
+            "type": "object",
+            "properties": {
+                "from": {
+                    "title": "From",
+                    "description": "First element Id of the connection",
+                    "type": "string",
+                    "minLength": 1
+                },
+                "to": {
+                    "title": "To",
+                    "description": "End element Id of the connection",
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "required": [
+                "from",
+                "to"
+            ],
+            "additionalProperties": false
+        },
+        "Icon": {
+            "title": "Icon",
+            "description": "Icon of the object",
+            "type": "string"
+        },
+        "Providers": {
+            "title": "Providers",
+            "description": "Cloud Providers",
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "#/definitions/Provider"
+            }
+        },
+        "Provider": {
+            "title": "Provider",
+            "description": "Cloud Provider",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "$ref": "#/definitions/Title"
+                },
+                "description": {
+                    "$ref": "#/definitions/Description"
+                },
+                "icon": {
+                    "$ref": "#/definitions/Icon"
+                },
+                "url": {
+                    "title": "Url",
+                    "description": "Url of the Provider",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "title"
+            ],
+            "additionalProperties": false
+        },
+        "SpecificElementsByProvider": {
+            "title": "Specific elements",
+            "description": "Specific elements mapped by providers",
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "#/definitions/ElementsByType"
+            }
+        },
+        "Title": {
+            "title": "Title",
+            "description": "Title of the object",
+            "type": "string",
+            "minLength": 1
+        },
+        "Types": {
+            "title": "Types",
+            "description": "Types with element definitions",
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+                "$ref": "#/definitions/Type"
+            }
+        },
+        "Type": {
+            "title": "Type",
+            "description": "Type with element definitions",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "$ref": "#/definitions/Title"
+                },
+                "description": {
+                    "$ref": "#/definitions/Description"
+                },
+                "icon": {
+                    "$ref": "#/definitions/Icon"
+                },
+                "properties": {
+                    "title": "Properties",
+                    "description": "Allowed properties definition for the elements with this type",
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/TypeProperty"
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "title",
+                "properties"
+            ]
+        },
+        "TypeProperty": {
+            "title": "Property",
+            "description": "Allowed property definition for the elements with this type",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "$ref": "#/definitions/Title"
+                },
+                "description": {
+                    "$ref": "#/definitions/Description"
+                },
+                "unit": {
+                    "title": "Unit",
+                    "description": "Unit of the property",
+                    "type": "string"
+                },
+                "required": {
+                    "title": "Required",
+                    "description": "Shows if required this property",
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "title"
+            ]
+        }
+    }
+}

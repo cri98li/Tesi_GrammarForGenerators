@@ -1,0 +1,17 @@
+{
+    "id": "http://ndm.mit.edu/magnet_orders/schemas/runOn",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "runOn",
+    "description": "Relation for connecting shots to runs.",
+    "definitions": {},
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "_NDMobject"
+        },
+        {
+            "$ref": "_NDMobject#/definitions/E"
+        }
+    ],
+    "properties": {}
+}

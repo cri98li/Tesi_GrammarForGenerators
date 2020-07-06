@@ -1,0 +1,61 @@
+{
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-03/schema",
+    "title": "Metadata",
+    "description": "The metadata for a package.",
+    "required": true,
+    "properties": {
+        "packages": {
+            "type": "array",
+            "title": "Packages",
+            "description": "Links to package metadata.",
+            "required": true,
+            "items": {
+                "type": "string",
+                "required": false
+            }
+        },
+        "author": {
+            "type": "string",
+            "title": "Author",
+            "description": "The author of the package.",
+            "required": true
+        },
+        "id": {
+            "type": "string",
+            "title": "Identifier",
+            "description": "The unique identifier for the package.",
+            "required": true
+        },
+        "metaVer": {
+            "type": "number",
+            "title": "Metadata Version",
+            "description": "The version of this metadata JSON.",
+            "minimum": 1,
+            "maximum": 1,
+            "required": true
+        },
+        "repos": {
+            "type": "array",
+            "title": "Sub-repositories",
+            "description": "Links to sub-repositories.",
+            "required": false,
+            "items": {
+                "type": "string",
+                "required": false
+            }
+        },
+        "resources": {
+            "type": "object",
+            "title": "Resources",
+            "description": "A dictionary of resources for use by the client.",
+            "required": false
+        },
+        "title": {
+            "type": "string",
+            "title": "Title",
+            "description": "The title of the package.",
+            "required": true
+        }
+    }
+}

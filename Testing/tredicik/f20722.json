@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://portal.webgap.eu:8080/schemas/user.json",
+    "title": "User",
+    "description": "Application JSON Schema definition",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "User name to display"
+        },
+        "email": {
+            "type": "string",
+            "title": "Email",
+            "description": "User email might be used to send notifications"
+        },
+        "photo": {
+            "type": "string",
+            "title": "Photo",
+            "description": "User photo/avatar URL"
+        },
+        "language": {
+            "type": "string",
+            "enum": [
+                "pt-PT",
+                "en-US"
+            ],
+            "title": "Language",
+            "description": "User preferred language"
+        }
+    },
+    "required": [
+        "name",
+        "email"
+    ],
+    "additionalProperties": false
+}

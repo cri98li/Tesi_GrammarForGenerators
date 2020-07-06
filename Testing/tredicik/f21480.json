@@ -1,0 +1,83 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Gateway set",
+    "type": "array",
+    "items": {
+        "title": "Gateway",
+        "type": "object",
+        "properties": {
+            "apiVersion": {
+                "type": "string"
+            },
+            "kind": {
+                "type": "string"
+            },
+            "metadata": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "ref": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name"
+                ]
+            },
+            "spec": {
+                "type": "object",
+                "properties": {
+                    "type": "object",
+                    "properties": {
+                        "credentials": {
+                            "type": "object",
+                            "properties": {
+                                "username": {
+                                    "type": "string"
+                                },
+                                "secret": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "username",
+                                "secret"
+                            ]
+                        },
+                        "expires": {
+                            "type": "integer"
+                        },
+                        "host": {
+                            "type": "string"
+                        },
+                        "port": {
+                            "type": "integer"
+                        },
+                        "transport": {
+                            "type": "string"
+                        },
+                        "registries": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "minItems": 1,
+                            "uniqueItems": true
+                        }
+                    }
+                },
+                "required": [
+                    "host"
+                ]
+            }
+        },
+        "required": [
+            "apiVersion",
+            "kind",
+            "metadata",
+            "spec"
+        ]
+    }
+}

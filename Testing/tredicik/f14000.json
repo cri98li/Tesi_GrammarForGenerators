@@ -1,0 +1,275 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "id": "MarketConfig",
+    "type": "object",
+    "definitions": {
+        "RatesIndexMarketConventions": {
+            "id": "RatesIndexMarketConventions",
+            "type": "object",
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "title": "The name of the Rates Index Conventions used to build market instruments"
+                },
+                "SpecificConventionsOverlay": {
+                    "$ref": "schemas/MarketConventions.json#/definitions/RatesIndexConventions",
+                    "title": "Specific conventions overlay"
+                }
+            },
+            "title": "Conventions for instruments used to build this index",
+            "required": [
+                "Name"
+            ]
+        },
+        "RatesIndexForwardMarket": {
+            "id": "RatesIndexForwardMarket",
+            "type": "object",
+            "properties": {
+                "Curve": {
+                    "$ref": "schemas/Tools/Curves.json#",
+                    "title": "The specification of the Interest Rates Curve object",
+                    "display": {
+                        "collapse": true,
+                        "defaultUncollapsed": true
+                    }
+                },
+                "Instruments": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "schemas/Tools/RatesInstruments.json#",
+                        "display": {
+                            "collapse": true
+                        }
+                    },
+                    "title": "The set of market instruments used to build the curve",
+                    "display": {
+                        "style": "normal",
+                        "collapse": true,
+                        "defaultUncollapsed": true
+                    }
+                }
+            },
+            "title": "Rates Index Forward market",
+            "required": [
+                "Curve"
+            ]
+        },
+        "RatesIndexVolatilityMarketTmp": {
+            "id": "RatesIndexVolatilityMarketTmp",
+            "type": "object",
+            "properties": {
+                "Surface": {
+                    "$ref": "schemas/Tools/IRVolSurface.json#",
+                    "title": "The specification of the IR Vol Surface object",
+                    "display": {
+                        "collapse": true
+                    }
+                },
+                "Instruments": {
+                    "type": "string",
+                    "title": "The set of market instruments used to build the IR Vol Surface"
+                }
+            },
+            "title": "Rates Index Volatility market",
+            "required": [
+                "Surface"
+            ]
+        },
+        "RatesIndexVolSurface": {
+            "id": "RatesIndexVolSurface",
+            "type": "object",
+            "properties": {
+                "TenorInterpolation": {
+                    "type": "string",
+                    "title": "Volatility interpolation style between Underlying Swap Tenors",
+                    "enum": [
+                        "Linear"
+                    ],
+                    "default": "Linear"
+                },
+                "UnderlyingVolatilities": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "Tenor": {
+                                "$ref": "schemas/Tools/Base.json#/definitions/DateTenor",
+                                "title": "Underlying Swap End Date or Tenor"
+                            },
+                            "Vol": {
+                                "$ref": "schemas/Tools/VolSurface.json#",
+                                "title": "Vol Surface for this Underlying Swap",
+                                "display": {
+                                    "collapse": true,
+                                    "defaultUncollapsed": true
+                                }
+                            }
+                        },
+                        "required": [
+                            "Tenor",
+                            "Vol"
+                        ],
+                        "display": {
+                            "tag": "Tenor"
+                        }
+                    },
+                    "title": "Underlying Swaps Volatility Surfaces",
+                    "required": [
+                        "Tenor",
+                        "Vol"
+                    ],
+                    "display": {
+                        "style": "tabs",
+                        "collapse": true,
+                        "defaultUncollapsed": true
+                    }
+                }
+            },
+            "title": "Specification of the IR Vol Surface object by Underlying Swap Tenor",
+            "required": [
+                "UnderlyingVolatilities"
+            ],
+            "display": {
+                "collapse": true,
+                "defaultUncollapsed": true
+            }
+        },
+        "RatesIndexVolatilityMarket": {
+            "id": "RatesIndexVolatilityMarket",
+            "type": "object",
+            "properties": {
+                "Surface": {
+                    "$ref": "#/definitions/RatesIndexVolSurface"
+                },
+                "Instruments": {
+                    "type": "string",
+                    "title": "Set of market instruments used to build the IR Vol Surface"
+                }
+            },
+            "title": "Rates Index Volatility market",
+            "required": [
+                "Surface"
+            ]
+        },
+        "RatesIndexMarket": {
+            "id": "RatesIndexMarket",
+            "type": "object",
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "title": "The name of the index"
+                },
+                "Conventions": {
+                    "$ref": "#/definitions/RatesIndexMarketConventions"
+                },
+                "Forward": {
+                    "$ref": "#/definitions/RatesIndexForwardMarket"
+                },
+                "Volatility": {
+                    "$ref": "#/definitions/RatesIndexVolatilityMarket"
+                }
+            },
+            "title": "Rates Index market structure",
+            "required": [
+                "Name",
+                "Forward"
+            ],
+            "display": {
+                "tag": "Name"
+            }
+        },
+        "RatesEconomyMarket": {
+            "id": "RatesEconomyMarket",
+            "type": "object",
+            "properties": {
+                "Currency": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Currency"
+                },
+                "RatesIndices": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RatesIndexMarket"
+                    },
+                    "title": "The list of Rates Indices market structure for this economy",
+                    "display": {
+                        "style": "grid",
+                        "collapse": true,
+                        "defaultUncollapsed": true
+                    }
+                }
+            },
+            "title": "A page describing rates market for an economy",
+            "required": [
+                "Currency",
+                "RatesIndices"
+            ],
+            "display": {
+                "tag": "Currency"
+            }
+        },
+        "FXMarket": {
+            "id": "FXMarket",
+            "type": "object",
+            "properties": {
+                "CurrencyPair": {
+                    "$ref": "schemas/Tools/CurrencyPairs.json#/definitions/CurrencyPair"
+                }
+            },
+            "title": "A page describing foreign exchange market",
+            "required": [
+                "CurrencyPair"
+            ],
+            "display": {
+                "tag": "CurrencyPair"
+            }
+        },
+        "CreditMarket": {
+            "id": "CreditMarket",
+            "type": "object",
+            "properties": {},
+            "title": "A page describing credit instruments",
+            "required": [],
+            "display": {
+                "tag": "Label"
+            }
+        }
+    },
+    "properties": {
+        "Date": {
+            "$ref": "schemas/Tools/Base.json#/definitions/Date",
+            "title": "Market quoting date"
+        },
+        "Rates": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/RatesEconomyMarket"
+            },
+            "title": "Interest Rates markets",
+            "display": {
+                "style": "pills"
+            }
+        },
+        "FX": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/FXMarket"
+            },
+            "title": "Foreign Exchange markets",
+            "display": {
+                "style": "pills"
+            }
+        },
+        "Credit": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/CreditMarket"
+            },
+            "title": "Credit markets",
+            "display": {
+                "style": "pills"
+            }
+        }
+    },
+    "title": "This document describes the Market Data structure and instruments.",
+    "required": []
+}

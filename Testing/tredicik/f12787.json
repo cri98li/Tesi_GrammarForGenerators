@@ -1,0 +1,105 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://www.dan-nixon.com/Hourai/schema/model.json#",
+    "type": "object",
+    "title": "Model",
+    "options": {
+        "disable_collapse": true
+    },
+    "definitions": {
+        "maintenance_job": {
+            "type": "object",
+            "properties": {
+                "timestamp": {
+                    "title": "Timestamp",
+                    "description": "Date and time the maintenence was performed",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "title": {
+                    "title": "Title",
+                    "type": "string",
+                    "minLength": 5
+                },
+                "description": {
+                    "title": "Description",
+                    "description": "Description of the work carried out",
+                    "type": "string",
+                    "format": "textarea",
+                    "options": {
+                        "input_height": "100px"
+                    }
+                }
+            },
+            "required": [
+                "timestamp",
+                "title",
+                "description"
+            ],
+            "additionalProperties": false,
+            "options": {
+                "collapsed": true
+            }
+        }
+    },
+    "properties": {
+        "name": {
+            "title": "Name",
+            "description": "Unique name of the model",
+            "type": "string",
+            "minLength": 2
+        },
+        "type": {
+            "title": "Type",
+            "type": "string",
+            "enum": [
+                "fixed_wing",
+                "flying_wing",
+                "multirotor_3",
+                "multirotor_4",
+                "multirotor_6",
+                "multirotor_8",
+                "helicopter",
+                "boat",
+                "road_car",
+                "offroad_car",
+                "hovercraft",
+                "other"
+            ]
+        },
+        "description": {
+            "title": "Description",
+            "type": "string",
+            "format": "textarea",
+            "options": {
+                "input_height": "100px"
+            }
+        },
+        "weight": {
+            "title": "Weight",
+            "description": "Weight of the model in Kg",
+            "type": "number",
+            "minimum": 0,
+            "exclusiveMinimum": true
+        },
+        "maintenance": {
+            "title": "Maintenance Log",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/maintenance_job"
+            },
+            "options": {
+                "disable_array_reorder": true,
+                "collapsed": true
+            }
+        }
+    },
+    "required": [
+        "name",
+        "type",
+        "description",
+        "weight",
+        "maintenance"
+    ],
+    "additionalProperties": false
+}

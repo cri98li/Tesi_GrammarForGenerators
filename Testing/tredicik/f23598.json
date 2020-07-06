@@ -1,0 +1,106 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "Historic England Battlefields dataset properties schema",
+    "description": "Historic England Battlefields",
+    "properties": {
+        "AREA_HA": {
+            "description": "",
+            "title": "Area",
+            "type": "number"
+        },
+        "AmendDate": {
+            "anyof": [
+                {
+                    "type": "string"
+                },
+                {
+                    "properties": {
+                        "day": {
+                            "description": "Day of month",
+                            "title": "Day",
+                            "type": "integer"
+                        },
+                        "month": {
+                            "description": "Month of the year",
+                            "title": "Month",
+                            "type": "integer"
+                        },
+                        "year": {
+                            "description": "",
+                            "title": "Year",
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
+                }
+            ],
+            "description": "The date the list entry was last amended",
+            "title": "Amended Date"
+        },
+        "CaptureSca": {
+            "description": "",
+            "title": "Capture Scale",
+            "type": "string"
+        },
+        "Easting": {
+            "description": "",
+            "title": "Easting",
+            "type": "number"
+        },
+        "LegacyUID": {
+            "description": "The old unique ID for identifying List Entrys",
+            "title": "Legacy ID",
+            "type": "string"
+        },
+        "ListEntry": {
+            "description": "Each List Entry is assigned a unique ID",
+            "title": "List Entry ID",
+            "type": "integer"
+        },
+        "NGR": {
+            "description": "",
+            "title": "National Grid Reference",
+            "type": "string"
+        },
+        "Name": {
+            "description": "",
+            "title": "List Entry Name",
+            "type": "string"
+        },
+        "Northing": {
+            "description": "",
+            "title": "Northing",
+            "type": "number"
+        },
+        "RegDate": {
+            "anyof": [
+                {
+                    "type": "string"
+                },
+                {
+                    "properties": {
+                        "day": {
+                            "description": "Day of month",
+                            "title": "Day",
+                            "type": "integer"
+                        },
+                        "month": {
+                            "description": "Month of the year",
+                            "title": "Month",
+                            "type": "integer"
+                        },
+                        "year": {
+                            "description": "",
+                            "title": "Year",
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
+                }
+            ],
+            "description": "The date the battlefield was listed",
+            "title": "Listed Date"
+        }
+    }
+}

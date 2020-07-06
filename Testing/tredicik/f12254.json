@@ -1,0 +1,32 @@
+{
+    "id": "https://raw.githubusercontent.com/MoskitosForReal/xpack-rest-api-spec/master/src/schemas/trigger-schedule-attribute-hour.json#",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "trigger-schedule-attribute-hour",
+    "documentation": "https://www.elastic.co/guide/en/x-pack/5.5/trigger-schedule.html#schedule-daily",
+    "description": "An attribute used in trigger's schedule",
+    "type": "object",
+    "properties": {
+        "hour": {
+            "oneOf": [
+                {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 23
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 23
+                    },
+                    "uniqueItems": true,
+                    "minItems": 1
+                }
+            ]
+        }
+    },
+    "required": [
+        "hour"
+    ]
+}

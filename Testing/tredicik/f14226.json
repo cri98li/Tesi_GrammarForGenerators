@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://ostlog.org/schema/Growth_charts.json",
+    "title": "Growth charts",
+    "description": "Each entry represents percentile groupings for growth measures in sample population.",
+    "type": "object",
+    "properties": {
+        "months": {
+            "type": "integer"
+        },
+        "measure": {
+            "type": "string"
+        },
+        "gender": {
+            "type": "string"
+        },
+        "meta_id": {
+            "type": "integer"
+        },
+        "3rd": {
+            "type": "number"
+        },
+        "5th": {
+            "type": "number"
+        },
+        "10th": {
+            "type": "number"
+        },
+        "25th": {
+            "type": "number"
+        },
+        "50th": {
+            "type": "number"
+        },
+        "75th": {
+            "type": "number"
+        },
+        "90th": {
+            "type": "number"
+        },
+        "95th": {
+            "type": "number"
+        },
+        "97th": {
+            "type": "number"
+        },
+        "remarks": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "months",
+        "measure",
+        "gender"
+    ]
+}

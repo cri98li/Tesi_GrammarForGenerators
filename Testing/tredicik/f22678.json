@@ -1,0 +1,91 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://ostlog.org/schema/Workouts_log.json",
+    "title": "Workouts log",
+    "description": "Each entry describes a workout in time.",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "meta_id": {
+            "type": "integer",
+            "description": "reference to entry's metadata"
+        },
+        "calendar_date_id": {
+            "type": "string",
+            "description": "YYYYMMDD formatted date of the workout."
+        },
+        "timestamp": {
+            "type ": "string ",
+            "description": "HH:MM:SS formatted time of the workout."
+        },
+        "location_id": {
+            "type": "integer",
+            "description ": "the location where the workout started."
+        },
+        "domain ": {
+            "$ref": "definitions.json#/domain"
+        },
+        "person_id ": {
+            "type": "integer",
+            "description ": "the person who worked out."
+        },
+        "workout_type": {
+            "type": "string",
+            "enum": [
+                "walking",
+                "running",
+                "swimming",
+                "cycling",
+                "hiking",
+                "gymnastics",
+                "dance",
+                "roller-blading",
+                "other"
+            ],
+            "description": ""
+        },
+        "duration_minutes": {
+            "type": "number",
+            "description": ""
+        },
+        "distance_miles": {
+            "type": "number",
+            "description": ""
+        },
+        "elevation_gain_ft": {
+            "type": "number",
+            "description": ""
+        },
+        "avg_speed_mph": {
+            "type": "number",
+            "description": ""
+        },
+        "max_speed_mph": {
+            "type": "number",
+            "description": ""
+        },
+        "calories_burned": {
+            "type": "number",
+            "description": ""
+        },
+        "steps": {
+            "type": "integer",
+            "description": ""
+        },
+        "remarks": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "calendar_date_id",
+        "timestamp",
+        "location_id",
+        "domain",
+        "person_id",
+        "workout_type",
+        "duration_minutes"
+    ]
+}

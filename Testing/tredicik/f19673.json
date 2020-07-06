@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Users Create Request",
+    "type": "object",
+    "properties": {
+        "user": {
+            "type": "object",
+            "$ref": "__apigModelsEndpoint__/User"
+        },
+        "role": {
+            "type": "object",
+            "$ref": "__apigModelsEndpoint__/Role"
+        }
+    },
+    "required": [
+        "user",
+        "role"
+    ]
+}

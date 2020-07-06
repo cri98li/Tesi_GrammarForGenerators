@@ -1,0 +1,405 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Query",
+    "description": "Query definition",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "$": {
+            "description": "Name of the entity to fetch data for",
+            "oneOf": [
+                {
+                    "type": "string",
+                    "pattern": "^([\\w]+)*$"
+                },
+                {
+                    "$ref": "#/definitions/alias"
+                }
+            ]
+        },
+        "$out": {
+            "description": "List of the requisites to be loaded",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "oneOf": [
+                    {
+                        "description": "Requisite or reference expression",
+                        "type": "string",
+                        "pattern": "^([\\w, \\., \\*, \\-, \\+, \\*, \\/, \\(, \\), \\s]+)*$"
+                    },
+                    {
+                        "$ref": "#/definitions/alias"
+                    },
+                    {
+                        "$ref": "#/definitions/aggregate"
+                    },
+                    {
+                        "$ref": "#"
+                    }
+                ]
+            }
+        },
+        "$where": {
+            "$ref": "#/definitions/where"
+        },
+        "$having": {
+            "$ref": "#/definitions/where"
+        },
+        "$orderby": {
+            "description": "List of requisites with respective sorting directions",
+            "type": "object",
+            "additionalProperties": {
+                "enum": [
+                    "asc",
+                    "desc"
+                ]
+            },
+            "minProperties": 1
+        },
+        "$groupby": {
+            "description": "List of requisites to group by",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "oneOf": [
+                    {
+                        "description": "Requisite or reference expression",
+                        "type": "string",
+                        "pattern": "^([\\$, \\w, \\., \\*, \\-, \\+, \\*, \\/, \\(, \\), \\s]+)*$"
+                    },
+                    {
+                        "$ref": "#/definitions/alias"
+                    },
+                    {
+                        "$ref": "#/definitions/aggregate"
+                    },
+                    {
+                        "$ref": "#"
+                    }
+                ]
+            }
+        },
+        "$joins": {
+            "description": "Joined entities",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/join"
+            }
+        }
+    },
+    "patternProperties": {
+        "^([\\w, \\.]+)*$": {
+            "$ref": "#/definitions/operatorWithOperand"
+        }
+    },
+    "required": [
+        "$"
+    ],
+    "definitions": {
+        "alias": {
+            "type": "object",
+            "patternProperties": {
+                "^(\\w+)*$": {
+                    "oneOf": [
+                        {
+                            "description": "Alias to requisite or reference expression pair",
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "pattern": "^([\\w, \\., \\-, \\+, \\*, \\/, \\(, \\), \\s]+)*$"
+                        },
+                        {
+                            "$ref": "#"
+                        },
+                        {
+                            "$ref": "#/definitions/aggregate"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "minProperties": 1,
+            "maxProperties": 1
+        },
+        "aggregate": {
+            "type": "object",
+            "properties": {
+                "$count": {
+                    "$ref": "#/definitions/aggregateSubject"
+                },
+                "$countdistinct": {
+                    "$ref": "#/definitions/aggregateSubject"
+                },
+                "$sum": {
+                    "$ref": "#/definitions/aggregateSubject"
+                },
+                "$avg": {
+                    "$ref": "#/definitions/aggregateSubject"
+                },
+                "$min": {
+                    "$ref": "#/definitions/aggregateSubject"
+                },
+                "$max": {
+                    "$ref": "#/definitions/aggregateSubject"
+                },
+                "$hour": {
+                    "$ref": "#/definitions/aggregateSubject"
+                },
+                "$date": {
+                    "$ref": "#/definitions/aggregateSubject"
+                },
+                "$month": {
+                    "$ref": "#/definitions/aggregateSubject"
+                },
+                "$year": {
+                    "$ref": "#/definitions/aggregateSubject"
+                },
+                "$week": {
+                    "$ref": "#/definitions/aggregateSubject"
+                }
+            },
+            "maxProperties": 1,
+            "minProperties": 1,
+            "additionalProperties": false
+        },
+        "aggregateSubject": {
+            "oneOf": [
+                {
+                    "type": "string",
+                    "pattern": "^([\\w, \\., \\-, \\+, \\*, \\/, \\(, \\), \\s]+)*$"
+                }
+            ]
+        },
+        "join": {
+            "description": "Entity join",
+            "type": "object",
+            "properties": {
+                "$entity": {
+                    "description": "Name of the joined entity",
+                    "type": "string",
+                    "pattern": "^(\\w+)*$"
+                },
+                "$alias": {
+                    "description": "Alias of the joined entity",
+                    "type": "string",
+                    "pattern": "^(\\w+)*$"
+                },
+                "$on": {
+                    "description": "Join conditions",
+                    "$ref": "#/definitions/where"
+                },
+                "$type": {
+                    "description": "Type of the join",
+                    "enum": [
+                        "inner",
+                        "outer"
+                    ]
+                }
+            },
+            "required": [
+                "$entity",
+                "$on"
+            ],
+            "additionalProperties": false
+        },
+        "where": {
+            "oneOf": [
+                {
+                    "description": "Array of conditions",
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/condition"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "$ref": "#/definitions/condition"
+                }
+            ]
+        },
+        "operandSet": {
+            "oneOf": [
+                {
+                    "description": "Array of possible values",
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "object"
+                            }
+                        ]
+                    },
+                    "minItems": 1
+                },
+                {
+                    "$ref": "#"
+                }
+            ]
+        },
+        "operatorWithOperand": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "boolean"
+                },
+                {
+                    "type": "number"
+                },
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "~": {
+                            "description": "Like",
+                            "type": "string"
+                        },
+                        "<": {
+                            "description": "Less",
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "number"
+                                },
+                                {
+                                    "type": "object"
+                                }
+                            ]
+                        },
+                        ">": {
+                            "description": "Greater",
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "number"
+                                },
+                                {
+                                    "type": "object"
+                                }
+                            ]
+                        },
+                        ">=": {
+                            "description": "Greater or equal",
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "number"
+                                },
+                                {
+                                    "type": "object"
+                                }
+                            ]
+                        },
+                        "<=": {
+                            "description": "Less or equal",
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "number"
+                                },
+                                {
+                                    "type": "object"
+                                }
+                            ]
+                        },
+                        "=": {
+                            "description": "Equal",
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "number"
+                                },
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                },
+                                {
+                                    "type": "object"
+                                }
+                            ]
+                        },
+                        "!=": {
+                            "description": "Not equal",
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "number"
+                                },
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "null"
+                                },
+                                {
+                                    "type": "object"
+                                }
+                            ]
+                        },
+                        "$in": {
+                            "$ref": "#/definitions/operandSet"
+                        },
+                        "$notin": {
+                            "$ref": "#/definitions/operandSet"
+                        }
+                    },
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "condition": {
+            "type": "object",
+            "properties": {
+                "$or": {
+                    "$ref": "#/definitions/where"
+                },
+                "$and": {
+                    "$ref": "#/definitions/where"
+                },
+                "$not": {
+                    "$ref": "#/definitions/condition"
+                }
+            },
+            "patternProperties": {
+                "^([\\w, \\.]+)*$": {
+                    "description": "Requisite name or reference expression to value pair",
+                    "$ref": "#/definitions/operatorWithOperand",
+                    "pattern": "^([\\w, \\.]+)*$"
+                }
+            },
+            "additionalProperties": false,
+            "minProperties": 1
+        }
+    }
+}

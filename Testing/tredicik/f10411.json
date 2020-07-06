@@ -1,0 +1,119 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "List of Pokemon",
+    "description": "Schema that describe a list of Pokemon as found in the Pokedex",
+    "type": "array",
+    "items": {
+        "title": "A Pokemon",
+        "type": "object",
+        "properties": {
+            "id": {
+                "description": "Unique identifier of the Pokemon",
+                "type": "string"
+            },
+            "name_fr": {
+                "description": "Name of the Pokemon in french",
+                "type": "string"
+            },
+            "name_en": {
+                "description": "Name of the Pokemon in english",
+                "type": "string"
+            },
+            "description": {
+                "description": "Description of the Pokemon",
+                "type": "string"
+            },
+            "type": {
+                "description": "List of comma separated values of Pokemon type as referenced in pokedexgo-types table",
+                "type": "string"
+            },
+            "weaknesses": {
+                "description": "List of comma separated values of Pokemon type as referenced in pokedexgo-types table",
+                "type": "string"
+            },
+            "resistances": {
+                "description": "List of comma separated values of Pokemon type as referenced in pokedexgo-types table",
+                "type": "string"
+            },
+            "immunities": {
+                "description": "List of comma separated values of Pokemon type as referenced in pokedexgo-types table",
+                "type": "string"
+            },
+            "egg": {
+                "description": "Egg appearance in km",
+                "type": "string",
+                "default": 0
+            },
+            "region_id": {
+                "description": "Identifier of the region as referenced in pokedexgo-regions table",
+                "type": "string"
+            },
+            "hp": {
+                "description": "Max endurance points of the Pokemon",
+                "type": "string"
+            },
+            "attack": {
+                "description": "Max attack points of the Pokemon",
+                "type": "string"
+            },
+            "defense": {
+                "description": "Max defense points of the Pokemon",
+                "type": "string"
+            },
+            "cp": {
+                "description": "Max combat points of the Pokemon",
+                "type": "string"
+            },
+            "average_cp": {
+                "description": "Average combat points per level",
+                "type": "string"
+            },
+            "capture_rate": {
+                "description": "Capture rate (in %) of the Pokemon",
+                "type": "string"
+            },
+            "escape_rate": {
+                "description": "Escape rate (in %) of the Pokemon",
+                "type": "string"
+            },
+            "height": {
+                "description": "Height of th Pokemeon in meters",
+                "type": "string"
+            },
+            "weight": {
+                "description": "Weight of the Pokemon in kg",
+                "type": "string"
+            },
+            "availability": {
+                "description": "Availability og the Pokemon",
+                "type": "string"
+            },
+            "legendary": {
+                "description": "Indicates that the Pokemon is lengendary or not",
+                "type": "string"
+            },
+            "friend": {
+                "description": "How many km to get a candy",
+                "type": "string"
+            },
+            "raid": {
+                "description": "Encounter raid level",
+                "type": "string"
+            }
+        },
+        "required": [
+            "id",
+            "name_fr",
+            "name_en",
+            "description",
+            "type",
+            "region_id",
+            "hp",
+            "attack",
+            "defense",
+            "cp",
+            "height",
+            "weight"
+        ]
+    }
+}

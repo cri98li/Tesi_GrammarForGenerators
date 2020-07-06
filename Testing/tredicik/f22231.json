@@ -1,0 +1,47 @@
+{
+    "id": "http://ndm.mit.edu/ndm/schemas/shot",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "shot",
+    "description": "HTS Shot schema",
+    "definitions": {},
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "_NDMobject"
+        },
+        {
+            "$ref": "_NDMobject#/definitions/V"
+        }
+    ],
+    "properties": {
+        "operators": {
+            "$ref": "_NDMobject#/definitions/LINK",
+            "defaultvalue": {
+                "linked-class": "Person"
+            }
+        },
+        "shotNumber": {
+            "type": "INTEGER",
+            "defaultvalue": "42"
+        }
+    },
+    "required": [
+        "shotNumber"
+    ],
+    "metadata": {
+        "schemaMetadata": {
+            "title": [
+                "@class",
+                "shotNumber"
+            ],
+            "brief": [
+                "operators"
+            ],
+            "body": [
+                "measurementAppliedField",
+                "measurementAngle"
+            ],
+            "links": []
+        }
+    }
+}

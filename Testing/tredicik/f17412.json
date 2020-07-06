@@ -1,0 +1,92 @@
+{
+    "$schema": "http://json-schema.org/draft-04/hyper-schema",
+    "id": "http://localhost/schema",
+    "title": "Deferpanic integration with goa",
+    "type": "object",
+    "properties": {
+        "Example": {
+            "$ref": "#/definitions/Example"
+        },
+        "example": {
+            "$ref": "#/definitions/example"
+        }
+    },
+    "definitions": {
+        "Example": {
+            "title": "Mediatype identifier: application/vnd.goa.example+json",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of example"
+                }
+            },
+            "description": "An example",
+            "media": {
+                "type": "application/vnd.goa.example+json"
+            }
+        },
+        "example": {
+            "title": "example",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of example"
+                }
+            },
+            "description": "An example",
+            "media": {
+                "type": "application/vnd.goa.example+json"
+            },
+            "links": [
+                {
+                    "title": "panic",
+                    "rel": "panic",
+                    "href": "/deferpanic/examples/panic",
+                    "method": "GET",
+                    "targetSchema": {
+                        "$ref": "#/definitions/Example"
+                    },
+                    "mediaType": "application/vnd.goa.example+json"
+                },
+                {
+                    "title": "slow",
+                    "rel": "slow",
+                    "href": "/deferpanic/examples/slow",
+                    "method": "GET",
+                    "targetSchema": {
+                        "$ref": "#/definitions/Example"
+                    },
+                    "mediaType": "application/vnd.goa.example+json"
+                },
+                {
+                    "title": "fast",
+                    "rel": "fast",
+                    "href": "/deferpanic/examples/fast",
+                    "method": "GET",
+                    "targetSchema": {
+                        "$ref": "#/definitions/Example"
+                    },
+                    "mediaType": "application/vnd.goa.example+json"
+                }
+            ]
+        }
+    },
+    "description": "A basic example of deferpanic integration with goa",
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://localhost"
+        },
+        {
+            "rel": "self",
+            "href": "/schema",
+            "method": "GET",
+            "targetSchema": {
+                "$schema": "http://json-schema.org/draft-04/hyper-schema",
+                "additionalProperties": true
+            }
+        }
+    ]
+}

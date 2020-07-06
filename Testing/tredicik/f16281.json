@@ -1,0 +1,60 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://ostlog.org/schema/Chores_log.json",
+    "title": "Chores log",
+    "description": "Each entry the status on an assigned chore.",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "meta_id": {
+            "type": "integer",
+            "description": "reference to entry's metadata"
+        },
+        "calendar_date_id": {
+            "type": "string",
+            "description": "YYYYMMDD formatted date the chore was planned or attempted ."
+        },
+        "timestamp": {
+            "type ": "string ",
+            "description": "HH:MM:SS formatted time of the chore was planned or attempted."
+        },
+        "location_id": {
+            "type": "integer",
+            "description": "location where chore was carried out."
+        },
+        "domain ": {
+            "$ref": "definitions.json#/domain"
+        },
+        "person_id ": {
+            "type": "integer",
+            "description ": "the person who carried out the chore."
+        },
+        "min_per_day": {
+            "type": "integer",
+            "description ": "the minimum chores person carries out per day."
+        },
+        "avg_per_day": {
+            "type": "integer",
+            "description ": "the average chores person carries out per day."
+        },
+        "max_per_day": {
+            "type": "integer",
+            "description ": "the maximum chores person carries out per day."
+        },
+        "remarks": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "calendar_date_id",
+        "timestamp",
+        "location_id",
+        "domain",
+        "person_id",
+        "chore_description",
+        "status"
+    ]
+}

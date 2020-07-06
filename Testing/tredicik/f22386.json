@@ -1,0 +1,377 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "date": {
+            "type": "string",
+            "format": "date"
+        },
+        "name": {
+            "type": "string",
+            "pattern": "^(?!.*[\u042b\u042a\u042d\u0401\u044b\u044a\u044d\u0451@%&$^#])[a-zA-Z\u0410-\u042f\u0490\u0407\u0406\u0404\u0430-\u044f\u0491\u0457\u0456\u04540-9\u2116\\\"!\\^\\*)\\]\\[(._-].*$"
+        },
+        "person_name": {
+            "type": "string",
+            "pattern": "^(?!.*[\u042b\u042a\u042d\u0401\u044b\u044a\u044d\u0451@%&$^#])[\u0410-\u042f\u0490\u0407\u0406\u0404\u0430-\u044f\u0491\u0457\u0456\u0454\u2019\\'\\- ]+$"
+        },
+        "phone": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "description": "Dictionary: PHONE_TYPE"
+                },
+                "number": {
+                    "type": "string",
+                    "pattern": "^\\+38[0-9]{10}$"
+                }
+            },
+            "required": [
+                "type",
+                "number"
+            ],
+            "additionalProperties": false
+        },
+        "gender": {
+            "type": "string",
+            "description": "Dictionary: GENDER"
+        },
+        "document": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "description": "Dictionary: DOCUMENT_TYPE"
+                },
+                "number": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "issued_by": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "issued_at": {
+                    "type": "string",
+                    "format": "date"
+                }
+            },
+            "required": [
+                "type",
+                "number"
+            ],
+            "additionalProperties": false
+        },
+        "education": {
+            "type": "object",
+            "properties": {
+                "country": {
+                    "type": "string",
+                    "description": "Dictionary: COUNTRY"
+                },
+                "city": {
+                    "$ref": "#/definitions/name"
+                },
+                "institution_name": {
+                    "$ref": "#/definitions/name"
+                },
+                "issued_date": {
+                    "$ref": "#/definitions/date"
+                },
+                "diploma_number": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "degree": {
+                    "type": "string",
+                    "description": "Dictionary: EDUCATION_DEGREE"
+                },
+                "speciality": {
+                    "$ref": "#/definitions/name"
+                }
+            },
+            "required": [
+                "country",
+                "city",
+                "institution_name",
+                "diploma_number",
+                "degree",
+                "speciality"
+            ],
+            "additionalProperties": false
+        },
+        "qualification": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "description": "Dictionary: QUALIFICATION_TYPE"
+                },
+                "institution_name": {
+                    "$ref": "#/definitions/name"
+                },
+                "speciality": {
+                    "$ref": "#/definitions/name"
+                },
+                "issued_date": {
+                    "$ref": "#/definitions/date"
+                },
+                "certificate_number": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "valid_to": {
+                    "$ref": "#/definitions/date"
+                },
+                "additional_info": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type",
+                "institution_name",
+                "speciality"
+            ],
+            "additionalProperties": false
+        },
+        "speciality": {
+            "type": "object",
+            "properties": {
+                "speciality": {
+                    "type": "string",
+                    "description": "Dictionary: SPECIALITY_TYPE"
+                },
+                "speciality_officio": {
+                    "type": "boolean"
+                },
+                "level": {
+                    "type": "string",
+                    "description": "Dictionary: SPECIALITY_LEVEL"
+                },
+                "qualification_type": {
+                    "type": "string",
+                    "description": "Dictionary: SPEC_QUALIFICATION_TYPE"
+                },
+                "attestation_name": {
+                    "$ref": "#/definitions/name"
+                },
+                "attestation_date": {
+                    "$ref": "#/definitions/date"
+                },
+                "valid_to_date": {
+                    "$ref": "#/definitions/date"
+                },
+                "certificate_number": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "required": [
+                "speciality",
+                "speciality_officio",
+                "level",
+                "qualification_type",
+                "attestation_name",
+                "attestation_date",
+                "certificate_number"
+            ],
+            "additionalProperties": false
+        },
+        "science_degree": {
+            "type": "object",
+            "properties": {
+                "country": {
+                    "type": "string",
+                    "description": "Dictionary: COUNTRY"
+                },
+                "city": {
+                    "$ref": "#/definitions/name"
+                },
+                "degree": {
+                    "type": "string",
+                    "description": "Dictionary: SCIENCE_DEGREE"
+                },
+                "institution_name": {
+                    "$ref": "#/definitions/name"
+                },
+                "diploma_number": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "speciality": {
+                    "$ref": "#/definitions/name"
+                },
+                "issued_date": {
+                    "$ref": "#/definitions/date"
+                }
+            },
+            "required": [
+                "country",
+                "city",
+                "degree",
+                "institution_name",
+                "diploma_number",
+                "speciality"
+            ],
+            "additionalProperties": false
+        },
+        "party": {
+            "type": "object",
+            "properties": {
+                "first_name": {
+                    "type": "string",
+                    "$ref": "#/definitions/person_name"
+                },
+                "last_name": {
+                    "type": "string",
+                    "$ref": "#/definitions/person_name"
+                },
+                "second_name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "pattern": "^(?!.*[\u042b\u042a\u042d\u0401\u044b\u044a\u044d\u0451@%&$^#])[\u0410-\u042f\u0490\u0407\u0406\u0404\u0430-\u044f\u0491\u0457\u0456\u0454\\'\\- ]+$"
+                },
+                "birth_date": {
+                    "$ref": "#/definitions/date"
+                },
+                "gender": {
+                    "$ref": "#/definitions/gender"
+                },
+                "tax_id": {
+                    "type": "string",
+                    "pattern": "^([0-9]{9,10}|[\u0410-\u042f\u0401\u0407I\u0404\u0490]{2}\\d{6})$"
+                },
+                "no_tax_id": {
+                    "type": "boolean"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                },
+                "documents": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/document"
+                    },
+                    "minItems": 1
+                },
+                "phones": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/phone"
+                    },
+                    "minItems": 1
+                },
+                "about_myself": {
+                    "type": "string",
+                    "maxLength": 2000
+                },
+                "working_experience": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "exclusiveMinimum": true,
+                    "description": "qnty of full years"
+                }
+            },
+            "required": [
+                "first_name",
+                "last_name",
+                "birth_date",
+                "gender",
+                "tax_id",
+                "email",
+                "documents",
+                "phones"
+            ],
+            "additionalProperties": true
+        }
+    },
+    "type": "object",
+    "properties": {
+        "employee_request": {
+            "type": "object",
+            "properties": {
+                "legal_entity_id": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{8}(-?)[0-9a-f]{4}(-?)[0-9a-f]{4}(-?)[0-9a-f]{4}(-?)[0-9a-f]{12}$"
+                },
+                "division_id": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{8}(-?)[0-9a-f]{4}(-?)[0-9a-f]{4}(-?)[0-9a-f]{4}(-?)[0-9a-f]{12}$"
+                },
+                "employee_id": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{8}(-?)[0-9a-f]{4}(-?)[0-9a-f]{4}(-?)[0-9a-f]{4}(-?)[0-9a-f]{12}$"
+                },
+                "position": {
+                    "type": "string",
+                    "description": "Dictionary: POSITION"
+                },
+                "start_date": {
+                    "$ref": "#/definitions/date"
+                },
+                "end_date": {
+                    "$ref": "#/definitions/date"
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "NEW"
+                    ]
+                },
+                "employee_type": {
+                    "type": "string",
+                    "description": "Dictionary: EMPLOYEE_TYPE"
+                },
+                "party": {
+                    "$ref": "#/definitions/party"
+                },
+                "doctor": {
+                    "type": "object",
+                    "properties": {
+                        "educations": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/education"
+                            },
+                            "minItems": 1
+                        },
+                        "qualifications": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/qualification"
+                            },
+                            "minItems": 1
+                        },
+                        "specialities": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/speciality"
+                            },
+                            "minItems": 1
+                        },
+                        "science_degree": {
+                            "$ref": "#/definitions/science_degree"
+                        }
+                    },
+                    "required": [
+                        "educations",
+                        "specialities"
+                    ]
+                }
+            },
+            "required": [
+                "legal_entity_id",
+                "position",
+                "start_date",
+                "status",
+                "employee_type",
+                "party"
+            ]
+        }
+    },
+    "required": [
+        "employee_request"
+    ]
+}

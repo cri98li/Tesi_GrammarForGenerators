@@ -1,0 +1,918 @@
+{
+    "id": "http://specif.de/v0.11.8/schema#",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "JSON-Schema for SpecIF v0.11.8",
+    "description": "SpecIF represents the visible, i.e. the diagrams and the text, as well as the semantics of system specifications for model integration and model exchange.",
+    "definitions": {
+        "id": {
+            "description": "A unique identifier.",
+            "type": "string",
+            "pattern": "^[_a-zA-Z]{1}[_a-zA-Z0-9.-]*$"
+        },
+        "revision": {
+            "description": "A revision tag with one or multiple blocks with alphanumeric characters separated by a special character [.:,;/-]. Sequential as well as branching/merging notations are possible.",
+            "type": "string",
+            "pattern": "^(?:[0-9a-zA-Z]+[.:,;/-])*[0-9a-zA-Z]+$"
+        },
+        "replaces": {
+            "description": "For change and configuration management; the first revision has 0 entries, a simple modification has 1 entry and the result of a merge has 2 entries.",
+            "type": "array",
+            "maxItems": 2,
+            "items": {
+                "$ref": "#/definitions/revision"
+            }
+        },
+        "key": {
+            "description": "A unique key for a particular revision of an identifiable item, e.g. of a resource.",
+            "oneOf": [
+                {
+                    "description": "A string with a valid identifier; where the last revision (i.e. revision=0) is implied.",
+                    "$ref": "#/definitions/id"
+                },
+                {
+                    "description": "A key consisting of a valid identifier and a revision. Revision=0 means the latest revision of the identified item. If the revision does not exist, the next lower existing revision applies.",
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "$ref": "#/definitions/id"
+                        },
+                        "revision": {
+                            "$ref": "#/definitions/revision"
+                        }
+                    },
+                    "required": [
+                        "id"
+                    ]
+                }
+            ]
+        },
+        "dateTime": {
+            "description": "An ISO-8601 dateTime string. For reduced accuracy, any number of values may be dropped, but only from right to left.",
+            "type": "string",
+            "pattern": "^(\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
+        },
+        "icon": {
+            "description": "A symbol for display as a prefix to titles; applicable to all instances of the class. Is usually a XML-encoded UTF-8 symbol.",
+            "type": "string"
+        },
+        "instantiation": {
+            "description": "Indicates whether an instance of the class is created automatically, manually or both. All is allowed, if the property is omitted. The class is abstract and cannot be instantiated, if the property list is present, but empty.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "type": "string",
+                "enum": [
+                    "auto",
+                    "user"
+                ]
+            }
+        },
+        "value": {
+            "description": "A property value according to the property class.",
+            "oneOf": [
+                {
+                    "description": "A string containing some text or a special value.",
+                    "type": "string"
+                },
+                {
+                    "description": "A list of items with text and language properties. Thus, the information can be given in multiple languages.",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "text": {
+                                "description": "A string containing some text.",
+                                "type": "string"
+                            },
+                            "language": {
+                                "description": "An IETF language tag such as 'en', 'en-US, 'fr' or 'de'.",
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                            "text",
+                            "language"
+                        ]
+                    }
+                }
+            ]
+        },
+        "nodes": {
+            "description": "A list of pointers to resources; may be nested to build a tree, i.e. a hierarchy of pointers.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "$ref": "#/definitions/id"
+                    },
+                    "title": {
+                        "$ref": "#/definitions/value",
+                        "description": "The node's label; if missing, the title of the referenced resource is applied."
+                    },
+                    "description": {
+                        "$ref": "#/definitions/value"
+                    },
+                    "resource": {
+                        "description": "The pointer to the resource to be displayed at this position.",
+                        "$ref": "#/definitions/key"
+                    },
+                    "nodes": {
+                        "description": "The next hierarchy level.",
+                        "$ref": "#/definitions/nodes"
+                    },
+                    "revision": {
+                        "$ref": "#/definitions/revision"
+                    },
+                    "replaces": {
+                        "$ref": "#/definitions/replaces"
+                    },
+                    "changedAt": {
+                        "$ref": "#/definitions/dateTime"
+                    },
+                    "changedBy": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "resource"
+                ]
+            }
+        },
+        "properties": {
+            "description": "A property of a resource or statement.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "$ref": "#/definitions/id"
+                    },
+                    "title": {
+                        "$ref": "#/definitions/value",
+                        "description": "The property's label; if missing, the title of the property's class is applied."
+                    },
+                    "description": {
+                        "$ref": "#/definitions/value"
+                    },
+                    "class": {
+                        "$ref": "#/definitions/key",
+                        "description": "Must be a member of propertyClasses. In addition, it must be listed in the propertyClasses of the parent's class."
+                    },
+                    "value": {
+                        "$ref": "#/definitions/value",
+                        "description": "If the value is unknown, omit the whole property. By default, the class' value applies."
+                    },
+                    "revision": {
+                        "$ref": "#/definitions/revision"
+                    },
+                    "replaces": {
+                        "$ref": "#/definitions/replaces"
+                    },
+                    "changedAt": {
+                        "$ref": "#/definitions/dateTime",
+                        "description": "Without change information, the parent's change information applies."
+                    },
+                    "changedBy": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "class",
+                    "value"
+                ]
+            }
+        }
+    },
+    "type": "object",
+    "properties": {
+        "id": {
+            "$ref": "#/definitions/id"
+        },
+        "title": {
+            "$ref": "#/definitions/value"
+        },
+        "description": {
+            "$ref": "#/definitions/value"
+        },
+        "specifVersion": {
+            "description": "The schema version to use.",
+            "type": "string",
+            "pattern": "^0.11.8$"
+        },
+        "generator": {
+            "type": "string"
+        },
+        "generatorVersion": {
+            "type": "string"
+        },
+        "rights": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "title",
+                "type",
+                "url"
+            ]
+        },
+        "createdAt": {
+            "$ref": "#/definitions/dateTime"
+        },
+        "createdBy": {
+            "description": "The creator of the SpecIF data-set (file). If specified, at least an e-mail address must be given.",
+            "type": "object",
+            "properties": {
+                "familyName": {
+                    "type": "string"
+                },
+                "givenName": {
+                    "type": "string"
+                },
+                "org": {
+                    "type": "object",
+                    "properties": {
+                        "organizationName": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "organizationName"
+                    ]
+                },
+                "email": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "value": {
+                            "type": "string",
+                            "format": "email"
+                        }
+                    },
+                    "required": [
+                        "value"
+                    ]
+                }
+            },
+            "required": [
+                "email"
+            ]
+        },
+        "dataTypes": {
+            "description": "The base data types for use by property class definitions.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "oneOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "title": "Data-type 'Boolean'",
+                                "description": "The corresponding definition in https://www.w3.org/TR/xmlschema-2/ applies.",
+                                "enum": [
+                                    "xs:boolean",
+                                    "xs:dateTime"
+                                ]
+                            },
+                            "id": {
+                                "$ref": "#/definitions/id"
+                            },
+                            "title": {
+                                "$ref": "#/definitions/value"
+                            },
+                            "description": {
+                                "$ref": "#/definitions/value"
+                            },
+                            "revision": {
+                                "$ref": "#/definitions/revision"
+                            },
+                            "replaces": {
+                                "$ref": "#/definitions/replaces"
+                            },
+                            "changedAt": {
+                                "$ref": "#/definitions/dateTime"
+                            },
+                            "changedBy": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                            "id",
+                            "title",
+                            "type",
+                            "changedAt"
+                        ]
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "title": "Data-type 'Integer'",
+                                "description": "The corresponding definition in https://www.w3.org/TR/xmlschema-2/ applies.",
+                                "enum": [
+                                    "xs:integer"
+                                ]
+                            },
+                            "id": {
+                                "$ref": "#/definitions/id"
+                            },
+                            "title": {
+                                "$ref": "#/definitions/value"
+                            },
+                            "description": {
+                                "$ref": "#/definitions/value"
+                            },
+                            "min": {
+                                "type": "number",
+                                "title": "Minimum Value of a Number",
+                                "description": "Optional use by dataTypes 'xs:integer' and 'xs:double'."
+                            },
+                            "max": {
+                                "type": "number",
+                                "title": "Maximum Value of a Number",
+                                "description": "Optional use by dataTypes 'xs:integer' and 'xs:double'."
+                            },
+                            "revision": {
+                                "$ref": "#/definitions/revision"
+                            },
+                            "replaces": {
+                                "$ref": "#/definitions/replaces"
+                            },
+                            "changedAt": {
+                                "$ref": "#/definitions/dateTime"
+                            },
+                            "changedBy": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                            "id",
+                            "title",
+                            "type",
+                            "changedAt"
+                        ]
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "title": "Data-type 'Double'",
+                                "description": "The corresponding definition in https://www.w3.org/TR/xmlschema-2/ applies.",
+                                "enum": [
+                                    "xs:double"
+                                ]
+                            },
+                            "id": {
+                                "$ref": "#/definitions/id"
+                            },
+                            "title": {
+                                "$ref": "#/definitions/value"
+                            },
+                            "description": {
+                                "$ref": "#/definitions/value"
+                            },
+                            "accuracy": {
+                                "type": "integer",
+                                "title": "Accuracy of a Decimal Number",
+                                "description": "Optional use by dataType 'xs:double', indicates the number of decimals.",
+                                "minimum": 1
+                            },
+                            "min": {
+                                "type": "number",
+                                "title": "Minimum Value of a Number",
+                                "description": "Optional use by dataTypes 'xs:integer' and 'xs:double'."
+                            },
+                            "max": {
+                                "type": "number",
+                                "title": "Maximum Value of a Number",
+                                "description": "Optional use by dataTypes 'xs:integer' and 'xs:double'."
+                            },
+                            "revision": {
+                                "$ref": "#/definitions/revision"
+                            },
+                            "replaces": {
+                                "$ref": "#/definitions/replaces"
+                            },
+                            "changedAt": {
+                                "$ref": "#/definitions/dateTime"
+                            },
+                            "changedBy": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                            "id",
+                            "title",
+                            "type",
+                            "changedAt"
+                        ]
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "title": "Data-type 'String' or 'Formatted Text'",
+                                "description": "The corresponding definition in https://www.w3.org/TR/xmlschema-2/ resp. https://www.w3.org/TR/xhtml1/ applies.",
+                                "enum": [
+                                    "xs:string",
+                                    "xhtml"
+                                ]
+                            },
+                            "id": {
+                                "$ref": "#/definitions/id"
+                            },
+                            "title": {
+                                "$ref": "#/definitions/value"
+                            },
+                            "description": {
+                                "$ref": "#/definitions/value"
+                            },
+                            "maxLength": {
+                                "type": "integer",
+                                "title": "Maximum String Length",
+                                "description": "Optional use by dataTypes 'xs:string' and 'XHTML'.",
+                                "minimum": 0
+                            },
+                            "revision": {
+                                "$ref": "#/definitions/revision"
+                            },
+                            "replaces": {
+                                "$ref": "#/definitions/replaces"
+                            },
+                            "changedAt": {
+                                "$ref": "#/definitions/dateTime"
+                            },
+                            "changedBy": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                            "id",
+                            "title",
+                            "type",
+                            "changedAt"
+                        ]
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "title": "Data-type 'Enumeration'",
+                                "description": "The corresponding definition in https://www.w3.org/TR/xmlschema-2/ applies.",
+                                "enum": [
+                                    "xs:enumeration"
+                                ]
+                            },
+                            "id": {
+                                "$ref": "#/definitions/id"
+                            },
+                            "title": {
+                                "$ref": "#/definitions/value"
+                            },
+                            "description": {
+                                "$ref": "#/definitions/value"
+                            },
+                            "values": {
+                                "type": "array",
+                                "title": "Enumerated Values",
+                                "description": "Mandatory use by dataType 'xs:enumeration'. If 'multiple' is true 0..n options may be selected, otherwise exactly one must be selected.",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "$ref": "#/definitions/id"
+                                        },
+                                        "value": {
+                                            "$ref": "#/definitions/value"
+                                        }
+                                    },
+                                    "required": [
+                                        "id",
+                                        "value"
+                                    ]
+                                }
+                            },
+                            "multiple": {
+                                "type": "boolean",
+                                "description": "Optional use by dataType 'xs:enumeration'. Indicates whether multiple values can be chosen; by default the value is 'false'."
+                            },
+                            "revision": {
+                                "$ref": "#/definitions/revision"
+                            },
+                            "replaces": {
+                                "$ref": "#/definitions/replaces"
+                            },
+                            "changedAt": {
+                                "$ref": "#/definitions/dateTime"
+                            },
+                            "changedBy": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                            "id",
+                            "title",
+                            "type",
+                            "changedAt"
+                        ]
+                    }
+                ]
+            }
+        },
+        "propertyClasses": {
+            "description": "Class definition of a property for resources or statements. Is a sub-element of the respective resourceClass or statementClass. If no revision or change information is specified, the respective values of the parent element apply.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "$ref": "#/definitions/id"
+                    },
+                    "title": {
+                        "$ref": "#/definitions/value"
+                    },
+                    "description": {
+                        "$ref": "#/definitions/value"
+                    },
+                    "dataType": {
+                        "$ref": "#/definitions/key",
+                        "description": "Must be a member of dataTypes."
+                    },
+                    "multiple": {
+                        "type": "boolean",
+                        "description": "Optional use by a propertyClass with dataType 'xs:enumeration'. Indicates whether multiple values can be chosen. If omitted, the 'multiple' property of the dataType applies; by default the value is 'false'."
+                    },
+                    "value": {
+                        "$ref": "#/definitions/value",
+                        "description": "An optional default value in case the corresponding resource's or statement's property is missing."
+                    },
+                    "revision": {
+                        "$ref": "#/definitions/revision"
+                    },
+                    "replaces": {
+                        "$ref": "#/definitions/replaces"
+                    },
+                    "changedAt": {
+                        "$ref": "#/definitions/dateTime"
+                    },
+                    "changedBy": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "id",
+                    "title",
+                    "dataType",
+                    "changedAt"
+                ]
+            }
+        },
+        "resourceClasses": {
+            "description": "The class definitions for resources.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "$ref": "#/definitions/id"
+                    },
+                    "title": {
+                        "$ref": "#/definitions/value"
+                    },
+                    "description": {
+                        "$ref": "#/definitions/value"
+                    },
+                    "extends": {
+                        "$ref": "#/definitions/key"
+                    },
+                    "icon": {
+                        "$ref": "#/definitions/icon"
+                    },
+                    "isHeading": {
+                        "type": "boolean"
+                    },
+                    "instantiation": {
+                        "$ref": "#/definitions/instantiation"
+                    },
+                    "propertyClasses": {
+                        "type": "array",
+                        "description": "A collection of keys of eligible property classes",
+                        "minItems": 0,
+                        "uniqueItems": true,
+                        "items": {
+                            "$ref": "#/definitions/key",
+                            "description": "Must be a member of propertyClasses."
+                        }
+                    },
+                    "revision": {
+                        "$ref": "#/definitions/revision"
+                    },
+                    "replaces": {
+                        "$ref": "#/definitions/replaces"
+                    },
+                    "changedAt": {
+                        "$ref": "#/definitions/dateTime"
+                    },
+                    "changedBy": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "id",
+                    "title",
+                    "changedAt"
+                ]
+            }
+        },
+        "statementClasses": {
+            "description": "The class definitions for statements in subject-predicate-object statements, where subject and object are resources.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "$ref": "#/definitions/id"
+                    },
+                    "title": {
+                        "$ref": "#/definitions/value"
+                    },
+                    "description": {
+                        "$ref": "#/definitions/value"
+                    },
+                    "extends": {
+                        "$ref": "#/definitions/key"
+                    },
+                    "icon": {
+                        "$ref": "#/definitions/icon"
+                    },
+                    "instantiation": {
+                        "$ref": "#/definitions/instantiation"
+                    },
+                    "propertyClasses": {
+                        "type": "array",
+                        "description": "A collection of keys of eligible property classes",
+                        "minItems": 0,
+                        "uniqueItems": true,
+                        "items": {
+                            "$ref": "#/definitions/key",
+                            "description": "Must be a member of propertyClasses."
+                        }
+                    },
+                    "subjectClasses": {
+                        "type": "array",
+                        "title": "Resource and statement classes eligible as subject",
+                        "description": "A collection of id's of eligible resource and statement classes; if 'subjectClasses' is missing, all resource or statement classes are eligible.",
+                        "minItems": 1,
+                        "uniqueItems": true,
+                        "items": {
+                            "$ref": "#/definitions/key",
+                            "description": "Must be a member of resourceClasses or statementClasses."
+                        }
+                    },
+                    "objectClasses": {
+                        "type": "array",
+                        "title": "Resource and statement classes eligible as object",
+                        "description": "A collection of id's of eligible resource and statement classes; if 'objectClasses' is missing, all resource or statement classes are eligible.",
+                        "minItems": 1,
+                        "uniqueItems": true,
+                        "items": {
+                            "$ref": "#/definitions/key",
+                            "description": "Must be a member of resourceClasses or statementClasses."
+                        }
+                    },
+                    "revision": {
+                        "$ref": "#/definitions/revision"
+                    },
+                    "replaces": {
+                        "$ref": "#/definitions/replaces"
+                    },
+                    "changedAt": {
+                        "$ref": "#/definitions/dateTime"
+                    },
+                    "changedBy": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "id",
+                    "title",
+                    "changedAt"
+                ]
+            }
+        },
+        "resources": {
+            "description": "The resources such as diagrams, model elements or requirements.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "$ref": "#/definitions/id"
+                    },
+                    "title": {
+                        "$ref": "#/definitions/value"
+                    },
+                    "description": {
+                        "$ref": "#/definitions/value"
+                    },
+                    "class": {
+                        "$ref": "#/definitions/key",
+                        "description": "Must be a member of resourceClasses."
+                    },
+                    "properties": {
+                        "$ref": "#/definitions/properties"
+                    },
+                    "revision": {
+                        "$ref": "#/definitions/revision"
+                    },
+                    "replaces": {
+                        "$ref": "#/definitions/replaces"
+                    },
+                    "changedAt": {
+                        "$ref": "#/definitions/dateTime"
+                    },
+                    "changedBy": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "id",
+                    "title",
+                    "class",
+                    "changedAt"
+                ]
+            }
+        },
+        "statements": {
+            "description": "Subject-predicate-Object statements, where subject and object are resources. In other terms, statements are directed relations between two resources building a semantic net.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "$ref": "#/definitions/id"
+                    },
+                    "title": {
+                        "$ref": "#/definitions/value"
+                    },
+                    "description": {
+                        "$ref": "#/definitions/value"
+                    },
+                    "class": {
+                        "$ref": "#/definitions/key",
+                        "description": "Must be a member of statementClasses."
+                    },
+                    "subject": {
+                        "$ref": "#/definitions/key",
+                        "description": "Must be a member of resources."
+                    },
+                    "object": {
+                        "$ref": "#/definitions/key",
+                        "description": "Must be a member of resources."
+                    },
+                    "properties": {
+                        "$ref": "#/definitions/properties"
+                    },
+                    "revision": {
+                        "$ref": "#/definitions/revision"
+                    },
+                    "replaces": {
+                        "$ref": "#/definitions/replaces"
+                    },
+                    "changedAt": {
+                        "$ref": "#/definitions/dateTime"
+                    },
+                    "changedBy": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "id",
+                    "title",
+                    "class",
+                    "subject",
+                    "object",
+                    "changedAt"
+                ]
+            }
+        },
+        "hierarchies": {
+            "description": "A list of hierarchies with pointers to resources; may be nested to build a tree, i.e. a hierarchy of pointers.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "$ref": "#/definitions/key"
+                    },
+                    "title": {
+                        "$ref": "#/definitions/value",
+                        "description": "The node's label; if missing, the title of the referenced resource is applied."
+                    },
+                    "description": {
+                        "$ref": "#/definitions/value"
+                    },
+                    "resource": {
+                        "description": "The pointer to the resource to be displayed at this position.",
+                        "$ref": "#/definitions/id"
+                    },
+                    "nodes": {
+                        "description": "The next hierarchy level.",
+                        "$ref": "#/definitions/nodes"
+                    },
+                    "revision": {
+                        "$ref": "#/definitions/revision"
+                    },
+                    "replaces": {
+                        "$ref": "#/definitions/replaces"
+                    },
+                    "changedAt": {
+                        "$ref": "#/definitions/dateTime"
+                    },
+                    "changedBy": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "id",
+                    "resource",
+                    "changedAt"
+                ]
+            }
+        },
+        "files": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "In case of a file, the id is ideally an absolute or relative URL.",
+                        "$ref": "#/definitions/id"
+                    },
+                    "title": {
+                        "$ref": "#/definitions/value"
+                    },
+                    "description": {
+                        "$ref": "#/definitions/value"
+                    },
+                    "type": {
+                        "description": "The file's media type (formerly MIME-type) according to https://www.iana.org/assignments/media-types/media-types.xhtml.",
+                        "type": "string"
+                    },
+                    "revision": {
+                        "$ref": "#/definitions/revision"
+                    },
+                    "replaces": {
+                        "$ref": "#/definitions/replaces"
+                    },
+                    "changedAt": {
+                        "$ref": "#/definitions/dateTime"
+                    },
+                    "changedBy": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "id",
+                    "title",
+                    "type",
+                    "changedAt"
+                ]
+            }
+        }
+    },
+    "required": [
+        "id",
+        "title",
+        "specifVersion",
+        "resourceClasses",
+        "statementClasses",
+        "resources",
+        "statements",
+        "hierarchies"
+    ]
+}

@@ -1,0 +1,118 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "program_id": {
+                "type": "string",
+                "description": "`Medical program Identifier`"
+            },
+            "program_name": {
+                "type": "string"
+            },
+            "status": {
+                "type": "string",
+                "enum": [
+                    "VALID",
+                    "INVALID"
+                ],
+                "description": "Status for ability use program for this Medication request Request"
+            },
+            "rejection_reason": {
+                "type": "string",
+                "description": "Reason to fetch invalid status"
+            },
+            "participants": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "medication_id": {
+                            "type": "string"
+                        },
+                        "medication_name": {
+                            "type": "string"
+                        },
+                        "form": {
+                            "type": "string"
+                        },
+                        "manufacturer": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "country": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "name",
+                                "country"
+                            ]
+                        },
+                        "reimbursement_amount": {
+                            "type": "number"
+                        },
+                        "wholesale_price": {
+                            "type": "number"
+                        },
+                        "consumer_price": {
+                            "type": "number"
+                        },
+                        "reimbursement_daily_dosage": {
+                            "type": "number"
+                        },
+                        "estimated_payment_amount": {
+                            "type": "number"
+                        },
+                        "package_qty": {
+                            "type": "number"
+                        },
+                        "package_min_qty": {
+                            "type": "number"
+                        },
+                        "start_date": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "format": "date"
+                        },
+                        "end_date": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "format": "date"
+                        },
+                        "registry_number": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "id",
+                        "medication_id",
+                        "medication_name",
+                        "form",
+                        "manufacturer",
+                        "reimbursement_amount"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        },
+        "required": [
+            "program_id",
+            "program_name",
+            "status"
+        ]
+    }
+}

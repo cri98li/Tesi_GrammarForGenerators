@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "cars",
+    "description": "A Car! VROOM",
+    "type": "object",
+    "properties": {
+        "created_at": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "updated_at": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "uuid": {
+            "type": "string"
+        },
+        "make": {
+            "type": "string"
+        },
+        "color": {
+            "type": "string"
+        },
+        "wheels": {
+            "type": "integer",
+            "minimum": 4
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "color",
+        "wheels",
+        "make",
+        "created_at",
+        "updated_at"
+    ]
+}

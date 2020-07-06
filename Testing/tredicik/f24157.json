@@ -1,0 +1,235 @@
+{
+    "title": "JSON schema for yasoon module JSON files",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "required": [
+        "id",
+        "versionId",
+        "version",
+        "appNamespace",
+        "title",
+        "logoImage",
+        "files",
+        "main"
+    ],
+    "definitions": {
+        "contact": {
+            "type": [
+                "object"
+            ],
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                }
+            }
+        },
+        "requestParams": {
+            "type": "object",
+            "description": "Additional request parameters",
+            "properties": {
+                "url": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "header": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "post": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "authorization": {
+            "type": "object",
+            "required": [
+                "name",
+                "mode"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "mode": {
+                    "type": "string"
+                },
+                "filter": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "versionId": {
+            "type": "integer"
+        },
+        "version": {
+            "type": "string"
+        },
+        "appNamespace": {
+            "type": "string",
+            "pattern": "[a-z0-9\\.]*"
+        },
+        "title": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "homepage": {
+            "type": "string",
+            "format": "uri"
+        },
+        "author": {
+            "$ref": "#/definitions/contact"
+        },
+        "vendor": {
+            "$ref": "#/definitions/contact"
+        },
+        "logoImage": {
+            "type": "string"
+        },
+        "notificationImage": {
+            "type": "string"
+        },
+        "files": {
+            "type": "array",
+            "description": "Javascript files that need to be loaded to run this app. Files will be loaded strictly in order except for the main-file, which will be loaded at the end.",
+            "items": {
+                "type": "string"
+            }
+        },
+        "main": {
+            "type": "string",
+            "description": "Entry Javascript file, which needs to contain the call to yasoon.app.load. All other files will be loaded before this file"
+        },
+        "oauth": {
+            "type": "array",
+            "description": "Specify used OAuth services with this attribute",
+            "items": {
+                "type": "object",
+                "required": [
+                    "serviceName",
+                    "oauthVersion"
+                ],
+                "properties": {
+                    "serviceName": {
+                        "type": "string",
+                        "description": "Name of the OAuth service. In case of server supported flow, needs to be the same as configured online"
+                    },
+                    "oauthVersion": {
+                        "type": "integer",
+                        "description": "The OAuth protocol version, 1 for OAuth 1a or 2 for OAuth2",
+                        "minimum": 1,
+                        "maximum": 2
+                    },
+                    "clientId": {
+                        "type": "string",
+                        "description": "OAuth1 ConsumerKey / OAuth2 ClientId. Only necessary for local OAuth processing"
+                    },
+                    "clientSecret": {
+                        "type": "string",
+                        "description": "OAuth1 ConsumerSecret with HMAC-SHA1 signature / OAuth2 ClientSecret. Only necessary for local OAuth processing"
+                    },
+                    "clientCertificate": {
+                        "type": "string",
+                        "description": "Base64 encoded X.509 certificate for OAuth1 with RSA-SHA1 signature. Only necessary for local OAuth processing"
+                    },
+                    "signatureMethod": {
+                        "type": "string",
+                        "pattern": "rsaSha1|hmacSha1|plain",
+                        "description": "OAuth1 signature method, should be one of the following: 'rsaSha1', 'hmacSha1' or 'plain'. Only necessary for local OAuth processing"
+                    },
+                    "requestUrl": {
+                        "type": "string",
+                        "description": "OAuth1 request token endpoint url. Only necessary for local OAuth processing"
+                    },
+                    "requestMethod": {
+                        "type": "string",
+                        "description": "OAuth1 request token endpoint HTTP method. Only necessary for local OAuth processing"
+                    },
+                    "requestParameters": {
+                        "$ref": "#/definitions/requestParams"
+                    },
+                    "authorizationUrl": {
+                        "type": "string",
+                        "description": "OAuth authorization endpoint url. Only necessary for local OAuth processing"
+                    },
+                    "authorizationMethod": {
+                        "type": "string",
+                        "description": "OAuth authorization endpoint HTTP method. Only necessary for local OAuth processing"
+                    },
+                    "authorizationParameters": {
+                        "$ref": "#/definitions/requestParams"
+                    },
+                    "tokenUrl": {
+                        "type": "string",
+                        "description": "OAuth access token endpoint url. Only necessary for local OAuth processing"
+                    },
+                    "tokenMethod": {
+                        "type": "string",
+                        "description": "OAuth access token endpoint HTTP method. Only necessary for local OAuth processing"
+                    },
+                    "tokenParameters": {
+                        "type": "object",
+                        "properties": {
+                            "auth": {
+                                "$ref": "#/definitions/requestParams"
+                            },
+                            "refresh": {
+                                "$ref": "#/definitions/requestParams"
+                            }
+                        }
+                    },
+                    "accessTokenExpirationDuration": {
+                        "type": "integer",
+                        "description": "Validity of OAuth access token in seconds"
+                    },
+                    "selfSignedCertificate": {
+                        "type": "string",
+                        "description": "Base64 encoded public certificate of target host"
+                    },
+                    "scope": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "authorizations": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/authorization"
+            }
+        },
+        "predeliveredConfiguration": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "string"
+            }
+        }
+    }
+}

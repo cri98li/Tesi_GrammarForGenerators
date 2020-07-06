@@ -1,0 +1,70 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://ostlog.org/schema/Menstrual_cycle_log.json",
+    "title": "Menstrual cycle log",
+    "description": "Each entry records aspects of a day in the menstrual cycle.",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "meta_id": {
+            "type": "integer",
+            "description": "reference to entry's metadata"
+        },
+        "calendar_date_id": {
+            "type": "string",
+            "description": "YYYYMMDD formatted date when observation made."
+        },
+        "timestamp": {
+            "type ": "string ",
+            "description": "HH:MM:SS formatted when observation made."
+        },
+        "location_id": {
+            "type": "integer",
+            "description": "location where observation was made."
+        },
+        "domain ": {
+            "$ref": "definitions.json#/domain"
+        },
+        "person_id ": {
+            "type": "integer",
+            "description ": "the person to whom the metrics phenotype and physiological metrics apply."
+        },
+        "day_in_cycle": {
+            "type": "integer",
+            "enum": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "description": "no. days passed since cycle started"
+        },
+        "flow": {
+            "type": "string",
+            "enum": [
+                "heavy",
+                "light",
+                "medium",
+                "spotting"
+            ]
+        },
+        "remarks": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "calendar_date_id",
+        "timestamp",
+        "location_id",
+        "domain",
+        "person_id",
+        "day_in_cycle",
+        "flow"
+    ]
+}

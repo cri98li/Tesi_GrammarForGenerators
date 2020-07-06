@@ -1,0 +1,293 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "id": "BaseTools",
+    "definitions": {
+        "Date": {
+            "type": "string",
+            "pattern": "",
+            "title": "A date as DD/MM/YYY",
+            "display": {
+                "helper": "date"
+            }
+        },
+        "DateTenor": {
+            "type": "string",
+            "pattern": "",
+            "title": "A date as DD/MM/YYY, a valid tenor or 'Spot'",
+            "display": {
+                "helper": "date"
+            }
+        },
+        "Tenor": {
+            "type": "string",
+            "pattern": "(-*[0-9]*)([DBWMQSYA])",
+            "title": "A valid tenor"
+        },
+        "Frequency": {
+            "type": "string",
+            "title": "A flexible event frequency",
+            "display": {
+                "helper": "typeahead",
+                "suggestions": [
+                    "D",
+                    "B",
+                    "W",
+                    "M",
+                    "Q",
+                    "S",
+                    "Y"
+                ]
+            }
+        },
+        "Rolling": {
+            "type": "string",
+            "title": "A business day rolling convention",
+            "enum": [
+                "None",
+                "F",
+                "MF",
+                "P",
+                "MP"
+            ]
+        },
+        "RollDay": {
+            "type": "string",
+            "title": "A roll day of month or convention",
+            "display": {
+                "helper": "typeahead",
+                "suggestions": [
+                    "EOM",
+                    "IMM",
+                    "IMM3",
+                    "CDS"
+                ]
+            }
+        },
+        "Stub": {
+            "type": "string",
+            "title": "A date schedule stub coupon type",
+            "enum": [
+                "Front",
+                "LongFront",
+                "Back",
+                "LongBack"
+            ]
+        },
+        "DayCounting": {
+            "type": "string",
+            "title": "A day counting convention for coupons",
+            "enum": [
+                "30/360",
+                "30A/360",
+                "30E/360",
+                "30E/360 ISDA",
+                "30E+/360",
+                "ACT/ACT ICMA",
+                "ACT/360",
+                "ACT/ACT",
+                "ACT/365F",
+                "ACT/365L",
+                "ACT/365A",
+                "ACT/365NL",
+                "ACT/364",
+                "BUS/252",
+                "1/1"
+            ]
+        },
+        "Calendar": {
+            "type": "string",
+            "title": "A holiday calendar name",
+            "display": {
+                "helper": "typeahead",
+                "suggestions": [
+                    "Target",
+                    "NewYork",
+                    "London",
+                    "London+NewYork",
+                    "Paris",
+                    "Frankfurt",
+                    "Milan",
+                    "Madrid",
+                    "Tokyo",
+                    "Zurich",
+                    "HongKong",
+                    "Toronto",
+                    "TelAviv",
+                    "Moscow",
+                    "Seoul",
+                    "SaoPaulo",
+                    "Johannesburg",
+                    "Istanbul",
+                    "Mexico",
+                    "Mumbai",
+                    "Beijing",
+                    "Singapore",
+                    "BuenosAires"
+                ]
+            }
+        },
+        "Currency": {
+            "type": "string",
+            "pattern": "[A-Z]{3}",
+            "title": "A valid currency code",
+            "labels": [
+                "Ccy"
+            ],
+            "display": {
+                "helper": "typeahead",
+                "suggestions": [
+                    "USD",
+                    "EUR",
+                    "GBP",
+                    "JPY",
+                    "CHF",
+                    "HKD",
+                    "AUD",
+                    "CAD",
+                    "ARS",
+                    "BRL",
+                    "CLP",
+                    "CNY",
+                    "COP",
+                    "CZK",
+                    "DKK",
+                    "EGP",
+                    "HUF",
+                    "IDR",
+                    "ILS",
+                    "INR",
+                    "KRW",
+                    "LBP",
+                    "MAD",
+                    "MXN",
+                    "MYR",
+                    "NOK",
+                    "NZD",
+                    "PEN",
+                    "PHP",
+                    "PKR",
+                    "PLN",
+                    "RON",
+                    "RUB",
+                    "SEK",
+                    "SGD",
+                    "SKK",
+                    "THB",
+                    "TRY",
+                    "TWD",
+                    "UAH",
+                    "VEB",
+                    "ZAR"
+                ]
+            }
+        },
+        "RatesIndex": {
+            "type": "string",
+            "title": "A Rates conventions or index name",
+            "labels": [
+                "Conventions",
+                "Index"
+            ],
+            "display": {
+                "helper": "typeahead",
+                "suggestions": [
+                    "LIBOR",
+                    "CMS"
+                ],
+                "additionalSuggestionsLabels": [
+                    "Ccy"
+                ],
+                "additionalSuggestions": {
+                    "USD": [
+                        "LIBOR6M",
+                        "OIS"
+                    ],
+                    "EUR": [
+                        "IBOR",
+                        "EONIA"
+                    ],
+                    "GBP": [
+                        "SONIA"
+                    ],
+                    "JPY": [
+                        "YONIA"
+                    ],
+                    "RUB": [
+                        "MSPRM"
+                    ]
+                }
+            }
+        },
+        "PayReceive": {
+            "type": "string",
+            "enum": [
+                "P",
+                "R"
+            ],
+            "title": "Pay (P) or Receive (R) Fixed Coupons",
+            "default": "R"
+        },
+        "CallPut": {
+            "type": "string",
+            "enum": [
+                "C",
+                "P"
+            ],
+            "title": "Call (C) or Put (P) Option Type",
+            "default": "C"
+        },
+        "NotionalM": {
+            "type": "number",
+            "title": "Notional amount of the trade",
+            "display": {
+                "scaler": "M"
+            },
+            "labels": [
+                "Notional"
+            ]
+        },
+        "RateP": {
+            "type": "number",
+            "title": "Rate of Fixed Coupons",
+            "display": {
+                "scaler": "%"
+            },
+            "labels": [
+                "Rate",
+                "PricingParam"
+            ]
+        },
+        "CreditReference": {
+            "id": "CreditReference",
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "string",
+                    "title": "The name of the reference"
+                },
+                "IdType": {
+                    "type": "string",
+                    "title": "The nature of the id"
+                },
+                "DebtRestructuring": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/RollDay",
+                    "title": "The coupons roll day"
+                },
+                "DebtSeniority": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/DayCounting",
+                    "title": "The coupons day counting convention"
+                }
+            },
+            "title": "A page describing a credit event reference",
+            "required": [
+                "Id",
+                "IdType",
+                "DebtRestructuring",
+                "DebtSeniority"
+            ],
+            "display": {
+                "tag": "Id"
+            }
+        }
+    }
+}

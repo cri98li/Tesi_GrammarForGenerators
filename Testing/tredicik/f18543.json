@@ -1,0 +1,94 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://ostlog.org/schema/Urine_log.json",
+    "title": "Urine log",
+    "description": "Each entry records results from a urine lab test.",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "meta_id": {
+            "type": "integer",
+            "description": "reference to entry's metadata"
+        },
+        "calendar_date_id": {
+            "type": "string",
+            "description": "YYYYMMDD formatted date of the urine sample."
+        },
+        "timestamp": {
+            "type ": "string ",
+            "description": "HH:MM:SS formatted time of the urine sample."
+        },
+        "location_id": {
+            "type": "integer",
+            "description": "location where lab carried out."
+        },
+        "domain ": {
+            "$ref": "definitions.json#/domain"
+        },
+        "person_id ": {
+            "type": "integer",
+            "description ": "the person to whom the urine belongs."
+        },
+        "clarity": {
+            "type": "string",
+            "description": ""
+        },
+        "color": {
+            "type": "string",
+            "description": ""
+        },
+        "density_15_c": {
+            "type": "number",
+            "description": ""
+        },
+        "ph": {
+            "type": "number",
+            "description": ""
+        },
+        "albumin": {
+            "type": "number",
+            "description": ""
+        },
+        "glucose": {
+            "type": "number",
+            "description": ""
+        },
+        "ketones": {
+            "type": "number",
+            "description": ""
+        },
+        "urobilinogen": {
+            "type": "number",
+            "description": ""
+        },
+        "bilirubin": {
+            "type": "number",
+            "description": ""
+        },
+        "hemoglobin": {
+            "type": "number",
+            "description": ""
+        },
+        "nitries": {
+            "type": "number",
+            "description": ""
+        },
+        "culture": {
+            "type": "number",
+            "description": "Urine culture measured in colony forming units CFU/ml"
+        },
+        "remarks": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "calendar_date_id",
+        "timestamp",
+        "location_id",
+        "domain",
+        "person_id"
+    ]
+}

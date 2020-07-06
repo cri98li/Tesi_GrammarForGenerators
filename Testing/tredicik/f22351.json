@@ -1,0 +1,42 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "example of schema types",
+    "description": "model",
+    "type": "object",
+    "properties": {
+        "uid": {
+            "type": "string"
+        },
+        "fooArray": {
+            "type": "array"
+        },
+        "fooBoolean": {
+            "type": "boolean"
+        },
+        "fooInteger": {
+            "type": "integer"
+        },
+        "fooNull": {
+            "type": "null"
+        },
+        "fooNumber": {
+            "type": "number"
+        },
+        "fooObject": {
+            "type": "object"
+        },
+        "fooString": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "fooArray",
+        "fooBoolean",
+        "fooInteger",
+        "fooNull",
+        "fooNumber",
+        "fooObject",
+        "fooString"
+    ]
+}

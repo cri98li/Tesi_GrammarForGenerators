@@ -32,15 +32,18 @@ public class FolderTestBuilder extends TestBuilder {
             if(!file.isFile() || file.getName().startsWith("output"))
                 continue;
 
-            if(file.getName().contains(".json"))
-                for(int action : FolderTestBuilder.actionsForJSONInput)
+            //if(file.getName().contains(".json"))
+                //for(int action : FolderTestBuilder.actionsForJSONInput)
                     //if(new File(file.getPath().replace("input", "output").replace(".json", "_"+actionNames[action-1])).exists())
-                        returnList.add(new FolderTest(file.getPath(), action, actionNames[action-1]));
+                        //returnList.add(new FolderTest(file.getPath(), action, actionNames[action-1]));
 
-            if(file.getName().contains(".algebra"))
-                for(int action : FolderTestBuilder.actionsForGramarInput)
+            returnList.add(new FolderTest(file.getPath(), 0, "testPrestazioni"));
+
+
+            //if(file.getName().contains(".algebra"))
+                //for(int action : FolderTestBuilder.actionsForGramarInput)
                     //if(new File(file.getPath().replace("input", "output").replace(".algebra", "_"+actionNames[action-1])).exists())
-                        returnList.add(new FolderTest(file.getPath(), action, actionNames[action-1]));
+                        //returnList.add(new FolderTest(file.getPath(), action, actionNames[action-1]));
 
         }
 

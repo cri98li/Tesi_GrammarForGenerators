@@ -1,0 +1,90 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "Item",
+    "description": "JSON schema for an item.",
+    "additionalProperties": false,
+    "required": [
+        "$schema",
+        "pid",
+        "barcode",
+        "call_number",
+        "location",
+        "item_type",
+        "document",
+        "status"
+    ],
+    "properties": {
+        "$schema": {
+            "title": "Schema",
+            "description": "Schema to validate item records against.",
+            "type": "string",
+            "minLength": 9,
+            "default": "https://ils.rero.ch/schema/items/item-v0.0.1.json"
+        },
+        "pid": {
+            "title": "Item ID",
+            "type": "string",
+            "minLength": 1
+        },
+        "barcode": {
+            "title": "Barcode",
+            "description": "Barcode of the item.",
+            "type": "string",
+            "minLength": 4
+        },
+        "call_number": {
+            "title": "Call number",
+            "description": "Call number of the item.",
+            "type": "string",
+            "minLength": 4
+        },
+        "location": {
+            "title": "Location",
+            "type": "object",
+            "properties": {
+                "$ref": {
+                    "title": "Location URI",
+                    "type": "string",
+                    "pattern": "^https://ils.rero.ch/api/locations/.+?$"
+                }
+            }
+        },
+        "document": {
+            "title": "Document",
+            "type": "object",
+            "properties": {
+                "$ref": {
+                    "title": "Document URI",
+                    "type": "string",
+                    "pattern": "^https://ils.rero.ch/api/documents/.+?$",
+                    "default": "https://ils.rero.ch/api/documents/"
+                }
+            }
+        },
+        "item_type": {
+            "title": "Item Type",
+            "description": "Item type of the item.",
+            "type": "object",
+            "properties": {
+                "$ref": {
+                    "title": "Item Type URI",
+                    "type": "string",
+                    "pattern": "^https://ils.rero.ch/api/item_types/.+?$"
+                }
+            }
+        },
+        "status": {
+            "type": "string",
+            "default": "on_shelf",
+            "enum": [
+                "on_shelf",
+                "on_loan",
+                "missing",
+                "in_transit",
+                "at_desk",
+                "excluded"
+            ]
+        }
+    }
+}

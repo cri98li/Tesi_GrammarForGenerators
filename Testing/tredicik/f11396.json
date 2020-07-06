@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "status_reason": {
+            "type": "string",
+            "description": "code of reason of terminated status",
+            "enum": [
+                "DEFAULT",
+                "AUTO_EXPIRED",
+                "AUTO_DEACTIVATION_LEGAL_ENTITY"
+            ]
+        },
+        "reason": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "description": "reason of terminated status",
+            "maxLength": 3000
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "CAPITATION",
+                "REIMBURSEMENT"
+            ]
+        }
+    },
+    "required": [
+        "status_reason"
+    ],
+    "additionalProperties": false
+}

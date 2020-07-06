@@ -1,0 +1,102 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://ostlog.org/schema/Payments_log.json",
+    "title": "Payments log",
+    "description": "Each entry records a credit/debit transaction.",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "meta_id": {
+            "type": "integer",
+            "description": "reference to entry's metadata"
+        },
+        "calendar_date_id": {
+            "type": "string",
+            "description": "YYYYMMDD formatted date of the transaction."
+        },
+        "timestamp": {
+            "type ": "string ",
+            "description": "HH:MM:SS formatted time of transaction."
+        },
+        "location_id": {
+            "type": "integer",
+            "description ": "the location where payment was made."
+        },
+        "domain ": {
+            "$ref": "definitions.json#/domain"
+        },
+        "payer_id ": {
+            "type": "integer",
+            "description ": "the person making the payment."
+        },
+        "payee_id ": {
+            "type": "integer",
+            "description ": "the person receiving the payment."
+        },
+        "payment_type": {
+            "type": "string",
+            "enum": [
+                "debit",
+                "credit"
+            ],
+            "description": ""
+        },
+        "item_description": {
+            "type": "string",
+            "description": ""
+        },
+        "item_category": {
+            "type": "string",
+            "enum": [
+                "arts",
+                "transport",
+                "xfer",
+                "bills",
+                "projects",
+                "cash",
+                "credit-payment",
+                "education",
+                "entertainment",
+                "fees",
+                "food",
+                "gifts",
+                "health",
+                "home",
+                "income",
+                "kids",
+                "loan",
+                "loan-payment",
+                "mortgage-rent",
+                "shopping",
+                "taxes",
+                "travel"
+            ],
+            "description": ""
+        },
+        "amount_usd": {
+            "type": "number",
+            "description": "the value of the transaction in USD"
+        },
+        "amount_euro": {
+            "type": "number",
+            "description": "the value of the transaction in euro"
+        },
+        "remarks": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "calendar_date_id",
+        "timestamp",
+        "location_id",
+        "domain",
+        "person_id",
+        "payment_type",
+        "item_description",
+        "item_category",
+        "amount_usd"
+    ]
+}

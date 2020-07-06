@@ -1,0 +1,180 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "TouchTheBeat - level",
+    "type": "object",
+    "definitions": {
+        "Shape": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "circle",
+                        "square_sidedown",
+                        "square_edgedown",
+                        "triangle_sidedown",
+                        "triangle_edgedown"
+                    ]
+                },
+                "size": {
+                    "type": "string",
+                    "enum": [
+                        "small",
+                        "medium",
+                        "large"
+                    ]
+                }
+            },
+            "required": [
+                "type",
+                "size"
+            ]
+        },
+        "TapObject": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "Tap"
+                    ]
+                },
+                "tapTime": {
+                    "type": "number"
+                },
+                "x": {
+                    "type": "number"
+                },
+                "y": {
+                    "type": "number"
+                },
+                "shape": {
+                    "$ref": "#/definitions/Shape"
+                }
+            },
+            "required": [
+                "type",
+                "tapTime",
+                "x",
+                "y",
+                "shape"
+            ]
+        },
+        "HoldObject": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "Hold"
+                    ]
+                },
+                "startTime": {
+                    "type": "number"
+                },
+                "duration": {
+                    "type": "number"
+                },
+                "x": {
+                    "type": "number"
+                },
+                "y": {
+                    "type": "number"
+                },
+                "shape": {
+                    "$ref": "#/definitions/Shape"
+                }
+            },
+            "required": [
+                "type",
+                "startTime",
+                "duration",
+                "x",
+                "y",
+                "shape"
+            ]
+        }
+    },
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "tags": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "audio": {
+            "type": "object",
+            "properties": {
+                "artist": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "duration": {
+                    "type": "number"
+                },
+                "streamUrl": {
+                    "type": "string"
+                },
+                "permalinkUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "artist",
+                "title",
+                "duration",
+                "streamUrl",
+                "permalinkUrl"
+            ]
+        },
+        "visuals": {
+            "type": "object"
+        },
+        "gameObjects": {
+            "type": "array",
+            "items": {
+                "oneOf": [
+                    {
+                        "$ref": "#/definitions/TapObject"
+                    },
+                    {
+                        "$ref": "#/definitions/HoldObject"
+                    }
+                ]
+            },
+            "uniqueItems": true
+        },
+        "owner": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                },
+                "homepage": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "username"
+            ]
+        }
+    },
+    "required": [
+        "name",
+        "audio",
+        "gameObjects",
+        "owner"
+    ]
+}

@@ -1,0 +1,416 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "id": "Test",
+    "type": "object",
+    "definitions": {
+        "ePage": {
+            "id": "ePage",
+            "type": "object",
+            "properties": {
+                "ea": {
+                    "type": "string",
+                    "title": "This is ea - string",
+                    "display": {
+                        "helper": "textarea"
+                    }
+                },
+                "eb": {
+                    "type": "string",
+                    "title": "This is eb - string"
+                },
+                "ec": {
+                    "$ref": "schemas/Tools/ecPage.json#"
+                },
+                "ed": {
+                    "type": "string",
+                    "title": "This is ed - string"
+                },
+                "ee": {
+                    "$ref": "schemas/Tools/eePage.json#"
+                }
+            },
+            "title": "This is e - sub page",
+            "required": [
+                "ea",
+                "eb",
+                "ec",
+                "ed"
+            ],
+            "labels": [
+                "Page",
+                "VeryImportant"
+            ],
+            "display": {
+                "tag": "ea"
+            }
+        },
+        "jPage": {
+            "id": "jPage",
+            "type": "object",
+            "properties": {
+                "ja": {
+                    "type": "string",
+                    "title": "This is ja - string"
+                },
+                "rho": {
+                    "type": "number",
+                    "title": "This is &rho; - number",
+                    "display": {
+                        "scaler": "%",
+                        "keyHelper": "mathSymbol"
+                    }
+                },
+                "jc": {
+                    "$ref": "#/definitions/jcPage",
+                    "display": {
+                        "style": "collapse"
+                    }
+                },
+                "jd": {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/jcPage"
+                        },
+                        {
+                            "$ref": "#/definitions/ePage"
+                        }
+                    ],
+                    "title": "Another jcPage... or an ePage!"
+                },
+                "je": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Date",
+                    "title": "This is je - date"
+                },
+                "jf": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Currency",
+                    "title": "This is jf - currency"
+                },
+                "jg": {
+                    "type": "integer",
+                    "title": "This is jg - integer"
+                },
+                "jh": {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/jPage"
+                            },
+                            {
+                                "$ref": "schemas/Tools/eePage.json#"
+                            }
+                        ]
+                    },
+                    "title": "This is jh - list of either jpages or eepages"
+                },
+                "jy": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "schemas/Tools/Base.json#/definitions/Currency"
+                        }
+                    },
+                    "title": "This is jy - matrix of ccies"
+                },
+                "jz": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "number",
+                            "display": {
+                                "scaler": "%"
+                            }
+                        }
+                    },
+                    "title": "This is jz - matrix of %",
+                    "helper": {
+                        "helper": "bigtable"
+                    }
+                }
+            },
+            "title": "This is j - sub page",
+            "required": [
+                "ja",
+                "jb",
+                "jc",
+                "jz"
+            ],
+            "labels": [
+                "Page",
+                "NotSoImportant"
+            ],
+            "display": {
+                "tag": "ja"
+            }
+        },
+        "jcPage": {
+            "id": "jcPage",
+            "type": "object",
+            "properties": {
+                "jca": {
+                    "type": "string",
+                    "title": "This is jca - string"
+                },
+                "jcb": {
+                    "type": "string",
+                    "title": "This is jcb - string"
+                }
+            },
+            "title": "This is jc - sub page",
+            "required": [
+                "jca",
+                "jcb"
+            ],
+            "labels": [
+                "Page",
+                "NotImportant"
+            ]
+        }
+    },
+    "properties": {
+        "a": {
+            "type": "string",
+            "title": "This is a - string",
+            "default": "a"
+        },
+        "b": {
+            "type": "boolean",
+            "title": "This is b - boolean",
+            "default": false
+        },
+        "c": {
+            "type": "number",
+            "title": "This is c - number",
+            "default": 51
+        },
+        "d": {
+            "$ref": "schemas/Tools/Base.json#/definitions/Date",
+            "title": "This is d - date",
+            "labels": [
+                "Important"
+            ]
+        },
+        "e": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/ePage"
+                },
+                {
+                    "$ref": "#/definitions/jPage"
+                }
+            ],
+            "title": "This is e, either ePage or jPage",
+            "labels": [
+                "Really"
+            ]
+        },
+        "f": {
+            "type": "array",
+            "items": {
+                "$ref": "schemas/Tools/Base.json#/definitions/Date"
+            },
+            "title": "This is f - date array"
+        },
+        "g": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "This is g - string array",
+            "labels": [
+                "Important"
+            ]
+        },
+        "beta": {
+            "type": "array",
+            "items": {
+                "type": "number",
+                "display": {
+                    "scaler": "%"
+                }
+            },
+            "title": "This is &beta; - number array",
+            "display": {
+                "keyHelper": "mathSymbol"
+            }
+        },
+        "i": {
+            "type": "array",
+            "items": {
+                "type": "boolean"
+            },
+            "title": "This is i - boolean array"
+        },
+        "j": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/jPage"
+            },
+            "title": "This is j - list of jpages",
+            "display": {
+                "style": "grid"
+            }
+        },
+        "kappa": {
+            "$ref": "#/definitions/ePage",
+            "title": "this is <b>&kappa;</b>",
+            "display": {
+                "keyHelper": "mathSymbol"
+            }
+        },
+        "l": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/jPage",
+                "display": {
+                    "tag": "jb"
+                }
+            },
+            "title": "This is l - list of jpages",
+            "display": {
+                "style": "grid",
+                "collapse": true,
+                "defaultUncollapsed": false
+            }
+        },
+        "m": {
+            "type": "array",
+            "items": {
+                "$ref": "schemas/Tools/Base.json#/definitions/Currency"
+            },
+            "title": "This is m - currency array"
+        },
+        "n": {
+            "type": "array",
+            "items": {
+                "$ref": "schemas/Tools/Base.json#/definitions/CallPut"
+            },
+            "title": "This is n - call / put array"
+        },
+        "Omega": {
+            "type": "array",
+            "items": {
+                "oneOf": [
+                    {
+                        "$ref": "#/definitions/jPage"
+                    },
+                    {
+                        "$ref": "schemas/Tools/eePage.json#"
+                    }
+                ]
+            },
+            "title": "This is &Omega; - list of either jpages or eepages",
+            "display": {
+                "keyHelper": "mathSymbol",
+                "style": "pills"
+            }
+        },
+        "Theta": {
+            "type": "array",
+            "items": {
+                "type": "array",
+                "items": {
+                    "type": "number",
+                    "display": {
+                        "scaler": "%"
+                    }
+                }
+            },
+            "title": "This is &Theta; - matrix of %",
+            "display": {
+                "helper": "bigtable",
+                "keyHelper": "mathSymbol"
+            }
+        },
+        "z": {
+            "type": "array",
+            "items": {
+                "type": "array",
+                "items": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Currency"
+                }
+            },
+            "title": "This is z - matrix of currencies"
+        },
+        "sigma": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "This is &sigma;",
+            "display": {
+                "keyHelper": "mathSymbol"
+            }
+        }
+    },
+    "title": "This document is a simple test for various property types.",
+    "required": [
+        "d",
+        "e",
+        "f",
+        "g",
+        "beta",
+        "i",
+        "j",
+        "k",
+        "m",
+        "n"
+    ],
+    "labels": [
+        "Test"
+    ],
+    "display": {
+        "group": [
+            "f",
+            "beta",
+            "i",
+            "m",
+            "n"
+        ]
+    },
+    "additionalProperties": {
+        "oneOf": [
+            {
+                "type": "boolean"
+            },
+            {
+                "type": "string"
+            },
+            {
+                "$ref": "#/definitions/ePage"
+            },
+            {
+                "$ref": "#/definitions/jPage"
+            },
+            {
+                "id": "jPageList",
+                "type": "array",
+                "items": {
+                    "$ref": "#/definitions/jPage"
+                }
+            },
+            {
+                "id": "ePageList",
+                "type": "array",
+                "items": {
+                    "$ref": "#/definitions/ePage"
+                }
+            },
+            {
+                "type": "array",
+                "items": {
+                    "type": "number"
+                }
+            },
+            {
+                "type": "array",
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            }
+        ]
+    }
+}

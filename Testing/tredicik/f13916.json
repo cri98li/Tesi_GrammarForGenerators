@@ -1,0 +1,192 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "merchant": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "required": true
+                },
+                "organizationNumber": {
+                    "type": "string",
+                    "required": true
+                },
+                "address": {
+                    "type": "object",
+                    "properties": {
+                        "streetName": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "city": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "zip": {
+                            "type": "string",
+                            "required": true
+                        }
+                    },
+                    "required": true
+                }
+            },
+            "required": true
+        },
+        "date": {
+            "type": "string",
+            "required": true
+        },
+        "serialNumber": {
+            "type": "integer",
+            "required": true
+        },
+        "reportType": {
+            "type": "string",
+            "required": true
+        },
+        "cashierDesignation": {
+            "type": "string",
+            "required": true
+        },
+        "totalSalesAmount": {
+            "type": "string",
+            "required": true
+        },
+        "mainGroupsSalesAmount": {
+            "type": "object",
+            "properties": {
+                "food": {
+                    "type": "string"
+                }
+            },
+            "required": true
+        },
+        "VATs": {
+            "type": "object",
+            "properties": {
+                "25": {
+                    "type": "string"
+                }
+            },
+            "required": true
+        },
+        "totalChange": {
+            "type": "string",
+            "required": true
+        },
+        "soldArticles": {
+            "type": "string",
+            "required": true
+        },
+        "soldServices": {
+            "type": "string",
+            "required": true
+        },
+        "receipts": {
+            "type": "string",
+            "required": true
+        },
+        "openings": {
+            "type": "string",
+            "required": true
+        },
+        "receiptCopies": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "sum": {
+                    "type": "string"
+                }
+            },
+            "required": true
+        },
+        "trainingReceipts": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "sum": {
+                    "type": "string"
+                }
+            },
+            "required": true
+        },
+        "paymentTypeAmounts": {
+            "type": "object",
+            "properties": {
+                "card": {
+                    "type": "string"
+                },
+                "cash": {
+                    "type": "string"
+                }
+            },
+            "required": true
+        },
+        "returns": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "sum": {
+                    "type": "string"
+                }
+            },
+            "required": true
+        },
+        "discount": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "sum": {
+                    "type": "string"
+                }
+            },
+            "required": true
+        },
+        "otherSubtractionPosts": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "sum": {
+                    "type": "string"
+                }
+            },
+            "required": true
+        },
+        "unfinishedSales": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "sum": {
+                    "type": "string"
+                }
+            },
+            "required": true
+        },
+        "grandTotalSales": {
+            "type": "string",
+            "required": true
+        },
+        "grandTotalReturns": {
+            "type": "string",
+            "required": true
+        },
+        "grandTotalNet": {
+            "type": "string",
+            "required": true
+        }
+    }
+}

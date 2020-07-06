@@ -1,0 +1,510 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://portal.webgap.eu/alpaca/schemas/application.json",
+    "title": "Application JSON Schema",
+    "description": "Application JSON Schema definition. This schema is designed to define the way an application should be translated in a Docker image.",
+    "type": "object",
+    "definitions": {
+        "options": {
+            "description": "The options for the argument",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "",
+                    "title": "Field Name",
+                    "type": "string",
+                    "additionalProperties": false
+                },
+                "type": {
+                    "description": "",
+                    "type": "string",
+                    "title": "Field Type",
+                    "enum": [
+                        "fixed",
+                        "number",
+                        "string",
+                        "boolean"
+                    ],
+                    "additionalProperties": false
+                },
+                "format": {
+                    "description": "",
+                    "type": "string",
+                    "title": "Field Format",
+                    "enum": [
+                        "fixed",
+                        "number",
+                        "text",
+                        "range"
+                    ],
+                    "additionalProperties": false
+                },
+                "default": {
+                    "description": "",
+                    "title": "Field Default Value",
+                    "type": "string",
+                    "additionalProperties": false
+                },
+                "pattern": {
+                    "description": "",
+                    "title": "Field Pattern",
+                    "type": "string",
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "properties": {
+        "id": {
+            "description": "Application unique identifier. It is an UUID that will identify this document in the database.",
+            "title": "ID",
+            "type": "string",
+            "pattern": "[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}",
+            "additionalProperties": false
+        },
+        "name": {
+            "description": "Application name. It is defined by the user and thus will not be the Docker Image Name.",
+            "title": "Name",
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 25,
+            "additionalProperties": false
+        },
+        "version": {
+            "description": "Application version. Defined by the user",
+            "title": "Version",
+            "type": "string",
+            "minLength": 1,
+            "additionalProperties": false
+        },
+        "description": {
+            "description": "Application description. Self explanatory. It should specify all the information needed not only to use the application, but also to extend it if it is the case.",
+            "title": "Description",
+            "type": "string",
+            "format": "textarea",
+            "maxLength": 2500,
+            "additionalProperties": false
+        },
+        "category": {
+            "description": "Application category. In order to classify the type of application it will be possible to associate a category. Will be useful for criteria filtering.",
+            "title": "Category",
+            "type": "array",
+            "items": {
+                "title": "Category",
+                "type": "string",
+                "enum": [
+                    "Mathematics",
+                    "Astronomy",
+                    "Physics",
+                    "EO"
+                ],
+                "maxItems": 3
+            },
+            "additionalProperties": false
+        },
+        "logo": {
+            "description": "Application logo. Initially will accept only URL to an image. Should be implemented a way to upload images or use a logo included in the package to install as application.",
+            "title": "Logo",
+            "type": "string",
+            "additionalProperties": false
+        },
+        "tags": {
+            "description": "Metadata Tags. A String separated by commas. Will be useful for criteria filtering.",
+            "title": "Tags",
+            "type": "string",
+            "additionalProperties": false
+        },
+        "isShared": {
+            "description": "Application share license. By ticking this option, the allows this application (docker image) to be extended and used as base for other applications in the Marketplace.",
+            "title": "Allow the application to be shared and extended?",
+            "type": "boolean",
+            "additionalProperties": false
+        },
+        "type": {
+            "description": "Application Type. Whether the Marketplace application will be an Application, an Extension of an existing application or an access to a Virtual Machine or Physical Machine",
+            "title": "Type",
+            "type": "string",
+            "enum": [
+                "APPLICATION",
+                "EXTENSION",
+                "SYSTEM"
+            ],
+            "additionalProperties": false
+        },
+        "installationPath": {
+            "description": "In case it is an application, the user must specify the path where the extension/application will be installed / unpacked in the OS. Usually a path /home/<application-name>/<application-folder>.",
+            "title": "Where will be installed the extension?",
+            "type": "string",
+            "additionalProperties": false
+        },
+        "isManualDockerfile": {
+            "description": "For advanced users the dockerfile can be written. In some cases, e.g. GAP development group, the dockerfile is maintained and publicly available.",
+            "title": "Do you want to write the dockerfile yourself?",
+            "type": "boolean",
+            "additionalProperties": false
+        },
+        "dockerfile": {
+            "description": "Dockerfile content. This will hold the dockerfile contents added by the advanced user, or the generated dockerfile from the user form data.",
+            "title": "Dockerfile",
+            "type": "string",
+            "format": "textarea",
+            "additionalProperties": false
+        },
+        "needsCompilation": {
+            "description": "If the application needs compilation a new form to add compilation properties will appear",
+            "title": "Does the application need compilation?",
+            "type": "boolean",
+            "additionalProperties": false
+        },
+        "compilationTools": {
+            "description": "Which tools should be installed to compile the source code in order to generate the application (docker image). These tools will be downloaded using yum/apt-get managers.",
+            "title": "Compile Tools",
+            "type": "string",
+            "additionalProperties": false
+        },
+        "needsDependencyLibraries": {
+            "description": "Does the application need dependencies",
+            "title": "Does the application need special dependencies?",
+            "type": "boolean",
+            "additionalProperties": false
+        },
+        "dependencyLibraries": {
+            "description": "Which dependencies should be installed in order for the application to work. These libraries will be downloaded using yum/apt-get managers.",
+            "title": "Dependency Libraries",
+            "type": "string",
+            "additionalProperties": false
+        },
+        "needsInteractiveInstallation": {
+            "description": "Does the application need special commands for installation. An expect file should handle the interactive installation of applications (inside docker images).",
+            "title": "Does the application need special commands for installation? Do you want to upload an expect file?",
+            "type": "boolean",
+            "additionalProperties": false
+        },
+        "interactiveInstallationExpectFile": {
+            "description": "Expect file should be added here in order to use when generating the docker image.",
+            "title": "Expect File",
+            "type": "string",
+            "additionalProperties": false
+        },
+        "os": {
+            "description": "Operating System where the application will run. Should be able to select not only the OS but the docker image from another application that is licensed for sharing.",
+            "title": "Operating System / Marketplace Application",
+            "type": "string",
+            "enum": [
+                "CentOS x64 latest",
+                "Ubuntu x64 latest"
+            ],
+            "dependencies": "image",
+            "additionalProperties": false
+        },
+        "visibility": {
+            "description": "Application visibility. Should be possible to share an application publicly, with a group or with specific users.",
+            "title": "Visibility",
+            "type": "string",
+            "enum": [
+                "PUBLIC",
+                "GROUP",
+                "PRIVATE"
+            ],
+            "additionalProperties": false
+        },
+        "private": {
+            "description": "User identifier. If visibility is private should be possible to select the users which can use the application.",
+            "title": "User",
+            "type": "string",
+            "dependencies": "visibility",
+            "additionalProperties": false
+        },
+        "group": {
+            "description": "Group identifier. If visibility is group should be possible to select the groups which can use the application.",
+            "title": "Group ID TBI",
+            "type": "string",
+            "dependencies": "visibility",
+            "additionalProperties": false
+        },
+        "access": {
+            "description": "Application Access. Applications can be used using a variety of protocols. Each application can have only one protocol at a time. If it is possible to use the application using other protocols, for sake of simplicity, a new app should be created.",
+            "title": "Access",
+            "type": "string",
+            "enum": [
+                "SSH",
+                "VNC",
+                "API",
+                "ASY"
+            ],
+            "dependencies": "visibility",
+            "additionalProperties": false
+        },
+        "ssh": {
+            "description": "The running configurations for the application",
+            "title": "SSH",
+            "type": "object",
+            "dependencies": "access",
+            "properties": {
+                "command": {
+                    "description": "Entry point command",
+                    "title": "Command Path",
+                    "type": "string",
+                    "additionalProperties": false
+                },
+                "params": {
+                    "description": "The parameters accepted by the command",
+                    "title": "Parameters",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "title": "Parameter",
+                        "properties": {
+                            "arg": {
+                                "description": "The argument for the command. e.g.: -e",
+                                "title": "Argument",
+                                "type": "string",
+                                "additionalProperties": false
+                            },
+                            "options": {
+                                "description": "The argument value if used.",
+                                "title": "Value Type",
+                                "$ref": "#/definitions/options",
+                                "additionalProperties": false
+                            }
+                        },
+                        "additionalProperties": false
+                    },
+                    "additionalProperties": false
+                },
+                "redirects": {
+                    "description": "The Redirects for the command",
+                    "title": "Redirects",
+                    "type": "array",
+                    "items": {
+                        "title": "Redirect",
+                        "type": "object",
+                        "properties": {
+                            "arg": {
+                                "description": "The redirect <, >",
+                                "title": "Argument",
+                                "type": "string",
+                                "enum": [
+                                    "<",
+                                    ">"
+                                ],
+                                "additionalProperties": false
+                            },
+                            "options": {
+                                "description": "The argument value if used.",
+                                "title": "Value Type",
+                                "$ref": "#/definitions/options",
+                                "additionalProperties": false
+                            }
+                        },
+                        "additionalProperties": false,
+                        "uniqueItems": true
+                    },
+                    "maxItems": 2
+                },
+                "pipes": {
+                    "description": "Pipes for the command",
+                    "title": "Pipes",
+                    "type": "array",
+                    "items": {
+                        "title": "Command",
+                        "type": "object",
+                        "properties": {
+                            "arg": {
+                                "description": "The argument for the command. e.g.: -e",
+                                "title": "Argument",
+                                "type": "string",
+                                "additionalProperties": false
+                            },
+                            "options": {
+                                "description": "The argument value if used.",
+                                "title": "Value Type",
+                                "$ref": "#/definitions/options",
+                                "additionalProperties": false
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                }
+            }
+        },
+        "vnc": {
+            "description": "The running configurations for the application",
+            "type": "object",
+            "title": "VNC",
+            "dependencies": "access",
+            "properties": {
+                "url": {
+                    "description": "Desktop IP/URL",
+                    "title": "IP/URL",
+                    "type": "string",
+                    "additionalProperties": false
+                },
+                "port": {
+                    "description": "Port",
+                    "title": "Port",
+                    "type": "number",
+                    "additionalProperties": false
+                },
+                "username": {
+                    "description": "Username",
+                    "title": "Username",
+                    "type": "string",
+                    "additionalProperties": false
+                },
+                "password": {
+                    "description": "Password",
+                    "title": "Password",
+                    "type": "string",
+                    "additionalProperties": false
+                }
+            }
+        },
+        "api": {
+            "description": "The running configurations for the application",
+            "type": "object",
+            "title": "ASYNCHRONOUS API",
+            "dependencies": "access",
+            "properties": {
+                "api": {
+                    "description": "REST API for the application",
+                    "title": "REST API",
+                    "type": "object",
+                    "properties": {
+                        "url": {
+                            "description": "The url for the service /api/",
+                            "title": "API URL",
+                            "type": "string",
+                            "additionalProperties": false
+                        },
+                        "paths": {
+                            "description": "The paths accepted by the command",
+                            "title": "Paths",
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "title": "Path",
+                                "properties": {
+                                    "resource": {
+                                        "description": "The url path",
+                                        "title": "Resource",
+                                        "type": "string",
+                                        "additionalProperties": false
+                                    },
+                                    "method": {
+                                        "description": "The REST method",
+                                        "title": "Method",
+                                        "type": "string",
+                                        "enum": [
+                                            "GET",
+                                            "POST",
+                                            "PUT",
+                                            "DELETE"
+                                        ],
+                                        "additionalProperties": false
+                                    },
+                                    "params": {
+                                        "description": "The parameters accepted by the command",
+                                        "title": "Parameters",
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "title": "Parameter",
+                                            "properties": {
+                                                "arg": {
+                                                    "description": "The argument for the command. e.g.: -e",
+                                                    "title": "Argument",
+                                                    "type": "string",
+                                                    "additionalProperties": false
+                                                },
+                                                "options": {
+                                                    "description": "The argument value if used.",
+                                                    "title": "Value Type",
+                                                    "$ref": "#/definitions/options",
+                                                    "additionalProperties": false
+                                                }
+                                            },
+                                            "additionalProperties": false
+                                        }
+                                    }
+                                },
+                                "additionalProperties": false
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "archive": {
+            "description": "Application archive (zip, tar, tgz, gz)",
+            "title": "Application Binaries",
+            "type": "string",
+            "dependencies": "access",
+            "additionalProperties": false
+        },
+        "owner": {
+            "description": "Application owner properties",
+            "type": "object",
+            "format": "hidden",
+            "options": {
+                "hidden": true
+            },
+            "properties": {
+                "id": {
+                    "description": "Application owner id",
+                    "title": "Owner",
+                    "type": "string",
+                    "pattern": "[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}",
+                    "additionalProperties": false
+                },
+                "name": {
+                    "description": "Application owner name",
+                    "title": "Maintainer",
+                    "type": "string",
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        },
+        "service": {
+            "description": "The running configurations for the application",
+            "type": "object",
+            "format": "hidden",
+            "options": {
+                "hidden": true
+            },
+            "properties": {
+                "schema": {
+                    "description": "The schema of the service.",
+                    "type": "string"
+                },
+                "data": {
+                    "description": "The data for the schema",
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "stars": {
+            "description": "Stars",
+            "title": "Stars",
+            "type": "number",
+            "additionalProperties": false
+        },
+        "users": {
+            "description": "Users",
+            "title": "Users",
+            "type": "number",
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "id",
+        "owner",
+        "name",
+        "version",
+        "tags"
+    ],
+    "additionalProperties": false
+}

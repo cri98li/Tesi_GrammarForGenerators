@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "List of applications / tools versions",
+    "description": "Schema that describe applications / tools versions",
+    "type": "array",
+    "items": {
+        "title": "An application or tool",
+        "type": "object",
+        "properties": {
+            "appcode": {
+                "description": "Application code",
+                "type": "string"
+            },
+            "versions": {
+                "title": "Version array for an application",
+                "type": "array",
+                "items": {
+                    "title": "A version with a date",
+                    "type": "object",
+                    "properties": {
+                        "version": {
+                            "description": "Version number",
+                            "type": "string"
+                        },
+                        "date": {
+                            "description": "Date of the version",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

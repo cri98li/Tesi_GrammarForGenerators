@@ -1,0 +1,168 @@
+{
+    "title": "Rich Citations API Schema",
+    "id": "http://api.richcitations.org/schema",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "definitions": {
+        "bibliographic": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true
+        },
+        "updated_by": {
+            "type": "array",
+            "items": {
+                "type": "object"
+            }
+        },
+        "citation_group": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "section": {
+                    "type": "string"
+                },
+                "word_position": {
+                    "type": "integer"
+                },
+                "context": {
+                    "type": "object",
+                    "required": [
+                        "citation"
+                    ],
+                    "properties": {
+                        "truncated_before": {
+                            "type": "boolean"
+                        },
+                        "text_before": {
+                            "type": "string"
+                        },
+                        "citation": {
+                            "type": "string"
+                        },
+                        "text_after": {
+                            "type": "string"
+                        },
+                        "truncated_after": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "references": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "id",
+                "references",
+                "context"
+            ],
+            "additionalProperties": false
+        },
+        "reference": {
+            "type": "object",
+            "required": [
+                "id",
+                "number"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "self_citations": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "uri": {
+                    "type": "string"
+                },
+                "uri_source": {
+                    "type": "string"
+                },
+                "bib_source": {
+                    "type": "string"
+                },
+                "score": {
+                    "type": "number"
+                },
+                "bibliographic": {
+                    "$ref": "#/definitions/bibliographic"
+                },
+                "number": {
+                    "type": "integer"
+                },
+                "original_citation": {
+                    "type": "string"
+                },
+                "accessed_at": {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "format": "date-time"
+                        },
+                        {
+                            "pattern": "^[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]$"
+                        }
+                    ]
+                },
+                "citation_groups": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "word_count": {
+                    "type": "integer"
+                },
+                "updated_by": {
+                    "$ref": "#/definitions/updated_by"
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "uri",
+        "bibliographic"
+    ],
+    "properties": {
+        "uri": {
+            "type": "string"
+        },
+        "uri_source": {
+            "type": "string"
+        },
+        "bib_source": {
+            "type": "string"
+        },
+        "bibliographic": {
+            "$ref": "#/definitions/bibliographic"
+        },
+        "references": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/reference"
+            }
+        },
+        "citation_groups": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/citation_group"
+            }
+        },
+        "word_count": {
+            "type": "integer"
+        },
+        "updated_by": {
+            "$ref": "#/definitions/updated_by"
+        }
+    },
+    "additionalProperties": false
+}

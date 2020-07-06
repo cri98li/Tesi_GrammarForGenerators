@@ -1,0 +1,69 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "admin input",
+    "description": "schema for adding an admin",
+    "type": "object",
+    "required": [
+        "name",
+        "steamId",
+        "password",
+        "email",
+        "servers",
+        "serverGroups"
+    ],
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "admin username",
+            "minLength": 1
+        },
+        "steamId": {
+            "type": "string",
+            "description": "steam id. must not already exist in sourcebans.",
+            "pattern": "^STEAM_[0-9]:[0-9]:[0-9]+$"
+        },
+        "password": {
+            "type": "string",
+            "description": "plaintext password",
+            "minLength": 4
+        },
+        "email": {
+            "type": "string",
+            "description": "description. must not already exist in sourcebans",
+            "pattern": "^([a-zA-Z0-9])+([a-zA-Z0-9\\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\\._-]+)+$"
+        },
+        "srvPassword": {
+            "type": "string",
+            "description": "if this is provided, the user must specify this password in-game before admin usage",
+            "minLength": 1
+        },
+        "webAdminGroup": {
+            "type": "integer",
+            "description": "group id of the web admin group",
+            "minimum": 0
+        },
+        "srvAdminGroup": {
+            "type": "integer",
+            "description": "group id of the server admin group",
+            "minimum": 0
+        },
+        "servers": {
+            "type": "array",
+            "description": "server ids that the admin should have access to",
+            "items": {
+                "type": "integer",
+                "minimum": 0
+            },
+            "uniqueItems": true
+        },
+        "serverGroups": {
+            "type": "array",
+            "description": "server groups that the admins should have access to",
+            "items": {
+                "type": "integer",
+                "minimum": 0
+            },
+            "uniqueItems": true
+        }
+    }
+}

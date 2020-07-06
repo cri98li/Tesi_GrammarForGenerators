@@ -1,0 +1,49 @@
+{
+    "id": "http://ndm.mit.edu/ndm/schemas/_shot",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "_shot",
+    "description": "Sparc Shot schema",
+    "definitions": {},
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "_NDMobject"
+        },
+        {
+            "$ref": "_NDMobject#/definitions/V"
+        }
+    ],
+    "properties": {
+        "operators": {
+            "$ref": "_NDMobject#/definitions/LINK",
+            "defaultvalue": {
+                "linked-class": "Person"
+            }
+        },
+        "shotNumber": {
+            "type": "INTEGER",
+            "defaultvalue": "42"
+        },
+        "runDate": {
+            "type": "STRING",
+            "format": "date-time",
+            "defaultvalue": "'sysdate()'"
+        }
+    },
+    "required": [
+        "shotNumber"
+    ],
+    "metadata": {
+        "schemaMetadata": {
+            "title": [
+                "@class",
+                "shotNumber"
+            ],
+            "brief": [
+                "operators"
+            ],
+            "body": [],
+            "links": []
+        }
+    }
+}

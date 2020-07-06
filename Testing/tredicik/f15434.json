@@ -1,0 +1,29 @@
+{
+    "id": "http://ndm.mit.edu/ndm/schemas/reel",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "topic",
+    "description": "Topic for an annotation",
+    "definitions": {},
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "_NDMobject"
+        },
+        {
+            "$ref": "_NDMobject#/definitions/V"
+        }
+    ],
+    "properties": {
+        "name": {
+            "type": "STRING",
+            "default": "deftopic"
+        },
+        "description": {
+            "type": "STRING",
+            "default": "defdesc"
+        }
+    },
+    "required": [
+        "name"
+    ]
+}

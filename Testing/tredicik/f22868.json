@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "array",
+    "description": "schema for languages entry",
+    "items": {
+        "type": "object",
+        "required": [
+            "name",
+            "iso6391"
+        ],
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "name of language"
+            }
+        }
+    }
+}

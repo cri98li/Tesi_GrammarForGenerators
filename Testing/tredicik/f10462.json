@@ -1,0 +1,68 @@
+{
+    "id": "http://ndm.mit.edu/ndm/schemas/tape",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "tape",
+    "description": "HTS Tape class schema.",
+    "definitions": {},
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "_NDMobject"
+        },
+        {
+            "$ref": "_NDMobject#/definitions/V"
+        }
+    ],
+    "properties": {
+        "name": {
+            "type": "STRING",
+            "defaultvalue": "Bent"
+        },
+        "reel": {
+            "$ref": "_NDMobject#/definitions/LINK",
+            "defaultvalue": {
+                "linked-class": "reel"
+            }
+        },
+        "processingConditions": {
+            "type": "STRING",
+            "defaultvalue": "Bent"
+        },
+        "startPosition": {
+            "type": "INTEGER",
+            "defaultvalue": "42"
+        },
+        "endPosition": {
+            "type": "INTEGER",
+            "defaultvalue": "42"
+        },
+        "tapestarData": {
+            "$ref": "_NDMobject#/definitions/LINK",
+            "defaultvalue": {
+                "linked-class": "_ExternalReference"
+            }
+        }
+    },
+    "required": [
+        "name"
+    ],
+    "metadata": {
+        "schemaMetadata": {
+            "title": [
+                "@class",
+                "name"
+            ],
+            "brief": [
+                "processingConditions"
+            ],
+            "body": [
+                "startPosition",
+                "endPosition"
+            ],
+            "links": [
+                "reel",
+                "tapestarData"
+            ]
+        }
+    }
+}

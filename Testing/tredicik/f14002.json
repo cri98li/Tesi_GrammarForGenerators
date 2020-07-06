@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "/",
+    "type": "object",
+    "title": "oxAttributes",
+    "additionalProperties": true,
+    "properties": {
+        "tlsClientAuthSubjectDn": {
+            "type": "string",
+            "id": "tlsClientAuthSubjectDn"
+        },
+        "runIntrospectionScriptBeforeAccessTokenAsJwtCreationAndIncludeClaims": {
+            "id": "runIntrospectionScriptBeforeAccessTokenAsJwtCreationAndIncludeClaims",
+            "description": "Run Introspection Script Before Access Token As Jwt Creation And Include Claims.",
+            "type": "boolean"
+        },
+        "keepClientAuthorizationAfterExpiration": {
+            "id": "keepClientAuthorizationAfterExpiration",
+            "description": "Keep Client Authorization After Expiration.",
+            "type": "boolean"
+        }
+    }
+}

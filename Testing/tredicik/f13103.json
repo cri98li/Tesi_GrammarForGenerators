@@ -1,0 +1,77 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://ostlog.org/schema/Net_worth_log.json",
+    "title": "Net worth log",
+    "description": "Each entry records a person's net worth at a point in time.",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "meta_id": {
+            "type": "integer",
+            "description": "reference to entry's metadata"
+        },
+        "calendar_date_id": {
+            "type": "string",
+            "description": "YYYYMMDD formatted date of net worth."
+        },
+        "timestamp": {
+            "type ": "string ",
+            "description": "HH:MM:SS formatted time of net worth."
+        },
+        "location_id": {
+            "type": "integer",
+            "description": "location where net worth was recorded."
+        },
+        "domain ": {
+            "$ref": "definitions.json#/domain"
+        },
+        "person_id ": {
+            "type": "integer",
+            "description ": "the person associated to the net worth."
+        },
+        "cash_usd": {
+            "type": "number",
+            "description": "value of cash-on-hand in USD."
+        },
+        "financial_investments_usd": {
+            "type": "number",
+            "description": "value of financial investments in USD."
+        },
+        "real_estate_investments_usd": {
+            "type": "number",
+            "description": "value of of real-estate investments in USD."
+        },
+        "pension_lump_sum_equivalent_usd": {
+            "type": "number",
+            "description": "yearly value of total pension entitlement in USD."
+        },
+        "other_assets_usd": {
+            "type": "number",
+            "description": "value of other assets in USD."
+        },
+        "loans_usd": {
+            "type": "number",
+            "description": "amount of loan debt in USD."
+        },
+        "credit_card_usd": {
+            "type": "number",
+            "description": "amount of credit card debt in USD."
+        },
+        "other_liabilities_usd": {
+            "type": "number",
+            "description": "amount of other debt/liabilities in USD."
+        },
+        "remarks": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "calendar_date_id",
+        "timestamp",
+        "domain",
+        "person_id"
+    ]
+}

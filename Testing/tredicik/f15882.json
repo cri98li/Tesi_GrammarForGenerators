@@ -1,0 +1,276 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "id": "MarketConventions",
+    "type": "object",
+    "definitions": {
+        "FixedConventions": {
+            "id": "FixedConventions",
+            "type": "object",
+            "properties": {
+                "Start": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Tenor",
+                    "title": "The 'Spot' tenor",
+                    "default": "0D"
+                },
+                "Frequency": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Frequency",
+                    "title": "The coupons frequency"
+                },
+                "DayCounting": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/DayCounting",
+                    "title": "The coupons day counting convention"
+                },
+                "Rolling": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Rolling",
+                    "title": "The coupon dates rolling convention"
+                },
+                "Calendar": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Calendar",
+                    "title": "The coupon dates rolling calendar"
+                }
+            },
+            "title": "Swap fixed leg date schedule conventions",
+            "required": [
+                "Frequency",
+                "DayCounting"
+            ]
+        },
+        "FixingConventions": {
+            "id": "FixingConventions",
+            "type": "object",
+            "properties": {
+                "Offset": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Tenor",
+                    "title": "The offset tenor from coupon dates to index fixing dates",
+                    "default": "-0D"
+                },
+                "Rolling": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Rolling",
+                    "title": "The fixing dates rolling convention"
+                },
+                "Calendar": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Calendar",
+                    "title": "The fixing dates rolling calendar"
+                }
+            },
+            "title": "Swap float leg index fixing conventions"
+        },
+        "FloatConventions": {
+            "id": "FloatConventions",
+            "$ref": "#/definitions/FixedConventions",
+            "properties": {
+                "Fixing": {
+                    "$ref": "#/definitions/FixingConventions"
+                }
+            },
+            "title": "Swap float leg date schedule conventions"
+        },
+        "IndexConventions": {
+            "id": "IndexConventions",
+            "type": "object",
+            "properties": {
+                "Start": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Tenor",
+                    "title": "The index start tenor",
+                    "default": "0D"
+                },
+                "End": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Tenor",
+                    "title": "The index tenor"
+                },
+                "DayCounting": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/DayCounting",
+                    "title": "The index day counting convention"
+                },
+                "Rolling": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Rolling",
+                    "title": "The index dates rolling convention"
+                },
+                "Calendar": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Calendar",
+                    "title": "The index dates rolling calendar"
+                },
+                "IsCompounding": {
+                    "type": "boolean",
+                    "title": "Indicates whether the index is daily compounded",
+                    "default": false
+                }
+            },
+            "title": "Swap index conventions",
+            "required": [
+                "End",
+                "DayCounting"
+            ]
+        },
+        "RatesIndexConventions": {
+            "id": "RatesIndexConventions",
+            "type": "object",
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "title": "The name of the index"
+                },
+                "Fixed": {
+                    "$ref": "#/definitions/FixedConventions"
+                },
+                "Float": {
+                    "$ref": "#/definitions/FloatConventions"
+                },
+                "Index": {
+                    "$ref": "#/definitions/IndexConventions"
+                },
+                "Rolling": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Rolling",
+                    "title": "Default rolling convention for events linked to this index"
+                },
+                "Calendar": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Calendar",
+                    "title": "Default rolling calendar for events linked to this index"
+                }
+            },
+            "title": "Swap conventions for this index",
+            "required": [
+                "Name",
+                "Fixed",
+                "Float",
+                "Index",
+                "Rolling",
+                "Calendar"
+            ],
+            "display": {
+                "tag": "Name"
+            }
+        },
+        "RatesEconomyConventions": {
+            "id": "RatesEconomyConventions",
+            "type": "object",
+            "properties": {
+                "Currency": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Currency"
+                },
+                "RatesIndices": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RatesIndexConventions"
+                    },
+                    "title": "The list of rates indices for this economy",
+                    "display": {
+                        "style": "grid",
+                        "collapse": true,
+                        "defaultUncollapsed": true
+                    }
+                }
+            },
+            "title": "A page describing rates conventions for an economy",
+            "required": [
+                "Currency",
+                "RatesIndices"
+            ],
+            "display": {
+                "tag": "Currency"
+            }
+        },
+        "FXConventions": {
+            "id": "FXConventions",
+            "type": "object",
+            "properties": {
+                "CurrencyPair": {
+                    "$ref": "schemas/Tools/CurrencyPairs.json#/definitions/CurrencyPair"
+                },
+                "Rolling": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Rolling",
+                    "title": "Default rolling convention for events linked to this currency pair"
+                },
+                "Calendar": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Calendar",
+                    "title": "Default rolling calendar for events linked to this currency pair"
+                }
+            },
+            "title": "A page describing foreign exchange conventions",
+            "required": [
+                "CurrencyPair",
+                "Rolling",
+                "Calendar"
+            ],
+            "display": {
+                "tag": "CurrencyPair"
+            }
+        },
+        "CreditConventions": {
+            "id": "CreditConventions",
+            "type": "object",
+            "properties": {
+                "Label": {
+                    "type": "string",
+                    "title": "The label used for this convention"
+                },
+                "Frequency": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Frequency",
+                    "title": "The coupons frequency"
+                },
+                "RollDay": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/RollDay",
+                    "title": "The coupons roll day"
+                },
+                "DayCounting": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/DayCounting",
+                    "title": "The coupons day counting convention"
+                },
+                "Rolling": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Rolling",
+                    "title": "The coupon business dates rolling convention"
+                },
+                "Calendar": {
+                    "$ref": "schemas/Tools/Base.json#/definitions/Calendar",
+                    "title": "The coupon business dates holiday calendar"
+                }
+            },
+            "title": "A page describing credit instruments conventions",
+            "required": [
+                "Label",
+                "Frequency",
+                "RollDay",
+                "DayCounting",
+                "Rolling",
+                "Calendar"
+            ],
+            "display": {
+                "tag": "Label"
+            }
+        }
+    },
+    "properties": {
+        "Rates": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/RatesEconomyConventions"
+            },
+            "title": "Interest Rates conventions",
+            "display": {
+                "style": "pills"
+            }
+        },
+        "FX": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/FXConventions"
+            },
+            "title": "Foreign Exchange conventions",
+            "display": {
+                "style": "pills"
+            }
+        },
+        "Credit": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/CreditConventions"
+            },
+            "title": "Credit conventions",
+            "display": {
+                "style": "pills"
+            }
+        }
+    },
+    "title": "This page gathers all the Market Conventions used for instruments and trades representation and pricing",
+    "required": []
+}

@@ -1,0 +1,33 @@
+{
+    "id": "http://ndm.mit.edu/magnet_orders/schemas/_ExternalReference",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "_ExternalReference",
+    "description": "Abstract class for external references",
+    "type": "object",
+    "definitions": {},
+    "allOf": [
+        {
+            "$ref": "_NDMobject"
+        },
+        {
+            "$ref": "_NDMobject#/definitions/V"
+        }
+    ],
+    "properties": {
+        "name": {
+            "type": "STRING",
+            "defaultvalue": "object-name"
+        },
+        "description": {
+            "type": "STRING",
+            "defaultvalue": "'External Object Description'"
+        },
+        "URI": {
+            "type": "STRING",
+            "defaultvalue": "'protocol://network.spec/object/spec'"
+        }
+    },
+    "required": [
+        "URI"
+    ]
+}

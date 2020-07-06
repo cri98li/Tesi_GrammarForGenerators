@@ -1,0 +1,180 @@
+{
+    "definitions": {
+        "Method": {
+            "title": "Method",
+            "id": "#/Snobject/Method",
+            "description": "Snobject methods must document their request and responses. These are named locally in the definitions section of the method spec.",
+            "dependencies": {
+                "definitions": {
+                    "request": {
+                        "$ref": "#/Snobject/Request"
+                    },
+                    "response": {
+                        "$ref": "#/Snobject/Response"
+                    }
+                }
+            }
+        },
+        "Request": {
+            "title": "Request",
+            "id": "#/Snobject/Request",
+            "description": "A request for a method to execute."
+        },
+        "NullRequest": {
+            "title": "NullRequest",
+            "id": "#/Snobject/Request/NullRequest",
+            "description": "No parameters are required for this request.",
+            "type": "null"
+        },
+        "Response": {
+            "title": "Response",
+            "id": "#/Snobject/Response",
+            "description": "A (superficially JS callback style) response to a request on a method. Base type for inheriting. Indicates the response to the request, not necessarily the decision on it. May be empty in the case of asyncronous methods.",
+            "properties": {
+                "error": {
+                    "type": "object",
+                    "description": "Fail response, inspired by program exit codes. If method is called natively, this code may be implied by negative return or callback.",
+                    "oneOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "$ref": "#/Snobject/Response/error"
+                        }
+                    ]
+                },
+                "data": {
+                    "description": "Successful response. If method is called natively, this code may be implied by positive return or callback.",
+                    "oneOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "description": "Response data could be null or any type... Overwrite this base type!"
+                        }
+                    ]
+                }
+            }
+        },
+        "SchemaResponse": {
+            "title": "SchemaResponse",
+            "id": "#/Snobject/Response/SchemaResponse",
+            "description": "The json schema for this snobject.",
+            "type": "object"
+        },
+        "error": {
+            "title": "error",
+            "id": "#/Snobject/Response/error",
+            "description": "A general error.",
+            "properties": {
+                "code": {
+                    "title": "code",
+                    "description": "An integer code field which can represent program exit code or HTTP response code. May be ignored in native method call.",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 1000
+                },
+                "message": {
+                    "title": "message",
+                    "description": "The error message, or a string representation.",
+                    "type": "string"
+                }
+            }
+        },
+        "version": {
+            "title": "version",
+            "id": "#/Snobject/version",
+            "description": "Since Snobjects are standalone apps, they can be versioned independently using [semantic versioning](http://semver.org).",
+            "type": "string",
+            "pattern": "^\\d*\\.\\d*\\.\\d*$",
+            "default": "0.0.1"
+        },
+        "license": {
+            "type": "string",
+            "id": "#/Snobject/license",
+            "description": "The [SPDX](http://spdx.org) string representation of the license for this snobject.",
+            "default": "MIT"
+        },
+        "getSchema": {
+            "title": "getSchema",
+            "id": "#/Snobject/getSchema",
+            "description": "Get the schema for this snobject.",
+            "allOf": [
+                {
+                    "$ref": "#/Snobject/Method"
+                }
+            ],
+            "definitions": {
+                "request": {
+                    "$ref": "#/Snobject/Request/NullRequest"
+                },
+                "response": {
+                    "$ref": "#/Snobject/Response/SchemaResponse"
+                }
+            }
+        },
+        "addSchema": {
+            "title": "addSchema",
+            "id": "#/Snobject/addSchema",
+            "description": "Add a schema to the validator this snobject.",
+            "allOf": [
+                {
+                    "$ref": "#/Snobject/Method"
+                }
+            ],
+            "definitions": {
+                "request": {
+                    "$ref": "#/Snobject/Request"
+                },
+                "response": {
+                    "$ref": "#/Snobject/Response"
+                }
+            }
+        },
+        "validate": {
+            "title": "validate",
+            "id": "#/Snobject/validate",
+            "description": "Validate this snobject, using its own schema and validator.",
+            "allOf": [
+                {
+                    "$ref": "#/Snobject/Method"
+                }
+            ],
+            "definitions": {
+                "request": {
+                    "$ref": "#/Snobject/Request/NullRequest"
+                },
+                "response": {
+                    "$ref": "#/Snobject/Response/BooleanResponse"
+                }
+            }
+        }
+    },
+    "properties": {
+        "version": {
+            "$ref": "#/Snobject/version"
+        },
+        "license": {
+            "$ref": "#/Snobject/license"
+        },
+        "getSchema": {
+            "$ref": "#/Snobject/getSchema"
+        },
+        "addSchema": {
+            "$ref": "#/Snobject/addSchema"
+        },
+        "validate": {
+            "$ref": "#/Snobject/validate"
+        }
+    },
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "Snobject",
+    "id": "#/Snobject",
+    "description": "Snobject aka [(JSON) Schema](http://json-schema.org/) [Naked Object](https://en.wikipedia.org/wiki/Naked_objects) is a software architecture pattern based on json schema and naked object. This Javascript reference implementation provides strong object-orientation principles to Javascript objects. Each snobject is self contained and self describing, managing all of its own resources and interfaces.\n\nEach snobject includes it's own json schema, accessible through the `getSchema`, `addSchema`, and `validate` methods. This level of introspection combines code comments and API documentation into a single, runtime-accessible location.",
+    "required": [
+        "getSchema",
+        "addSchema",
+        "validate"
+    ]
+}

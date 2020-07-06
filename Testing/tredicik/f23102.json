@@ -1,0 +1,42 @@
+{
+    "id": "http://ndm.mit.edu/magnet_orders/schemas/annotation",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "annotation",
+    "description": "A general annoation class schema.",
+    "definitions": {},
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "_NDMobject"
+        },
+        {
+            "$ref": "_NDMobject#/definitions/V"
+        }
+    ],
+    "properties": {
+        "summary": {
+            "type": "STRING",
+            "defaultvalue": "'Brief summary of this annotation'"
+        },
+        "body": {
+            "type": "STRING",
+            "defaultvalue": "'The content of this annotation'"
+        }
+    },
+    "metadata": {
+        "schemaMetadata": {
+            "title": [
+                "summary"
+            ],
+            "brief": [
+                "summary"
+            ],
+            "body": [
+                "body"
+            ],
+            "links": [
+                "target"
+            ]
+        }
+    }
+}

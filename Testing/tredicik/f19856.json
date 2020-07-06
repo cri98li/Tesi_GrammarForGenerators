@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "AccountRequest",
+    "type": "object",
+    "properties": {
+        "firstName": {
+            "id": "firstName",
+            "type": "string"
+        },
+        "lastName": {
+            "id": "lastName",
+            "type": "string"
+        },
+        "email": {
+            "id": "email",
+            "type": "string",
+            "pattern": "^\\S+@\\S+\\.\\S+$"
+        },
+        "requestDate": {
+            "id": "requestDate",
+            "type": "string",
+            "format": "date"
+        },
+        "approved": {
+            "id": "approved",
+            "type": "boolean"
+        }
+    },
+    "required": [
+        "firstName",
+        "lastName",
+        "email",
+        "requestDate",
+        "approved"
+    ]
+}

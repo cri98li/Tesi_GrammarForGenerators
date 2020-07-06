@@ -1,0 +1,50 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "server input",
+    "description": "schema for adding an server",
+    "type": "object",
+    "required": [
+        "ip",
+        "port",
+        "rcon",
+        "modid",
+        "enabled",
+        "groups"
+    ],
+    "properties": {
+        "ip": {
+            "type": "string",
+            "description": "ip address",
+            "minLength": 1
+        },
+        "port": {
+            "type": "integer",
+            "description": "port number",
+            "minimum": 1,
+            "maximum": 65535
+        },
+        "rcon": {
+            "type": "string",
+            "description": "rcon password",
+            "minLength": 0
+        },
+        "modid": {
+            "type": "integer",
+            "description": "mod id of the server",
+            "minimum": 0
+        },
+        "enabled": {
+            "type": "boolean",
+            "description": "whether or not the server is enabled or disabled"
+        },
+        "groups": {
+            "type": "array",
+            "description": "list of group ids to include the server in",
+            "items": {
+                "type": "integer",
+                "minimum": 0
+            },
+            "uniqueItems": true
+        }
+    }
+}

@@ -1,0 +1,107 @@
+{
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-03/schema",
+    "title": "Metadata",
+    "description": "The metadata for a package.",
+    "required": true,
+    "properties": {
+        "author": {
+            "type": "string",
+            "title": "Author",
+            "description": "The author of the package.",
+            "required": true
+        },
+        "conflicts": {
+            "type": "array",
+            "title": "Conflicts",
+            "description": "A list of package IDs that the package conflicts with.",
+            "required": false,
+            "items": {
+                "type": "string",
+                "required": false
+            }
+        },
+        "depends": {
+            "type": "array",
+            "title": "Dependencies",
+            "description": "The IDs of packages that this package requires.",
+            "required": false,
+            "items": {
+                "type": "string",
+                "required": false
+            }
+        },
+        "download": {
+            "type": "string",
+            "title": "Download URL",
+            "description": "A URL for the download of the package.",
+            "required": true
+        },
+        "gameVersion": {
+            "type": "array",
+            "title": "Supported Game Versions",
+            "description": "A list of game versions that this specific package version supports.",
+            "minitems": 1,
+            "required": false,
+            "items": {
+                "type": "string",
+                "required": false
+            }
+        },
+        "id": {
+            "type": "string",
+            "title": "Identifier",
+            "description": "The unique identifier for the package.",
+            "required": true
+        },
+        "metaVer": {
+            "type": "number",
+            "title": "Metadata Version",
+            "description": "The version of this metadata JSON.",
+            "minimum": 1,
+            "maximum": 1,
+            "required": true
+        },
+        "recommends": {
+            "type": "array",
+            "title": "Recommendations",
+            "description": "A list of IDs that the package recommends for installation.",
+            "required": false,
+            "items": {
+                "type": "string",
+                "required": false
+            }
+        },
+        "resources": {
+            "type": "object",
+            "title": "Resources",
+            "description": "A dictionary of resources for use by the client.",
+            "required": false
+        },
+        "targetDir": {
+            "type": "string",
+            "title": "Target Directory",
+            "description": "The target directory for installation.",
+            "required": false
+        },
+        "title": {
+            "type": "string",
+            "title": "Title",
+            "description": "The title of the package.",
+            "required": true
+        },
+        "type": {
+            "type": "string",
+            "title": "Type",
+            "description": "The type of download/versioning method used.",
+            "required": false
+        },
+        "version": {
+            "type": "number",
+            "title": "Package Version",
+            "description": "The version of this package.",
+            "minimum": 0,
+            "required": true
+        }
+    }
+}

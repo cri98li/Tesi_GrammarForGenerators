@@ -1,0 +1,88 @@
+{
+    "$schema": "http://json-schema.org/draft-04/hyper-schema",
+    "id": "https://localhost:8081/schema",
+    "type": "object",
+    "properties": {
+        "Pong": {
+            "$ref": "#/definitions/Pong"
+        },
+        "insecure": {
+            "$ref": "#/definitions/insecure"
+        },
+        "secure": {
+            "$ref": "#/definitions/secure"
+        }
+    },
+    "definitions": {
+        "Pong": {
+            "title": "Mediatype identifier: application/vnd.goa-sso-client.pong; view=default",
+            "type": "object",
+            "properties": {
+                "msg": {
+                    "type": "string",
+                    "description": "like it's 1999",
+                    "example": "Tempore autem fugiat quasi optio voluptate."
+                }
+            },
+            "description": "Pong media type (default view)",
+            "example": {
+                "msg": "Tempore autem fugiat quasi optio voluptate."
+            },
+            "media": {
+                "type": "application/vnd.goa-sso-client.pong; view=default"
+            },
+            "required": [
+                "msg"
+            ]
+        },
+        "insecure": {
+            "title": "insecure",
+            "type": "object",
+            "description": "example of an insecure route group / 'resource'",
+            "links": [
+                {
+                    "title": "ping",
+                    "rel": "ping",
+                    "href": "/insecure/ping",
+                    "method": "GET",
+                    "targetSchema": {
+                        "$ref": "#/definitions/Pong"
+                    },
+                    "mediaType": "application/vnd.goa-sso-client.pong"
+                }
+            ]
+        },
+        "secure": {
+            "title": "secure",
+            "type": "object",
+            "description": "example of secure route group / 'resource'",
+            "links": [
+                {
+                    "title": "ping",
+                    "rel": "ping",
+                    "href": "/secure/ping",
+                    "method": "GET",
+                    "targetSchema": {
+                        "$ref": "#/definitions/Pong"
+                    },
+                    "mediaType": "application/vnd.goa-sso-client.pong"
+                }
+            ]
+        }
+    },
+    "links": [
+        {
+            "rel": "self",
+            "href": "https://localhost:8081"
+        },
+        {
+            "rel": "self",
+            "href": "/schema",
+            "method": "GET",
+            "targetSchema": {
+                "$schema": "http://json-schema.org/draft-04/hyper-schema",
+                "additionalProperties": true
+            }
+        }
+    ]
+}

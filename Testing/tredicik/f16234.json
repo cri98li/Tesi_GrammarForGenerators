@@ -1,0 +1,948 @@
+{
+    "schema": {
+        "type": "object",
+        "title": "Create game",
+        "properties": {
+            "name": {
+                "title": "Name",
+                "type": "string",
+                "placeholder": "Name of game"
+            },
+            "type": {
+                "title": "Type",
+                "type": "string",
+                "x-schema-form": {
+                    "type": "select"
+                },
+                "enum": [
+                    "italian-cusine",
+                    "product",
+                    "receipe",
+                    "restaurant",
+                    "secret-receipe",
+                    "short-tip"
+                ]
+            },
+            "configuration": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "title": "Configuration",
+                "description": "Tips Schema",
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "title": "Status",
+                        "description": "Tip status",
+                        "type": "string",
+                        "enum": [
+                            "Active",
+                            "Draft"
+                        ],
+                        "default": "Active"
+                    },
+                    "hidden": {
+                        "title": "Is hidden?",
+                        "description": "Is tip hidden",
+                        "type": "boolean",
+                        "default": false
+                    },
+                    "translations": {
+                        "title": "Translations",
+                        "type": "object",
+                        "properties": {
+                            "EN": {
+                                "title": "EN",
+                                "type": "object",
+                                "properties": {
+                                    "title": {
+                                        "title": "Tip title",
+                                        "description": "Title of the tip",
+                                        "type": "string"
+                                    },
+                                    "shortDesc": {
+                                        "title": "Short description",
+                                        "description": "Tip short description",
+                                        "type": "string"
+                                    },
+                                    "mediaUrl": {
+                                        "title": "MediaURL",
+                                        "description": "URL of media Video or Image",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "title",
+                                    "mediaUrl",
+                                    "shortDesc"
+                                ]
+                            },
+                            "IT": {
+                                "title": "IT",
+                                "type": "object",
+                                "properties": {
+                                    "title": {
+                                        "title": "Tip title",
+                                        "description": "Title of the tip",
+                                        "type": "string"
+                                    },
+                                    "shortDesc": {
+                                        "title": "Short description",
+                                        "description": "Tip short description",
+                                        "type": "string"
+                                    },
+                                    "mediaUrl": {
+                                        "title": "MediaURL",
+                                        "description": "URL of media Video or Image",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "title",
+                                    "mediaUrl",
+                                    "shortDesc"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "EN",
+                            "IT"
+                        ]
+                    },
+                    "mediaType": {
+                        "title": "Media Type",
+                        "description": "Media Type",
+                        "type": "string",
+                        "enum": [
+                            "Video",
+                            "Image"
+                        ]
+                    },
+                    "data": {
+                        "title": "Sections",
+                        "description": "Tip's data",
+                        "type": "array",
+                        "items": {
+                            "title": "Section",
+                            "description": "Tip section",
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string",
+                                    "title": "Type",
+                                    "enum": [
+                                        "preparation",
+                                        "ingredients",
+                                        "instructions",
+                                        "nutrition",
+                                        "chef",
+                                        "socialMedia"
+                                    ]
+                                },
+                                "preparation": {
+                                    "title": "Preparation",
+                                    "description": "Preparation section body item.",
+                                    "type": "object",
+                                    "properties": {
+                                        "desc": {
+                                            "title": "Description",
+                                            "description": "Tip data description",
+                                            "type": "object",
+                                            "properties": {
+                                                "EN": {
+                                                    "title": "EN",
+                                                    "description": "Tip data description",
+                                                    "type": "string"
+                                                },
+                                                "IT": {
+                                                    "title": "IT",
+                                                    "description": "Tip data description",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "EN",
+                                                "IT"
+                                            ]
+                                        },
+                                        "preparationTime": {
+                                            "title": "Preparation Time",
+                                            "description": "Preparation time",
+                                            "type": "number"
+                                        },
+                                        "servingAmount": {
+                                            "title": "Serving Amount",
+                                            "description": "Serving Amount",
+                                            "type": "number"
+                                        }
+                                    },
+                                    "required": [
+                                        "desc",
+                                        "preparationTime",
+                                        "servingAmount"
+                                    ],
+                                    "condition": "model.configuration.data[arrayIndex].type=='preparation'"
+                                },
+                                "ingredients": {
+                                    "type": "object",
+                                    "title": "Ingredients",
+                                    "properties": {
+                                        "sectionTitle": {
+                                            "title": "Section title",
+                                            "description": "Title of the section",
+                                            "type": "object",
+                                            "properties": {
+                                                "EN": {
+                                                    "title": "EN",
+                                                    "description": "Title of the section",
+                                                    "type": "string"
+                                                },
+                                                "IT": {
+                                                    "title": "IT",
+                                                    "description": "Title of the section",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "EN",
+                                                "IT"
+                                            ]
+                                        },
+                                        "sectionBody": {
+                                            "title": "Items",
+                                            "description": "List of ingredients.",
+                                            "type": "array",
+                                            "items": {
+                                                "description": "Ingredients section body item.",
+                                                "type": "object",
+                                                "properties": {
+                                                    "desc": {
+                                                        "title": "Description",
+                                                        "description": "Tip data description",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "EN": {
+                                                                "title": "EN",
+                                                                "description": "Tip data description",
+                                                                "type": "string"
+                                                            },
+                                                            "IT": {
+                                                                "title": "IT",
+                                                                "description": "Tip data description",
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "EN",
+                                                            "IT"
+                                                        ]
+                                                    },
+                                                    "quantity": {
+                                                        "title": "Quantity",
+                                                        "description": "Quantity of ingredient",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "desc"
+                                                ]
+                                            },
+                                            "minItems": 1
+                                        }
+                                    },
+                                    "required": [
+                                        "sectionBody",
+                                        "sectionTitle"
+                                    ],
+                                    "condition": "model.configuration.data[arrayIndex].type=='ingredients'"
+                                },
+                                "instructions": {
+                                    "type": "object",
+                                    "title": "Instructions",
+                                    "properties": {
+                                        "sectionTitle": {
+                                            "title": "Section title",
+                                            "description": "Title of the section",
+                                            "type": "object",
+                                            "properties": {
+                                                "EN": {
+                                                    "title": "EN",
+                                                    "description": "Title of the section",
+                                                    "type": "string"
+                                                },
+                                                "IT": {
+                                                    "title": "IT",
+                                                    "description": "Title of the section",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "EN",
+                                                "IT"
+                                            ]
+                                        },
+                                        "sectionBody": {
+                                            "title": "Items",
+                                            "description": "Instruction section body items.",
+                                            "type": "array",
+                                            "items": {
+                                                "description": "List of instructions item.",
+                                                "type": "object",
+                                                "properties": {
+                                                    "desc": {
+                                                        "title": "Description",
+                                                        "description": "Tip data description",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "EN": {
+                                                                "title": "EN",
+                                                                "description": "Tip data description",
+                                                                "type": "string"
+                                                            },
+                                                            "IT": {
+                                                                "title": "IT",
+                                                                "description": "Tip data description",
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "EN",
+                                                            "IT"
+                                                        ]
+                                                    }
+                                                },
+                                                "required": [
+                                                    "desc"
+                                                ]
+                                            },
+                                            "minItems": 1
+                                        }
+                                    },
+                                    "required": [
+                                        "sectionBody",
+                                        "sectionTitle"
+                                    ],
+                                    "condition": "model.configuration.data[arrayIndex].type=='instructions'"
+                                },
+                                "nutrition": {
+                                    "type": "object",
+                                    "title": "Nutrition",
+                                    "properties": {
+                                        "sectionTitle": {
+                                            "title": "Section title",
+                                            "description": "Title of the section",
+                                            "type": "object",
+                                            "properties": {
+                                                "EN": {
+                                                    "title": "EN",
+                                                    "description": "Title of the section",
+                                                    "type": "string"
+                                                },
+                                                "IT": {
+                                                    "title": "IT",
+                                                    "description": "Title of the section",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "EN",
+                                                "IT"
+                                            ]
+                                        },
+                                        "sectionBody": {
+                                            "title": "Items",
+                                            "description": "List of nutritions.",
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "cal": {
+                                                        "title": "Calcium",
+                                                        "description": "Amount of calcium.",
+                                                        "type": "number",
+                                                        "minimum": 0
+                                                    },
+                                                    "carb": {
+                                                        "title": "Carbon",
+                                                        "description": "Amount of carbon.",
+                                                        "type": "string"
+                                                    },
+                                                    "protein": {
+                                                        "title": "Protein",
+                                                        "description": "Amount of protein.",
+                                                        "type": "string"
+                                                    },
+                                                    "fat": {
+                                                        "title": "Fat",
+                                                        "description": "Amount of fat.",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "cal",
+                                                    "carb",
+                                                    "protein",
+                                                    "fat"
+                                                ]
+                                            },
+                                            "minItems": 1
+                                        }
+                                    },
+                                    "required": [
+                                        "sectionBody",
+                                        "sectionTitle"
+                                    ],
+                                    "condition": "model.configuration.data[arrayIndex].type=='nutrition'"
+                                },
+                                "chef": {
+                                    "type": "object",
+                                    "title": "Chef",
+                                    "properties": {
+                                        "sectionTitle": {
+                                            "title": "Section title",
+                                            "description": "Title of the section",
+                                            "type": "object",
+                                            "properties": {
+                                                "EN": {
+                                                    "title": "EN",
+                                                    "description": "Title of the section",
+                                                    "type": "string"
+                                                },
+                                                "IT": {
+                                                    "title": "IT",
+                                                    "description": "Title of the section",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "EN",
+                                                "IT"
+                                            ]
+                                        },
+                                        "sectionBody": {
+                                            "title": "Items",
+                                            "description": "List of chiefs.",
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "translations": {
+                                                        "title": "Translations",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "EN": {
+                                                                "title": "EN",
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "picUrl": {
+                                                                        "description": "Section picUrl.",
+                                                                        "type": "string",
+                                                                        "upload": {
+                                                                            "type": "single"
+                                                                        }
+                                                                    },
+                                                                    "desc": {
+                                                                        "title": "Description",
+                                                                        "description": "Tip data description",
+                                                                        "type": "string"
+                                                                    }
+                                                                },
+                                                                "required": [
+                                                                    "picUrl"
+                                                                ]
+                                                            },
+                                                            "IT": {
+                                                                "title": "IT",
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "picUrl": {
+                                                                        "description": "Section picUrl.",
+                                                                        "type": "string",
+                                                                        "upload": {
+                                                                            "type": "single"
+                                                                        }
+                                                                    },
+                                                                    "desc": {
+                                                                        "title": "Description",
+                                                                        "description": "Tip data description",
+                                                                        "type": "string"
+                                                                    }
+                                                                },
+                                                                "required": [
+                                                                    "picUrl"
+                                                                ]
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "EN",
+                                                            "IT"
+                                                        ]
+                                                    },
+                                                    "name": {
+                                                        "title": "Name",
+                                                        "description": "Name of chef.",
+                                                        "type": "string"
+                                                    },
+                                                    "surname": {
+                                                        "title": "Surname",
+                                                        "description": "Surname of chef.",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "translations",
+                                                    "name",
+                                                    "surname"
+                                                ]
+                                            },
+                                            "minItems": 1
+                                        }
+                                    },
+                                    "required": [
+                                        "sectionBody",
+                                        "sectionTitle"
+                                    ],
+                                    "condition": "model.configuration.data[arrayIndex].type=='chef'"
+                                }
+                            },
+                            "required": [
+                                "type"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "status",
+                    "translations",
+                    "mediaType",
+                    "data"
+                ]
+            }
+        },
+        "required": [
+            "name",
+            "type"
+        ]
+    },
+    "form": [
+        "name",
+        "type",
+        {
+            "key": "configuration",
+            "condition": "model.type",
+            "items": [
+                {
+                    "type": "tabs",
+                    "tabs": [
+                        {
+                            "title": "Configuration",
+                            "items": [
+                                {
+                                    "key": "configuration.status",
+                                    "condition": ""
+                                },
+                                {
+                                    "key": "configuration.hidden",
+                                    "condition": ""
+                                },
+                                {
+                                    "key": "configuration.mediaType",
+                                    "condition": ""
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Translations",
+                            "condition": "",
+                            "items": [
+                                {
+                                    "type": "tabs",
+                                    "tabs": [
+                                        {
+                                            "title": "EN",
+                                            "condition": "",
+                                            "items": [
+                                                {
+                                                    "key": "configuration.translations.EN.title",
+                                                    "condition": ""
+                                                },
+                                                {
+                                                    "key": "configuration.translations.EN.shortDesc",
+                                                    "condition": ""
+                                                },
+                                                {
+                                                    "key": "configuration.translations.EN.mediaUrl",
+                                                    "condition": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "title": "IT",
+                                            "condition": "",
+                                            "items": [
+                                                {
+                                                    "key": "configuration.translations.IT.title",
+                                                    "condition": ""
+                                                },
+                                                {
+                                                    "key": "configuration.translations.IT.shortDesc",
+                                                    "condition": ""
+                                                },
+                                                {
+                                                    "key": "configuration.translations.IT.mediaUrl",
+                                                    "condition": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "key": "configuration.data",
+                            "title": "Sections",
+                            "items": [
+                                {
+                                    "key": "configuration.data",
+                                    "type": "tabarray",
+                                    "title": "{{ value.name || 'Section '+$index }}",
+                                    "items": [
+                                        {
+                                            "type": "tabs",
+                                            "tabs": [
+                                                {
+                                                    "title": "Section",
+                                                    "items": [
+                                                        {
+                                                            "key": "configuration.data[].type",
+                                                            "condition": ""
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "title": "Preparation",
+                                                    "condition": "model.configuration.data[arrayIndex].type=='preparation'",
+                                                    "items": [
+                                                        {
+                                                            "type": "tabs",
+                                                            "tabs": [
+                                                                {
+                                                                    "title": "Preparation",
+                                                                    "items": [
+                                                                        {
+                                                                            "key": "configuration.data[].preparation.preparationTime",
+                                                                            "condition": ""
+                                                                        },
+                                                                        {
+                                                                            "key": "configuration.data[].preparation.servingAmount",
+                                                                            "condition": ""
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "title": "Description",
+                                                                    "condition": "",
+                                                                    "items": [
+                                                                        {
+                                                                            "key": "configuration.data[].preparation.desc.EN",
+                                                                            "condition": ""
+                                                                        },
+                                                                        {
+                                                                            "key": "configuration.data[].preparation.desc.IT",
+                                                                            "condition": ""
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "title": "Ingredients",
+                                                    "condition": "model.configuration.data[arrayIndex].type=='ingredients'",
+                                                    "items": [
+                                                        {
+                                                            "type": "tabs",
+                                                            "tabs": [
+                                                                {
+                                                                    "title": "Section title",
+                                                                    "condition": "",
+                                                                    "items": [
+                                                                        {
+                                                                            "key": "configuration.data[].ingredients.sectionTitle.EN",
+                                                                            "condition": ""
+                                                                        },
+                                                                        {
+                                                                            "key": "configuration.data[].ingredients.sectionTitle.IT",
+                                                                            "condition": ""
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "key": "configuration.data[].ingredients.sectionBody",
+                                                                    "title": "Items",
+                                                                    "items": [
+                                                                        {
+                                                                            "key": "configuration.data[].ingredients.sectionBody",
+                                                                            "type": "tabarray",
+                                                                            "title": "{{ value.name || 'Item '+$index }}",
+                                                                            "items": [
+                                                                                {
+                                                                                    "type": "tabs",
+                                                                                    "tabs": [
+                                                                                        {
+                                                                                            "title": "Base",
+                                                                                            "items": [
+                                                                                                {
+                                                                                                    "key": "configuration.data[].ingredients.sectionBody[].quantity",
+                                                                                                    "condition": ""
+                                                                                                }
+                                                                                            ]
+                                                                                        },
+                                                                                        {
+                                                                                            "title": "Description",
+                                                                                            "condition": "",
+                                                                                            "items": [
+                                                                                                {
+                                                                                                    "key": "configuration.data[].ingredients.sectionBody[].desc.EN",
+                                                                                                    "condition": ""
+                                                                                                },
+                                                                                                {
+                                                                                                    "key": "configuration.data[].ingredients.sectionBody[].desc.IT",
+                                                                                                    "condition": ""
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "title": "Instructions",
+                                                    "condition": "model.configuration.data[arrayIndex].type=='instructions'",
+                                                    "items": [
+                                                        {
+                                                            "type": "tabs",
+                                                            "tabs": [
+                                                                {
+                                                                    "title": "Section title",
+                                                                    "condition": "",
+                                                                    "items": [
+                                                                        {
+                                                                            "key": "configuration.data[].instructions.sectionTitle.EN",
+                                                                            "condition": ""
+                                                                        },
+                                                                        {
+                                                                            "key": "configuration.data[].instructions.sectionTitle.IT",
+                                                                            "condition": ""
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "key": "configuration.data[].instructions.sectionBody",
+                                                                    "title": "Items",
+                                                                    "items": [
+                                                                        {
+                                                                            "key": "configuration.data[].instructions.sectionBody",
+                                                                            "type": "tabarray",
+                                                                            "title": "{{ value.name || 'Item '+$index }}",
+                                                                            "items": [
+                                                                                {
+                                                                                    "type": "tabs",
+                                                                                    "tabs": [
+                                                                                        {
+                                                                                            "title": "Description",
+                                                                                            "condition": "",
+                                                                                            "items": [
+                                                                                                {
+                                                                                                    "key": "configuration.data[].instructions.sectionBody[].desc.EN",
+                                                                                                    "condition": ""
+                                                                                                },
+                                                                                                {
+                                                                                                    "key": "configuration.data[].instructions.sectionBody[].desc.IT",
+                                                                                                    "condition": ""
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "title": "Nutrition",
+                                                    "condition": "model.configuration.data[arrayIndex].type=='nutrition'",
+                                                    "items": [
+                                                        {
+                                                            "type": "tabs",
+                                                            "tabs": [
+                                                                {
+                                                                    "title": "Section title",
+                                                                    "condition": "",
+                                                                    "items": [
+                                                                        {
+                                                                            "key": "configuration.data[].nutrition.sectionTitle.EN",
+                                                                            "condition": ""
+                                                                        },
+                                                                        {
+                                                                            "key": "configuration.data[].nutrition.sectionTitle.IT",
+                                                                            "condition": ""
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "key": "configuration.data[].nutrition.sectionBody",
+                                                                    "title": "Items",
+                                                                    "items": [
+                                                                        {
+                                                                            "key": "configuration.data[].nutrition.sectionBody",
+                                                                            "type": "tabarray",
+                                                                            "title": "{{ value.name || 'Item '+$index }}",
+                                                                            "items": [
+                                                                                {
+                                                                                    "key": "configuration.data[].nutrition.sectionBody[].cal",
+                                                                                    "condition": ""
+                                                                                },
+                                                                                {
+                                                                                    "key": "configuration.data[].nutrition.sectionBody[].carb",
+                                                                                    "condition": ""
+                                                                                },
+                                                                                {
+                                                                                    "key": "configuration.data[].nutrition.sectionBody[].protein",
+                                                                                    "condition": ""
+                                                                                },
+                                                                                {
+                                                                                    "key": "configuration.data[].nutrition.sectionBody[].fat",
+                                                                                    "condition": ""
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "title": "Chef",
+                                                    "condition": "model.configuration.data[arrayIndex].type=='chef'",
+                                                    "items": [
+                                                        {
+                                                            "type": "tabs",
+                                                            "tabs": [
+                                                                {
+                                                                    "title": "Section title",
+                                                                    "condition": "",
+                                                                    "items": [
+                                                                        {
+                                                                            "key": "configuration.data[].chef.sectionTitle.EN",
+                                                                            "condition": ""
+                                                                        },
+                                                                        {
+                                                                            "key": "configuration.data[].chef.sectionTitle.IT",
+                                                                            "condition": ""
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "key": "configuration.data[].chef.sectionBody",
+                                                                    "title": "Items",
+                                                                    "items": [
+                                                                        {
+                                                                            "key": "configuration.data[].chef.sectionBody",
+                                                                            "type": "tabarray",
+                                                                            "title": "{{ value.name || 'Item '+$index }}",
+                                                                            "items": [
+                                                                                {
+                                                                                    "type": "tabs",
+                                                                                    "tabs": [
+                                                                                        {
+                                                                                            "title": "Base",
+                                                                                            "items": [
+                                                                                                {
+                                                                                                    "key": "configuration.data[].chef.sectionBody[].name",
+                                                                                                    "condition": ""
+                                                                                                },
+                                                                                                {
+                                                                                                    "key": "configuration.data[].chef.sectionBody[].surname",
+                                                                                                    "condition": ""
+                                                                                                }
+                                                                                            ]
+                                                                                        },
+                                                                                        {
+                                                                                            "title": "Translations",
+                                                                                            "condition": "",
+                                                                                            "items": [
+                                                                                                {
+                                                                                                    "type": "tabs",
+                                                                                                    "tabs": [
+                                                                                                        {
+                                                                                                            "title": "EN",
+                                                                                                            "condition": "",
+                                                                                                            "items": [
+                                                                                                                {
+                                                                                                                    "key": "configuration.data[].chef.sectionBody[].translations.EN.picUrl",
+                                                                                                                    "type": "upload",
+                                                                                                                    "condition": ""
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "key": "configuration.data[].chef.sectionBody[].translations.EN.desc",
+                                                                                                                    "condition": ""
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "title": "IT",
+                                                                                                            "condition": "",
+                                                                                                            "items": [
+                                                                                                                {
+                                                                                                                    "key": "configuration.data[].chef.sectionBody[].translations.IT.picUrl",
+                                                                                                                    "type": "upload",
+                                                                                                                    "condition": ""
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "key": "configuration.data[].chef.sectionBody[].translations.IT.desc",
+                                                                                                                    "condition": ""
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        }
+                                                                                                    ]
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "submit",
+            "style": "btn-info",
+            "title": "OK"
+        }
+    ]
+}

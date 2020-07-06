@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "List of Pokemon Types",
+    "description": "Schema that describe a list of Pokemon types",
+    "type": "array",
+    "items": {
+        "title": "A type of Pokemon",
+        "type": "object",
+        "properties": {
+            "id": {
+                "description": "Unique identifier of the Pokemon type",
+                "type": "number"
+            },
+            "type": {
+                "description": "Label of the type",
+                "type": "string"
+            }
+        },
+        "required": [
+            "id",
+            "type"
+        ]
+    }
+}

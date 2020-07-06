@@ -1,0 +1,145 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "User",
+    "type": "object",
+    "properties": {
+        "memberId": {
+            "description": "[Output only] Unique ID of Household Member",
+            "type": "string",
+            "minLength": 1
+        },
+        "householdId": {
+            "description": "[Output only] Unique ID of Household",
+            "type": "string",
+            "minLength": 1
+        },
+        "providedId": {
+            "description": "Optional Unique ID provided by the Household Member",
+            "type": "string",
+            "minLength": 1
+        },
+        "email": {
+            "description": "E-mail address for the Household Member",
+            "type": "string",
+            "format": "email",
+            "minLength": 1
+        },
+        "firstName": {
+            "description": "First name of Household Member",
+            "type": "string",
+            "minLength": 1
+        },
+        "middleName": {
+            "description": "Middle name of Household Member",
+            "type": "string",
+            "minLength": 1
+        },
+        "lastName": {
+            "description": "Last name of Household Member",
+            "type": "string",
+            "minLength": 1
+        },
+        "phone": {
+            "description": "Phone number for the Household Member",
+            "type": "number"
+        },
+        "birthday": {
+            "description": "Birthday of the Household Member",
+            "type": "string",
+            "format": "date-time",
+            "minLength": 1
+        },
+        "gender": {
+            "description": "Gender of the Household Member",
+            "type": "string",
+            "enum": [
+                "Male",
+                "Female",
+                "Other"
+            ]
+        },
+        "race": {
+            "description": "Race of the Household Member",
+            "type": "string",
+            "enum": [
+                "American Indian or Alaska Native",
+                "Asian",
+                "Black or African American",
+                "Native Hawaiian or Other Pacific Islander",
+                "White"
+            ]
+        },
+        "memberType": {
+            "description": "Member type of the household member",
+            "type": "string",
+            "enum": [
+                "headOfHousehold",
+                "householdMember"
+            ]
+        },
+        "validationDate": {
+            "description": "Validation date of the Household Member",
+            "type": "string",
+            "format": "date-time",
+            "minLength": 1
+        },
+        "validationType": {
+            "description": "Validation type of the Household Member",
+            "type": "string",
+            "minLength": 1
+        },
+        "isActive": {
+            "description": "Flag to indicate if a household member is Active",
+            "type": "boolean",
+            "default": true
+        },
+        "isArchived": {
+            "description": "Flag to indicate if a household member is Archived",
+            "type": "boolean",
+            "default": false
+        },
+        "isDisabled": {
+            "description": "Flag to indicate if a household member is Disabled",
+            "type": "boolean",
+            "default": false
+        },
+        "isHispanic": {
+            "description": "Flag to indicate if a household member is Hispanic",
+            "type": "boolean",
+            "default": false
+        },
+        "isSpecialNeeds": {
+            "description": "Flag to indicate if a household member is Special Needs",
+            "type": "boolean",
+            "default": false
+        },
+        "createdAt": {
+            "description": "[Output only] Creation time of the household member",
+            "type": "string",
+            "format": "date-time",
+            "minLength": 1
+        },
+        "createdBy": {
+            "description": "[Output only] Creator of the household member",
+            "type": "string",
+            "minLength": 1
+        },
+        "updatedAt": {
+            "description": "[Output only] Last modification time of the household member",
+            "type": "string",
+            "format": "date-time",
+            "minLength": 1
+        },
+        "updatedBy": {
+            "description": "[Output only] User to last modify the household member",
+            "type": "string",
+            "minLength": 1
+        }
+    },
+    "required": [
+        "firstName",
+        "lastName",
+        "birthday",
+        "gender"
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "List of Pokemon Attacks",
+    "description": "Schema that describe a list of Pokemon attacks",
+    "type": "array",
+    "items": {
+        "title": "A kind of Pokemon attack",
+        "type": "object",
+        "properties": {
+            "id": {
+                "description": "Unique identifier of the Pokemon type",
+                "type": "number"
+            },
+            "attack": {
+                "description": "Label of the attack",
+                "type": "string"
+            },
+            "type": {
+                "description": "Id of the attack type (speed or special)",
+                "type": "number"
+            },
+            "type_id": {
+                "description": "Id of the attack type as referenced in pokedexgo-types table",
+                "type": "number"
+            },
+            "damage": {
+                "description": "Amount of damages caused by the attack",
+                "type": "number"
+            },
+            "gauge": {
+                "description": "Time before used or reuse special attack - gauge delay",
+                "type": "number"
+            }
+        },
+        "required": [
+            "id",
+            "attack",
+            "type",
+            "type_id",
+            "damage",
+            "gauge"
+        ]
+    }
+}

@@ -1,0 +1,167 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "uuid": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+        },
+        "date": {
+            "type": "string",
+            "pattern": "^(\\d{4})-(\\d{2})-(\\d{2})$",
+            "description": "ISO 8601 date and time in UTC timezone."
+        },
+        "name": {
+            "type": "string",
+            "pattern": "^(?!.*[\u042b\u042a\u042d\u0401\u044b\u044a\u044d\u0451@%&$^#])[a-zA-Z\u0410-\u042f\u0490\u0407\u0406\u0404\u0430-\u044f\u0491\u0457\u0456\u04540-9\u2116\\\"!\\^\\*)\\]\\[(._-].*$"
+        },
+        "MFO": {
+            "type": "string",
+            "pattern": "^[0-9]{6}$",
+            "minLength": 6
+        },
+        "payer_account": {
+            "type": "string",
+            "pattern": "^[0-9]+$"
+        }
+    },
+    "type": "object",
+    "properties": {
+        "contractor_owner_id": {
+            "type": "string",
+            "$ref": "#/definitions/uuid",
+            "description": "person which represent legal entity"
+        },
+        "contractor_legal_entity_id": {
+            "type": "string",
+            "$ref": "#/definitions/uuid",
+            "description": "legal entity participant of a contract"
+        },
+        "contractor_base": {
+            "type": "string",
+            "$ref": "#/definitions/name",
+            "description": "documents which allows to represent clinic",
+            "minLength": 1
+        },
+        "contractor_payment_details": {
+            "type": "object",
+            "properties": {
+                "bank_name": {
+                    "type": "string",
+                    "$ref": "#/definitions/name",
+                    "description": "bank name",
+                    "minLength": 1
+                },
+                "MFO": {
+                    "type": "string",
+                    "$ref": "#/definitions/MFO",
+                    "description": "bank code"
+                },
+                "payer_account": {
+                    "type": "string",
+                    "$ref": "#/definitions/payer_account",
+                    "description": "\u041d\u043e\u043c\u0435\u0440 \u0431\u0430\u043d\u043a\u0456\u0432\u0441\u044c\u043a\u043e\u0433\u043e \u0440\u0430\u0445\u0443\u043d\u043a\u0443"
+                }
+            },
+            "required": [
+                "bank_name",
+                "MFO",
+                "payer_account"
+            ],
+            "additionalProperties": false
+        },
+        "contractor_divisions": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "$ref": "#/definitions/uuid",
+                "description": "division ID"
+            },
+            "minItems": 1
+        },
+        "id_form": {
+            "type": "string",
+            "description": "Dictionary: CONTRACT_TYPE"
+        },
+        "contract_number": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "pattern": "^\\d{4}-[\\dAEHKMPTX]{4}-[\\dAEHKMPTX]{4}$"
+        },
+        "nhs_signer_id": {
+            "type": "string",
+            "$ref": "#/definitions/uuid",
+            "description": "id of signer from nhs side"
+        },
+        "nhs_legal_entity_id": {
+            "type": "string",
+            "$ref": "#/definitions/uuid",
+            "description": "id of NHS legal entity"
+        },
+        "nhs_signer_base": {
+            "type": "string",
+            "minLength": 1,
+            "description": "documents which allows to represent nhs"
+        },
+        "contractor_signed": {
+            "type": "boolean",
+            "enum": [
+                false
+            ],
+            "description": "flag if contract is signed by nhs"
+        },
+        "nhs_payment_method": {
+            "type": "string",
+            "description": "payment method for contract Dictionary: CONTRACT_PAYMENT_METHOD"
+        },
+        "issue_city": {
+            "type": "string",
+            "minLength": 1,
+            "description": "place of contract request"
+        },
+        "misc": {
+            "type": "string"
+        },
+        "consent_text": {
+            "type": "string"
+        },
+        "status_reason": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "medical_program_id": {
+            "$ref": "#/definitions/uuid",
+            "description": "id of a medical program that is a subject of reimbursement contract"
+        },
+        "parent_contract_id": {
+            "type": "string",
+            "$ref": "#/definitions/uuid",
+            "description": "id of parent contract"
+        },
+        "assignee_id": {
+            "type": "string",
+            "$ref": "#/definitions/uuid"
+        }
+    },
+    "required": [
+        "contractor_owner_id",
+        "contractor_legal_entity_id",
+        "contractor_base",
+        "contractor_payment_details",
+        "contractor_divisions",
+        "id_form",
+        "consent_text",
+        "contract_number",
+        "nhs_signer_id",
+        "nhs_legal_entity_id",
+        "nhs_signer_base",
+        "nhs_payment_method",
+        "issue_city",
+        "medical_program_id",
+        "parent_contract_id"
+    ],
+    "additionalProperties": false
+}

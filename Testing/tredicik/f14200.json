@@ -1,0 +1,210 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "General Config",
+    "type": "object",
+    "properties": {
+        "apiVersion": {
+            "type": "string"
+        },
+        "metadata": {
+            "type": "object",
+            "properties": {
+                "userAgent": {
+                    "type": "string"
+                }
+            }
+        },
+        "spec": {
+            "type": "object",
+            "properties": {
+                "registrarIntf": {
+                    "enum": [
+                        "Internal",
+                        "External"
+                    ]
+                },
+                "bindAddr": {
+                    "type": "string"
+                },
+                "externAddr": {
+                    "type": "string"
+                },
+                "localnets": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true
+                },
+                "recordRoute": {
+                    "type": "boolean"
+                },
+                "addressInfo": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true
+                },
+                "restService": {
+                    "type": "object",
+                    "properties": {
+                        "unsecured": {
+                            "type": "boolean"
+                        },
+                        "port": {
+                            "type": "integer"
+                        },
+                        "maxThreads": {
+                            "type": "integer"
+                        },
+                        "minThreads": {
+                            "type": "integer"
+                        },
+                        "timeOutMillis": {
+                            "type": "integer"
+                        },
+                        "bindAddr": {
+                            "type": "string"
+                        },
+                        "keyStore": {
+                            "type": "string"
+                        },
+                        "trustStore": {
+                            "type": "string"
+                        },
+                        "keyStorePassword": {
+                            "type": "string"
+                        },
+                        "trustStorePassword": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "dataSource": {
+                    "type": "object",
+                    "properties": {
+                        "provider": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "provider"
+                    ]
+                },
+                "securityContext": {
+                    "type": "object",
+                    "properties": {
+                        "debugging": {
+                            "type": "boolean"
+                        },
+                        "keyStore": {
+                            "type": "string"
+                        },
+                        "trustStore": {
+                            "type": "string"
+                        },
+                        "keyStorePassword": {
+                            "type": "string"
+                        },
+                        "keyStoreType": {
+                            "type": "string"
+                        },
+                        "client": {
+                            "type": "object",
+                            "properties": {
+                                "protocols": {
+                                    "type": "array",
+                                    "items": {
+                                        "enum": [
+                                            "TLSv1.2",
+                                            "TLSv1.1",
+                                            "TLSv1"
+                                        ]
+                                    }
+                                },
+                                "authType": {
+                                    "enum": [
+                                        "Default",
+                                        "Enabled",
+                                        "Want",
+                                        "Disabled",
+                                        "DisabledAll"
+                                    ]
+                                }
+                            }
+                        },
+                        "required": [
+                            "keyStore",
+                            "trustStore",
+                            "keyStorePassword",
+                            "keyStoreType"
+                        ]
+                    }
+                },
+                "accessControlList": {
+                    "type": "object",
+                    "properties": {
+                        "allow": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "minItems": 1,
+                            "uniqueItems": true
+                        },
+                        "deny": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "minItems": 1,
+                            "uniqueItems": true
+                        }
+                    }
+                },
+                "transport": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "bindAddr": {
+                                "type": "string"
+                            },
+                            "port": {
+                                "type": "integer"
+                            },
+                            "protocol": {
+                                "enum": [
+                                    "udp",
+                                    "tcp",
+                                    "tls",
+                                    "sctp",
+                                    "ws",
+                                    "wss"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "protocol",
+                            "port"
+                        ],
+                        "minItems": 1,
+                        "uniqueItems": true
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            },
+            "required": [
+                "transport"
+            ]
+        }
+    },
+    "required": [
+        "apiVersion",
+        "spec"
+    ]
+}

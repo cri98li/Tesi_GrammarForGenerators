@@ -1,0 +1,78 @@
+{
+    "id": "http://ndm.mit.edu/magnet_orders/schemas/Person",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "Person",
+    "description": "Record with contact info etc linked to OUser",
+    "definitions": {},
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "_NDMobject#/definitions/V"
+        }
+    ],
+    "properties": {
+        "createdBy": {
+            "$ref": "#/definitions/LINK",
+            "defaultvalue": {
+                "linked-class": "Person",
+                "@rid": "'GetUser()'"
+            }
+        },
+        "creationTime": {
+            "type": "STRING",
+            "format": "date-time",
+            "defaultvalue": "'sysdate()'"
+        },
+        "guid": {
+            "type": "STRING",
+            "defaultvalue": "'uuid()'",
+            "dbprop": "READONLY TRUE"
+        },
+        "firstname": {
+            "type": "STRING"
+        },
+        "lastname": {
+            "type": "STRING"
+        },
+        "email": {
+            "type": "STRING"
+        },
+        "phone": {
+            "type": "STRING"
+        },
+        "comment": {
+            "type": "STRING"
+        },
+        "dbname": {
+            "type": "STRING"
+        },
+        "ouser": {
+            "$ref": "#/definitions/LINK",
+            "defaultvalue": {
+                "linked-class": "OUser",
+                "@rid": "FROM Person.dbname to OUser.name"
+            }
+        }
+    },
+    "required": [
+        "firstname",
+        "lastname",
+        "email"
+    ],
+    "metadata": {
+        "schemaMetadata": {
+            "title": [
+                "firstname",
+                "lastname"
+            ],
+            "brief": [
+                "email"
+            ],
+            "body": [
+                "phone",
+                "dbname"
+            ],
+            "links": []
+        }
+    }
+}

@@ -1,0 +1,121 @@
+{
+    "id": "http://ndm.mit.edu/magnet_orders/schemas/_NDMobject",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "_NDMobject",
+    "description": "Information about database entry",
+    "type": "object",
+    "definitions": {
+        "LINK": {
+            "description": "link with link type pointing to record by rid. Internal to ODB.",
+            "type": "object",
+            "properties": {
+                "linked-class": {
+                    "type": "STRING"
+                },
+                "@rid": {
+                    "type": "STRING"
+                }
+            },
+            "required": [
+                "linked-class",
+                "@rid"
+            ]
+        },
+        "LINKLIST": {
+            "description": "An ordered list of links for 1:n relations.",
+            "type": "array"
+        },
+        "V": {
+            "description": "Vertex base class.  Internal to ODB.",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "STRING"
+                },
+                "@rid": {
+                    "type": "STRING"
+                }
+            }
+        },
+        "E": {
+            "description": "Edge base class.  Internal to ODB.",
+            "type": "object",
+            "properties": {
+                "@rid": {
+                    "type": "STRING"
+                },
+                "out": {
+                    "type": "STRING"
+                },
+                "in": {
+                    "type": "STRING"
+                }
+            }
+        },
+        "ORestricted": {
+            "description": "Role management base class. Internal to ODB.",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "STRING"
+                },
+                "type": {
+                    "type": "STRING"
+                },
+                "_allow": {
+                    "type": "array",
+                    "items": {
+                        "type": "STRING"
+                    }
+                },
+                "_allowDelete": {
+                    "type": "array",
+                    "items": {
+                        "type": "STRING"
+                    }
+                },
+                "_allowRead": {
+                    "type": "array",
+                    "items": {
+                        "type": "STRING"
+                    }
+                },
+                "_allowUpdate": {
+                    "type": "array",
+                    "items": {
+                        "type": "STRING"
+                    }
+                }
+            }
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "#/definitions/ORestricted"
+        }
+    ],
+    "properties": {
+        "createdBy": {
+            "$ref": "#/definitions/LINK",
+            "defaultvalue": {
+                "linked-class": "Person",
+                "@rid": "'GetUser()'"
+            }
+        },
+        "creationTime": {
+            "type": "STRING",
+            "format": "date-time",
+            "defaultvalue": "'sysdate()'"
+        },
+        "guid": {
+            "type": "STRING",
+            "defaultvalue": "'uuid()'",
+            "dbprop": "READONLY TRUE"
+        }
+    },
+    "required": [
+        "creationTime",
+        "createdBy",
+        "guid"
+    ]
+}

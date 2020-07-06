@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "status_reason": {
+            "type": "string",
+            "maxLength": 3000,
+            "description": "the reason of terminated status"
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "CAPITATION",
+                "REIMBURSEMENT"
+            ]
+        }
+    },
+    "required": [
+        "status_reason"
+    ],
+    "additionalProperties": false
+}

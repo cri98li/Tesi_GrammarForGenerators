@@ -1,0 +1,66 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://ostlog.org/schema/Sleep_log.json",
+    "title": "Sleep log",
+    "description": "Each entry records daily sleep time.",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "meta_id": {
+            "type": "integer",
+            "description": "reference to entry's metadata"
+        },
+        "in_bed_date_id": {
+            "type": "string",
+            "description": "YYYYMMDD formatted date when person went to bed."
+        },
+        "in_bed_timestamp": {
+            "type ": "string ",
+            "description": "HH:MM:SS formatted time when person went to bed."
+        },
+        "out_of_bed_date_id": {
+            "type": "string",
+            "description": "YYYYMMDD formatted date when person got up from bed."
+        },
+        "out_of_bed_timestamp": {
+            "type ": "string ",
+            "description": "HH:MM:SS formatted time when person got up from bed."
+        },
+        "location_id": {
+            "type": "integer",
+            "description": "location where person slept."
+        },
+        "domain": {
+            "$ref": "definitions.json#/domain"
+        },
+        "person_id": {
+            "type": "integer",
+            "description ": "the person who slept."
+        },
+        "slept well": {
+            "$ref": "definitions.json#/likert_scale",
+            "description": "Commentary regarding how the person feels they slept on the specified date."
+        },
+        "easy_wakeup": {
+            "$ref": "definitions.json#/likert_scale",
+            "description": "The person woke up and got out of bed easily and with little resistance."
+        },
+        "remarks": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "version_id",
+        "last_updated",
+        "in_bed_date_id",
+        "in_bed_time",
+        "out_of_bed_date_id",
+        "out_of_bed_time",
+        "location_id",
+        "domain",
+        "person_id"
+    ]
+}

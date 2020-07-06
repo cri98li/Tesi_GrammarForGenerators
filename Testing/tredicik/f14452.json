@@ -1,0 +1,55 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "required": [
+        "quandlApiKey",
+        "quandl"
+    ],
+    "properties": {
+        "quandlApiKey": {
+            "type": "string"
+        },
+        "quandl": {
+            "$ref": "#/definitions/downstreamService"
+        }
+    },
+    "definitions": {
+        "downstreamService": {
+            "required": [
+                "url",
+                "healthCheckPath"
+            ],
+            "properties": {
+                "url": {
+                    "$ref": "#/definitions/baseUrl"
+                },
+                "healthCheckPath": {
+                    "type": "string"
+                }
+            }
+        },
+        "baseUrl": {
+            "required": [
+                "protocol",
+                "host"
+            ],
+            "properties": {
+                "protocol": {
+                    "type": "string"
+                },
+                "host": {
+                    "type": "string"
+                },
+                "port": {
+                    "type": "number"
+                },
+                "basePath": {
+                    "type": "string"
+                },
+                "verifyCertificate": {
+                    "type": "boolean"
+                }
+            }
+        }
+    }
+}

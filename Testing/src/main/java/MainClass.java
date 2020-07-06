@@ -98,56 +98,78 @@ public class MainClass {
 
 
 
+		try {
+			if (commandLine.hasOption("t")) {
+				testBuilder = new FolderTestBuilder(commandLine.getOptionValue("t"));
+				//ExecutorService executors = Executors.newFixedThreadPool(nThread);
+				ThreadPoolExecutor executors = new ThreadPoolExecutor(nThread, nThread,
+						0L, TimeUnit.MILLISECONDS,
+						new LinkedBlockingQueue<>());
+				List<Test> tests = testBuilder.getTests();
+				for (Test test : tests)
+					executors.execute(test);
 
-		if(commandLine.hasOption("t")){
-			testBuilder = new FolderTestBuilder(commandLine.getOptionValue("t"));
-			//ExecutorService executors = Executors.newFixedThreadPool(nThread);
-			ThreadPoolExecutor executors = new ThreadPoolExecutor(nThread, nThread,
-					0L, TimeUnit.MILLISECONDS,
-					new LinkedBlockingQueue<>());
-			List<Test> tests = testBuilder.getTests();
-			for (Test test : tests)
-				executors.execute(test);
+				executors.shutdown();
 
-			executors.shutdown();
-
-			while (!executors.awaitTermination(1, TimeUnit.SECONDS)) {
-				System.out.println("MANCANO "+ executors.getQueue().size() +" TEST (su "+ tests.size() +")");
-			}
-
-			int testTotali = tests.size();
-			int testPassati = 0;
-			long tempoMedio = 0;
-			BufferedWriter w = new BufferedWriter(new FileWriter("output.csv"));
-			for (Test t : tests) {
-				w.write(t.getInputFiles().get(0)+","+t.getResult()+","+t.getTime()+","+t.getComment()+"\r\n");
-
-				if (t.getResult()) {
-					testPassati++;
-					tempoMedio += t.getTime();
+				while (!executors.awaitTermination(1, TimeUnit.SECONDS)) {
+					System.out.println("MANCANO " + executors.getQueue().size() + " TEST (su " + tests.size() + ")");
 				}
-			}
-			w.close();
 
-			System.out.println("TEST SUPERATI: " + testPassati + "/" + testTotali);
-			System.out.println("\tTEMPO MEDIO ELABORAZIONE: " + (tempoMedio/testPassati) + " millisecondi");
+				int testTotali = tests.size();
+				int testPassati = 0;
+				long tempoMedio = 0;
+				BufferedWriter w = new BufferedWriter(new FileWriter("output.csv"));
 
-			testBuilder.shutdown();
-
-			for(int i = 0; i < args.length; i++)
-				if(args[i].equals("-t") || args[i].equals("--testFolder"))
-					args[i] = "-c";
-
-			if(commandLine.hasOption("d")){
-				for(Test t : tests)
+				String[] op = {"toAlgebraNormalized",
+								"toAlgebraNormalized+Beauty",
+								"toAlgebraNormalized+parser",
+								"toAlgebraNormalized+notElimination",
+								"toAlgebraNormalized+notElimination+toJSON",
+								"toAlgebraNormalized+notElimination+toWitness",
+								"toAlgebraNormalized+notElimination+toWitness+andMerging",
+								"toAlgebraNormalized+notElimination+toWitness+canonicalization",
+								"toAlgebraNormalized+notElimination+toWitness+canonicalization+varNormalization",
+								"toAlgebraNormalized+notElimination+toWitness+canonicalization+varNormalization+DNF"
+								};
+				for (Test t : tests) {
+					int idOp = 9;
 					if(t.getResult())
-						for(String path : t.getInputFiles())
-							new File(path).delete();
-			}
+						w.write("2,"+ op[idOp]+","+t.getInputFiles().get(0) + ",1," + t.getTime() + "," + t.getComment() + "\n");
+					else
+						w.write("2,"+ op[idOp]+","+t.getInputFiles().get(0) + ",0," + t.getTime() + "," + t.getComment().substring(0, t.getComment().length()>1024?1024 : t.getComment().length()) + "\n");
 
-			System.out.println(Arrays.toString(args));
+					if (t.getResult()) {
+						testPassati++;
+						tempoMedio += t.getTime();
+					}
+				}
+				w.close();
+
+				System.out.println("TEST SUPERATI: " + testPassati + "/" + testTotali);
+				System.out.println("\tTEMPO MEDIO ELABORAZIONE: " + (tempoMedio / testPassati) + " millisecondi");
+
+				testBuilder.shutdown();
+
+			/*for(int i = 0; i < args.length; i++)
+				if(args[i].equals("-t") || args[i].equals("--testFolder"))
+					args[i] = "-c";*/
+
+				if (commandLine.hasOption("d")) {
+					for (Test t : tests)
+						if (t.getResult())
+							for (String path : t.getInputFiles())
+								new File(path).delete();
+				}
+
+			/*System.out.println(Arrays.toString(args));
 			main(args);
 
+			return;*/
+
+				return;
+			}
+		}catch (Exception e){
+			e.printStackTrace();
 			return;
 		}
 
@@ -192,6 +214,10 @@ public class MainClass {
                             new File(path).delete();
                     }
 			}
+
+			System.out.println("\t\tTEMPO IMPIEGATO: "+ (System.currentTimeMillis() - start) +" millisecondi");
+			System.out.println("\t\tTEMPO IMPIEGATO: "+ (System.currentTimeMillis() - start)/1000 +" secondi");
+			System.out.println("\t\tTEMPO IMPIEGATO: "+ (System.currentTimeMillis() - start)/(1000*60) +" minuti");
 		}
 
 
